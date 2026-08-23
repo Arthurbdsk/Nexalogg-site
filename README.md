@@ -1,0 +1,127 @@
+# NEXALLOG
+
+Site institucional da NEXALLOG. Consultoria para empresas e empresários de Transportes e Logística:
+diagnóstico financeiro e operacional, identificação de causas estruturais, plano de ação de 90 dias
+e suporte na execução.
+
+## Stack
+
+| Camada | Escolha | Motivo |
+| --- | --- | --- |
+| Framework | Next.js 15 (App Router) | Renderização estática por padrão, metadata nativa, rotas de API |
+| Linguagem | TypeScript (strict) | Tipagem do conteúdo e dos componentes |
+| Estilos | Tailwind CSS 3 | Sistema de design centralizado em `tailwind.config.ts` |
+| Animação | CSS + IntersectionObserver | Sem biblioteca de animação, apenas `opacity` e `transform` |
+| Ícones | SVG próprio | Nenhuma dependência de biblioteca de ícones |
+| Fontes | Archivo, Inter e IBM Plex Mono | Auto-hospedadas em `public/fonts`, subconjunto latino |
+
+Dependências de produção: `next`, `react`, `react-dom`. Nada além disso.
+
+## Comandos
+
+```bash
+npm install
+npm run dev            # ambiente de desenvolvimento
+npm run build          # build de produção
+npm run start          # servidor de produção
+npm run typecheck      # verificação de tipos
+npm run lint           # ESLint com next/core-web-vitals
+npm run seo:generate   # regenera public/sitemap.xml e public/robots.txt
+```
+
+## Dados da empresa: onde editar
+
+Todo conteúdo institucional editável está centralizado. Nenhuma informação foi inventada: campos sem
+dado oficial ficam vazios e simplesmente não são renderizados, sem exibir marcador ao usuário final.
+
+### `src/lib/site.ts`
+
+Fonte única de:
+
+- `name`, `tagline`, `description`, `url` (domínio de produção)
+- `contact.email`, `contact.phone`, `contact.whatsapp`
+  Preencher o campo `value` habilita automaticamente o canal no rodapé, na página de contato e no
+  JSON-LD, com evento de analytics já associado.
+- `address` e `legal` (razão social, CNPJ, encarregado de dados, data dos documentos legais)
+- `social` (somente perfis oficiais confirmados)
+- `advisor` (foto, biografia e LinkedIn de Alexandre Felix)
+- `analytics` (IDs de GA4 e GTM)
+- `cta` (textos dos botões principais)
+
+### `src/data/`
+
+- `problems.ts`: os cinco problemas estruturais da seção de diagnóstico
+- `methodology.ts`: as quatro etapas do Programa D90 e os resultados esperados
+- `solutions.ts`: as nove áreas de cobertura, os textos das páginas de área e os três princípios
+- `navigation.ts`: menus do header e do rodapé
+
+Incluir uma nova área em `solutions.ts` cria a página `/solucoes/<slug>` e a entrada no diagrama de
+ecossistema. Depois disso, rode `npm run seo:generate` para atualizar o sitemap.
+
+## Variáveis de ambiente
+
+Copie `.env.example` para `.env.local`:
+
+| Variável | Uso |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Domínio usado em canonical, Open Graph, sitemap e JSON-LD |
+| `NEXT_PUBLIC_GA4_ID` | Ativa o GA4. Vazio, nenhum script de terceiro é carregado |
+| `NEXT_PUBLIC_GTM_ID` | Ativa o GTM nas mesmas condições |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Meta tag de verificação do Search Console |
+| `CONTACT_WEBHOOK_URL` | Destino do formulário. Somente servidor, nunca exposto ao browser |
+| `CONTACT_INBOX` | Caixa de destino enviada junto ao webhook |
+
+Sem `CONTACT_WEBHOOK_URL`, a rota `/api/contact` valida e registra a solicitação no log do servidor,
+mas não encaminha para nenhum destino. Configure a variável antes de publicar.
+
+## Estrutura
+
+```
+src/
+  app/                  rotas, metadata, JSON-LD, 404, erro e API de contato
+  components/
+    layout/             header, rodapé, cabeçalho de página, progresso, analytics
+    sections/           seções de conteúdo reutilizadas entre páginas
+    ui/                 botão, campo, revelação, trilha, marca, dados estruturados
+    visuals/            composições SVG (rota do hero, rota da página 404)
+  data/                 conteúdo institucional tipado
+  hooks/                observadores de scroll, viewport, ponteiro e mídia
+  lib/                  configuração, SEO, JSON-LD, analytics, validação, utilitários
+public/
+  fonts/                fontes auto-hospedadas
+  images/               imagem de Open Graph e marca
+  robots.txt            gerado por npm run seo:generate
+  sitemap.xml           gerado por npm run seo:generate
+```
+
+## Analytics
+
+`src/lib/analytics.ts` expõe `track(evento, dados)`. Sem IDs configurados a chamada é um no-op, então
+o site funciona normalmente antes da configuração. Eventos já instrumentados:
+
+`cta_principal_click`, `cta_metodologia_click`, `cta_solucoes_click`, `whatsapp_click`,
+`telefone_click`, `email_click`, `form_start`, `form_submit`, `form_success`, `form_error`,
+`scroll_depth`.
+
+## SEO
+
+- Title e meta description únicos por página, montados em `src/lib/seo.ts`
+- Canonical absoluto em todas as páginas indexáveis
+- Open Graph e Twitter Card com imagem 1200x630
+- JSON-LD com `Organization`, `WebSite`, `WebPage`, `BreadcrumbList`, `Service` e `Person`,
+  sempre sem propriedades vazias
+- `sitemap.xml` e `robots.txt` físicos em `public/`, gerados a partir das rotas reais
+- Páginas de erro marcadas com `noindex`
+- Redirecionamentos 301 de rotas alternativas em `next.config.mjs`
+
+## Acessibilidade
+
+Navegação completa por teclado, atalho para o conteúdo, foco visível, estrutura semântica com um
+único `h1` por página, rótulos associados no formulário, estados de erro comunicados por texto e
+ícone, e suporte a `prefers-reduced-motion` em todas as animações.
+
+## Segurança
+
+Headers de segurança e Content Security Policy em `next.config.mjs`, validação e sanitização
+compartilhadas entre cliente e servidor em `src/lib/validation.ts`, honeypot e limite de envios por
+origem na rota `/api/contact`.

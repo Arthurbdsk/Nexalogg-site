@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --shell-padding: clamp(1.25rem, 4vw, 3.5rem);
+    --header-height: 5.5rem;
+    --header-height-compact: 4.25rem;
+    --rule: rgba(244, 243, 239, 0.12);
+    --rule-strong: rgba(244, 243, 239, 0.22);
+    --rule-dark: rgba(5, 8, 13, 0.12);
+    color-scheme: dark;
+  }
+
+  * {
+    min-width: 0;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height-compact) + 1.5rem);
+  }
+
+  body {
+    @apply bg-ink font-sans text-paper antialiased;
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-semibold text-balance;
+  }
+
+  ::selection {
+    background-color: #C4682B;
+    color: #F4F3EF;
+  }
+
+  :focus-visible {
+    outline: 2px solid #E7A874;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Evita que o foco em elementos de seção desenhe contornos indesejados */
+  section:focus,
+  main:focus {
+    outline: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: var(--shell-padding);
+  }
+
+  .rule {
+    border-color: var(--rule);
+  }
+
+  .label {
+    @apply font-mono text-label uppercase tracking-[0.16em] text-copper-300;
+  }
+
+  .label-muted {
+    @apply font-mono text-label uppercase tracking-[0.16em] text-slateink-400;
+  }
+
+  .prose-nx p {
+    @apply text-[1.0625rem] leading-[1.75] text-paper/70;
+  }
+
+  .prose-nx p + p {
+    @apply mt-5;
+  }
+
+  .prose-nx h2 {
+    @apply mt-14 text-display-sm text-paper;
+  }
+
+  .prose-nx h3 {
+    @apply mt-10 text-xl text-paper;
+  }
+
+  .prose-nx h2 + p,
+  .prose-nx h3 + p {
+    @apply mt-4;
+  }
+
+  .prose-nx ul {
+    @apply mt-5 space-y-3;
+  }
+
+  .prose-nx li {
+    @apply relative pl-6 text-[1.0625rem] leading-[1.7] text-paper/70;
+  }
+
+  .prose-nx li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: 0.75rem;
+    height: 1px;
+    background-color: #C4682B;
+  }
+
+  .prose-nx a {
+    @apply text-copper-300 underline decoration-copper-500/40 underline-offset-4 transition-colors hover:text-copper-200;
+  }
+
+  /* Malha técnica usada como textura de fundo */
+  .grid-field {
+    background-image:
+      linear-gradient(to right, var(--rule) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--rule) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .hairline-top {
+    box-shadow: inset 0 1px 0 0 var(--rule);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition:
+      opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .reveal[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+}
