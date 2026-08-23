@@ -34,6 +34,13 @@ const nextConfig = {
     return [
       { source: '/:path*', headers: securityHeaders },
       {
+        // Domínios temporários de deploy não devem ser indexados. Quando o
+        // domínio oficial for conectado, esta regra deixa de ser aplicada.
+        source: '/:path*',
+        has: [{ type: 'host', value: '(?<sub>.*)\\.vercel\\.app' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
         source: '/fonts/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
