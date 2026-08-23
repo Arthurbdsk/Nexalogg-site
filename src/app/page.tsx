@@ -33,11 +33,7 @@ export default function HomePage() {
               'Programa de diagnóstico financeiro e operacional, identificação de causas estruturais, plano de ação de 90 dias e suporte na execução para empresas de Transportes e Logística.',
             path: '/metodologia',
           }),
-          personSchema({
-            name: siteConfig.advisor.name,
-            jobTitle: siteConfig.advisor.role,
-            path: '/a-nexallog',
-          }),
+          personSchema({ path: '/a-nexallog' }),
         ])}
       />
       <ScrollDepthTracker />

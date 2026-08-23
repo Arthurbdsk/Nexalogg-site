@@ -49,6 +49,17 @@ export function organizationSchema() {
       'TMS',
     ],
     sameAs: social.map((item) => item.href),
+    founder: { '@id': `${siteConfig.url}/a-nexallog#alexandre-felix` },
+    contactPoint: contact.email.value
+      ? {
+          '@type': 'ContactPoint',
+          contactType: 'sales',
+          email: contact.email.value,
+          telephone: contact.phone.value ?? undefined,
+          areaServed: 'BR',
+          availableLanguage: 'Portuguese',
+        }
+      : undefined,
     address: hasAddress
       ? {
           '@type': 'PostalAddress',
@@ -115,14 +126,34 @@ export function serviceSchema(input: { name: string; description: string; path: 
   });
 }
 
-export function personSchema(input: { name: string; jobTitle: string; path: string }) {
+const personId = `${siteConfig.url}/a-nexallog#alexandre-felix`;
+
+/** Person montado a partir dos dados oficiais em siteConfig.advisor. */
+export function personSchema(input: { path: string }) {
+  const { advisor } = siteConfig;
+
   return clean({
     '@type': 'Person',
-    '@id': `${absoluteUrl(input.path)}#${input.name.toLowerCase().replace(/\s+/g, '-')}`,
-    name: input.name,
-    jobTitle: input.jobTitle,
-    worksFor: { '@id': organizationId },
+    '@id': personId,
+    name: advisor.name,
+    jobTitle: advisor.role,
+    description: advisor.highlights.join('. '),
+    image: advisor.photo ? absoluteUrl(advisor.photo) : undefined,
     url: absoluteUrl(input.path),
+    worksFor: { '@id': organizationId },
+    sameAs: advisor.linkedin ? [advisor.linkedin] : [],
+    alumniOf: [
+      { '@type': 'CollegeOrUniversity', name: 'Fundação Getulio Vargas' },
+      { '@type': 'CollegeOrUniversity', name: 'Stanford Graduate School of Business' },
+    ],
+    knowsAbout: [
+      'Operações',
+      'Logística',
+      'Supply chain',
+      'Redes logísticas',
+      'Centros de distribuição',
+      'Reconfiguração de malhas',
+    ],
   });
 }
 

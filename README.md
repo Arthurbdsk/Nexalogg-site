@@ -15,7 +15,8 @@ e suporte na execução.
 | Ícones | SVG próprio | Nenhuma dependência de biblioteca de ícones |
 | Fontes | Archivo, Inter e IBM Plex Mono | Auto-hospedadas em `public/fonts`, subconjunto latino |
 
-Dependências de produção: `next`, `react`, `react-dom`. Nada além disso.
+Dependências de produção: `next`, `react`, `react-dom`. Nada além disso. O pacote `qrcode` é
+dependência de desenvolvimento e roda apenas no script que gera o SVG do QR code.
 
 ## Comandos
 
@@ -27,6 +28,7 @@ npm run start          # servidor de produção
 npm run typecheck      # verificação de tipos
 npm run lint           # ESLint com next/core-web-vitals
 npm run seo:generate   # regenera public/sitemap.xml e public/robots.txt
+npm run qr:generate    # regenera o QR code do LinkedIn em public/images
 ```
 
 ## Dados da empresa: onde editar
@@ -41,10 +43,13 @@ Fonte única de:
 - `name`, `tagline`, `description`, `url` (domínio de produção)
 - `contact.email`, `contact.phone`, `contact.whatsapp`
   Preencher o campo `value` habilita automaticamente o canal no rodapé, na página de contato e no
-  JSON-LD, com evento de analytics já associado.
+  JSON-LD, com evento de analytics já associado. Quando telefone e WhatsApp são o mesmo número, os
+  dois são exibidos como uma única entrada.
 - `address` e `legal` (razão social, CNPJ, encarregado de dados, data dos documentos legais)
 - `social` (somente perfis oficiais confirmados)
-- `advisor` (foto, biografia e LinkedIn de Alexandre Felix)
+- `advisor` (foto, trajetória, formação e LinkedIn de Alexandre Felix)
+  Alterar `advisor.linkedin` exige rodar `npm run qr:generate` para atualizar o QR code exibido na
+  seção de liderança. O SVG é versionado, então nenhuma biblioteca de QR code vai para produção.
 - `analytics` (IDs de GA4 e GTM)
 - `cta` (textos dos botões principais)
 

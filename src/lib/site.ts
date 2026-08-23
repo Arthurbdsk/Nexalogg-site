@@ -35,11 +35,21 @@ export const siteConfig = {
   /** Domínio de produção. Alterável por variável de ambiente. */
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.nexallog.com.br').replace(/\/$/, ''),
 
-  /** Canais de contato. Preencher quando os dados oficiais forem definidos. */
+  /** Canais de contato oficiais. */
   contact: {
-    email: { value: null, label: null } as { value: string | null; label: string | null },
-    phone: { value: null, label: null } as { value: string | null; label: string | null },
-    whatsapp: { value: null, label: null } as { value: string | null; label: string | null },
+    email: {
+      value: 'alexandre.felix@nexallog.com',
+      label: 'alexandre.felix@nexallog.com',
+    } as { value: string | null; label: string | null },
+    phone: {
+      value: '+5511981468028',
+      label: '+55 11 98146-8028',
+    } as { value: string | null; label: string | null },
+    // Mesmo número do telefone. Deixe value como null para ocultar o canal.
+    whatsapp: {
+      value: '+5511981468028',
+      label: '+55 11 98146-8028',
+    } as { value: string | null; label: string | null },
   },
 
   /** Endereço oficial. Preencher para habilitar exibição e schema PostalAddress. */
@@ -62,19 +72,34 @@ export const siteConfig = {
   },
 
   /**
-   * Alexandre Felix, conforme o material institucional.
-   * `photo` aceita um caminho em /public (ex.: '/images/alexandre-felix.jpg')
-   * e `bio` aceita parágrafos que serão renderizados na ordem informada.
-   * Enquanto estiverem vazios, a seção é exibida em sua composição gráfica,
-   * sem qualquer marcador de conteúdo pendente.
+   * Alexandre Felix, Founder e Senior Advisor.
+   * `photo` aceita um caminho em /public. `summary` aceita parágrafos de texto
+   * corrido e `highlights` a lista de trajetória exibida na seção de liderança.
+   * O QR code do LinkedIn é gerado por `npm run qr:generate`.
    */
   advisor: {
     name: 'Alexandre Felix',
-    role: 'Advisor, Board Member e Consultor de Transformação Logística',
-    photo: null as string | null,
-    photoAlt: '' as string,
-    bio: [] as string[],
-    linkedin: '' as string,
+    role: 'Founder e Senior Advisor',
+    photo: '/images/alexandre-felix.jpg' as string | null,
+    photoAlt: 'Alexandre Felix, Founder e Senior Advisor da NEXALLOG',
+    /** Anos de experiência. Usado no indicador numérico da seção. */
+    experienceYears: 25,
+    experienceLabel: 'anos em operações, logística e supply chain',
+    summary: [] as string[],
+    highlights: [
+      'Liderou transformações operacionais e programas de eficiência em empresas globais e nacionais',
+      'Experiência em redes logísticas, centros de distribuição e operações de alta escala',
+      'Posições de CEO e COO em empresas como CEVA Logistics, AGV Logística, Katoen Natie e Loggi',
+      'Especialista em reconfiguração de malhas e captura de eficiência',
+    ],
+    education: [
+      'Engenheiro de Produção',
+      'MBA Executivo pela FGV',
+      'Formação executiva pela Stanford Graduate School of Business',
+    ],
+    linkedin: 'https://www.linkedin.com/in/alexandrefelix75',
+    /** QR code estático do perfil, gerado a partir da URL acima. */
+    linkedinQr: '/images/qr-linkedin-alexandre-felix.svg',
   },
 
   /** Somente redes oficiais confirmadas devem ser adicionadas. */

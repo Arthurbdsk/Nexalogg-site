@@ -7,7 +7,6 @@ import { JsonLd } from '@/components/ui/JsonLd';
 import { Reveal } from '@/components/ui/Reveal';
 import { breadcrumbSchema, graph, personSchema, webPageSchema } from '@/lib/jsonld';
 import { buildMetadata } from '@/lib/seo';
-import { siteConfig } from '@/lib/site';
 
 const title = 'A NEXALLOG';
 const description =
@@ -44,11 +43,7 @@ export default function AboutPage() {
         data={graph([
           webPageSchema({ path, name: title, description }),
           breadcrumbSchema(crumbs),
-          personSchema({
-            name: siteConfig.advisor.name,
-            jobTitle: siteConfig.advisor.role,
-            path,
-          }),
+          personSchema({ path }),
         ])}
       />
 
