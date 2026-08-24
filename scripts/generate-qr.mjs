@@ -27,7 +27,7 @@ const svg = await QRCode.toString(linkedin, {
   type: 'svg',
   errorCorrectionLevel: 'M',
   margin: 1,
-  color: { dark: '#05080D', light: '#F4F3EF' },
+  color: { dark: '#111111', light: '#FFFFFF' },
 });
 
 const output = resolve(root, 'public/images/qr-linkedin-alexandre-felix.svg');
