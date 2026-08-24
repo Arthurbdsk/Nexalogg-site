@@ -24,6 +24,31 @@
 --line: 17 17 17;
 }
 
+/* Modo escuro. O tema claro é o padrão do site; o escuro é uma escolha do
+   usuário, guardada no navegador. Os mesmos tons continuam se alternando,
+   agora em degraus de preto. */
+[data-theme='dark'] {
+color-scheme: dark;
+--surface: 18 18 18;
+--content: 255 255 255;
+--line: 255 255 255;
+}
+[data-theme='dark'] .tone-light {
+--surface: 18 18 18;
+--content: 255 255 255;
+--line: 255 255 255;
+}
+[data-theme='dark'] .tone-muted {
+--surface: 28 28 28;
+--content: 255 255 255;
+--line: 255 255 255;
+}
+[data-theme='dark'] .tone-dark {
+--surface: 8 8 8;
+--content: 255 255 255;
+--line: 255 255 255;
+}
+
 @layer base {
   :root {
     --shell-padding: clamp(1.25rem, 4vw, 3.5rem);
@@ -64,14 +89,19 @@
   }
 
   :focus-visible {
-    outline: 2px solid #111111;
+    outline: 2px solid rgb(var(--content));
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   .tone-dark :focus-visible,
-  .tone-dark:focus-visible {
+  .tone-dark:focus-visible,
+  .tone-brand :focus-visible {
     outline-color: #e0a800;
+  }
+
+  .tone-brand :focus-visible {
+    outline-color: #111111;
   }
 
   section:focus,
