@@ -83,18 +83,18 @@ export function ProblemsSection() {
                     onMouseEnter={() => setActive(index)}
                     onKeyDown={(event) => onKeyDown(event, index)}
                     className={cx(
-                      'group relative flex w-full items-center gap-5 border-b border-line/15 py-5 text-left transition-colors duration-300',
+                      'group relative flex w-full items-center gap-5 border-b border-line/15 py-5 pl-6 text-left transition-colors duration-300',
                       isActive ? 'text-content' : 'text-content/45 hover:text-content/80',
                     )}
                   >
                     <span
                       aria-hidden="true"
                       className={cx(
-                        'absolute left-0 top-0 h-full w-0.5 origin-top bg-brand-500 transition-transform duration-500 ease-outexpo',
+                        'absolute left-0 top-0 h-full w-0.5 origin-top bg-accent transition-transform duration-500 ease-outexpo',
                         isActive ? 'scale-y-100' : 'scale-y-0',
                       )}
                     />
-                    <span className="w-8 text-[0.75rem] font-bold tracking-[0.12em] text-brand-600">
+                    <span className="w-8 text-[0.75rem] font-bold tracking-[0.12em] text-accent">
                       {problem.index}
                     </span>
                     <span className="font-bold text-[1.25rem] leading-tight">{problem.title}</span>
@@ -147,7 +147,7 @@ export function ProblemsSection() {
                       aria-controls={`${baseId}-mobile-${problem.id}`}
                       className="flex w-full items-center gap-4 py-4 text-left"
                     >
-                      <span className="w-7 text-[0.75rem] font-bold tracking-[0.12em] text-brand-600">
+                      <span className="w-7 text-[0.75rem] font-bold tracking-[0.12em] text-accent">
                         {problem.index}
                       </span>
                       <span className="flex-1 text-[1.0625rem] font-bold">{problem.title}</span>
@@ -158,7 +158,7 @@ export function ProblemsSection() {
                           isOpen && 'rotate-45',
                         )}
                       >
-                        <svg viewBox="0 0 16 16" className="h-4 w-4 text-brand-600" fill="none">
+                        <svg viewBox="0 0 16 16" className="h-4 w-4 text-accent" fill="none">
                           <path d="M8 2v12M2 8h12" stroke="currentColor" strokeWidth="1.8" />
                         </svg>
                       </span>

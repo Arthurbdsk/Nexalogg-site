@@ -4,6 +4,7 @@ import { AdvisorSection } from '@/components/sections/AdvisorSection';
 import { EcosystemSection } from '@/components/sections/EcosystemSection';
 import { FinalCta } from '@/components/sections/FinalCta';
 import { Hero } from '@/components/sections/Hero';
+import { KeywordMarquee } from '@/components/sections/KeywordMarquee';
 import { MethodologySection } from '@/components/sections/MethodologySection';
 import { ProblemsSection } from '@/components/sections/ProblemsSection';
 import { JsonLd } from '@/components/ui/JsonLd';
@@ -39,6 +40,7 @@ export default function HomePage() {
 
       <main id="conteudo" tabIndex={-1}>
         <Hero />
+        <KeywordMarquee />
         <AboutSection />
         <ProblemsSection />
         <MethodologySection />

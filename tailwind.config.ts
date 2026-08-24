@@ -88,12 +88,19 @@ const config: Config = {
           from: { opacity: '0', transform: 'translate3d(0, 14px, 0)' },
           to: { opacity: '1', transform: 'none' },
         },
+        // A faixa carrega duas cópias da lista. Deslocar metade da largura
+        // devolve o conteúdo à posição inicial, então o laço é imperceptível.
+        'marquee-right': {
+          from: { transform: 'translate3d(-50%, 0, 0)' },
+          to: { transform: 'translate3d(0, 0, 0)' },
+        },
       },
       animation: {
         travel: 'dash-travel 5.5s linear infinite',
         pulseline: 'pulseline 4.5s ease-in-out infinite',
         driftin: 'driftin 0.7s cubic-bezier(0.16, 1, 0.3, 1) both',
         rise: 'rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'marquee-right': 'marquee-right 64s linear infinite',
       },
     },
   },

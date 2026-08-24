@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ContactChannels } from '@/components/ui/ContactChannels';
+import { FooterWordmark } from '@/components/layout/FooterWordmark';
 import { Logo } from '@/components/ui/Logo';
 import { footerNav } from '@/data/navigation';
 import { siteConfig } from '@/lib/site';
@@ -55,7 +56,9 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-line/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
+        <FooterWordmark />
+
+        <div className="mt-10 flex flex-col gap-3 border-t border-line/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-content/45">
             {year} {siteConfig.name}
             {siteConfig.legalName ? `. ${siteConfig.legalName}` : ''}

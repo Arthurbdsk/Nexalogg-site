@@ -47,7 +47,7 @@ Cada bloco de conteúdo declara o próprio tom pelo componente
 | `light` | Branco | Hero, metodologia, liderança, páginas legais |
 | `muted` | Cinza claro | Diagnóstico e blocos de apoio |
 | `dark` | Preto | Pilares, cobertura completa, rodapé |
-| `brand` | Amarelo | Chamada final |
+| `brand` | Amarelo | Faixa de palavras-chave e chamada final |
 
 A alternância entre os quatro tons é o que dá ritmo à leitura. Para trocar a
 cor de um bloco basta mudar a prop `tone`.
