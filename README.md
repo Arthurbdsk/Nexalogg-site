@@ -52,6 +52,17 @@ Cada bloco de conteúdo declara o próprio tom pelo componente
 A alternância entre os quatro tons é o que dá ritmo à leitura. Para trocar a
 cor de um bloco basta mudar a prop `tone`.
 
+### Tema claro e escuro
+
+O tema claro é o padrão do site, independente da configuração do sistema
+operacional. O usuário pode trocar pelo botão no cabeçalho e a escolha fica
+guardada no navegador (`localStorage`, chave `nexallog-theme`).
+
+O tema é aplicado antes da primeira pintura por um script mínimo em
+`src/lib/theme.ts`, o que evita piscada de cor no carregamento. No modo escuro
+os mesmos quatro tons continuam se alternando, agora em degraus de preto, e o
+amarelo da marca permanece igual nos dois temas.
+
 ## Comandos
 
 ```bash
