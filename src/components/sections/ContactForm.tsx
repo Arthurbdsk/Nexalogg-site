@@ -118,24 +118,24 @@ export function ContactForm() {
   if (status === 'success') {
     return (
       <div
-        className="border border-brand-500/40 bg-ink-800/70 p-8 sm:p-10"
+        className="border-2 border-brand-500 bg-[rgb(255_251_240)] p-8 sm:p-10"
         role="status"
         aria-live="polite"
       >
         <span className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-400/60">
-          <svg viewBox="0 0 20 20" className="h-5 w-5 text-brand-300" fill="none" aria-hidden="true">
+          <svg viewBox="0 0 20 20" className="h-5 w-5 text-ink" fill="none" aria-hidden="true">
             <path d="M4 10.5 8 14.5 16 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
           </svg>
         </span>
         <h3 className="mt-6 text-display-sm">Solicitação enviada</h3>
-        <p className="mt-4 max-w-md text-[1.0625rem] leading-[1.7] text-paper/65">
+        <p className="mt-4 max-w-md text-[1.0625rem] leading-[1.7] text-content/65">
           Recebemos suas informações. A NEXALLOG retorna o contato pelo e-mail ou telefone
           informados para entender o momento da sua operação.
         </p>
         <button
           type="button"
           onClick={() => setStatus('idle')}
-          className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-300 transition-colors duration-300 hover:text-brand-200"
+          className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] font-semibold transition-opacity duration-300 hover:opacity-70"
         >
           <span className="relative">
             Enviar outra solicitação
@@ -254,14 +254,14 @@ export function ContactForm() {
               >
                 <option value="">Selecione o segmento de atuação</option>
                 {segments.map((segment) => (
-                  <option key={segment} value={segment} className="bg-ink-800 text-paper">
+                  <option key={segment} value={segment}>
                     {segment}
                   </option>
                 ))}
               </select>
               <svg
                 viewBox="0 0 16 16"
-                className="pointer-events-none absolute right-0 top-4 h-4 w-4 text-paper/55"
+                className="pointer-events-none absolute right-0 top-4 h-4 w-4 text-content/45"
                 fill="none"
                 aria-hidden="true"
               >
@@ -300,13 +300,13 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className="group relative inline-flex h-[3.25rem] items-center justify-center gap-3 rounded-full bg-brand-500 px-8 text-[0.9375rem] font-medium text-paper transition-all duration-300 ease-outexpo hover:bg-brand-400 disabled:cursor-progress disabled:opacity-70"
+          className="group relative inline-flex h-[3.375rem] items-center justify-center gap-3 whitespace-nowrap rounded-full bg-brand-500 px-8 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper disabled:cursor-progress disabled:opacity-70"
         >
           {isLoading ? (
             <>
               <span
                 aria-hidden="true"
-                className="h-4 w-4 animate-spin rounded-full border border-paper/35 border-t-paper"
+                className="h-4 w-4 animate-spin rounded-full border-2 border-ink/25 border-t-ink"
               />
               Enviando
             </>
@@ -320,7 +320,7 @@ export function ContactForm() {
           )}
         </button>
 
-        <p className="max-w-xs text-xs leading-relaxed text-paper/55">
+        <p className="max-w-xs text-xs leading-relaxed text-content/55">
           Ao enviar, você concorda com o tratamento dos dados informados conforme a Política de
           Privacidade.
         </p>
@@ -328,7 +328,7 @@ export function ContactForm() {
 
       <div aria-live="polite" className="mt-6">
         {status === 'error' ? (
-          <p className="flex items-start gap-3 border border-brand-500/40 bg-brand-600/10 p-4 text-sm text-brand-200">
+          <p className="flex items-start gap-3 border border-brand-500 bg-brand-600/10 p-4 text-sm text-brand-200">
             <svg viewBox="0 0 16 16" className="mt-0.5 h-4 w-4 shrink-0" fill="none" aria-hidden="true">
               <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" />
               <path d="M8 5v4M8 11h.01" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />

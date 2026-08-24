@@ -16,15 +16,15 @@ export default function ErrorBoundary({
   }, [error]);
 
   return (
-    <main id="conteudo" tabIndex={-1} className="bg-ink">
+    <main id="conteudo" tabIndex={-1} className="tone-light bg-surface text-content">
       <section className="shell pb-section pt-[calc(var(--header-height)+5rem)]">
-        <span className="text-[0.6875rem] uppercase tracking-[0.16em] text-brand-400">
+        <span className="text-[0.6875rem] uppercase tracking-[0.16em] text-brand-600">
           Falha inesperada
         </span>
         <h1 className="mt-6 max-w-2xl text-display-lg">
           Não foi possível carregar esta página
         </h1>
-        <p className="mt-6 max-w-lg text-lead text-paper/65">
+        <p className="mt-6 max-w-lg text-lead text-content/65">
           A página encontrou um erro durante o carregamento. Tente novamente ou volte ao início do
           site.
         </p>

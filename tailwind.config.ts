@@ -10,6 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Tokens semânticos: mudam conforme o tom da seção (claro, cinza, preto, amarelo)
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        content: 'rgb(var(--content) / <alpha-value>)',
+        line: 'rgb(var(--line) / <alpha-value>)',
+
         // Preto da marca e seus degraus de superfície
         ink: {
           DEFAULT: '#111111',
@@ -46,7 +51,7 @@ const config: Config = {
         display: ['var(--font-sans)', 'Montserrat', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display-xl': ['clamp(2.5rem, 6.4vw, 5.25rem)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
+        'display-xl': ['clamp(2.375rem, 5.4vw, 4.5rem)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
         'display-lg': ['clamp(2.125rem, 4.8vw, 3.875rem)', { lineHeight: '1.04', letterSpacing: '-0.025em' }],
         'display-md': ['clamp(1.75rem, 3.4vw, 2.75rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         'display-sm': ['clamp(1.375rem, 2.2vw, 1.875rem)', { lineHeight: '1.2', letterSpacing: '-0.015em' }],
@@ -58,7 +63,7 @@ const config: Config = {
         prose: '68ch',
       },
       spacing: {
-        section: 'clamp(4.5rem, 9vw, 9rem)',
+        section: 'clamp(3.75rem, 7vw, 7rem)',
       },
       transitionTimingFunction: {
         outexpo: 'cubic-bezier(0.16, 1, 0.3, 1)',

@@ -41,7 +41,7 @@ export default function ContactPage() {
           }
         />
 
-        <section aria-labelledby="formulario-titulo" className="bg-ink py-section">
+        <section aria-labelledby="formulario-titulo" className="tone-light bg-surface py-section text-content">
           <div className="shell">
             <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-7">
@@ -51,7 +51,7 @@ export default function ContactPage() {
                   </h2>
                 </Reveal>
                 <Reveal delay={80}>
-                  <p className="mt-4 max-w-xl text-[1.0625rem] leading-[1.7] text-paper/60">
+                  <p className="mt-4 max-w-xl text-[1.0625rem] leading-[1.7] text-content/60">
                     Os campos marcados com asterisco são obrigatórios.
                   </p>
                 </Reveal>
@@ -64,19 +64,19 @@ export default function ContactPage() {
 
               <aside className="lg:col-span-4 lg:col-start-9">
                 <Reveal delay={200}>
-                  <div className="border border-paper/12 bg-ink-800/50 p-8">
-                    <h2 className="label-muted">O que acontece depois</h2>
+                  <div className="border-2 border-line/10 bg-[rgb(244_244_242)] p-8">
+                    <h2 className="label">O que acontece depois</h2>
                     <ol className="mt-6 space-y-6">
                       {methodologyStages.slice(0, 3).map((stage) => (
                         <li key={stage.id} className="flex gap-4">
-                          <span className="mt-1 text-[0.6875rem] tracking-[0.16em] text-brand-400">
+                          <span className="mt-1 text-[0.6875rem] tracking-[0.16em] text-brand-600">
                             {stage.order}
                           </span>
                           <span>
                             <span className="block font-display text-[1.0625rem] font-semibold text-paper">
                               {stage.title}
                             </span>
-                            <span className="mt-1 block text-sm leading-relaxed text-paper/55">
+                            <span className="mt-1 block text-sm leading-relaxed text-content/55">
                               {stage.definition}
                             </span>
                           </span>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                       ))}
                     </ol>
 
-                    <ContactChannels className="mt-8 border-t border-paper/12 pt-8" local="pagina_contato" />
+                    <ContactChannels className="mt-8 border-t border-line/15 pt-8" local="pagina_contato" />
                   </div>
                 </Reveal>
               </aside>

@@ -19,7 +19,7 @@ type FieldProps = {
 };
 
 const controlClasses =
-  'peer h-12 w-full border-b border-paper/20 bg-transparent px-0 pb-2 pt-1 text-[0.9375rem] text-paper transition-colors duration-300 placeholder:text-paper/45 hover:border-paper/35 focus:border-brand-400 focus:outline-none focus-visible:outline-none';
+  'peer h-12 w-full border-b-2 border-line/15 bg-transparent px-0 pb-2 pt-1 text-[0.9375rem] text-content transition-colors duration-300 placeholder:text-content/35 hover:border-line/30 focus:border-brand-500 focus:outline-none focus-visible:outline-none';
 
 /**
  * Campo de formulário com rótulo persistente, mensagem de erro associada por
@@ -35,15 +35,15 @@ export function Field({ id, label, error, hint, required, className, children }:
     <div className={cx('flex flex-col', className)}>
       <label
         htmlFor={id}
-        className="text-[0.6875rem] uppercase tracking-[0.16em] text-smoke-400"
+        className="text-[0.6875rem] uppercase tracking-[0.16em] text-content/45"
       >
         {label}
         {required ? (
-          <span className="ml-1 text-brand-400" aria-hidden="true">
+          <span className="ml-1 text-brand-600" aria-hidden="true">
             *
           </span>
         ) : (
-          <span className="ml-2 normal-case tracking-normal text-smoke-400">(opcional)</span>
+          <span className="ml-2 font-medium normal-case tracking-normal text-content/40">(opcional)</span>
         )}
       </label>
 
@@ -52,18 +52,18 @@ export function Field({ id, label, error, hint, required, className, children }:
           id,
           'aria-invalid': Boolean(error),
           'aria-describedby': describedBy,
-          className: cx(controlClasses, error && 'border-brand-400'),
+          className: cx(controlClasses, error && 'border-[#B3261E]'),
         })}
       </div>
 
       {hint ? (
-        <p id={hintId} className="mt-2 text-xs text-paper/55">
+        <p id={hintId} className="mt-2 text-xs text-content/50">
           {hint}
         </p>
       ) : null}
 
       {error ? (
-        <p id={errorId} className="mt-2 flex items-center gap-2 text-xs text-brand-200">
+        <p id={errorId} className="mt-2 flex items-center gap-2 text-xs font-semibold text-[#B3261E]">
           <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 shrink-0" fill="none" aria-hidden="true">
             <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" />
             <path d="M8 5v4M8 11h.01" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />

@@ -2,15 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tons de seção. Cada bloco redefine superfície, texto e linhas. */
+.tone-light {
+--surface: 255 255 255;
+--content: 17 17 17;
+--line: 17 17 17;
+}
+.tone-muted {
+--surface: 244 244 242;
+--content: 17 17 17;
+--line: 17 17 17;
+}
+.tone-dark {
+--surface: 17 17 17;
+--content: 255 255 255;
+--line: 255 255 255;
+}
+.tone-brand {
+--surface: 224 168 0;
+--content: 17 17 17;
+--line: 17 17 17;
+}
+
 @layer base {
   :root {
     --shell-padding: clamp(1.25rem, 4vw, 3.5rem);
-    --header-height: 5.5rem;
-    --header-height-compact: 4.25rem;
-    --rule: rgba(255, 255, 255, 0.12);
-    --rule-strong: rgba(255, 255, 255, 0.24);
+    --header-height: 5.25rem;
+    --header-height-compact: 4rem;
     --brand: #e0a800;
-    color-scheme: dark;
+
+    /* Tom padrão da página: claro */
+    --surface: 255 255 255;
+    --content: 17 17 17;
+    --line: 17 17 17;
+    color-scheme: light;
   }
 
   * {
@@ -24,13 +49,13 @@
   }
 
   body {
-    @apply bg-ink font-sans text-paper antialiased;
+    @apply bg-surface font-sans text-content antialiased;
     overflow-x: clip;
     text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4 {
-    @apply font-display font-bold text-balance;
+    @apply font-bold text-balance;
   }
 
   ::selection {
@@ -39,9 +64,14 @@
   }
 
   :focus-visible {
-    outline: 2px solid #e0a800;
+    outline: 2px solid #111111;
     outline-offset: 3px;
     border-radius: 2px;
+  }
+
+  .tone-dark :focus-visible,
+  .tone-dark:focus-visible {
+    outline-color: #e0a800;
   }
 
   section:focus,
@@ -67,34 +97,30 @@
 @layer components {
   .shell {
     width: 100%;
-    max-width: 84rem;
+    max-width: 82rem;
     margin-inline: auto;
     padding-inline: var(--shell-padding);
   }
 
-  /* Rótulo tipográfico da marca: caixa alta com entrelinha aberta */
+  /* Rótulo tipográfico da marca */
   .label {
-    @apply text-label font-semibold uppercase tracking-[0.2em] text-brand-500;
-  }
-
-  .label-muted {
-    @apply text-label font-semibold uppercase tracking-[0.2em] text-smoke-400;
+    @apply text-label font-bold uppercase tracking-[0.18em] text-content/45;
   }
 
   .prose-nx p {
-    @apply text-[1.0625rem] leading-[1.75] text-paper/70;
+    @apply text-[1.0625rem] leading-[1.7] text-content/70;
   }
 
   .prose-nx p + p {
-    @apply mt-5;
+    @apply mt-4;
   }
 
   .prose-nx h2 {
-    @apply mt-14 text-display-sm text-paper;
+    @apply mt-12 text-display-sm;
   }
 
   .prose-nx h3 {
-    @apply mt-10 text-xl text-paper;
+    @apply mt-8 text-lg;
   }
 
   .prose-nx h2 + p,
@@ -103,37 +129,32 @@
   }
 
   .prose-nx ul {
-    @apply mt-5 space-y-3;
+    @apply mt-4 space-y-2.5;
   }
 
   .prose-nx li {
-    @apply relative pl-6 text-[1.0625rem] leading-[1.7] text-paper/70;
+    @apply relative pl-6 text-[1.0625rem] leading-[1.65] text-content/70;
   }
 
   .prose-nx li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0.75em;
+    top: 0.72em;
     width: 0.75rem;
     height: 2px;
     background-color: var(--brand);
   }
 
   .prose-nx a {
-    @apply text-brand-500 underline decoration-brand-500/40 underline-offset-4 transition-colors hover:text-brand-400;
+    @apply underline decoration-brand-500 decoration-2 underline-offset-4 transition-opacity hover:opacity-70;
   }
 
-  /* Malha técnica usada como textura de fundo */
   .grid-field {
     background-image:
-      linear-gradient(to right, var(--rule) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--rule) 1px, transparent 1px);
-    background-size: 72px 72px;
-  }
-
-  .hairline-top {
-    box-shadow: inset 0 1px 0 0 var(--rule);
+      linear-gradient(to right, rgb(var(--line) / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--line) / 0.07) 1px, transparent 1px);
+    background-size: 88px 88px;
   }
 }
 
@@ -148,10 +169,10 @@
 
   .reveal {
     opacity: 0;
-    transform: translate3d(0, 18px, 0);
+    transform: translate3d(0, 16px, 0);
     transition:
-      opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     transition-delay: var(--reveal-delay, 0ms);
     will-change: opacity, transform;
   }
@@ -170,12 +191,7 @@
   }
 
   .mask-fade-b {
-    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
-  }
-
-  .mask-fade-x {
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
   }
 }

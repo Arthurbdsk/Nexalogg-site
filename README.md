@@ -34,7 +34,23 @@ O site segue o manual da marca NEXALLOG. Os valores estão centralizados em
 
 O símbolo da marca vive em `src/components/ui/Logo.tsx`, como componente
 `BrandMark`. O mesmo traçado é usado no logotipo, no favicon, no ícone de
-aplicativo e como elemento gráfico de grande escala nas seções.
+aplicativo e como elemento gráfico nas seções.
+
+### Tons de seção
+
+Cada bloco de conteúdo declara o próprio tom pelo componente
+`src/components/layout/Section.tsx`, e os filhos herdam as cores pelos tokens
+`surface`, `content` e `line`:
+
+| Tom | Fundo | Uso |
+| --- | --- | --- |
+| `light` | Branco | Hero, metodologia, liderança, páginas legais |
+| `muted` | Cinza claro | Diagnóstico e blocos de apoio |
+| `dark` | Preto | Pilares, cobertura completa, rodapé |
+| `brand` | Amarelo | Chamada final |
+
+A alternância entre os quatro tons é o que dá ritmo à leitura. Para trocar a
+cor de um bloco basta mudar a prop `tone`.
 
 ## Comandos
 

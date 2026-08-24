@@ -21,7 +21,7 @@ export const problems: Problem[] = [
     title: 'Decisões sem dados',
     summary: 'Gestão no improviso e ausência de DRE gerencial confiável.',
     description:
-      'A operação decide pelo histórico e pela percepção de quem está mais perto do problema. Sem um DRE gerencial confiável e sem indicadores consolidados, cada área trabalha com uma versão diferente do mesmo número e a diretoria perde a capacidade de antecipar.',
+      'Sem DRE gerencial confiável, cada área trabalha com uma versão diferente do mesmo número.',
     signals: [
       'Gestão no improviso',
       'Ausência de DRE gerencial confiável',
@@ -34,7 +34,7 @@ export const problems: Problem[] = [
     title: 'Margem sob pressão',
     summary: 'Custos crescendo fora de proporção com a receita.',
     description:
-      'A receita cresce e o resultado não acompanha. Custos avançam fora de proporção, o preço deixa de refletir o custo real de servir e a margem se estreita sem que a causa esteja identificada por rota, cliente ou operação.',
+      'A receita cresce e o resultado não acompanha, porque o custo de servir não é lido por operação.',
     signals: [
       'Custos crescendo fora de proporção com a receita',
       'Margem sob pressão',
@@ -47,7 +47,7 @@ export const problems: Problem[] = [
     title: 'Time sem direção',
     summary: 'Baixa maturidade técnica e engajamento comprometido.',
     description:
-      'Sem prioridades claras, o time responde a urgências. A baixa maturidade técnica em pontos críticos e o engajamento comprometido transformam qualquer plano em execução parcial, e o esforço se dispersa antes de virar resultado.',
+      'Sem prioridade clara, o time responde a urgências e o plano vira execução parcial.',
     signals: [
       'Times sem direção',
       'Baixa maturidade técnica',
@@ -60,7 +60,7 @@ export const problems: Problem[] = [
     title: 'Comercial sem funil',
     summary: 'Prospecção fraca e share of wallet subutilizado.',
     description:
-      'A entrada de novos negócios depende de indicação e relacionamento. Sem funil estruturado, a prospecção perde consistência e a base atual permanece subexplorada, com share of wallet muito abaixo do potencial já conquistado.',
+      'A entrada de negócios depende de indicação, e a base atual permanece subexplorada.',
     signals: [
       'Comercial sem funil',
       'Prospecção fraca',
@@ -73,7 +73,7 @@ export const problems: Problem[] = [
     title: 'Tecnologia defasada',
     summary: 'Ferramentas abaixo do nível de serviço necessário.',
     description:
-      'Sistemas que não conversam entre si, controles em planilhas paralelas e ferramentas abaixo do nível de serviço exigido pelo cliente. A tecnologia deixa de sustentar a operação e passa a limitar o que a operação consegue entregar.',
+      'Sistemas que não conversam e controles em planilhas limitam o nível de serviço.',
     signals: [
       'Tecnologia defasada',
       'Ferramentas abaixo do nível de serviço necessário',

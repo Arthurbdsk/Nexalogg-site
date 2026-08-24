@@ -19,28 +19,28 @@ type LegalArticleProps = {
  */
 export function LegalArticle({ sections }: LegalArticleProps) {
   return (
-    <section className="bg-ink py-section">
+    <section className="tone-light bg-surface py-section text-content">
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <nav aria-label="Sumário do documento" className="lg:col-span-4">
             <div className="lg:sticky lg:top-32">
-              <h2 className="label-muted">Sumário</h2>
-              <ol className="mt-6 space-y-3 border-l border-paper/12 pl-5">
+              <h2 className="label">Sumário</h2>
+              <ol className="mt-6 space-y-3 border-l-2 border-line/12 pl-5">
                 {sections.map((section, index) => (
                   <li key={section.id} className="flex gap-3">
-                    <span className="text-[0.6875rem] leading-6 tracking-[0.16em] text-brand-400">
+                    <span className="text-[0.6875rem] leading-6 tracking-[0.16em] text-brand-600">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <a
                       href={`#${section.id}`}
-                      className="text-[0.9375rem] leading-6 text-paper/60 transition-colors duration-300 hover:text-brand-200"
+                      className="text-[0.9375rem] leading-6 text-content/60 transition-colors duration-300 hover:text-brand-600"
                     >
                       {section.title}
                     </a>
                   </li>
                 ))}
               </ol>
-              <p className="mt-8 text-[0.6875rem] uppercase tracking-[0.14em] text-smoke-400">
+              <p className="mt-8 text-[0.6875rem] uppercase tracking-[0.14em] text-content/45">
                 Atualizado em {formatDate(siteConfig.legal.lastUpdated)}
               </p>
             </div>

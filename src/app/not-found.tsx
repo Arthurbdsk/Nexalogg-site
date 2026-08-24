@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
 
 export default function NotFound() {
   return (
-    <main id="conteudo" tabIndex={-1} className="bg-ink">
+    <main id="conteudo" tabIndex={-1} className="tone-light bg-surface text-content">
       <section className="shell pb-section pt-[calc(var(--header-height)+5rem)]">
         <div className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-6">
@@ -21,7 +21,7 @@ export default function NotFound() {
               404
             </p>
             <h1 className="mt-6 text-display-lg">Esse caminho não existe</h1>
-            <p className="mt-6 max-w-lg text-lead text-paper/65">
+            <p className="mt-6 max-w-lg text-lead text-content/65">
               O endereço acessado não corresponde a nenhuma página do site. A rota pode ter mudado ou
               o link pode estar incompleto.
             </p>
@@ -35,8 +35,8 @@ export default function NotFound() {
               </Button>
             </div>
 
-            <nav aria-label="Páginas do site" className="mt-12 border-t border-paper/12 pt-8">
-              <h2 className="label-muted">Ir direto para</h2>
+            <nav aria-label="Páginas do site" className="mt-12 border-t border-line/15 pt-8">
+              <h2 className="label">Ir direto para</h2>
               <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
                 {mainNav
                   .filter((item) => item.href !== '/')
@@ -44,7 +44,7 @@ export default function NotFound() {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="group relative text-[0.9375rem] text-paper/65 transition-colors duration-300 hover:text-paper"
+                        className="group relative text-[0.9375rem] text-content/65 transition-colors duration-300 hover:text-paper"
                       >
                         {item.label}
                         <span

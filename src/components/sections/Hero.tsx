@@ -1,60 +1,40 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
-import { BrandMark } from '@/components/ui/Logo';
-import { RouteCanvas } from '@/components/visuals/RouteCanvas';
+import { BrandPanel } from '@/components/visuals/BrandPanel';
 import { track } from '@/lib/analytics';
 import { siteConfig } from '@/lib/site';
 
-const MARKERS = [
-  'Diagnóstico financeiro e operacional',
-  'Causas estruturais por área e processo',
-  'Plano de 90 dias com suporte na execução',
-];
+/** Três etapas do trabalho, em uma linha cada. */
+const STEPS = ['Diagnóstico', 'Plano de 90 dias', 'Execução acompanhada'];
 
 export function Hero() {
   return (
     <section
       id="inicio"
       aria-labelledby="hero-titulo"
-      className="relative overflow-hidden bg-ink pb-16 pt-[calc(var(--header-height)+3rem)] lg:pb-24 lg:pt-[calc(var(--header-height)+5rem)]"
+      className="tone-light relative overflow-hidden bg-surface pb-14 pt-[calc(var(--header-height)+2.5rem)] text-content lg:pb-20 lg:pt-[calc(var(--header-height)+4rem)]"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 grid-field opacity-30 mask-fade-b"
-      />
-      {/* Símbolo da marca em grande escala, como nas aplicações do manual */}
-      <BrandMark
-        outline
-        strokeWidth={0.5}
-        className="pointer-events-none absolute -right-52 -top-16 h-[40rem] w-[40rem] text-brand-500/[0.055] lg:-right-40 lg:-top-24 lg:h-[54rem] lg:w-[54rem]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-32 h-[30rem] w-[30rem] rounded-full bg-brand-500/[0.05] blur-[140px]"
-      />
-
       <div className="shell relative">
-        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-6">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-7">
             <h1 id="hero-titulo" className="text-display-xl motion-safe:animate-rise">
               Conectando caminhos,
               <br />
-              <span className="text-brand-500">gerando resultados.</span>
+              gerando <span className="text-brand-500">resultados.</span>
             </h1>
 
             <p
-              className="mt-8 max-w-xl text-lead text-paper/70 motion-safe:animate-driftin"
+              className="mt-7 max-w-lg text-lead text-content/70 motion-safe:animate-driftin"
               style={{ animationDelay: '120ms' }}
             >
-              A NEXALLOG trabalha com empresas e empresários de Transportes e Logística. Analisamos
-              dados financeiros e operacionais, identificamos as causas estruturais que travam o
-              resultado e entregamos um plano de 90 dias com suporte direto na execução.
+              Diagnóstico, plano de ação de 90 dias e execução para empresas de transporte e
+              logística.
             </p>
 
             <div
-              className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center motion-safe:animate-driftin"
-              style={{ animationDelay: '220ms' }}
+              className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center motion-safe:animate-driftin"
+              style={{ animationDelay: '200ms' }}
             >
               <Button
                 href="/contato"
@@ -75,23 +55,22 @@ export function Hero() {
             </div>
 
             <ul
-              className="mt-14 grid border-t border-paper/12 sm:grid-cols-3 motion-safe:animate-driftin"
-              style={{ animationDelay: '320ms' }}
+              className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 motion-safe:animate-driftin"
+              style={{ animationDelay: '280ms' }}
             >
-              {MARKERS.map((marker) => (
-                <li
-                  key={marker}
-                  className="flex items-start gap-4 border-b border-paper/12 py-5 sm:border-b-0 sm:pr-6"
-                >
-                  <span aria-hidden="true" className="mt-[0.6rem] h-0.5 w-4 shrink-0 bg-brand-500" />
-                  <span className="text-sm leading-relaxed text-paper/65">{marker}</span>
+              {STEPS.map((step) => (
+                <li key={step} className="flex items-center gap-3">
+                  <span aria-hidden="true" className="h-0.5 w-5 bg-brand-500" />
+                  <span className="text-sm font-semibold uppercase tracking-[0.1em] text-content/60">
+                    {step}
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="lg:col-span-6 lg:pl-6">
-            <RouteCanvas />
+          <div className="lg:col-span-5">
+            <BrandPanel />
           </div>
         </div>
       </div>

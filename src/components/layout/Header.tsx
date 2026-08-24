@@ -11,11 +11,11 @@ import { track } from '@/lib/analytics';
 import { siteConfig } from '@/lib/site';
 import { cx } from '@/lib/utils';
 
-const HOME_SECTIONS = ['inicio', 'a-nexallog', 'problemas', 'metodologia', 'solucoes', 'contato'];
+const HOME_SECTIONS = ['inicio', 'a-nexallog', 'problemas', 'metodologia', 'solucoes'];
 
 export function Header() {
   const pathname = usePathname();
-  const { scrolled } = useScrollState(24);
+  const { scrolled } = useScrollState(16);
   const [menuOpen, setMenuOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -30,7 +30,6 @@ export function Header() {
 
   useEffect(() => {
     if (!menuOpen) return;
-
     const { style } = document.body;
     const previousOverflow = style.overflow;
     style.overflow = 'hidden';
@@ -42,10 +41,7 @@ export function Header() {
         return;
       }
       if (event.key !== 'Tab') return;
-
-      const focusables = panelRef.current?.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled])',
-      );
+      const focusables = panelRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
       if (!focusables || focusables.length === 0) return;
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
@@ -59,9 +55,7 @@ export function Header() {
     };
 
     document.addEventListener('keydown', onKeyDown);
-    const firstLink = panelRef.current?.querySelector<HTMLElement>('a[href]');
-    firstLink?.focus();
-
+    panelRef.current?.querySelector<HTMLElement>('a[href]')?.focus();
     return () => {
       document.removeEventListener('keydown', onKeyDown);
       style.overflow = previousOverflow;
@@ -69,35 +63,29 @@ export function Header() {
   }, [menuOpen]);
 
   const isActive = (href: string, sectionId?: string) => {
-    if (href.startsWith('/#')) {
-      return isHome && activeSection === sectionId;
-    }
-    if (href === '/') {
-      return isHome && (activeSection === null || activeSection === 'inicio');
-    }
+    if (href.startsWith('/#')) return isHome && activeSection === sectionId;
+    if (href === '/') return isHome && (activeSection === null || activeSection === 'inicio');
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
   return (
     <header
       className={cx(
-        'fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-500 ease-outexpo',
+        'tone-light fixed inset-x-0 top-0 z-50 bg-surface text-content transition-shadow duration-300',
         scrolled || menuOpen
-          ? 'bg-ink-900/85 shadow-[0_1px_0_0_rgba(244,243,239,0.08),0_18px_40px_-32px_rgba(0,0,0,0.9)] backdrop-blur-md'
-          : 'bg-transparent',
+          ? 'shadow-[0_1px_0_0_rgb(17_17_17/0.10)]'
+          : 'shadow-none',
       )}
     >
       <div
         className={cx(
-          'shell flex items-center justify-between transition-[height] duration-500 ease-outexpo',
-          scrolled || menuOpen
-            ? 'h-[var(--header-height-compact)]'
-            : 'h-[var(--header-height)]',
+          'shell flex items-center justify-between transition-[height] duration-300 ease-outexpo',
+          scrolled || menuOpen ? 'h-[var(--header-height-compact)]' : 'h-[var(--header-height)]',
         )}
       >
         <Link
           href="/"
-          className="group relative -ml-1 rounded px-1 py-2 text-paper transition-colors duration-300 hover:text-paper"
+          className="-ml-1 rounded px-1 py-2"
           aria-label={`${siteConfig.name}. Ir para a página inicial`}
         >
           <Logo />
@@ -113,15 +101,15 @@ export function Header() {
                     href={item.href}
                     aria-current={active ? 'page' : undefined}
                     className={cx(
-                      'group relative inline-flex h-9 items-center px-3.5 text-[0.9375rem] transition-colors duration-300',
-                      active ? 'text-paper' : 'text-paper/60 hover:text-paper',
+                      'group relative inline-flex h-9 items-center px-3.5 text-[0.9375rem] font-medium transition-colors duration-300',
+                      active ? 'text-content' : 'text-content/55 hover:text-content',
                     )}
                   >
                     {item.label}
                     <span
                       aria-hidden="true"
                       className={cx(
-                        'absolute inset-x-3.5 bottom-1 h-px origin-left bg-brand-400 transition-transform duration-300 ease-outexpo',
+                        'absolute inset-x-3.5 bottom-1 h-0.5 origin-left bg-brand-500 transition-transform duration-300 ease-outexpo',
                         active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
                       )}
                     />
@@ -136,11 +124,11 @@ export function Header() {
           <Link
             href="/contato"
             onClick={() => track('cta_principal_click', { local: 'header' })}
-            className="group hidden h-10 items-center gap-2.5 rounded-full border border-paper/20 pl-5 pr-4 text-[0.9375rem] text-paper transition-all duration-300 ease-outexpo hover:border-brand-400/70 hover:bg-brand-500 xl:inline-flex"
+            className="group hidden h-10 items-center gap-2.5 rounded-full bg-brand-500 pl-5 pr-4 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper xl:inline-flex"
           >
             {siteConfig.cta.primary}
             <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-              <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+              <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
             </svg>
           </Link>
 
@@ -150,26 +138,26 @@ export function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-controls="menu-mobile"
-            className="relative -mr-2 flex h-11 w-11 items-center justify-center rounded-full text-paper transition-colors duration-300 hover:text-brand-200 xl:hidden"
+            className="relative -mr-2 flex h-11 w-11 items-center justify-center rounded-full text-content transition-colors duration-300 xl:hidden"
           >
             <span className="sr-only">{menuOpen ? 'Fechar menu' : 'Abrir menu'}</span>
-            <span aria-hidden="true" className="flex h-4 w-6 flex-col justify-between">
+            <span aria-hidden="true" className="flex h-3.5 w-6 flex-col justify-between">
               <span
                 className={cx(
-                  'block h-px w-full origin-center bg-current transition-transform duration-300 ease-outexpo',
-                  menuOpen && 'translate-y-[7.5px] rotate-45',
+                  'block h-0.5 w-full origin-center bg-current transition-transform duration-300 ease-outexpo',
+                  menuOpen && 'translate-y-[6px] rotate-45',
                 )}
               />
               <span
                 className={cx(
-                  'block h-px w-full bg-current transition-opacity duration-200',
+                  'block h-0.5 w-full bg-current transition-opacity duration-200',
                   menuOpen && 'opacity-0',
                 )}
               />
               <span
                 className={cx(
-                  'block h-px w-full origin-center bg-current transition-transform duration-300 ease-outexpo',
-                  menuOpen && '-translate-y-[7.5px] -rotate-45',
+                  'block h-0.5 w-full origin-center bg-current transition-transform duration-300 ease-outexpo',
+                  menuOpen && '-translate-y-[6px] -rotate-45',
                 )}
               />
             </span>
@@ -177,31 +165,20 @@ export function Header() {
         </div>
       </div>
 
-      <div
-        id="menu-mobile"
-        ref={panelRef}
-        hidden={!menuOpen}
-        className="xl:hidden"
-      >
-        <div className="h-[calc(100dvh-var(--header-height-compact))] overflow-y-auto border-t border-paper/10 bg-ink-900/97 backdrop-blur-xl">
-          <nav aria-label="Navegação principal, versão compacta" className="shell py-8">
+      <div id="menu-mobile" ref={panelRef} hidden={!menuOpen} className="xl:hidden">
+        <div className="tone-light h-[calc(100dvh-var(--header-height-compact))] overflow-y-auto border-t border-line/10 bg-surface">
+          <nav aria-label="Navegação principal, versão compacta" className="shell py-6">
             <ul className="flex flex-col">
-              {mainNav.map((item, index) => (
-                <li key={item.href} className="border-b border-paper/10">
+              {mainNav.map((item) => (
+                <li key={item.href} className="border-b border-line/10">
                   <Link
                     href={item.href}
                     onClick={closeMenu}
-                    className="group flex items-center justify-between py-5 text-display-sm text-paper transition-colors duration-300 hover:text-brand-200"
-                    style={{ transitionDelay: `${index * 20}ms` }}
+                    className="flex items-center justify-between py-4 text-[1.375rem] font-bold"
                   >
-                    <span className="flex items-baseline gap-4">
-                      <span className="text-[0.6875rem] text-brand-400">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      {item.label}
-                    </span>
-                    <svg viewBox="0 0 14 14" className="h-4 w-4 text-paper/30 transition-transform duration-300 ease-outexpo group-hover:translate-x-1 group-hover:text-brand-300" fill="none" aria-hidden="true">
-                      <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+                    {item.label}
+                    <svg viewBox="0 0 14 14" className="h-4 w-4 text-brand-500" fill="none" aria-hidden="true">
+                      <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
                     </svg>
                   </Link>
                 </li>
@@ -214,14 +191,10 @@ export function Header() {
                 track('cta_principal_click', { local: 'menu_mobile' });
                 closeMenu();
               }}
-              className="mt-10 flex h-14 w-full items-center justify-center rounded-full bg-brand-500 text-[0.9375rem] font-medium text-paper transition-colors duration-300 hover:bg-brand-400"
+              className="mt-8 flex h-14 w-full items-center justify-center rounded-full bg-brand-500 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink"
             >
               {siteConfig.cta.primary}
             </Link>
-
-            <p className="mt-8 max-w-sm text-sm leading-relaxed text-paper/50">
-              {siteConfig.tagline}
-            </p>
           </nav>
         </div>
       </div>

@@ -12,11 +12,9 @@ const base =
 
 const variants: Record<Variant, string> = {
   // Amarelo da marca com lettering preto, conforme aplicação oficial
-  primary:
-    'bg-brand-500 text-ink hover:bg-brand-400 hover:shadow-[0_12px_32px_-14px_rgba(224,168,0,0.9)]',
-  outline:
-    'border border-paper/30 text-paper hover:border-brand-500 hover:bg-brand-500 hover:text-ink',
-  ghost: 'text-paper/75 hover:text-brand-500',
+  primary: 'bg-brand-500 text-ink hover:bg-ink hover:text-paper',
+  outline: 'border-2 border-line/20 text-content hover:border-content hover:bg-content hover:text-surface',
+  ghost: 'text-content/70 hover:text-content',
 };
 
 const sizes: Record<Size, string> = {

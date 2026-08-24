@@ -22,7 +22,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'Pessoas',
     summary: 'Estrutura, papéis e maturidade técnica do time.',
     intro:
-      'Nenhum plano avança além do que o time consegue sustentar. A frente de Pessoas trata da estrutura da equipe, da clareza de papéis e da maturidade técnica necessária para que a execução aconteça dentro da janela de 90 dias.',
+      'Nenhum plano avança além do que o time consegue sustentar. Tratamos estrutura, papéis e maturidade técnica das posições críticas.',
     fronts: [
       'Desenho de estrutura e papéis por área',
       'Clareza de responsabilidades na execução do plano',
@@ -38,7 +38,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'Processos',
     summary: 'Rotinas administrativas e base gerencial confiável.',
     intro:
-      'O resultado gerencial nasce da rotina administrativa. Esta frente organiza os processos que alimentam o DRE gerencial, os controles internos e a base de informação que sustenta a decisão.',
+      'O resultado gerencial nasce da rotina administrativa. Organizamos os processos que alimentam o DRE gerencial e os controles internos.',
     fronts: [
       'Rotinas administrativas e controles internos',
       'Base de dados que alimenta o DRE gerencial',
@@ -58,7 +58,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'Operações',
     summary: 'Produtividade, custo de servir e nível de serviço.',
     intro:
-      'A operação é onde o custo se forma e o nível de serviço é decidido. Esta frente trabalha a produtividade, o custo de servir e a consistência da entrega, conectando o que acontece no dia a dia ao resultado financeiro.',
+      'A operação é onde o custo se forma e o nível de serviço é decidido. Trabalhamos produtividade, custo de servir e consistência da entrega.',
     fronts: [
       'Produtividade operacional',
       'Custo de servir por operação, rota ou cliente',
@@ -78,7 +78,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'Comercial',
     summary: 'Funil, prospecção e share of wallet.',
     intro:
-      'Crescimento previsível depende de funil. Esta frente estrutura a prospecção, organiza o funil comercial e trabalha o share of wallet da base já conquistada.',
+      'Crescimento previsível depende de funil. Estruturamos a prospecção e trabalhamos o share of wallet da base já conquistada.',
     fronts: [
       'Estruturação do funil comercial',
       'Processo de prospecção',
@@ -94,7 +94,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'Tecnologia',
     summary: 'Arquitetura de sistemas e integração de dados.',
     intro:
-      'A tecnologia precisa sustentar o nível de serviço prometido ao cliente. Esta frente avalia a arquitetura de sistemas, a integração entre eles e a qualidade do dado que chega à gestão.',
+      'A tecnologia precisa sustentar o nível de serviço prometido. Avaliamos arquitetura, integração e qualidade do dado que chega à gestão.',
     fronts: [
       'Avaliação da arquitetura de sistemas',
       'Integração entre sistemas e fontes de dado',
@@ -114,7 +114,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'WMS / TMS',
     summary: 'Sistemas de armazenagem e de transporte.',
     intro:
-      'WMS e TMS são o centro do controle logístico. Esta frente trata da seleção, da implantação e do uso efetivo desses sistemas, da parametrização à aderência do time ao processo desenhado.',
+      'WMS e TMS são o centro do controle logístico. Tratamos seleção, implantação e uso efetivo desses sistemas no dia a dia.',
     fronts: [
       'Seleção e adequação de WMS e TMS',
       'Implantação e parametrização',
@@ -134,7 +134,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'Automação',
     summary: 'Eliminação de retrabalho e ganho de escala.',
     intro:
-      'Automação bem aplicada devolve tempo ao time e reduz erro de processo. Esta frente identifica onde a automação gera ganho real e onde a prioridade ainda é organizar o processo antes de automatizar.',
+      'Automação bem aplicada devolve tempo ao time. Identificamos onde ela gera ganho real e onde o processo precisa ser organizado antes.',
     fronts: [
       'Mapeamento de rotinas manuais e retrabalho',
       'Priorização do que deve ser automatizado',
@@ -154,7 +154,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'Real Estate',
     summary: 'Ativos físicos, malha e infraestrutura.',
     intro:
-      'A estrutura física condiciona o custo logístico. Esta frente trata da adequação dos ativos, da localização e da infraestrutura que suporta a operação no dia a dia.',
+      'A estrutura física condiciona o custo logístico. Tratamos adequação de ativos, localização e infraestrutura da operação.',
     fronts: [
       'Adequação de ativos e áreas operacionais',
       'Localização e desenho de malha',
@@ -174,7 +174,7 @@ export const solutionAreas: SolutionArea[] = [
     shortName: 'Fiscal',
     summary: 'Enquadramento, contratos e exposição a risco.',
     intro:
-      'Decisão financeira sem leitura fiscal e jurídica é decisão incompleta. Esta frente é conduzida com a rede de parceiros especializados e trata do enquadramento, dos contratos e da exposição a risco da operação.',
+      'Decisão financeira sem leitura fiscal é decisão incompleta. Conduzimos enquadramento, contratos e exposição a risco com a rede de parceiros.',
     fronts: [
       'Leitura fiscal aplicada à operação logística',
       'Contratos com clientes, parceiros e fornecedores',

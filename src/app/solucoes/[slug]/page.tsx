@@ -65,7 +65,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
           lead={<p>{area.intro}</p>}
         />
 
-        <section aria-labelledby="frentes-titulo" className="border-b border-paper/10 bg-ink py-section">
+        <section aria-labelledby="frentes-titulo" className="tone-light bg-surface py-section text-content">
           <div className="shell">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
@@ -75,7 +75,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                   </h2>
                 </Reveal>
                 <Reveal delay={100}>
-                  <p className="mt-6 text-[1.0625rem] leading-[1.75] text-paper/60">
+                  <p className="mt-6 text-[1.0625rem] leading-[1.75] text-content/60">
                     O escopo dentro de {area.name} é definido pelo diagnóstico. As frentes abaixo são
                     acionadas conforme a causa estrutural identificada e a prioridade estabelecida no
                     plano de 90 dias.
@@ -84,14 +84,14 @@ export default async function SolutionAreaPage({ params }: PageProps) {
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
-                <ul className="border-t border-paper/12">
+                <ul className="border-t border-line/15">
                   {area.fronts.map((front, index) => (
                     <Reveal as="li" key={front} delay={index * 70}>
-                      <div className="group flex items-baseline gap-6 border-b border-paper/12 py-5">
-                        <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
+                      <div className="group flex items-baseline gap-6 border-b border-line/15 py-5">
+                        <span className="text-[0.6875rem] tracking-[0.16em] text-brand-600">
                           {String(index + 1).padStart(2, '0')}
                         </span>
-                        <span className="text-[1.0625rem] leading-relaxed text-paper/85 transition-colors duration-300 group-hover:text-brand-200">
+                        <span className="text-[1.0625rem] leading-relaxed text-content/85 transition-colors duration-300 group-hover:text-brand-600">
                           {front}
                         </span>
                       </div>
@@ -103,7 +103,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section aria-labelledby="sinais-titulo" className="border-b border-paper/10 bg-ink-900 py-section">
+        <section aria-labelledby="sinais-titulo" className="tone-muted bg-surface py-section text-content">
           <div className="shell">
             <Reveal>
               <h2 id="sinais-titulo" className="text-display-md">
@@ -113,25 +113,25 @@ export default async function SolutionAreaPage({ params }: PageProps) {
             <ul className="mt-10 grid gap-px sm:grid-cols-3">
               {area.signals.map((signal, index) => (
                 <Reveal as="li" key={signal} delay={index * 80}>
-                  <div className="h-full border-t border-paper/12 pr-6 pt-6">
-                    <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
+                  <div className="h-full border-t border-line/15 pr-6 pt-6">
+                    <span className="text-[0.6875rem] tracking-[0.16em] text-brand-600">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <p className="mt-4 text-[1.0625rem] leading-[1.6] text-paper/75">{signal}</p>
+                    <p className="mt-4 text-[1.0625rem] leading-[1.6] text-content/75">{signal}</p>
                   </div>
                 </Reveal>
               ))}
             </ul>
 
             <Reveal delay={160}>
-              <div className="mt-14 border-t border-paper/12 pt-10">
-                <h3 className="label-muted">Outras áreas</h3>
+              <div className="mt-14 border-t border-line/15 pt-10">
+                <h3 className="label">Outras áreas</h3>
                 <ul className="mt-6 flex flex-wrap gap-3">
                   {related.map((item) => (
                     <li key={item.slug}>
                       <Link
                         href={`/solucoes/${item.slug}`}
-                        className="inline-flex h-10 items-center rounded-full border border-paper/15 px-5 text-sm text-paper/70 transition-colors duration-300 hover:border-brand-400/60 hover:text-brand-200"
+                        className="inline-flex h-10 items-center rounded-full border border-line/15 px-5 text-sm text-content/70 transition-colors duration-300 hover:border-brand-500 hover:text-brand-600"
                       >
                         {item.name}
                       </Link>
@@ -140,7 +140,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                   <li>
                     <Link
                       href="/solucoes"
-                      className="inline-flex h-10 items-center rounded-full border border-brand-500/40 px-5 text-sm text-brand-300 transition-colors duration-300 hover:border-brand-400 hover:text-brand-200"
+                      className="inline-flex h-10 items-center rounded-full border border-brand-500 px-5 text-sm text-brand-600 transition-colors duration-300 hover:border-brand-400 hover:text-brand-600"
                     >
                       Ver todas as áreas
                     </Link>

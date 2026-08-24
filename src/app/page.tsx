@@ -6,7 +6,6 @@ import { FinalCta } from '@/components/sections/FinalCta';
 import { Hero } from '@/components/sections/Hero';
 import { MethodologySection } from '@/components/sections/MethodologySection';
 import { ProblemsSection } from '@/components/sections/ProblemsSection';
-import { ResultsSection } from '@/components/sections/ResultsSection';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { graph, personSchema, serviceSchema, webPageSchema } from '@/lib/jsonld';
 import { buildMetadata } from '@/lib/seo';
@@ -44,7 +43,6 @@ export default function HomePage() {
         <ProblemsSection />
         <MethodologySection />
         <EcosystemSection />
-        <ResultsSection />
         <AdvisorSection />
         <FinalCta />
       </main>

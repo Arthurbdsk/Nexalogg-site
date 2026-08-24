@@ -59,7 +59,7 @@ export function Logo({ className, markOnly = false, withTagline = false }: LogoP
         ALLOG
       </span>
       {withTagline ? (
-        <span className="mt-2 text-[0.5rem] font-semibold uppercase leading-none tracking-[0.28em] text-paper/60 sm:text-[0.5625rem]">
+        <span className="mt-2 text-[0.5rem] font-semibold uppercase leading-none tracking-[0.28em] text-content/55 sm:text-[0.5625rem]">
           {siteConfig.tagline}
         </span>
       ) : null}

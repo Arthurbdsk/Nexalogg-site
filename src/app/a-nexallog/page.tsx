@@ -62,7 +62,7 @@ export default function AboutPage() {
 
         <section
           aria-labelledby="atuacao-titulo"
-          className="border-b border-paper/10 bg-ink py-section"
+          className="tone-muted bg-surface py-section text-content"
         >
           <div className="shell">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -73,7 +73,7 @@ export default function AboutPage() {
                   </h2>
                 </Reveal>
                 <Reveal delay={100}>
-                  <p className="mt-6 text-[1.0625rem] leading-[1.75] text-paper/60">
+                  <p className="mt-6 text-[1.0625rem] leading-[1.75] text-content/60">
                     Estas são as frentes conduzidas pela equipe NEXALLOG ao longo do programa. Nas
                     áreas que exigem competência técnica específica, a rede de parceiros
                     especializados entra junto, sem transferir a coordenação do trabalho.
@@ -82,7 +82,7 @@ export default function AboutPage() {
                 <Reveal delay={160}>
                   <Link
                     href="/solucoes"
-                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-300 transition-colors duration-300 hover:text-brand-200"
+                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-600 transition-colors duration-300 hover:text-brand-600"
                   >
                     <span className="relative">
                       Ver as áreas de cobertura
@@ -99,14 +99,14 @@ export default function AboutPage() {
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
-                <ul className="border-t border-paper/12">
+                <ul className="border-t border-line/15">
                   {capabilities.map((capability, index) => (
                     <Reveal as="li" key={capability} delay={index * 60}>
-                      <div className="group flex items-baseline gap-6 border-b border-paper/12 py-5 transition-colors duration-300 hover:text-brand-200">
-                        <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
+                      <div className="group flex items-baseline gap-6 border-b border-line/15 py-5 transition-colors duration-300 hover:text-brand-600">
+                        <span className="text-[0.6875rem] tracking-[0.16em] text-brand-600">
                           {String(index + 1).padStart(2, '0')}
                         </span>
-                        <span className="text-[1.0625rem] text-paper transition-colors duration-300 group-hover:text-brand-200">
+                        <span className="text-[1.0625rem] text-paper transition-colors duration-300 group-hover:text-brand-600">
                           {capability}
                         </span>
                       </div>

@@ -35,7 +35,7 @@ export function BackToTop() {
       onClick={toTop}
       aria-label="Voltar ao topo da página"
       tabIndex={visible ? 0 : -1}
-      className={`fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-paper/15 bg-ink-800/85 text-paper backdrop-blur transition-all duration-300 ease-outexpo hover:border-brand-400/70 hover:text-brand-200 ${
+      className={`fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-ink text-paper shadow-[0_10px_30px_-12px_rgb(17_17_17/0.5)] transition-all duration-300 ease-outexpo hover:bg-brand-500 hover:text-ink ${
         visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-3 opacity-0'
       }`}
     >

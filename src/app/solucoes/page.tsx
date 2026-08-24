@@ -55,7 +55,7 @@ export default function SolutionsPage() {
 
         <section
           aria-labelledby="conexao-titulo"
-          className="border-t border-paper/10 bg-ink-900 py-section"
+          className="tone-muted bg-surface py-section text-content"
         >
           <div className="shell">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -66,7 +66,7 @@ export default function SolutionsPage() {
                   </h2>
                 </Reveal>
                 <Reveal delay={100}>
-                  <p className="mt-6 text-[1.0625rem] leading-[1.75] text-paper/60">
+                  <p className="mt-6 text-[1.0625rem] leading-[1.75] text-content/60">
                     A escolha das frentes não é feita no início por preferência. Ela decorre do
                     diagnóstico: cada causa estrutural identificada aponta a área que precisa ser
                     acionada e o momento em que isso acontece dentro do plano.
@@ -75,7 +75,7 @@ export default function SolutionsPage() {
                 <Reveal delay={160}>
                   <Link
                     href="/metodologia"
-                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-300 transition-colors duration-300 hover:text-brand-200"
+                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-600 transition-colors duration-300 hover:text-brand-600"
                   >
                     <span className="relative">
                       Ver como funciona o D90
@@ -89,17 +89,17 @@ export default function SolutionsPage() {
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
-                <ol className="border-t border-paper/12">
+                <ol className="border-t border-line/15">
                   {methodologyStages.map((stage) => (
                     <Reveal as="li" key={stage.id}>
-                      <div className="border-b border-paper/12 py-6">
+                      <div className="border-b border-line/15 py-6">
                         <div className="flex items-baseline gap-5">
-                          <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
+                          <span className="text-[0.6875rem] tracking-[0.16em] text-brand-600">
                             {stage.order}
                           </span>
                           <h3 className="text-[1.25rem] text-paper">{stage.title}</h3>
                         </div>
-                        <p className="mt-3 pl-11 text-[0.9375rem] leading-[1.7] text-paper/55">
+                        <p className="mt-3 pl-11 text-[0.9375rem] leading-[1.7] text-content/55">
                           {stage.definition}
                         </p>
                       </div>
