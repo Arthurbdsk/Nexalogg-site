@@ -18,7 +18,7 @@ export default function ErrorBoundary({
   return (
     <main id="conteudo" tabIndex={-1} className="bg-ink">
       <section className="shell pb-section pt-[calc(var(--header-height)+5rem)]">
-        <span className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-copper-400">
+        <span className="text-[0.6875rem] uppercase tracking-[0.16em] text-brand-400">
           Falha inesperada
         </span>
         <h1 className="mt-6 max-w-2xl text-display-lg">

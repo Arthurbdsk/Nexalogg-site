@@ -13,10 +13,28 @@ e suporte na execução.
 | Estilos | Tailwind CSS 3 | Sistema de design centralizado em `tailwind.config.ts` |
 | Animação | CSS + IntersectionObserver | Sem biblioteca de animação, apenas `opacity` e `transform` |
 | Ícones | SVG próprio | Nenhuma dependência de biblioteca de ícones |
-| Fontes | Archivo, Inter e IBM Plex Mono | Auto-hospedadas em `public/fonts`, subconjunto latino |
+| Fontes | Montserrat | Tipografia oficial da marca, auto-hospedada em `public/fonts` |
 
 Dependências de produção: `next`, `react`, `react-dom`. Nada além disso. O pacote `qrcode` é
 dependência de desenvolvimento e roda apenas no script que gera o SVG do QR code.
+
+## Identidade visual
+
+O site segue o manual da marca NEXALLOG. Os valores estão centralizados em
+`tailwind.config.ts` e `src/app/globals.css`.
+
+| Elemento | Valor |
+| --- | --- |
+| Amarelo | `#E0A800` (`brand-500`) |
+| Preto | `#111111` (`ink`) |
+| Cinza escuro | `#333333` (`ink-500`) |
+| Cinza claro | `#E6E6E6` (`paper-dim`) |
+| Branco | `#FFFFFF` (`paper`) |
+| Tipografia | Montserrat Bold em títulos, Regular em corpo de texto |
+
+O símbolo da marca vive em `src/components/ui/Logo.tsx`, como componente
+`BrandMark`. O mesmo traçado é usado no logotipo, no favicon, no ícone de
+aplicativo e como elemento gráfico de grande escala nas seções.
 
 ## Comandos
 

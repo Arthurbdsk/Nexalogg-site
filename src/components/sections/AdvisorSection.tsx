@@ -38,21 +38,21 @@ export function AdvisorSection() {
                     <svg viewBox="0 0 400 500" className="h-full w-full" role="presentation">
                       <defs>
                         <pattern id="advisor-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                          <path d="M40 0H0v40" fill="none" stroke="#F4F3EF" strokeOpacity="0.05" strokeWidth="1" />
+                          <path d="M40 0H0v40" fill="none" stroke="#FFFFFF" strokeOpacity="0.05" strokeWidth="1" />
                         </pattern>
                       </defs>
                       <rect width="400" height="500" fill="url(#advisor-grid)" />
-                      <circle cx="200" cy="250" r="150" fill="none" stroke="#F4F3EF" strokeOpacity="0.08" strokeWidth="1" />
-                      <circle cx="200" cy="250" r="108" fill="none" stroke="#C4682B" strokeOpacity="0.35" strokeWidth="1" strokeDasharray="4 7" />
-                      <path d="M0 392 L120 340 L268 372 L400 300" fill="none" stroke="#C4682B" strokeOpacity="0.5" strokeWidth="1.5" />
+                      <circle cx="200" cy="250" r="150" fill="none" stroke="#FFFFFF" strokeOpacity="0.08" strokeWidth="1" />
+                      <circle cx="200" cy="250" r="108" fill="none" stroke="#E0A800" strokeOpacity="0.35" strokeWidth="1" strokeDasharray="4 7" />
+                      <path d="M0 392 L120 340 L268 372 L400 300" fill="none" stroke="#E0A800" strokeOpacity="0.5" strokeWidth="1.5" />
                       <text
                         x="200"
                         y="272"
                         textAnchor="middle"
                         fontSize="96"
-                        fontFamily="var(--font-display), sans-serif"
+                        fontFamily="var(--font-sans), sans-serif"
                         fontWeight="700"
-                        fill="#F4F3EF"
+                        fill="#FFFFFF"
                         fillOpacity="0.12"
                         letterSpacing="6"
                       >
@@ -76,7 +76,7 @@ export function AdvisorSection() {
                   href={advisor.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group absolute -bottom-7 right-[-1.75rem] hidden flex-col items-center gap-2 border border-paper/12 bg-ink-800 p-3 transition-colors duration-300 hover:border-copper-400/60 lg:flex"
+                  className="group absolute -bottom-7 right-[-1.75rem] hidden flex-col items-center gap-2 border border-paper/12 bg-ink-800 p-3 transition-colors duration-300 hover:border-brand-400/60 lg:flex"
                 >
                   <Image
                     src={advisor.linkedinQr}
@@ -85,7 +85,7 @@ export function AdvisorSection() {
                     height={76}
                     className="h-[76px] w-[76px]"
                   />
-                  <span className="font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-slateink-400 transition-colors duration-300 group-hover:text-copper-300">
+                  <span className="text-[0.5625rem] uppercase tracking-[0.16em] text-smoke-400 transition-colors duration-300 group-hover:text-brand-300">
                     LinkedIn
                   </span>
                 </a>
@@ -94,19 +94,13 @@ export function AdvisorSection() {
           </Reveal>
 
           <div className="lg:col-span-6 lg:col-start-7">
-            <Reveal>
-              <span className="label-muted flex items-center gap-3">
-                <span className="h-px w-8 bg-copper-500/70" aria-hidden="true" />
-                Liderança
-              </span>
-            </Reveal>
             <Reveal delay={60}>
-              <h2 id="advisor-titulo" className="mt-6 text-display-md">
+              <h2 id="advisor-titulo" className="text-display-md">
                 {advisor.name}
               </h2>
             </Reveal>
             <Reveal delay={120}>
-              <p className="mt-4 text-lead text-copper-300">{advisor.role}</p>
+              <p className="mt-4 text-lead text-brand-300">{advisor.role}</p>
             </Reveal>
 
             {advisor.summary.length > 0 ? (
@@ -136,7 +130,7 @@ export function AdvisorSection() {
               {advisor.highlights.map((item, index) => (
                 <Reveal as="li" key={item} delay={200 + index * 70}>
                   <div className="flex items-start gap-5 border-b border-paper/12 py-4">
-                    <span className="mt-2 h-px w-6 shrink-0 bg-copper-500" aria-hidden="true" />
+                    <span className="mt-2 h-0.5 w-6 shrink-0 bg-brand-500" aria-hidden="true" />
                     <span className="text-[0.9375rem] leading-[1.7] text-paper/75">{item}</span>
                   </div>
                 </Reveal>
@@ -167,7 +161,7 @@ export function AdvisorSection() {
                   href={advisor.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group mt-9 inline-flex h-12 items-center gap-3 rounded-full border border-paper/20 px-6 text-[0.9375rem] text-paper transition-colors duration-300 ease-outexpo hover:border-copper-400/70 hover:text-copper-200"
+                  className="group mt-9 inline-flex h-12 items-center gap-3 rounded-full border border-paper/20 px-6 text-[0.9375rem] text-paper transition-colors duration-300 ease-outexpo hover:border-brand-400/70 hover:text-brand-200"
                 >
                   Ver perfil no LinkedIn
                   <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">

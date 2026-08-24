@@ -15,14 +15,8 @@ export function ResultsSection() {
       <div className="shell">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
-            <Reveal>
-              <span className="label-muted flex items-center gap-3">
-                <span className="h-px w-8 bg-copper-500/70" aria-hidden="true" />
-                Resultados esperados
-              </span>
-            </Reveal>
             <Reveal delay={60}>
-              <h2 id="resultados-titulo" className="mt-6 text-display-md">
+              <h2 id="resultados-titulo" className="text-display-md">
                 O que a empresa passa a ter ao final do programa
               </h2>
             </Reveal>
@@ -43,9 +37,9 @@ export function ResultsSection() {
               <div className="group relative grid gap-4 border-b border-paper/12 py-8 transition-colors duration-500 hover:bg-paper/[0.03] lg:grid-cols-12 lg:items-baseline lg:gap-8 lg:px-4 lg:py-10">
                 <span
                   aria-hidden="true"
-                  className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-copper-500 transition-transform duration-700 ease-outexpo group-hover:scale-x-100"
+                  className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-brand-500 transition-transform duration-700 ease-outexpo group-hover:scale-x-100"
                 />
-                <span className="font-mono text-[0.6875rem] tracking-[0.16em] text-copper-400 lg:col-span-1">
+                <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400 lg:col-span-1">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="text-[1.375rem] leading-snug text-paper lg:col-span-6 lg:text-[1.5rem]">

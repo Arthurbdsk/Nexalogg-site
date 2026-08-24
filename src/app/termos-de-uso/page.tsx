@@ -147,7 +147,6 @@ export default function TermsPage() {
         <PageHeader
           title={title}
           crumbs={crumbs}
-          meta="Documento legal"
           lead={
             <p>
               Condições aplicáveis ao acesso e ao uso deste site, incluindo a finalidade do conteúdo

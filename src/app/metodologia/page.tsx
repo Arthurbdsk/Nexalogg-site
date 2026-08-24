@@ -35,7 +35,6 @@ export default function MethodologyPage() {
         <PageHeader
           title="Programa D90"
           crumbs={crumbs}
-          meta="Metodologia"
           lead={
             <p>
               O D90 é o programa da NEXALLOG para empresas de transporte e logística. Ele parte dos
@@ -47,12 +46,12 @@ export default function MethodologyPage() {
           <ol className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
             {methodologyStages.map((stage) => (
               <li key={stage.id} className="flex items-center gap-2">
-                <span className="font-mono text-[0.6875rem] tracking-[0.16em] text-copper-400">
+                <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
                   {stage.order}
                 </span>
                 <a
                   href={`#${stage.id}`}
-                  className="text-sm text-paper/60 transition-colors duration-300 hover:text-copper-200"
+                  className="text-sm text-paper/60 transition-colors duration-300 hover:text-brand-200"
                 >
                   {stage.title}
                 </a>

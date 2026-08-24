@@ -82,7 +82,7 @@ export function ContactChannels({ className, local, variant = 'stacked' }: Conta
       )}
     >
       {channels.map((channel) => (
-        <li key={channel.key}>
+        <li key={channel.key} className="flex flex-col items-start">
           <a
             href={channel.href}
             onClick={() => track(channel.event, { local })}
@@ -91,11 +91,11 @@ export function ContactChannels({ className, local, variant = 'stacked' }: Conta
             className="group inline-flex flex-col gap-1"
           >
             <span className="label-muted">{channel.caption}</span>
-            <span className="relative w-fit text-[1.0625rem] text-paper/85 transition-colors duration-300 group-hover:text-copper-200">
+            <span className="relative w-fit text-[1.0625rem] text-paper/85 transition-colors duration-300 group-hover:text-brand-200">
               {channel.label}
               <span
                 aria-hidden="true"
-                className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-copper-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
               />
             </span>
           </a>
@@ -106,7 +106,7 @@ export function ContactChannels({ className, local, variant = 'stacked' }: Conta
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => track(channel.secondary!.event, { local })}
-              className="group mt-2 inline-flex items-center gap-2 text-sm text-copper-300 transition-colors duration-300 hover:text-copper-200"
+              className="group mt-2 inline-flex items-center gap-2 text-sm text-brand-300 transition-colors duration-300 hover:text-brand-200"
             >
               <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none" aria-hidden="true">
                 <path
@@ -124,7 +124,7 @@ export function ContactChannels({ className, local, variant = 'stacked' }: Conta
                 {channel.secondary.label}
                 <span
                   aria-hidden="true"
-                  className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-copper-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                  className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                 />
               </span>
             </a>

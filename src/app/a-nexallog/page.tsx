@@ -51,7 +51,6 @@ export default function AboutPage() {
         <PageHeader
           title="Uma consultoria construída dentro da operação logística"
           crumbs={crumbs}
-          meta="Institucional"
           lead={
             <p>
               A NEXALLOG atua com empresas e empresários do segmento de Transportes e Logística.
@@ -83,13 +82,13 @@ export default function AboutPage() {
                 <Reveal delay={160}>
                   <Link
                     href="/solucoes"
-                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-copper-300 transition-colors duration-300 hover:text-copper-200"
+                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-300 transition-colors duration-300 hover:text-brand-200"
                   >
                     <span className="relative">
                       Ver as áreas de cobertura
                       <span
                         aria-hidden="true"
-                        className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-copper-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                        className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                       />
                     </span>
                     <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
@@ -103,11 +102,11 @@ export default function AboutPage() {
                 <ul className="border-t border-paper/12">
                   {capabilities.map((capability, index) => (
                     <Reveal as="li" key={capability} delay={index * 60}>
-                      <div className="group flex items-baseline gap-6 border-b border-paper/12 py-5 transition-colors duration-300 hover:text-copper-200">
-                        <span className="font-mono text-[0.6875rem] tracking-[0.16em] text-copper-400">
+                      <div className="group flex items-baseline gap-6 border-b border-paper/12 py-5 transition-colors duration-300 hover:text-brand-200">
+                        <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
                           {String(index + 1).padStart(2, '0')}
                         </span>
-                        <span className="text-[1.0625rem] text-paper transition-colors duration-300 group-hover:text-copper-200">
+                        <span className="text-[1.0625rem] text-paper transition-colors duration-300 group-hover:text-brand-200">
                           {capability}
                         </span>
                       </div>

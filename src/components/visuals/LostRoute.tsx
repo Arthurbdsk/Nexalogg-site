@@ -22,7 +22,7 @@ export function LostRoute() {
       <svg viewBox="0 0 520 260" className="h-auto w-full" role="presentation">
         <defs>
           <pattern id="lost-grid" width="52" height="52" patternUnits="userSpaceOnUse">
-            <path d="M52 0H0v52" fill="none" stroke="#F4F3EF" strokeOpacity="0.06" strokeWidth="1" />
+            <path d="M52 0H0v52" fill="none" stroke="#FFFFFF" strokeOpacity="0.06" strokeWidth="1" />
           </pattern>
         </defs>
         <rect width="520" height="260" fill="url(#lost-grid)" />
@@ -31,7 +31,7 @@ export function LostRoute() {
         <path
           d="M40 208 L150 208 L214 132"
           fill="none"
-          stroke="#F4F3EF"
+          stroke="#FFFFFF"
           strokeOpacity="0.35"
           strokeWidth="2"
           strokeLinecap="square"
@@ -39,21 +39,21 @@ export function LostRoute() {
         <path
           d="M214 132 L268 68"
           fill="none"
-          stroke="#F4F3EF"
+          stroke="#FFFFFF"
           strokeOpacity="0.2"
           strokeWidth="2"
           strokeDasharray="5 7"
         />
         <g>
-          <circle cx="268" cy="68" r="9" fill="none" stroke="#F4F3EF" strokeOpacity="0.25" strokeWidth="2" />
-          <path d="M263 63 l10 10 M273 63 l-10 10" stroke="#F4F3EF" strokeOpacity="0.4" strokeWidth="1.6" />
+          <circle cx="268" cy="68" r="9" fill="none" stroke="#FFFFFF" strokeOpacity="0.25" strokeWidth="2" />
+          <path d="M263 63 l10 10 M273 63 l-10 10" stroke="#FFFFFF" strokeOpacity="0.4" strokeWidth="1.6" />
         </g>
 
         {/* Trajeto alternativo */}
         <path
           d="M214 132 L318 168 L420 92 L480 92"
           fill="none"
-          stroke="#D98A4C"
+          stroke="#E0A800"
           strokeWidth="2"
           strokeLinecap="square"
           strokeDasharray="360"
@@ -64,21 +64,21 @@ export function LostRoute() {
           cx="480"
           cy="92"
           r="7"
-          fill="#05080D"
-          stroke="#D98A4C"
+          fill="#111111"
+          stroke="#E0A800"
           strokeWidth="2"
           style={{ opacity: rerouted ? 1 : 0.25, transition: 'opacity 600ms ease 300ms' }}
         />
-        <circle cx="40" cy="208" r="5" fill="#F4F3EF" fillOpacity="0.5" />
-        <circle cx="214" cy="132" r="5" fill="#D98A4C" />
+        <circle cx="40" cy="208" r="5" fill="#FFFFFF" fillOpacity="0.5" />
+        <circle cx="214" cy="132" r="5" fill="#E0A800" />
         <text
           x="480"
           y="66"
           textAnchor="middle"
-          fill="#E7A874"
+          fill="#E0A800"
           fontSize="11"
           letterSpacing="1.8"
-          fontFamily="var(--font-mono), monospace"
+          fontFamily="var(--font-sans), sans-serif"
           style={{ opacity: rerouted ? 1 : 0.35, transition: 'opacity 600ms ease 300ms' }}
         >
           INÍCIO

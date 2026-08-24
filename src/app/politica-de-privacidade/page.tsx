@@ -203,7 +203,6 @@ export default function PrivacyPage() {
         <PageHeader
           title={title}
           crumbs={crumbs}
-          meta="Documento legal"
           lead={
             <p>
               Esta página descreve quais dados pessoais são tratados a partir do uso deste site, com

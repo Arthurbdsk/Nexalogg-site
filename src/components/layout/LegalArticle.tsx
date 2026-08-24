@@ -28,19 +28,19 @@ export function LegalArticle({ sections }: LegalArticleProps) {
               <ol className="mt-6 space-y-3 border-l border-paper/12 pl-5">
                 {sections.map((section, index) => (
                   <li key={section.id} className="flex gap-3">
-                    <span className="font-mono text-[0.6875rem] leading-6 tracking-[0.16em] text-copper-400">
+                    <span className="text-[0.6875rem] leading-6 tracking-[0.16em] text-brand-400">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <a
                       href={`#${section.id}`}
-                      className="text-[0.9375rem] leading-6 text-paper/60 transition-colors duration-300 hover:text-copper-200"
+                      className="text-[0.9375rem] leading-6 text-paper/60 transition-colors duration-300 hover:text-brand-200"
                     >
                       {section.title}
                     </a>
                   </li>
                 ))}
               </ol>
-              <p className="mt-8 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-slateink-400">
+              <p className="mt-8 text-[0.6875rem] uppercase tracking-[0.14em] text-smoke-400">
                 Atualizado em {formatDate(siteConfig.legal.lastUpdated)}
               </p>
             </div>

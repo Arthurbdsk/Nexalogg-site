@@ -193,24 +193,30 @@ export const solutionAreas: SolutionArea[] = [
 export const getSolutionArea = (slug: string) =>
   solutionAreas.find((area) => area.slug === slug);
 
-/** Princípios institucionais da NEXALLOG. */
+/**
+ * Pilares institucionais, conforme o manual da marca NEXALLOG.
+ * Os textos reproduzem o propósito oficial e não devem ser reescritos sem
+ * validação da empresa.
+ */
 export const principles = [
   {
     id: 'conectamos',
     title: 'Conectamos',
-    description:
-      'Caminhos, pessoas e empresas. A NEXALLOG aproxima quem decide, quem executa e quem tem a competência técnica para resolver.',
+    description: 'Criamos conexões que geram valor entre pessoas, empresas e oportunidades.',
   },
   {
     id: 'movimentamos',
     title: 'Movimentamos',
-    description:
-      'Diagnóstico vira direção e direção vira execução. O trabalho acompanha o plano até que ele produza efeito na operação.',
+    description: 'Transformamos caminhos em oportunidades, com inteligência e eficiência.',
   },
   {
     id: 'geramos-resultados',
     title: 'Geramos resultados',
-    description:
-      'Soluções simples, aplicadas sobre causa estrutural, que geram resultados consistentes e impulsionam o futuro da empresa.',
+    description: 'Entregamos impacto com eficiência, para impulsionar negócios e o futuro.',
+  },
+  {
+    id: 'olhamos-para-o-futuro',
+    title: 'Olhamos para o futuro',
+    description: 'Inovamos hoje para construir o amanhã da operação logística.',
   },
 ] as const;

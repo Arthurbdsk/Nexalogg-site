@@ -121,7 +121,7 @@ export function Header() {
                     <span
                       aria-hidden="true"
                       className={cx(
-                        'absolute inset-x-3.5 bottom-1 h-px origin-left bg-copper-400 transition-transform duration-300 ease-outexpo',
+                        'absolute inset-x-3.5 bottom-1 h-px origin-left bg-brand-400 transition-transform duration-300 ease-outexpo',
                         active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
                       )}
                     />
@@ -136,7 +136,7 @@ export function Header() {
           <Link
             href="/contato"
             onClick={() => track('cta_principal_click', { local: 'header' })}
-            className="group hidden h-10 items-center gap-2.5 rounded-full border border-paper/20 pl-5 pr-4 text-[0.9375rem] text-paper transition-all duration-300 ease-outexpo hover:border-copper-400/70 hover:bg-copper-500 xl:inline-flex"
+            className="group hidden h-10 items-center gap-2.5 rounded-full border border-paper/20 pl-5 pr-4 text-[0.9375rem] text-paper transition-all duration-300 ease-outexpo hover:border-brand-400/70 hover:bg-brand-500 xl:inline-flex"
           >
             {siteConfig.cta.primary}
             <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
@@ -150,7 +150,7 @@ export function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-controls="menu-mobile"
-            className="relative -mr-2 flex h-11 w-11 items-center justify-center rounded-full text-paper transition-colors duration-300 hover:text-copper-200 xl:hidden"
+            className="relative -mr-2 flex h-11 w-11 items-center justify-center rounded-full text-paper transition-colors duration-300 hover:text-brand-200 xl:hidden"
           >
             <span className="sr-only">{menuOpen ? 'Fechar menu' : 'Abrir menu'}</span>
             <span aria-hidden="true" className="flex h-4 w-6 flex-col justify-between">
@@ -191,16 +191,16 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={closeMenu}
-                    className="group flex items-center justify-between py-5 text-display-sm text-paper transition-colors duration-300 hover:text-copper-200"
+                    className="group flex items-center justify-between py-5 text-display-sm text-paper transition-colors duration-300 hover:text-brand-200"
                     style={{ transitionDelay: `${index * 20}ms` }}
                   >
                     <span className="flex items-baseline gap-4">
-                      <span className="font-mono text-[0.6875rem] text-copper-400">
+                      <span className="text-[0.6875rem] text-brand-400">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       {item.label}
                     </span>
-                    <svg viewBox="0 0 14 14" className="h-4 w-4 text-paper/30 transition-transform duration-300 ease-outexpo group-hover:translate-x-1 group-hover:text-copper-300" fill="none" aria-hidden="true">
+                    <svg viewBox="0 0 14 14" className="h-4 w-4 text-paper/30 transition-transform duration-300 ease-outexpo group-hover:translate-x-1 group-hover:text-brand-300" fill="none" aria-hidden="true">
                       <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
                     </svg>
                   </Link>
@@ -214,7 +214,7 @@ export function Header() {
                 track('cta_principal_click', { local: 'menu_mobile' });
                 closeMenu();
               }}
-              className="mt-10 flex h-14 w-full items-center justify-center rounded-full bg-copper-500 text-[0.9375rem] font-medium text-paper transition-colors duration-300 hover:bg-copper-400"
+              className="mt-10 flex h-14 w-full items-center justify-center rounded-full bg-brand-500 text-[0.9375rem] font-medium text-paper transition-colors duration-300 hover:bg-brand-400"
             >
               {siteConfig.cta.primary}
             </Link>

@@ -42,7 +42,6 @@ export default function SolutionsPage() {
         <PageHeader
           title="Nove frentes, um único plano de trabalho"
           crumbs={crumbs}
-          meta="Cobertura completa"
           lead={
             <p>
               As áreas de atuação da NEXALLOG não funcionam como serviços isolados. Todas partem do
@@ -76,13 +75,13 @@ export default function SolutionsPage() {
                 <Reveal delay={160}>
                   <Link
                     href="/metodologia"
-                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-copper-300 transition-colors duration-300 hover:text-copper-200"
+                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-300 transition-colors duration-300 hover:text-brand-200"
                   >
                     <span className="relative">
                       Ver como funciona o D90
                       <span
                         aria-hidden="true"
-                        className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-copper-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                        className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                       />
                     </span>
                   </Link>
@@ -95,7 +94,7 @@ export default function SolutionsPage() {
                     <Reveal as="li" key={stage.id}>
                       <div className="border-b border-paper/12 py-6">
                         <div className="flex items-baseline gap-5">
-                          <span className="font-mono text-[0.6875rem] tracking-[0.16em] text-copper-400">
+                          <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
                             {stage.order}
                           </span>
                           <h3 className="text-[1.25rem] text-paper">{stage.title}</h3>

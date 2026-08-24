@@ -62,7 +62,6 @@ export default async function SolutionAreaPage({ params }: PageProps) {
         <PageHeader
           title={area.name}
           crumbs={crumbs}
-          meta="Área de atuação"
           lead={<p>{area.intro}</p>}
         />
 
@@ -89,10 +88,10 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                   {area.fronts.map((front, index) => (
                     <Reveal as="li" key={front} delay={index * 70}>
                       <div className="group flex items-baseline gap-6 border-b border-paper/12 py-5">
-                        <span className="font-mono text-[0.6875rem] tracking-[0.16em] text-copper-400">
+                        <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
                           {String(index + 1).padStart(2, '0')}
                         </span>
-                        <span className="text-[1.0625rem] leading-relaxed text-paper/85 transition-colors duration-300 group-hover:text-copper-200">
+                        <span className="text-[1.0625rem] leading-relaxed text-paper/85 transition-colors duration-300 group-hover:text-brand-200">
                           {front}
                         </span>
                       </div>
@@ -115,7 +114,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
               {area.signals.map((signal, index) => (
                 <Reveal as="li" key={signal} delay={index * 80}>
                   <div className="h-full border-t border-paper/12 pr-6 pt-6">
-                    <span className="font-mono text-[0.6875rem] tracking-[0.16em] text-copper-400">
+                    <span className="text-[0.6875rem] tracking-[0.16em] text-brand-400">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <p className="mt-4 text-[1.0625rem] leading-[1.6] text-paper/75">{signal}</p>
@@ -132,7 +131,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                     <li key={item.slug}>
                       <Link
                         href={`/solucoes/${item.slug}`}
-                        className="inline-flex h-10 items-center rounded-full border border-paper/15 px-5 text-sm text-paper/70 transition-colors duration-300 hover:border-copper-400/60 hover:text-copper-200"
+                        className="inline-flex h-10 items-center rounded-full border border-paper/15 px-5 text-sm text-paper/70 transition-colors duration-300 hover:border-brand-400/60 hover:text-brand-200"
                       >
                         {item.name}
                       </Link>
@@ -141,7 +140,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                   <li>
                     <Link
                       href="/solucoes"
-                      className="inline-flex h-10 items-center rounded-full border border-copper-500/40 px-5 text-sm text-copper-300 transition-colors duration-300 hover:border-copper-400 hover:text-copper-200"
+                      className="inline-flex h-10 items-center rounded-full border border-brand-500/40 px-5 text-sm text-brand-300 transition-colors duration-300 hover:border-brand-400 hover:text-brand-200"
                     >
                       Ver todas as áreas
                     </Link>

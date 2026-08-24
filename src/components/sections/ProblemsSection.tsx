@@ -49,14 +49,8 @@ export function ProblemsSection() {
       <div className="shell relative">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <Reveal>
-              <span className="label-muted flex items-center gap-3">
-                <span className="h-px w-8 bg-copper-500/70" aria-hidden="true" />
-                Diagnóstico
-              </span>
-            </Reveal>
             <Reveal delay={60}>
-              <h2 id={`${baseId}-titulo`} className="mt-6 text-display-md">
+              <h2 id={`${baseId}-titulo`} className="text-display-md">
                 Quando o resultado foge do controle
               </h2>
             </Reveal>
@@ -107,14 +101,14 @@ export function ProblemsSection() {
                     <span
                       aria-hidden="true"
                       className={cx(
-                        'absolute left-0 top-0 h-full w-px origin-top bg-copper-500 transition-transform duration-500 ease-outexpo',
+                        'absolute left-0 top-0 h-full w-px origin-top bg-brand-500 transition-transform duration-500 ease-outexpo',
                         isActive ? 'scale-y-100' : 'scale-y-0',
                       )}
                     />
                     <span
                       className={cx(
-                        'font-mono text-[0.6875rem] tracking-[0.16em] transition-colors duration-300',
-                        isActive ? 'text-copper-300' : 'text-slateink-400',
+                        'text-[0.6875rem] tracking-[0.16em] transition-colors duration-300',
+                        isActive ? 'text-brand-300' : 'text-smoke-400',
                       )}
                     >
                       {problem.index}
@@ -148,10 +142,10 @@ export function ProblemsSection() {
             >
               <div key={current.id} className="motion-safe:animate-driftin">
                 <div className="flex items-center justify-between border-b border-paper/10 pb-6">
-                  <span className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-copper-300">
+                  <span className="text-[0.6875rem] uppercase tracking-[0.16em] text-brand-300">
                     Leitura do problema
                   </span>
-                  <span className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-slateink-400">
+                  <span className="text-[0.6875rem] uppercase tracking-[0.16em] text-smoke-400">
                     {current.index} / {String(problems.length).padStart(2, '0')}
                   </span>
                 </div>
@@ -166,7 +160,7 @@ export function ProblemsSection() {
                     <li key={signal} className="flex items-start gap-4 text-[0.9375rem] text-paper/70">
                       <span
                         aria-hidden="true"
-                        className="mt-2.5 h-px w-6 shrink-0 bg-copper-500"
+                        className="mt-2.5 h-0.5 w-6 shrink-0 bg-brand-500"
                       />
                       {signal}
                     </li>
@@ -192,7 +186,7 @@ export function ProblemsSection() {
                       aria-controls={`${baseId}-mobile-${problem.id}`}
                       className="flex w-full items-start gap-4 py-5 text-left"
                     >
-                      <span className="mt-1 font-mono text-[0.6875rem] tracking-[0.16em] text-copper-300">
+                      <span className="mt-1 text-[0.6875rem] tracking-[0.16em] text-brand-300">
                         {problem.index}
                       </span>
                       <span className="flex-1">
@@ -208,7 +202,7 @@ export function ProblemsSection() {
                           isOpen && 'rotate-45',
                         )}
                       >
-                        <svg viewBox="0 0 16 16" className="h-4 w-4 text-copper-300" fill="none">
+                        <svg viewBox="0 0 16 16" className="h-4 w-4 text-brand-300" fill="none">
                           <path d="M8 2v12M2 8h12" stroke="currentColor" strokeWidth="1.5" />
                         </svg>
                       </span>
@@ -225,7 +219,7 @@ export function ProblemsSection() {
                     <ul className="mt-5 space-y-2.5">
                       {problem.signals.map((signal) => (
                         <li key={signal} className="flex items-start gap-3 text-sm text-paper/60">
-                          <span aria-hidden="true" className="mt-2 h-px w-4 shrink-0 bg-copper-500" />
+                          <span aria-hidden="true" className="mt-2 h-0.5 w-4 shrink-0 bg-brand-500" />
                           {signal}
                         </li>
                       ))}

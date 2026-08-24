@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { ScrollProgress } from '@/components/layout/ScrollProgress';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { JsonLd } from '@/components/ui/JsonLd';
-import { display, mono, sans } from '@/lib/fonts';
+import { montserrat } from '@/lib/fonts';
 import { graph, organizationSchema, websiteSchema } from '@/lib/jsonld';
 import { siteConfig } from '@/lib/site';
 import './globals.css';
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#05080D',
+  themeColor: '#111111',
   colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
@@ -50,7 +50,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang="pt-BR" className={montserrat.variable}>
       <head>
         {/* Sem JavaScript, o conteúdo com entrada progressiva permanece visível. */}
         <noscript>

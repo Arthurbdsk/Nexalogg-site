@@ -72,16 +72,16 @@ export function RouteCanvas({ className }: { className?: string }) {
         >
           <defs>
             <linearGradient id="route-line" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0%" stopColor="#C4682B" stopOpacity="0.35" />
-              <stop offset="55%" stopColor="#D98A4C" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="#E7A874" />
+              <stop offset="0%" stopColor="#B88A00" stopOpacity="0.35" />
+              <stop offset="55%" stopColor="#E0A800" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#FFD262" />
             </linearGradient>
             <radialGradient id="route-glow" cx="0.5" cy="0.5" r="0.5">
-              <stop offset="0%" stopColor="#C4682B" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#C4682B" stopOpacity="0" />
+              <stop offset="0%" stopColor="#B88A00" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#B88A00" stopOpacity="0" />
             </radialGradient>
             <pattern id="route-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M60 0H0v60" fill="none" stroke="#F4F3EF" strokeOpacity="0.06" strokeWidth="1" />
+              <path d="M60 0H0v60" fill="none" stroke="#FFFFFF" strokeOpacity="0.06" strokeWidth="1" />
             </pattern>
           </defs>
 
@@ -97,7 +97,7 @@ export function RouteCanvas({ className }: { className?: string }) {
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="#F4F3EF"
+              stroke="#FFFFFF"
               strokeOpacity="0.14"
               strokeWidth="1"
               strokeDasharray="3 5"
@@ -114,7 +114,7 @@ export function RouteCanvas({ className }: { className?: string }) {
                 cx={x}
                 cy={y}
                 r="3.5"
-                fill="#F4F3EF"
+                fill="#FFFFFF"
                 fillOpacity="0.35"
                 style={{
                   opacity: visible ? 1 : 0,
@@ -138,7 +138,7 @@ export function RouteCanvas({ className }: { className?: string }) {
           <path
             d={PATH}
             fill="none"
-            stroke="#E7A874"
+            stroke="#E0A800"
             strokeWidth="2"
             strokeLinecap="round"
             strokeDasharray="14 886"
@@ -164,28 +164,28 @@ export function RouteCanvas({ className }: { className?: string }) {
                     cy={point.y}
                     r="16"
                     fill="none"
-                    stroke="#D98A4C"
+                    stroke="#E0A800"
                     strokeOpacity="0.4"
                     strokeWidth="1"
                     className="motion-safe:animate-pulseline"
                   />
                 ) : null}
-                <circle cx={point.x} cy={point.y} r="7" fill="#05080D" stroke="#D98A4C" strokeWidth="2" />
-                <circle cx={point.x} cy={point.y} r="2.5" fill="#E7A874" />
+                <circle cx={point.x} cy={point.y} r="7" fill="#111111" stroke="#E0A800" strokeWidth="2" />
+                <circle cx={point.x} cy={point.y} r="2.5" fill="#E0A800" />
                 <text
                   x={point.x}
                   y={point.y - 26}
-                  fill="#E7A874"
+                  fill="#E0A800"
                   fontSize="11"
                   letterSpacing="1.8"
-                  fontFamily="var(--font-mono), monospace"
+                  fontFamily="var(--font-sans), sans-serif"
                 >
                   {point.code}
                 </text>
                 <text
                   x={point.x}
                   y={point.y + 32}
-                  fill="#F4F3EF"
+                  fill="#FFFFFF"
                   fillOpacity="0.6"
                   fontSize="13"
                   fontFamily="var(--font-sans), sans-serif"

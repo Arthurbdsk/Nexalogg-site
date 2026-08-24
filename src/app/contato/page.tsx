@@ -33,7 +33,6 @@ export default function ContactPage() {
         <PageHeader
           title="Falar com a NEXALLOG"
           crumbs={crumbs}
-          meta="Solicitação de contato"
           lead={
             <p>
               Envie as informações da sua empresa e o contexto atual da operação. A partir dessa
@@ -70,7 +69,7 @@ export default function ContactPage() {
                     <ol className="mt-6 space-y-6">
                       {methodologyStages.slice(0, 3).map((stage) => (
                         <li key={stage.id} className="flex gap-4">
-                          <span className="mt-1 font-mono text-[0.6875rem] tracking-[0.16em] text-copper-400">
+                          <span className="mt-1 text-[0.6875rem] tracking-[0.16em] text-brand-400">
                             {stage.order}
                           </span>
                           <span>

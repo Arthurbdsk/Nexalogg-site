@@ -8,19 +8,20 @@ type Variant = 'primary' | 'outline' | 'ghost';
 type Size = 'md' | 'lg';
 
 const base =
-  'group relative inline-flex select-none items-center justify-center gap-3 overflow-hidden rounded-full font-medium transition-[transform,background-color,border-color,color,box-shadow] duration-300 ease-outexpo active:translate-y-px disabled:pointer-events-none disabled:opacity-55';
+  'group relative inline-flex select-none items-center justify-center gap-4 overflow-hidden whitespace-nowrap rounded-full transition-[transform,background-color,border-color,color,box-shadow] duration-300 ease-outexpo active:translate-y-px disabled:pointer-events-none disabled:opacity-55';
 
 const variants: Record<Variant, string> = {
+  // Amarelo da marca com lettering preto, conforme aplicação oficial
   primary:
-    'bg-copper-500 text-paper shadow-[0_1px_0_0_rgba(255,255,255,0.14)_inset] hover:bg-copper-400 hover:shadow-[0_10px_30px_-12px_rgba(196,104,43,0.85)]',
+    'bg-brand-500 text-ink hover:bg-brand-400 hover:shadow-[0_12px_32px_-14px_rgba(224,168,0,0.9)]',
   outline:
-    'border border-paper/25 text-paper hover:border-copper-300/70 hover:bg-paper/5 hover:text-copper-200',
-  ghost: 'text-paper/75 hover:text-copper-200',
+    'border border-paper/30 text-paper hover:border-brand-500 hover:bg-brand-500 hover:text-ink',
+  ghost: 'text-paper/75 hover:text-brand-500',
 };
 
 const sizes: Record<Size, string> = {
-  md: 'h-11 px-6 text-[0.9375rem]',
-  lg: 'h-[3.25rem] px-8 text-[0.9375rem]',
+  md: 'h-11 px-6 text-[0.8125rem] font-bold uppercase tracking-[0.06em]',
+  lg: 'h-[3.375rem] px-8 text-[0.8125rem] font-bold uppercase tracking-[0.06em]',
 };
 
 type CommonProps = {

@@ -17,9 +17,9 @@ export default function NotFound() {
       <section className="shell pb-section pt-[calc(var(--header-height)+5rem)]">
         <div className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-6">
-            <span className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-copper-400">
-              Erro 404
-            </span>
+            <p className="font-display text-[clamp(4rem,10vw,7rem)] font-bold leading-none tracking-tight text-brand-500">
+              404
+            </p>
             <h1 className="mt-6 text-display-lg">Esse caminho não existe</h1>
             <p className="mt-6 max-w-lg text-lead text-paper/65">
               O endereço acessado não corresponde a nenhuma página do site. A rota pode ter mudado ou
@@ -49,7 +49,7 @@ export default function NotFound() {
                         {item.label}
                         <span
                           aria-hidden="true"
-                          className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-copper-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                          className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                         />
                       </Link>
                     </li>

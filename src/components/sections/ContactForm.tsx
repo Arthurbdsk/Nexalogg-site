@@ -118,12 +118,12 @@ export function ContactForm() {
   if (status === 'success') {
     return (
       <div
-        className="border border-copper-500/40 bg-ink-800/70 p-8 sm:p-10"
+        className="border border-brand-500/40 bg-ink-800/70 p-8 sm:p-10"
         role="status"
         aria-live="polite"
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full border border-copper-400/60">
-          <svg viewBox="0 0 20 20" className="h-5 w-5 text-copper-300" fill="none" aria-hidden="true">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-400/60">
+          <svg viewBox="0 0 20 20" className="h-5 w-5 text-brand-300" fill="none" aria-hidden="true">
             <path d="M4 10.5 8 14.5 16 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
           </svg>
         </span>
@@ -135,13 +135,13 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus('idle')}
-          className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-copper-300 transition-colors duration-300 hover:text-copper-200"
+          className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-300 transition-colors duration-300 hover:text-brand-200"
         >
           <span className="relative">
             Enviar outra solicitação
             <span
               aria-hidden="true"
-              className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-copper-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+              className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
             />
           </span>
         </button>
@@ -300,7 +300,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className="group relative inline-flex h-[3.25rem] items-center justify-center gap-3 rounded-full bg-copper-500 px-8 text-[0.9375rem] font-medium text-paper transition-all duration-300 ease-outexpo hover:bg-copper-400 disabled:cursor-progress disabled:opacity-70"
+          className="group relative inline-flex h-[3.25rem] items-center justify-center gap-3 rounded-full bg-brand-500 px-8 text-[0.9375rem] font-medium text-paper transition-all duration-300 ease-outexpo hover:bg-brand-400 disabled:cursor-progress disabled:opacity-70"
         >
           {isLoading ? (
             <>
@@ -328,7 +328,7 @@ export function ContactForm() {
 
       <div aria-live="polite" className="mt-6">
         {status === 'error' ? (
-          <p className="flex items-start gap-3 border border-copper-500/40 bg-copper-600/10 p-4 text-sm text-copper-200">
+          <p className="flex items-start gap-3 border border-brand-500/40 bg-brand-600/10 p-4 text-sm text-brand-200">
             <svg viewBox="0 0 16 16" className="mt-0.5 h-4 w-4 shrink-0" fill="none" aria-hidden="true">
               <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" />
               <path d="M8 5v4M8 11h.01" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />

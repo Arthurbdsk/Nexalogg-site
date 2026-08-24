@@ -7,9 +7,9 @@
     --shell-padding: clamp(1.25rem, 4vw, 3.5rem);
     --header-height: 5.5rem;
     --header-height-compact: 4.25rem;
-    --rule: rgba(244, 243, 239, 0.12);
-    --rule-strong: rgba(244, 243, 239, 0.22);
-    --rule-dark: rgba(5, 8, 13, 0.12);
+    --rule: rgba(255, 255, 255, 0.12);
+    --rule-strong: rgba(255, 255, 255, 0.24);
+    --brand: #e0a800;
     color-scheme: dark;
   }
 
@@ -30,21 +30,20 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-display font-semibold text-balance;
+    @apply font-display font-bold text-balance;
   }
 
   ::selection {
-    background-color: #C4682B;
-    color: #F4F3EF;
+    background-color: #e0a800;
+    color: #111111;
   }
 
   :focus-visible {
-    outline: 2px solid #E7A874;
+    outline: 2px solid #e0a800;
     outline-offset: 3px;
     border-radius: 2px;
   }
 
-  /* Evita que o foco em elementos de seção desenhe contornos indesejados */
   section:focus,
   main:focus {
     outline: none;
@@ -73,16 +72,13 @@
     padding-inline: var(--shell-padding);
   }
 
-  .rule {
-    border-color: var(--rule);
-  }
-
+  /* Rótulo tipográfico da marca: caixa alta com entrelinha aberta */
   .label {
-    @apply font-mono text-label uppercase tracking-[0.16em] text-copper-300;
+    @apply text-label font-semibold uppercase tracking-[0.2em] text-brand-500;
   }
 
   .label-muted {
-    @apply font-mono text-label uppercase tracking-[0.16em] text-slateink-400;
+    @apply text-label font-semibold uppercase tracking-[0.2em] text-smoke-400;
   }
 
   .prose-nx p {
@@ -120,12 +116,12 @@
     left: 0;
     top: 0.75em;
     width: 0.75rem;
-    height: 1px;
-    background-color: #C4682B;
+    height: 2px;
+    background-color: var(--brand);
   }
 
   .prose-nx a {
-    @apply text-copper-300 underline decoration-copper-500/40 underline-offset-4 transition-colors hover:text-copper-200;
+    @apply text-brand-500 underline decoration-brand-500/40 underline-offset-4 transition-colors hover:text-brand-400;
   }
 
   /* Malha técnica usada como textura de fundo */

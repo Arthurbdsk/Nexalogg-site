@@ -9,7 +9,7 @@ export default function Loading() {
       <span className="sr-only">Carregando conteúdo</span>
       <span
         aria-hidden="true"
-        className="h-6 w-6 animate-spin rounded-full border border-paper/20 border-t-copper-400"
+        className="h-6 w-6 animate-spin rounded-full border border-paper/20 border-t-brand-400"
       />
     </div>
   );

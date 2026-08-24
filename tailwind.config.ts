@@ -1,48 +1,57 @@
 import type { Config } from 'tailwindcss';
 
+/**
+ * Sistema visual da NEXALLOG, derivado do manual da marca.
+ * Paleta oficial: amarelo #E0A800, preto #111111, cinza escuro #333333,
+ * cinza claro #E6E6E6 e branco #FFFFFF. Tipografia oficial: Montserrat.
+ */
 const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
+        // Preto da marca e seus degraus de superfície
         ink: {
-          DEFAULT: '#05080D',
-          900: '#080C13',
-          800: '#0C121B',
-          700: '#121A25',
-          600: '#1A2431',
-          500: '#26313F',
+          DEFAULT: '#111111',
+          950: '#0A0A0A',
+          900: '#0F0F0F',
+          800: '#161616',
+          700: '#1E1E1E',
+          600: '#262626',
+          500: '#333333',
         },
+        // Amarelo da marca
+        brand: {
+          200: '#FFE59A',
+          300: '#FFD262',
+          400: '#F2BC24',
+          500: '#E0A800',
+          600: '#B88A00',
+        },
+        // Claros da marca
         paper: {
-          DEFAULT: '#F4F3EF',
-          dim: '#E8E6DF',
-          muted: '#D3D0C6',
+          DEFAULT: '#FFFFFF',
+          dim: '#E6E6E6',
+          muted: '#C9C9C9',
         },
-        copper: {
-          200: '#F2D4B7',
-          300: '#E7A874',
-          400: '#D98A4C',
-          500: '#C4682B',
-          600: '#A6511D',
-        },
-        slateink: {
-          400: '#8A94A3',
-          500: '#6B7686',
-          600: '#4E5766',
+        // Cinzas de apoio
+        smoke: {
+          400: '#9A9A9A',
+          500: '#767676',
+          600: '#4D4D4D',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Archivo', 'system-ui', 'sans-serif'],
-        sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        sans: ['var(--font-sans)', 'Montserrat', 'system-ui', 'sans-serif'],
+        display: ['var(--font-sans)', 'Montserrat', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display-xl': ['clamp(2.75rem, 7vw, 5.75rem)', { lineHeight: '0.95', letterSpacing: '-0.035em' }],
-        'display-lg': ['clamp(2.25rem, 5.2vw, 4.25rem)', { lineHeight: '0.98', letterSpacing: '-0.03em' }],
-        'display-md': ['clamp(1.875rem, 3.6vw, 3rem)', { lineHeight: '1.04', letterSpacing: '-0.025em' }],
-        'display-sm': ['clamp(1.5rem, 2.4vw, 2.125rem)', { lineHeight: '1.12', letterSpacing: '-0.02em' }],
-        lead: ['clamp(1.0625rem, 1.35vw, 1.3125rem)', { lineHeight: '1.55', letterSpacing: '-0.01em' }],
-        label: ['0.6875rem', { lineHeight: '1', letterSpacing: '0.16em' }],
+        'display-xl': ['clamp(2.5rem, 6.4vw, 5.25rem)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
+        'display-lg': ['clamp(2.125rem, 4.8vw, 3.875rem)', { lineHeight: '1.04', letterSpacing: '-0.025em' }],
+        'display-md': ['clamp(1.75rem, 3.4vw, 2.75rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-sm': ['clamp(1.375rem, 2.2vw, 1.875rem)', { lineHeight: '1.2', letterSpacing: '-0.015em' }],
+        lead: ['clamp(1.0625rem, 1.3vw, 1.25rem)', { lineHeight: '1.6', letterSpacing: '-0.005em' }],
+        label: ['0.6875rem', { lineHeight: '1', letterSpacing: '0.2em' }],
       },
       maxWidth: {
         shell: '84rem',

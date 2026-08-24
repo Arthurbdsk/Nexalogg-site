@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { BrandMark } from '@/components/ui/Logo';
 import { Reveal } from '@/components/ui/Reveal';
 import { solutionAreas } from '@/data/solutions';
 import { track } from '@/lib/analytics';
@@ -28,14 +29,8 @@ export function EcosystemSection() {
       <div className="shell relative">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
-            <Reveal>
-              <span className="label-muted flex items-center gap-3">
-                <span className="h-px w-8 bg-copper-500/70" aria-hidden="true" />
-                Cobertura completa
-              </span>
-            </Reveal>
             <Reveal delay={60}>
-              <h2 id="solucoes-titulo" className="mt-6 text-display-md">
+              <h2 id="solucoes-titulo" className="text-display-md">
                 Equipe própria e rede de parceiros especializados
               </h2>
             </Reveal>
@@ -59,8 +54,8 @@ export function EcosystemSection() {
               className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
               aria-hidden="true"
             >
-              <circle cx="50" cy="50" r={RADIUS} fill="none" stroke="#F4F3EF" strokeOpacity="0.08" strokeWidth="0.2" strokeDasharray="0.6 1.6" />
-              <circle cx="50" cy="50" r={RADIUS * 0.55} fill="none" stroke="#F4F3EF" strokeOpacity="0.06" strokeWidth="0.2" />
+              <circle cx="50" cy="50" r={RADIUS} fill="none" stroke="#FFFFFF" strokeOpacity="0.08" strokeWidth="0.2" strokeDasharray="0.6 1.6" />
+              <circle cx="50" cy="50" r={RADIUS * 0.55} fill="none" stroke="#FFFFFF" strokeOpacity="0.06" strokeWidth="0.2" />
               {solutionAreas.map((area, index) => {
                 const point = polar(50, 50, RADIUS, area.angle);
                 const isActive = active === area.slug;
@@ -71,7 +66,7 @@ export function EcosystemSection() {
                     y1="50"
                     x2={point.x}
                     y2={point.y}
-                    stroke={isActive ? '#D98A4C' : '#F4F3EF'}
+                    stroke={isActive ? '#E0A800' : '#FFFFFF'}
                     strokeOpacity={isActive ? 0.95 : 0.2}
                     strokeWidth={isActive ? 0.35 : 0.2}
                     strokeDasharray="1.2 1.6"
@@ -87,12 +82,12 @@ export function EcosystemSection() {
               aria-hidden="true"
               className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block"
             >
-              <div className="flex h-36 w-36 flex-col items-center justify-center rounded-full border border-paper/15 bg-ink-800 text-center">
-                <span className="font-display text-[0.9375rem] font-bold uppercase tracking-[0.18em] text-paper">
-                  Nexallog
+              <div className="flex h-40 w-40 flex-col items-center justify-center rounded-full border border-paper/15 bg-ink-800 text-center">
+                <BrandMark className="h-6 w-6 text-brand-500" />
+                <span className="mt-3 text-[0.9375rem] font-bold uppercase tracking-[0.18em] text-paper">
+                  NE<span className="text-brand-500">X</span>ALLOG
                 </span>
-                <span className="mt-2 h-px w-8 bg-copper-500" />
-                <span className="mt-2 max-w-[7rem] font-mono text-[0.625rem] uppercase leading-relaxed tracking-[0.1em] text-slateink-400">
+                <span className="mt-2 max-w-[7.5rem] text-[0.5625rem] font-semibold uppercase leading-relaxed tracking-[0.14em] text-smoke-400">
                   Coordenação do programa
                 </span>
               </div>
@@ -118,7 +113,7 @@ export function EcosystemSection() {
                       className={cx(
                         'group flex items-start gap-4 py-5 transition-colors duration-300 lg:flex-col lg:gap-2 lg:border lg:bg-ink-800/85 lg:px-5 lg:py-4 lg:backdrop-blur-sm',
                         isActive
-                          ? 'lg:border-copper-400/70 lg:bg-ink-700'
+                          ? 'lg:border-brand-400/70 lg:bg-ink-700'
                           : 'lg:border-paper/12 lg:hover:border-paper/25',
                       )}
                     >
@@ -126,14 +121,14 @@ export function EcosystemSection() {
                         aria-hidden="true"
                         className={cx(
                           'mt-2 h-1.5 w-1.5 shrink-0 rounded-full transition-colors duration-300 lg:mt-0',
-                          isActive ? 'bg-copper-400' : 'bg-paper/30 group-hover:bg-copper-400',
+                          isActive ? 'bg-brand-400' : 'bg-paper/30 group-hover:bg-brand-400',
                         )}
                       />
                       <span className="flex-1">
                         <span
                           className={cx(
                             'block font-display text-[1.0625rem] font-semibold leading-tight transition-colors duration-300',
-                            isActive ? 'text-copper-200' : 'text-paper',
+                            isActive ? 'text-brand-200' : 'text-paper',
                           )}
                         >
                           {area.name}
@@ -144,7 +139,7 @@ export function EcosystemSection() {
                       </span>
                       <span
                         aria-hidden="true"
-                        className="mt-1.5 hidden h-3 w-3 shrink-0 text-copper-300 transition-transform duration-300 ease-outexpo group-hover:translate-x-1 sm:block lg:hidden"
+                        className="mt-1.5 hidden h-3 w-3 shrink-0 text-brand-300 transition-transform duration-300 ease-outexpo group-hover:translate-x-1 sm:block lg:hidden"
                       >
                         <svg viewBox="0 0 14 14" fill="none" className="h-3 w-3">
                           <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
@@ -164,13 +159,13 @@ export function EcosystemSection() {
             <Link
               href="/solucoes"
               onClick={() => track('cta_solucoes_click', { local: 'ecossistema' })}
-              className="group inline-flex shrink-0 items-center gap-3 text-[0.9375rem] text-copper-300 transition-colors duration-300 hover:text-copper-200"
+              className="group inline-flex shrink-0 items-center gap-3 text-[0.9375rem] text-brand-300 transition-colors duration-300 hover:text-brand-200"
             >
               <span className="relative">
                 Ver todas as áreas
                 <span
                   aria-hidden="true"
-                  className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-copper-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                  className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                 />
               </span>
               <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
@@ -183,7 +178,7 @@ export function EcosystemSection() {
             <Link
               href="/solucoes"
               onClick={() => track('cta_solucoes_click', { local: 'ecossistema_mobile' })}
-              className="inline-flex h-12 items-center gap-3 rounded-full border border-paper/20 px-6 text-[0.9375rem] text-paper transition-colors duration-300 hover:border-copper-400/70 hover:text-copper-200"
+              className="inline-flex h-12 items-center gap-3 rounded-full border border-paper/20 px-6 text-[0.9375rem] text-paper transition-colors duration-300 hover:border-brand-400/70 hover:text-brand-200"
             >
               Ver todas as áreas
               <svg viewBox="0 0 14 14" className="h-3 w-3" fill="none" aria-hidden="true">

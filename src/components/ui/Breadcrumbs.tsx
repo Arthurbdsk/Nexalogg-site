@@ -13,7 +13,7 @@ type BreadcrumbsProps = {
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <nav aria-label="Trilha de navegação">
-      <ol className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-slateink-400">
+      <ol className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.6875rem] uppercase tracking-[0.14em] text-smoke-400">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
@@ -25,7 +25,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
               ) : (
                 <Link
                   href={item.path}
-                  className="transition-colors duration-200 hover:text-copper-300"
+                  className="transition-colors duration-200 hover:text-brand-300"
                 >
                   {item.name}
                 </Link>

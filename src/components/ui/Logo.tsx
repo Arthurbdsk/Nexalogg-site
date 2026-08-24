@@ -1,42 +1,68 @@
 import { siteConfig } from '@/lib/site';
 import { cx } from '@/lib/utils';
 
+/**
+ * Traçado do símbolo da marca: dois caminhos que se cruzam e se encontram no
+ * centro, formando o X da NEXALLOG. Usado no logotipo, no favicon e como
+ * elemento gráfico de fundo.
+ */
+export const BRAND_X_PATH =
+  'M0 0 H24 L50 30 L76 0 H100 L62 50 L100 100 H76 L50 70 L24 100 H0 L38 50 Z';
+
+type MarkProps = {
+  className?: string;
+  /** Versão vazada, usada como elemento gráfico de grande escala. */
+  outline?: boolean;
+  strokeWidth?: number;
+};
+
+/** Símbolo isolado da marca. */
+export function BrandMark({ className, outline = false, strokeWidth = 2 }: MarkProps) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      className={className}
+      fill={outline ? 'none' : 'currentColor'}
+      stroke={outline ? 'currentColor' : 'none'}
+      strokeWidth={outline ? strokeWidth : undefined}
+      strokeLinejoin="miter"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d={BRAND_X_PATH} />
+    </svg>
+  );
+}
+
 type LogoProps = {
   className?: string;
-  /** Oculta o texto, deixando apenas a marca gráfica. */
+  /** Oculta o texto, deixando apenas o símbolo. */
   markOnly?: boolean;
+  /** Exibe a assinatura sob o logotipo, conforme a versão principal do manual. */
+  withTagline?: boolean;
 };
 
 /**
- * Marca da NEXALLOG. O símbolo desenha um trajeto em forma de N com dois nós
- * de conexão, referência direta a rota, origem e destino.
+ * Logotipo NEXALLOG. O X central recebe o amarelo da marca, como definido no
+ * manual, e o restante do lettering acompanha a cor do contexto.
  */
-export function Logo({ className, markOnly = false }: LogoProps) {
+export function Logo({ className, markOnly = false, withTagline = false }: LogoProps) {
+  if (markOnly) {
+    return <BrandMark className={cx('text-brand-500', className)} />;
+  }
+
   return (
-    <span className={cx('inline-flex items-center gap-2.5', className)}>
-      <svg
-        viewBox="0 0 28 28"
-        className="h-7 w-7 shrink-0"
-        fill="none"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <path
-          d="M5 22V6l18 16V6"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="square"
-          strokeLinejoin="miter"
-          className="text-copper-400"
-        />
-        <circle cx="5" cy="6" r="2.6" className="fill-copper-500" />
-        <circle cx="23" cy="22" r="2.6" className="fill-paper" />
-      </svg>
-      {markOnly ? null : (
-        <span className="font-display text-[1.0625rem] font-bold uppercase leading-none tracking-[0.14em]">
-          {siteConfig.name}
+    <span className={cx('inline-flex flex-col', className)}>
+      <span className="font-display text-[1.125rem] font-bold uppercase leading-none tracking-[0.22em]">
+        NE
+        <span className="text-brand-500">X</span>
+        ALLOG
+      </span>
+      {withTagline ? (
+        <span className="mt-2 text-[0.5rem] font-semibold uppercase leading-none tracking-[0.28em] text-paper/60 sm:text-[0.5625rem]">
+          {siteConfig.tagline}
         </span>
-      )}
+      ) : null}
     </span>
   );
 }
