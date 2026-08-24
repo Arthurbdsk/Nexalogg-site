@@ -110,7 +110,7 @@ export function ProblemsSection() {
               id={`${baseId}-painel`}
               aria-labelledby={`${baseId}-tab-${current.id}`}
               tabIndex={0}
-              className="bg-surface p-9 shadow-[0_1px_0_0_rgb(var(--line)/0.12),0_24px_60px_-40px_rgb(var(--line)/0.35)]"
+              className="tone-light bg-surface p-9 text-content shadow-[0_1px_0_0_rgb(var(--line)/0.10),0_24px_60px_-40px_rgb(17_17_17/0.35)]"
             >
               <div key={current.id} className="motion-safe:animate-driftin">
                 <h3 className="text-display-sm">{current.title}</h3>
