@@ -104,7 +104,7 @@ export function EcosystemSection() {
                     onBlur={() => setActive((c) => (c === area.slug ? null : c))}
                     onClick={() => track('cta_solucoes_click', { area: area.slug })}
                     className={cx(
-                      'group flex items-center gap-4 py-4 transition-colors duration-300 lg:flex-col lg:items-start lg:gap-1.5 lg:border lg:bg-ink lg:px-4 lg:py-3.5',
+                      'group flex items-center gap-4 py-4 transition-colors duration-300 lg:flex-col lg:items-start lg:gap-1.5 lg:border lg:bg-surface lg:px-4 lg:py-3.5',
                       isActive
                         ? 'lg:border-brand-500 lg:bg-brand-500 lg:text-ink'
                         : 'lg:border-line/15 lg:hover:border-line/35',
