@@ -82,17 +82,17 @@ export default function AboutPage() {
                 <Reveal delay={160}>
                   <Link
                     href="/solucoes"
-                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] font-semibold transition-opacity duration-300 hover:opacity-70"
+                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-600 transition-colors duration-300 hover:text-brand-600"
                   >
                     <span className="relative">
                       Ver as áreas de cobertura
                       <span
                         aria-hidden="true"
-                        className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-brand-500 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                        className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                       />
                     </span>
                     <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-                      <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                      <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
                     </svg>
                   </Link>
                 </Reveal>
@@ -103,7 +103,7 @@ export default function AboutPage() {
                   {capabilities.map((capability, index) => (
                     <Reveal as="li" key={capability} delay={index * 60}>
                       <div className="group flex items-baseline gap-6 border-b border-line/15 py-5 transition-colors duration-300 hover:text-brand-600">
-                        <span className="text-[0.6875rem] font-bold tracking-[0.16em] text-brand-600">
+                        <span className="text-[0.6875rem] tracking-[0.16em] text-brand-600">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <span className="text-[1.0625rem] text-content transition-colors duration-300 group-hover:text-brand-600">

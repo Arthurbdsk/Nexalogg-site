@@ -69,7 +69,7 @@ export default function ContactPage() {
                     <ol className="mt-6 space-y-6">
                       {methodologyStages.slice(0, 3).map((stage) => (
                         <li key={stage.id} className="flex gap-4">
-                          <span className="mt-1 text-[0.6875rem] font-bold tracking-[0.16em] text-brand-600">
+                          <span className="mt-1 text-[0.6875rem] tracking-[0.16em] text-brand-600">
                             {stage.order}
                           </span>
                           <span>

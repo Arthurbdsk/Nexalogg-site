@@ -75,13 +75,13 @@ export default function SolutionsPage() {
                 <Reveal delay={160}>
                   <Link
                     href="/metodologia"
-                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] font-semibold transition-opacity duration-300 hover:opacity-70"
+                    className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-600 transition-colors duration-300 hover:text-brand-600"
                   >
                     <span className="relative">
                       Ver como funciona o D90
                       <span
                         aria-hidden="true"
-                        className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-brand-500 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                        className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                       />
                     </span>
                   </Link>
@@ -94,7 +94,7 @@ export default function SolutionsPage() {
                     <Reveal as="li" key={stage.id}>
                       <div className="border-b border-line/15 py-6">
                         <div className="flex items-baseline gap-5">
-                          <span className="text-[0.6875rem] font-bold tracking-[0.16em] text-brand-600">
+                          <span className="text-[0.6875rem] tracking-[0.16em] text-brand-600">
                             {stage.order}
                           </span>
                           <h3 className="text-[1.25rem] text-content">{stage.title}</h3>
