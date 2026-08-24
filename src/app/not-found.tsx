@@ -44,12 +44,12 @@ export default function NotFound() {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="group relative text-[0.9375rem] text-content/65 transition-colors duration-300 hover:text-paper"
+                        className="group relative text-[0.9375rem] text-content/65 transition-colors duration-300 hover:text-content"
                       >
                         {item.label}
                         <span
                           aria-hidden="true"
-                          className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+                          className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-brand-500 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                         />
                       </Link>
                     </li>
