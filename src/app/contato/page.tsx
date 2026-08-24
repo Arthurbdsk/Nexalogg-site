@@ -64,16 +64,16 @@ export default function ContactPage() {
 
               <aside className="lg:col-span-4 lg:col-start-9">
                 <Reveal delay={200}>
-                  <div className="border-2 border-line/10 bg-[rgb(244_244_242)] p-8">
+                  <div className="border-2 border-line/10 bg-content/[0.03] p-8">
                     <h2 className="label">O que acontece depois</h2>
                     <ol className="mt-6 space-y-6">
                       {methodologyStages.slice(0, 3).map((stage) => (
                         <li key={stage.id} className="flex gap-4">
-                          <span className="mt-1 text-[0.6875rem] tracking-[0.16em] text-brand-600">
+                          <span className="mt-1 text-[0.6875rem] font-bold tracking-[0.16em] text-brand-600">
                             {stage.order}
                           </span>
                           <span>
-                            <span className="block font-display text-[1.0625rem] font-semibold text-paper">
+                            <span className="block text-[1.0625rem] font-semibold text-content">
                               {stage.title}
                             </span>
                             <span className="mt-1 block text-sm leading-relaxed text-content/55">
