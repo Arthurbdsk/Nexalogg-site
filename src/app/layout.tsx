@@ -9,6 +9,7 @@ import { JsonLd } from '@/components/ui/JsonLd';
 import { montserrat } from '@/lib/fonts';
 import { graph, organizationSchema, websiteSchema } from '@/lib/jsonld';
 import { siteConfig } from '@/lib/site';
+import { themeInitScript } from '@/lib/theme';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -50,8 +51,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={montserrat.variable}>
+    <html lang="pt-BR" data-theme="light" className={montserrat.variable} suppressHydrationWarning>
       <head>
+        {/* Define o tema antes da primeira pintura, evitando piscada de cor. */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {/* Sem JavaScript, o conteúdo com entrada progressiva permanece visível. */}
         <noscript>
           <style>{'.reveal{opacity:1 !important;transform:none !important}'}</style>
