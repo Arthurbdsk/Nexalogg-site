@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Logo } from '@/components/ui/Logo';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 import { mainNav } from '@/data/navigation';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { useScrollState } from '@/hooks/useScrollState';
@@ -68,13 +69,16 @@ export function Header() {
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
+  // Na home o cabeçalho começa transparente sobre o bloco escuro do hero.
+  const overHero = isHome && !scrolled && !menuOpen;
+
   return (
     <header
       className={cx(
-        'tone-light fixed inset-x-0 top-0 z-50 bg-surface text-content transition-shadow duration-300',
-        scrolled || menuOpen
-          ? 'shadow-[0_1px_0_0_rgb(17_17_17/0.10)]'
-          : 'shadow-none',
+        'fixed inset-x-0 top-0 z-50 text-content transition-[background-color,box-shadow] duration-300',
+        overHero
+          ? 'tone-dark bg-transparent'
+          : 'tone-light bg-surface shadow-[0_1px_0_0_rgb(var(--line)/0.12)]',
       )}
     >
       <div
@@ -121,6 +125,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Link
             href="/contato"
             onClick={() => track('cta_principal_click', { local: 'header' })}
