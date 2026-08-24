@@ -69,16 +69,15 @@ export function Header() {
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-  // Na home o cabeçalho começa transparente sobre o bloco escuro do hero.
+  // Na home o cabeçalho começa transparente sobre o hero, que segue o tema.
   const overHero = isHome && !scrolled && !menuOpen;
 
   return (
     <header
       className={cx(
         'fixed inset-x-0 top-0 z-50 text-content transition-[background-color,box-shadow] duration-300',
-        overHero
-          ? 'tone-dark bg-transparent'
-          : 'tone-light bg-surface shadow-[0_1px_0_0_rgb(var(--line)/0.12)]',
+        'tone-light',
+        overHero ? 'bg-transparent' : 'bg-surface shadow-[0_1px_0_0_rgb(var(--line)/0.12)]',
       )}
     >
       <div
@@ -113,7 +112,7 @@ export function Header() {
                     <span
                       aria-hidden="true"
                       className={cx(
-                        'absolute inset-x-3.5 bottom-1 h-0.5 origin-left bg-brand-500 transition-transform duration-300 ease-outexpo',
+                        'absolute inset-x-3.5 bottom-1 h-0.5 origin-left bg-accent transition-transform duration-300 ease-outexpo',
                         active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
                       )}
                     />
@@ -182,7 +181,7 @@ export function Header() {
                     className="flex items-center justify-between py-4 text-[1.375rem] font-bold"
                   >
                     {item.label}
-                    <svg viewBox="0 0 14 14" className="h-4 w-4 text-brand-500" fill="none" aria-hidden="true">
+                    <svg viewBox="0 0 14 14" className="h-4 w-4 text-accent" fill="none" aria-hidden="true">
                       <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
                     </svg>
                   </Link>

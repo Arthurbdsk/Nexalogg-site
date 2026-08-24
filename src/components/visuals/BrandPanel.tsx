@@ -27,12 +27,12 @@ export function BrandPanel() {
           transition: 'transform 900ms cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
-        <svg viewBox="0 0 100 100" className="h-auto w-full" role="presentation">
+        <svg viewBox="0 0 100 100" className="h-auto w-full text-accent" role="presentation">
           {/* Contorno externo, desenhado da origem ao destino */}
           <path
             d={BRAND_X_PATH}
             fill="none"
-            stroke="#E0A800"
+            stroke="currentColor"
             strokeWidth="0.55"
             strokeDasharray="620"
             strokeDashoffset={visible ? 0 : 620}
@@ -43,7 +43,7 @@ export function BrandPanel() {
             <path
               d={BRAND_X_PATH}
               fill="none"
-              stroke="#E0A800"
+              stroke="currentColor"
               strokeOpacity="0.35"
               strokeWidth="0.5"
               style={{

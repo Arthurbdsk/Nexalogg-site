@@ -52,6 +52,13 @@ Cada bloco de conteúdo declara o próprio tom pelo componente
 A alternância entre os quatro tons é o que dá ritmo à leitura. Para trocar a
 cor de um bloco basta mudar a prop `tone`.
 
+Junto com `surface`, `content` e `line`, cada tom define `accent`: o amarelo
+legível sobre aquele fundo. Sobre branco e cinza claro ele escurece para
+`#B88A00`, garantindo contraste no texto; sobre preto volta ao `#E0A800` da
+marca. Use `text-accent` e `bg-accent` para amarelo aplicado a texto e a
+detalhes, e `brand-500` apenas onde o amarelo é fundo de um elemento, como nos
+botões.
+
 ### Tema claro e escuro
 
 O tema claro é o padrão do site, independente da configuração do sistema
@@ -62,6 +69,10 @@ O tema é aplicado antes da primeira pintura por um script mínimo em
 `src/lib/theme.ts`, o que evita piscada de cor no carregamento. No modo escuro
 os mesmos quatro tons continuam se alternando, agora em degraus de preto, e o
 amarelo da marca permanece igual nos dois temas.
+
+O hero da home usa o tom `light`, então acompanha o tema: fundo branco com
+lettering preto no claro, fundo preto com lettering branco no escuro. O
+cabeçalho começa transparente sobre ele e herda o mesmo tom.
 
 ## Comandos
 

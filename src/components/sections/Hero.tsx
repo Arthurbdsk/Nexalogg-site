@@ -8,12 +8,18 @@ import { siteConfig } from '@/lib/site';
 /** Três etapas do trabalho, uma palavra cada. */
 const STEPS = ['Diagnóstico', 'Plano de 90 dias', 'Execução acompanhada'];
 
+/**
+ * Abertura da home. O bloco acompanha o tema do site: fundo branco com
+ * lettering preto no tema claro, fundo preto com lettering branco no escuro.
+ * O amarelo entra pelo token de acento, que escurece sobre fundo claro para
+ * manter o contraste do título.
+ */
 export function Hero() {
   return (
     <section
       id="inicio"
       aria-labelledby="hero-titulo"
-      className="tone-dark relative flex min-h-[max(34rem,84svh)] items-center overflow-hidden bg-surface pb-14 pt-[calc(var(--header-height)+3rem)] text-content lg:pb-20 lg:pt-[calc(var(--header-height)+4rem)]"
+      className="tone-light relative flex min-h-[max(34rem,84svh)] items-center overflow-hidden bg-surface pb-14 pt-[calc(var(--header-height)+3rem)] text-content lg:pb-20 lg:pt-[calc(var(--header-height)+4rem)]"
     >
       <BrandPanel />
 
@@ -27,12 +33,12 @@ export function Hero() {
             <br />
             que conectam, movimentam
             <br />
-            e geram <span className="text-brand-500">resultados.</span>
+            e geram <span className="text-accent">resultados.</span>
           </h1>
 
           <span
             aria-hidden="true"
-            className="mt-9 block h-1 w-16 bg-brand-500 motion-safe:animate-driftin"
+            className="mt-9 block h-1 w-16 bg-accent motion-safe:animate-driftin"
             style={{ animationDelay: '140ms' }}
           />
 
@@ -72,7 +78,7 @@ export function Hero() {
           >
             {STEPS.map((step) => (
               <li key={step} className="flex items-center gap-3">
-                <span aria-hidden="true" className="h-0.5 w-5 bg-brand-500" />
+                <span aria-hidden="true" className="h-0.5 w-5 bg-accent" />
                 <span className="text-sm font-semibold uppercase tracking-[0.1em] text-content/60">
                   {step}
                 </span>

@@ -14,6 +14,8 @@ const config: Config = {
         surface: 'rgb(var(--surface) / <alpha-value>)',
         content: 'rgb(var(--content) / <alpha-value>)',
         line: 'rgb(var(--line) / <alpha-value>)',
+        // Amarelo legível sobre o tom vigente: escurece no claro, abre no escuro
+        accent: 'rgb(var(--accent) / <alpha-value>)',
 
         // Preto da marca e seus degraus de superfície
         ink: {

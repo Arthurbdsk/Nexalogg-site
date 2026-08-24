@@ -11,8 +11,3 @@ export function formatDate(iso: string): string {
   return `${day}/${month}/${year}`;
 }
 
-/** Converte um ponto polar em coordenadas cartesianas. Usado nos diagramas. */
-export function polar(cx: number, cy: number, radius: number, angleDeg: number) {
-  const rad = (angleDeg * Math.PI) / 180;
-  return { x: cx + radius * Math.cos(rad), y: cy + radius * Math.sin(rad) };
-}

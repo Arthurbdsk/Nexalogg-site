@@ -12,15 +12,21 @@ export function AdvisorSection() {
       <div className="shell">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
           <Reveal className="lg:col-span-5">
-            <div className="relative">
+            <div className="relative w-full max-w-[32rem]">
               {advisor.photo ? (
-                <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden bg-ink lg:max-w-none">
+                // O retrato é entregue em 1024x683. A moldura respeita essa
+                // proporção e limita a largura para que a imagem nunca seja
+                // ampliada além do original, inclusive em telas de alta
+                // densidade, onde o recorte vertical anterior a borrava.
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-ink">
                   <Image
                     src={advisor.photo}
                     alt={advisor.photoAlt || `Retrato de ${advisor.name}`}
-                    fill
-                    sizes="(max-width: 1024px) 90vw, 34vw"
-                    className="object-cover object-top transition-transform duration-[1400ms] ease-outexpo hover:scale-[1.03]"
+                    width={1024}
+                    height={683}
+                    quality={90}
+                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 60vw, 32rem"
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
               ) : null}
@@ -30,7 +36,7 @@ export function AdvisorSection() {
                   href={advisor.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group absolute -bottom-5 right-[-1.25rem] hidden flex-col items-center gap-1.5 bg-brand-500 p-3 transition-transform duration-300 ease-outexpo hover:-translate-y-1 lg:flex"
+                  className="group absolute -bottom-6 -right-6 hidden flex-col items-center gap-1.5 bg-brand-500 p-3 transition-transform duration-300 ease-outexpo hover:-translate-y-1 lg:flex"
                 >
                   <Image
                     src={advisor.linkedinQr}
@@ -54,7 +60,7 @@ export function AdvisorSection() {
               </h2>
             </Reveal>
             <Reveal delay={80}>
-              <p className="mt-3 text-lead font-semibold text-brand-600">{advisor.role}</p>
+              <p className="mt-3 text-lead font-semibold text-accent">{advisor.role}</p>
             </Reveal>
 
             <Reveal delay={140}>
@@ -72,7 +78,7 @@ export function AdvisorSection() {
               {advisor.highlights.map((item, index) => (
                 <Reveal as="li" key={item} delay={180 + index * 60}>
                   <div className="flex items-start gap-3">
-                    <span aria-hidden="true" className="mt-2 h-0.5 w-4 shrink-0 bg-brand-500" />
+                    <span aria-hidden="true" className="mt-2 h-0.5 w-4 shrink-0 bg-accent" />
                     <span className="text-[0.9375rem] leading-snug text-content/70">{item}</span>
                   </div>
                 </Reveal>
