@@ -118,11 +118,11 @@ export function ContactForm() {
   if (status === 'success') {
     return (
       <div
-        className="border-2 border-brand-500 bg-[rgb(255_251_240)] p-8 sm:p-10"
+        className="border-2 border-brand-500 bg-brand-500/[0.08] p-8 sm:p-10"
         role="status"
         aria-live="polite"
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-400/60">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-500">
           <svg viewBox="0 0 20 20" className="h-5 w-5 text-ink" fill="none" aria-hidden="true">
             <path d="M4 10.5 8 14.5 16 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
           </svg>
@@ -141,7 +141,7 @@ export function ContactForm() {
             Enviar outra solicitação
             <span
               aria-hidden="true"
-              className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
+              className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-brand-500 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
             />
           </span>
         </button>
@@ -328,7 +328,7 @@ export function ContactForm() {
 
       <div aria-live="polite" className="mt-6">
         {status === 'error' ? (
-          <p className="flex items-start gap-3 border border-brand-500 bg-brand-600/10 p-4 text-sm text-brand-200">
+          <p className="flex items-start gap-3 border-2 border-[#C62828] bg-[#C62828]/10 p-4 text-sm font-medium text-[#C62828]">
             <svg viewBox="0 0 16 16" className="mt-0.5 h-4 w-4 shrink-0" fill="none" aria-hidden="true">
               <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" />
               <path d="M8 5v4M8 11h.01" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
