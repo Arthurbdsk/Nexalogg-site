@@ -36,6 +36,9 @@ O símbolo da marca vive em `src/components/ui/Logo.tsx`, como componente
 `BrandMark`. O mesmo traçado é usado no logotipo, no favicon, no ícone de
 aplicativo e como elemento gráfico nas seções.
 
+Os arquivos de entrega da marca ficam em `marca/`, em PDF, SVG e PNG, gerados
+desses mesmos valores por `npm run marca:generate`. Veja `marca/README.md`.
+
 ### Tons de seção
 
 Cada bloco de conteúdo declara o próprio tom pelo componente
@@ -85,6 +88,7 @@ npm run typecheck      # verificação de tipos
 npm run lint           # ESLint com next/core-web-vitals
 npm run seo:generate   # regenera public/sitemap.xml e public/robots.txt
 npm run qr:generate    # regenera o QR code do LinkedIn em public/images
+npm run marca:generate # regenera o kit da marca em marca/ (pede playwright)
 ```
 
 ## Dados da empresa: onde editar
