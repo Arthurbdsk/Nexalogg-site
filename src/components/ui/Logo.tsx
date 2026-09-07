@@ -53,9 +53,9 @@ export function Logo({ className, markOnly = false, withTagline = false }: LogoP
 
   return (
     <span className={cx('inline-flex flex-col', className)}>
-      <span className="font-display text-[1.125rem] font-bold uppercase leading-none tracking-[0.22em]">
+      <span className="inline-flex items-center font-display text-[1.125rem] font-bold uppercase leading-none tracking-[0.22em]">
         NE
-        <span className="text-brand-500">X</span>
+        <BrandMark className="mx-[0.03em] h-[0.66em] w-[0.66em] shrink-0 text-brand-500" />
         ALLOG
       </span>
       {withTagline ? (
