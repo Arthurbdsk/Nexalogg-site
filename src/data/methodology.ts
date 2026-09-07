@@ -27,10 +27,6 @@ export const methodologyStages: MethodologyStage[] = [
       'Análise operacional',
       'Projeções financeiras',
     ],
-    resource: {
-      label: 'Ver Anexo I — Modelo do Programa D90',
-      href: '/anexo-i-modelo-programa-d90.pdf',
-    },
   },
   {
     id: 'identificacao',
