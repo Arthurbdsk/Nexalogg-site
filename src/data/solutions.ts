@@ -166,6 +166,25 @@ export const solutionAreas: SolutionArea[] = [
       'Risco jurídico sem acompanhamento estruturado',
     ],
   },
+  {
+    slug: 'gestao-coo-as-a-service',
+    name: 'Gestão — COO as a Service',
+    summary: 'Assessoria operacional estratégica por uma fração do custo de um time interno.',
+    intro:
+      'Assessoria operacional estratégica por uma fração do custo de um grupo de profissionais interno, com profissionais que conhecem na prática as rotinas, processos e métodos de gestão das maiores empresas de logística do país.',
+    fronts: [
+      'Transformação operacional',
+      'Organização e eficiência do negócio',
+      'Rotinas e processos',
+      'Gestão financeira',
+      'Malha logística e redes de distribuição',
+    ],
+    signals: [
+      'Falta de direção executiva na operação',
+      'Custo elevado de montar um time de gestão interno',
+      'Rotinas e processos sem padrão entre áreas',
+    ],
+  },
 ];
 
 export const getSolutionArea = (slug: string) =>
