@@ -31,7 +31,7 @@ export const solutionAreas: SolutionArea[] = [
     name: 'Processos Administrativos',
     summary: 'Rotinas administrativas e base gerencial confiável.',
     intro:
-      'O resultado gerencial nasce da rotina administrativa. Organizamos os processos que alimentam o DRE gerencial e os controles internos.',
+      'O resultado gerencial nasce da rotina administrativa. Organizamos os processos que alimentam o DRE gerencial e os controles internos. O escopo dentro de Processos Administrativos é definido pelo diagnóstico: as frentes e ações são acionadas conforme a causa estrutural identificada e a prioridade estabelecida no Programa D90.',
     fronts: [
       'Rotinas administrativas e controles internos',
       'Base de dados que alimenta o DRE gerencial',

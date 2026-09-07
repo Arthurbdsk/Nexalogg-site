@@ -10,6 +10,7 @@ export type AnalyticsEvent =
   | 'cta_principal_click'
   | 'cta_metodologia_click'
   | 'cta_solucoes_click'
+  | 'recurso_metodologia_click'
   | 'whatsapp_click'
   | 'telefone_click'
   | 'email_click'

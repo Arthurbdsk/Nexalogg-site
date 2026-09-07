@@ -112,6 +112,20 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
                             </li>
                           ))}
                         </ul>
+                        {stage.resource ? (
+                          <a
+                            href={stage.resource.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => track('recurso_metodologia_click', { etapa: stage.id })}
+                            className="group mt-5 inline-flex items-center gap-2 text-[0.8125rem] font-semibold text-brand-600 transition-opacity duration-300 hover:opacity-75"
+                          >
+                            {stage.resource.label}
+                            <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
+                              <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                            </svg>
+                          </a>
+                        ) : null}
                       </>
                     ) : null}
                   </div>

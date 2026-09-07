@@ -8,6 +8,8 @@ export type MethodologyStage = {
   detail: string;
   /** Entregas associadas à etapa. */
   deliverables: string[];
+  /** Material de referência opcional (ex.: Anexo I - Modelo do Programa D90). */
+  resource?: { label: string; href: string };
 };
 
 /** Programa D90: as quatro etapas apresentadas pela NEXALLOG. */
@@ -25,6 +27,10 @@ export const methodologyStages: MethodologyStage[] = [
       'Análise operacional',
       'Projeções financeiras',
     ],
+    resource: {
+      label: 'Ver Anexo I — Modelo do Programa D90',
+      href: '/anexo-i-modelo-programa-d90.pdf',
+    },
   },
   {
     id: 'identificacao',
