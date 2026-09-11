@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { normalizeContact, validateContact, type ContactFields } from '@/lib/validation';
+import { siteConfig } from '@/lib/site';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -26,6 +27,91 @@ function rateLimited(key: string): boolean {
 function clientKey(request: Request): string {
   const forwarded = request.headers.get('x-forwarded-for');
   return forwarded?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'desconhecido';
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+async function sendByEmail(contact: ContactFields): Promise<boolean> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.CONTACT_FROM_EMAIL;
+  const to = process.env.CONTACT_INBOX ?? siteConfig.contact.email.value;
+
+  if (!apiKey || !from || !to) return false;
+
+  const subject = `Nova solicitação pelo site: ${contact.company}`;
+  const text = [
+    `Nome: ${contact.name}`,
+    `Empresa: ${contact.company}`,
+    `E-mail: ${contact.email}`,
+    `Telefone: ${contact.phone}`,
+    `Segmento: ${contact.segment}`,
+    '',
+    'Mensagem:',
+    contact.message,
+  ].join('\n');
+  const html = `
+    <h1>Nova solicitação pelo site</h1>
+    <p><strong>Nome:</strong> ${escapeHtml(contact.name)}</p>
+    <p><strong>Empresa:</strong> ${escapeHtml(contact.company)}</p>
+    <p><strong>E-mail:</strong> ${escapeHtml(contact.email)}</p>
+    <p><strong>Telefone:</strong> ${escapeHtml(contact.phone)}</p>
+    <p><strong>Segmento:</strong> ${escapeHtml(contact.segment)}</p>
+    <p><strong>Mensagem:</strong></p>
+    <p>${escapeHtml(contact.message).replaceAll('\n', '<br>')}</p>
+  `;
+
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      reply_to: contact.email,
+      subject,
+      text,
+      html,
+    }),
+  });
+
+  if (!response.ok) {
+    console.error('[contato] serviço de e-mail respondeu com status', response.status);
+    throw new Error('Falha no serviço de e-mail');
+  }
+
+  return true;
+}
+
+async function sendByWebhook(contact: ContactFields): Promise<boolean> {
+  const webhook = process.env.CONTACT_WEBHOOK_URL;
+  if (!webhook) return false;
+
+  const response = await fetch(webhook, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      ...contact,
+      destino: process.env.CONTACT_INBOX ?? siteConfig.contact.email.value,
+      origem: 'site',
+      recebidoEm: new Date().toISOString(),
+    }),
+  });
+
+  if (!response.ok) {
+    console.error('[contato] destino respondeu com status', response.status);
+    throw new Error('Falha no webhook de contato');
+  }
+
+  return true;
 }
 
 export async function POST(request: Request) {
@@ -70,42 +156,21 @@ export async function POST(request: Request) {
   }
 
   const contact = normalizeContact(fields);
-  const webhook = process.env.CONTACT_WEBHOOK_URL;
-
-  if (webhook) {
-    try {
-      const response = await fetch(webhook, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...contact,
-          destino: process.env.CONTACT_INBOX ?? null,
-          origem: 'site',
-          recebidoEm: new Date().toISOString(),
-        }),
-      });
-
-      if (!response.ok) {
-        console.error('[contato] destino respondeu com status', response.status);
-        return NextResponse.json(
-          { message: 'Não foi possível registrar sua solicitação agora. Tente novamente em instantes.' },
-          { status: 502 },
-        );
-      }
-    } catch (error) {
-      console.error('[contato] falha ao encaminhar a solicitação', error);
+  try {
+    const delivered = (await sendByEmail(contact)) || (await sendByWebhook(contact));
+    if (!delivered) {
+      console.error('[contato] nenhum serviço de envio configurado');
       return NextResponse.json(
-        { message: 'Não foi possível registrar sua solicitação agora. Tente novamente em instantes.' },
-        { status: 502 },
+        { message: 'O envio está temporariamente indisponível. Fale com a NEXALLOG pelos canais informados na página.' },
+        { status: 503 },
       );
     }
-  } else {
-    // Sem destino configurado a solicitação é apenas registrada no servidor.
-    // Configure CONTACT_WEBHOOK_URL para encaminhar ao destino oficial.
-    console.warn('[contato] recebido sem CONTACT_WEBHOOK_URL configurado', {
-      empresa: contact.company,
-      segmento: contact.segment,
-    });
+  } catch (error) {
+    console.error('[contato] falha ao encaminhar a solicitação', error);
+    return NextResponse.json(
+      { message: 'Não foi possível enviar sua solicitação agora. Tente novamente em instantes.' },
+      { status: 502 },
+    );
   }
 
   return NextResponse.json({ received: true }, { status: 200 });

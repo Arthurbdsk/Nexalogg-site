@@ -34,7 +34,7 @@ export function organizationSchema() {
     url: siteConfig.url,
     description: siteConfig.description,
     slogan: siteConfig.tagline,
-    logo: absoluteUrl('/images/nexallog-logo.svg'),
+    logo: absoluteUrl('/images/nexallog-logo-oficial-claro.png'),
     image: absoluteUrl(siteConfig.ogImage),
     email: contact.email.value ?? undefined,
     telephone: contact.phone.value ?? undefined,

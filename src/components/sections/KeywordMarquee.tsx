@@ -31,7 +31,7 @@ export function KeywordMarquee() {
                 <span className="whitespace-nowrap px-7 text-[0.9375rem] font-bold uppercase tracking-[0.18em] sm:text-[1.0625rem]">
                   {word}
                 </span>
-                <BrandMark className="h-2.5 w-2.5 shrink-0 opacity-70" />
+                <BrandMark className="h-2.5 w-2.5 shrink-0 brightness-0 opacity-60" />
               </li>
             ))}
           </ul>

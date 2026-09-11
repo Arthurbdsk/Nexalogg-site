@@ -49,13 +49,14 @@ export default function AboutPage() {
 
       <main id="conteudo" tabIndex={-1}>
         <PageHeader
-          title="Uma consultoria construída dentro da operação logística"
+          title="Uma empresa construída de dentro da Operação Logística"
           crumbs={crumbs}
           lead={
             <p>
               A NEXALLOG atua com empresas e empresários do segmento de Transportes e Logística.
-              Trabalhamos sobre os números da operação, apontamos a origem dos desvios e conduzimos o
-              plano até a execução, ao lado do time da empresa.
+              Trabalhamos sobre os números financeiros da operação, apontamos a origem dos desvios
+              estruturais dentro das suas áreas e processos, e conduzimos o plano até a execução, ao
+              lado do time da empresa.
             </p>
           }
         />

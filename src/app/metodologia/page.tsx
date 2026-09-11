@@ -1,6 +1,7 @@
 import { PageHeader } from '@/components/layout/PageHeader';
 import { FinalCta } from '@/components/sections/FinalCta';
 import { MethodologySection } from '@/components/sections/MethodologySection';
+import { ProgramExampleSection } from '@/components/sections/ProgramExampleSection';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { Reveal } from '@/components/ui/Reveal';
 import { methodologyStages } from '@/data/methodology';
@@ -37,8 +38,9 @@ export default function MethodologyPage() {
           lead={
             <p>
               O D90 é o programa da NEXALLOG para empresas de transporte e logística. Ele parte dos
-              dados da operação, chega à causa estrutural de cada desvio e termina com um plano de 90
-              dias em execução dentro da empresa.
+              dados financeiros da operação, chega à causa estrutural de cada desvio e termina com um
+              plano de 90 dias de execução dentro da empresa. Cada número lido no diagnóstico vira
+              uma ação com dono, prazo e indicador de evolução e resultado.
             </p>
           }
         >
@@ -60,6 +62,8 @@ export default function MethodologyPage() {
         </PageHeader>
 
         <MethodologySection detailed withLink={false} />
+
+        <ProgramExampleSection />
 
         <section aria-labelledby="janela-titulo" className="tone-muted bg-surface py-section text-content">
           <div className="shell">
@@ -84,6 +88,11 @@ export default function MethodologyPage() {
                     O plano é priorizado por impacto, e a execução é acompanhada pela NEXALLOG junto
                     ao time responsável. O que exige competência técnica específica é conduzido com a
                     rede de parceiros especializados.
+                  </p>
+                  <p className="mt-6 text-[1.0625rem] leading-[1.75] text-content/55">
+                    Trabalhos adicionais, como BPO contábil e financeiro com a Numera ou business
+                    cases para investimentos em automação e ativos, entram somente quando o
+                    diagnóstico identifica essa necessidade.
                   </p>
                 </Reveal>
               </div>

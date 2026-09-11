@@ -122,7 +122,7 @@ export function ContactForm() {
         role="status"
         aria-live="polite"
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-500">
+        <span className="flex h-11 w-11 items-center justify-center bg-brand-500">
           <svg viewBox="0 0 20 20" className="h-5 w-5 text-ink" fill="none" aria-hidden="true">
             <path d="M4 10.5 8 14.5 16 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
           </svg>
@@ -300,7 +300,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className="group relative inline-flex h-[3.375rem] items-center justify-center gap-3 whitespace-nowrap rounded-full bg-brand-500 px-8 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper disabled:cursor-progress disabled:opacity-70"
+          className="group relative inline-flex h-[3.375rem] items-center justify-center gap-3 whitespace-nowrap bg-brand-500 px-8 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper disabled:cursor-progress disabled:opacity-70"
         >
           {isLoading ? (
             <>

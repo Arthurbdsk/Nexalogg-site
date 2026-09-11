@@ -88,7 +88,7 @@ export function Header() {
       >
         <Link
           href="/"
-          className="-ml-1 rounded px-1 py-2"
+          className="-ml-1 px-1 py-2"
           aria-label={`${siteConfig.name}. Ir para a página inicial`}
         >
           <Logo />
@@ -128,7 +128,7 @@ export function Header() {
           <Link
             href="/contato"
             onClick={() => track('cta_principal_click', { local: 'header' })}
-            className="group hidden h-10 items-center gap-2.5 rounded-full bg-brand-500 pl-5 pr-4 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper xl:inline-flex"
+            className="group hidden h-10 items-center gap-2.5 bg-brand-500 pl-5 pr-4 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper xl:inline-flex"
           >
             {siteConfig.cta.primary}
             <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
@@ -142,7 +142,7 @@ export function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-controls="menu-mobile"
-            className="relative -mr-2 flex h-11 w-11 items-center justify-center rounded-full text-content transition-colors duration-300 xl:hidden"
+            className="relative -mr-2 flex h-11 w-11 items-center justify-center text-content transition-colors duration-300 xl:hidden"
           >
             <span className="sr-only">{menuOpen ? 'Fechar menu' : 'Abrir menu'}</span>
             <span aria-hidden="true" className="flex h-3.5 w-6 flex-col justify-between">
@@ -195,7 +195,7 @@ export function Header() {
                 track('cta_principal_click', { local: 'menu_mobile' });
                 closeMenu();
               }}
-              className="mt-8 flex h-14 w-full items-center justify-center rounded-full bg-brand-500 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink"
+              className="mt-8 flex h-14 w-full items-center justify-center bg-brand-500 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink"
             >
               {siteConfig.cta.primary}
             </Link>

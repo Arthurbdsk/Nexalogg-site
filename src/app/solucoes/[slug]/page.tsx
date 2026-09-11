@@ -131,7 +131,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                     <li key={item.slug}>
                       <Link
                         href={`/solucoes/${item.slug}`}
-                        className="inline-flex h-10 items-center rounded-full border border-line/15 px-5 text-sm text-content/70 transition-colors duration-300 hover:border-brand-500 hover:text-brand-600"
+                        className="inline-flex h-10 items-center border border-line/15 px-5 text-sm text-content/70 transition-colors duration-300 hover:border-brand-500 hover:text-brand-600"
                       >
                         {item.name}
                       </Link>
@@ -140,7 +140,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                   <li>
                     <Link
                       href="/solucoes"
-                      className="inline-flex h-10 items-center rounded-full border border-brand-500 px-5 text-sm text-brand-600 transition-colors duration-300 hover:border-brand-400 hover:text-brand-600"
+                      className="inline-flex h-10 items-center border border-brand-500 px-5 text-sm text-brand-600 transition-colors duration-300 hover:border-brand-400 hover:text-brand-600"
                     >
                       Ver todas as áreas
                     </Link>

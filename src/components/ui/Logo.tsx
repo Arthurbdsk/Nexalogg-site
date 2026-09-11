@@ -1,67 +1,57 @@
-import { siteConfig } from '@/lib/site';
+import Image from 'next/image';
 import { cx } from '@/lib/utils';
-
-/**
- * Traçado do símbolo da marca: dois caminhos que se cruzam e se encontram no
- * centro, formando o X da NEXALLOG. Usado no logotipo, no favicon e como
- * elemento gráfico de fundo.
- */
-export const BRAND_X_PATH =
-  'M0 0 H24 L50 30 L76 0 H100 L62 50 L100 100 H76 L50 70 L24 100 H0 L38 50 Z';
 
 type MarkProps = {
   className?: string;
-  /** Versão vazada, usada como elemento gráfico de grande escala. */
-  outline?: boolean;
-  strokeWidth?: number;
 };
 
-/** Símbolo isolado da marca. */
-export function BrandMark({ className, outline = false, strokeWidth = 2 }: MarkProps) {
+export function BrandMark({ className }: MarkProps) {
   return (
-    <svg
-      viewBox="0 0 100 100"
-      className={className}
-      fill={outline ? 'none' : 'currentColor'}
-      stroke={outline ? 'currentColor' : 'none'}
-      strokeWidth={outline ? strokeWidth : undefined}
-      strokeLinejoin="miter"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d={BRAND_X_PATH} />
-    </svg>
+    <span className={cx('relative inline-block aspect-[1.074]', className)} aria-hidden="true">
+      <Image
+        src="/images/nexallog-simbolo-oficial.png"
+        alt=""
+        fill
+        sizes="(max-width: 768px) 40vw, 32rem"
+        className="object-contain"
+      />
+    </span>
   );
 }
 
 type LogoProps = {
   className?: string;
-  /** Oculta o texto, deixando apenas o símbolo. */
   markOnly?: boolean;
-  /** Exibe a assinatura sob o logotipo, conforme a versão principal do manual. */
   withTagline?: boolean;
+  surface?: 'auto' | 'light' | 'dark';
 };
 
-/**
- * Logotipo NEXALLOG. O X central recebe o amarelo da marca, como definido no
- * manual, e o restante do lettering acompanha a cor do contexto.
- */
-export function Logo({ className, markOnly = false, withTagline = false }: LogoProps) {
-  if (markOnly) {
-    return <BrandMark className={cx('text-brand-500', className)} />;
-  }
+export function Logo({ className, markOnly = false, surface = 'auto' }: LogoProps) {
+  if (markOnly) return <BrandMark className={className} />;
+
+  const common = 'h-auto w-full object-contain object-left';
 
   return (
-    <span className={cx('inline-flex flex-col', className)}>
-      <span className="inline-flex items-center font-display text-[1.125rem] font-bold uppercase leading-none tracking-[0.22em]">
-        NE
-        <BrandMark className="mx-[0.03em] h-[0.66em] w-[0.66em] shrink-0 text-brand-500" />
-        ALLOG
-      </span>
-      {withTagline ? (
-        <span className="mt-2 text-[0.5rem] font-semibold uppercase leading-none tracking-[0.28em] text-content/55 sm:text-[0.5625rem]">
-          {siteConfig.tagline}
-        </span>
+    <span className={cx('inline-block w-[12.5rem] max-w-full', className)}>
+      {surface !== 'dark' ? (
+        <Image
+          src="/images/nexallog-logo-oficial-claro.png"
+          alt="NEXALLOG. Conectando caminhos, gerando resultados."
+          width={800}
+          height={148}
+          priority
+          className={cx(common, surface === 'auto' && 'brand-logo-light')}
+        />
+      ) : null}
+      {surface !== 'light' ? (
+        <Image
+          src="/images/nexallog-logo-oficial-escuro.png"
+          alt="NEXALLOG. Conectando caminhos, gerando resultados."
+          width={693}
+          height={136}
+          priority
+          className={cx(common, surface === 'auto' && 'brand-logo-dark')}
+        />
       ) : null}
     </span>
   );

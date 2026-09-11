@@ -6,6 +6,13 @@ import { Reveal } from '@/components/ui/Reveal';
 import { problems } from '@/data/problems';
 import { cx } from '@/lib/utils';
 
+const financialQuestions = [
+  'Você sabe qual é a maior despesa da sua operação?',
+  'Quanto custa servir cada cliente e cada rota?',
+  'Quais contratos consomem a sua margem?',
+  'O caixa sustenta o próximo movimento da empresa?',
+];
+
 /**
  * Diagnóstico em formato de seleção. A lista mostra apenas o título de cada
  * problema e o painel traz uma linha de leitura e os sinais correspondentes,
@@ -54,6 +61,24 @@ export function ProblemsSection() {
             </Reveal>
           </div>
         </div>
+
+        <Reveal delay={140}>
+          <ul className="mt-10 grid border-y border-line/15 sm:grid-cols-2">
+            {financialQuestions.map((question, index) => (
+              <li
+                key={question}
+                className={cx(
+                  'flex min-h-20 items-center border-line/15 py-5 text-[1rem] font-semibold leading-snug text-content/75 sm:px-6',
+                  index < 3 && 'border-b',
+                  index === 2 && 'sm:border-b-0',
+                  index % 2 === 1 && 'sm:border-l',
+                )}
+              >
+                {question}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
         {/* Seleção: notebook e desktop */}
         <div className="mt-12 hidden lg:mt-16 lg:grid lg:grid-cols-12 lg:gap-12">
@@ -117,11 +142,11 @@ export function ProblemsSection() {
                 <p className="mt-4 text-[1.0625rem] leading-relaxed text-content/65">
                   {current.description}
                 </p>
-                <ul className="mt-7 flex flex-wrap gap-2">
+                <ul className="mt-7 border-t border-line/15">
                   {current.signals.map((signal) => (
                     <li
                       key={signal}
-                      className="border border-line/15 px-3.5 py-2 text-[0.8125rem] text-content/70"
+                      className="border-b border-line/15 py-3 text-[0.875rem] leading-relaxed text-content/70"
                     >
                       {signal}
                     </li>
@@ -168,11 +193,11 @@ export function ProblemsSection() {
                     <p className="text-[0.9375rem] leading-relaxed text-content/65">
                       {problem.description}
                     </p>
-                    <ul className="mt-4 flex flex-wrap gap-2">
+                    <ul className="mt-4 border-t border-line/15">
                       {problem.signals.map((signal) => (
                         <li
                           key={signal}
-                          className="border border-line/15 px-3 py-1.5 text-xs text-content/70"
+                          className="border-b border-line/15 py-2.5 text-xs leading-relaxed text-content/70"
                         >
                           {signal}
                         </li>

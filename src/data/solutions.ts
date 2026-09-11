@@ -29,7 +29,7 @@ export const solutionAreas: SolutionArea[] = [
   {
     slug: 'processos-administrativos',
     name: 'Processos Administrativos',
-    summary: 'Rotinas administrativas e base gerencial confiável.',
+    summary: 'Rotinas administrativas, processos precisos e resultado financeiro confiável.',
     intro:
       'O resultado gerencial nasce da rotina administrativa. Organizamos os processos que alimentam o DRE gerencial e os controles internos. O escopo dentro de Processos Administrativos é definido pelo diagnóstico: as frentes e ações são acionadas conforme a causa estrutural identificada e a prioridade estabelecida no Programa D90.',
     fronts: [
@@ -37,6 +37,7 @@ export const solutionAreas: SolutionArea[] = [
       'Base de dados que alimenta o DRE gerencial',
       'Padronização de processos entre áreas',
       'Indicadores gerenciais recorrentes',
+      'BPO contábil e financeiro com apoio da Numera, quando indicado pelo diagnóstico',
     ],
     signals: [
       'Ausência de DRE gerencial confiável',
@@ -47,7 +48,7 @@ export const solutionAreas: SolutionArea[] = [
   {
     slug: 'operacoes',
     name: 'Operações',
-    summary: 'Produtividade, custo de servir e nível de serviço.',
+    summary: 'Produtividade, custo de servir, malha e nível de serviço.',
     intro:
       'A operação é onde o custo se forma e o nível de serviço é decidido. Trabalhamos produtividade, custo de servir e consistência da entrega.',
     fronts: [
@@ -55,6 +56,7 @@ export const solutionAreas: SolutionArea[] = [
       'Custo de servir por operação, rota ou cliente',
       'Nível de serviço e consistência da entrega',
       'Estrutura de indicadores operacionais',
+      'Malha logística e redes de distribuição',
     ],
     signals: [
       'Custos crescendo fora de proporção com a receita',
@@ -123,6 +125,7 @@ export const solutionAreas: SolutionArea[] = [
       'Priorização do que deve ser automatizado',
       'Automação de fluxos administrativos e operacionais',
       'Ganho de escala sem aumento proporcional de custo',
+      'Business case de automação quando o diagnóstico apontar necessidade de CAPEX',
     ],
     signals: [
       'Retrabalho recorrente entre áreas',
@@ -133,7 +136,7 @@ export const solutionAreas: SolutionArea[] = [
   {
     slug: 'real-estate-e-facilities',
     name: 'Real Estate & Facilities',
-    summary: 'Ativos físicos, malha e infraestrutura.',
+    summary: 'Ativos físicos, centros operacionais e infraestrutura.',
     intro:
       'A estrutura física condiciona o custo logístico. Tratamos adequação de ativos, localização e infraestrutura da operação.',
     fronts: [
@@ -141,6 +144,7 @@ export const solutionAreas: SolutionArea[] = [
       'Localização e desenho de malha',
       'Infraestrutura e manutenção predial',
       'Custo de ocupação dentro do custo total',
+      'Business case de real estate quando o diagnóstico apontar necessidade de CAPEX',
     ],
     signals: [
       'Estrutura física desalinhada do volume operado',
@@ -151,7 +155,7 @@ export const solutionAreas: SolutionArea[] = [
   {
     slug: 'fiscal-e-juridico',
     name: 'Fiscal & Jurídico',
-    summary: 'Enquadramento, contratos e exposição a risco.',
+    summary: 'Reforma Tributária, exposição ao risco, balanço patrimonial e contratos.',
     intro:
       'Decisão financeira sem leitura fiscal é decisão incompleta. Conduzimos enquadramento, contratos e exposição a risco com a rede de parceiros.',
     fronts: [
@@ -168,7 +172,7 @@ export const solutionAreas: SolutionArea[] = [
   },
   {
     slug: 'gestao-coo-as-a-service',
-    name: 'Gestão — COO as a Service',
+    name: 'Gestão - COO as a Service',
     summary: 'Assessoria operacional estratégica por uma fração do custo de um time interno.',
     intro:
       'Assessoria operacional estratégica por uma fração do custo de um grupo de profissionais interno, com profissionais que conhecem na prática as rotinas, processos e métodos de gestão das maiores empresas de logística do país.',
@@ -209,11 +213,11 @@ export const principles = [
   {
     id: 'geramos-resultados',
     title: 'Geramos resultados',
-    description: 'Entregamos impacto com eficiência, para impulsionar negócios e o futuro.',
+    description: 'Entregamos transformação com eficiência para impulsionar negócios.',
   },
   {
     id: 'olhamos-para-o-futuro',
     title: 'Olhamos para o futuro',
-    description: 'Inovamos hoje para construir o amanhã da operação logística.',
+    description: 'Transformamos o hoje para construir o amanhã da operação logística.',
   },
 ] as const;

@@ -35,7 +35,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       onClick={toggle}
       aria-pressed={isDark}
       className={cx(
-        'flex h-10 w-10 items-center justify-center rounded-full border-2 border-line/15 text-content transition-colors duration-300 hover:border-brand-500 hover:text-brand-500',
+        'flex h-10 w-10 items-center justify-center border-2 border-line/15 text-content transition-colors duration-300 hover:border-brand-500 hover:text-brand-500',
         className,
       )}
     >

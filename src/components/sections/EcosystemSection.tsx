@@ -23,7 +23,7 @@ export function EcosystemSection() {
             </Reveal>
             <Reveal delay={80}>
               <p className="mt-5 max-w-xl text-[1.0625rem] leading-relaxed text-content/60">
-                Nove áreas que partem do mesmo diagnóstico e alimentam o mesmo plano de 90 dias.
+                Dez frentes que partem do mesmo diagnóstico e alimentam o mesmo plano de 90 dias.
               </p>
             </Reveal>
           </div>

@@ -117,7 +117,7 @@ Fonte única de:
 
 - `problems.ts`: os cinco problemas estruturais da seção de diagnóstico
 - `methodology.ts`: as quatro etapas do Programa D90 e os resultados esperados
-- `solutions.ts`: as nove áreas de cobertura, os textos das páginas de área e os três princípios
+- `solutions.ts`: as dez frentes de cobertura, os textos das páginas de área e os quatro princípios
 - `navigation.ts`: menus do header e do rodapé
 
 Incluir uma nova área em `solutions.ts` cria a página `/solucoes/<slug>` e a entrada no diagrama de
@@ -133,11 +133,13 @@ Copie `.env.example` para `.env.local`:
 | `NEXT_PUBLIC_GA4_ID` | Ativa o GA4. Vazio, nenhum script de terceiro é carregado |
 | `NEXT_PUBLIC_GTM_ID` | Ativa o GTM nas mesmas condições |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Meta tag de verificação do Search Console |
-| `CONTACT_WEBHOOK_URL` | Destino do formulário. Somente servidor, nunca exposto ao browser |
-| `CONTACT_INBOX` | Caixa de destino enviada junto ao webhook |
+| `RESEND_API_KEY` | Chave server-side usada para o envio direto das solicitações por e-mail |
+| `CONTACT_FROM_EMAIL` | Remetente autorizado no serviço de e-mail |
+| `CONTACT_INBOX` | Caixa que recebe as solicitações. O padrão do site é alexandre.felix@nexallog.com |
+| `CONTACT_WEBHOOK_URL` | Destino alternativo do formulário quando o envio direto não estiver configurado |
 
-Sem `CONTACT_WEBHOOK_URL`, a rota `/api/contact` valida e registra a solicitação no log do servidor,
-mas não encaminha para nenhum destino. Configure a variável antes de publicar.
+Configure `RESEND_API_KEY` e `CONTACT_FROM_EMAIL` antes de publicar. Sem um serviço de envio válido,
+a rota informa indisponibilidade e não exibe uma confirmação falsa ao visitante.
 
 ## Estrutura
 

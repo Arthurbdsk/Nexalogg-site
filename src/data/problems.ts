@@ -19,39 +19,42 @@ export const problems: Problem[] = [
     id: 'decisoes-sem-dados',
     index: '01',
     title: 'Decisões sem dados',
-    summary: 'Gestão no improviso e ausência de DRE gerencial confiável.',
+    summary: 'Gestão e decisão no improviso.',
     description:
-      'Sem DRE gerencial confiável, cada área trabalha com uma versão diferente do mesmo número.',
+      'Sem uma DRE confiável e um resultado operacional exato, cada área trabalha com a sua versão de resultado.',
     signals: [
-      'Gestão no improviso',
-      'Ausência de DRE gerencial confiável',
-      'Indicadores dispersos entre áreas',
-    ],
-  },
-  {
-    id: 'margem-sob-pressao',
-    index: '02',
-    title: 'Margem sob pressão',
-    summary: 'Custos crescendo fora de proporção com a receita.',
-    description:
-      'A receita cresce e o resultado não acompanha, porque o custo de servir não é lido por operação.',
-    signals: [
-      'Custos crescendo fora de proporção com a receita',
-      'Margem sob pressão',
-      'Custo de servir sem visibilidade por operação',
+      'Gestão e decisão no improviso',
+      'Impacto no caixa operacional',
+      'Pouca maturidade para uma decisão de expansão',
     ],
   },
   {
     id: 'time-sem-direcao',
-    index: '03',
+    index: '02',
     title: 'Time sem direção',
-    summary: 'Baixa maturidade técnica e engajamento comprometido.',
+    summary: 'A urgência toma o lugar da prioridade.',
     description:
-      'Sem prioridade clara, o time responde a urgências e o plano vira execução parcial.',
+      'Sem prioridade clara, o time responde na urgência e no improviso, e o plano de trabalho vira execução parcial.',
     signals: [
-      'Times sem direção',
-      'Baixa maturidade técnica',
+      'Sem um objetivo claro',
+      'Sem tempo para decisões assertivas',
+      'Entregas e execução de baixa qualidade',
       'Engajamento comprometido',
+      'Baixa maturidade técnica',
+    ],
+  },
+  {
+    id: 'margem-sob-pressao',
+    index: '03',
+    title: 'Margem sob pressão',
+    summary: 'Custos crescem fora de proporção com a receita.',
+    description:
+      'A receita cresce e o resultado não acompanha, porque o custo de servir não é lido por operação.',
+    signals: [
+      'Custo crescendo',
+      'Eficiência operacional baixa',
+      'Sem dados para reversão',
+      'Falta de uma rota clara para reverter o cenário',
     ],
   },
   {
@@ -60,11 +63,12 @@ export const problems: Problem[] = [
     title: 'Comercial sem funil',
     summary: 'Prospecção fraca e share of wallet subutilizado.',
     description:
-      'A entrada de negócios depende de indicação, e a base atual permanece subexplorada.',
+      'A entrada de novos negócios depende de prospecção, enquanto a expansão da base atual fica sem método.',
     signals: [
-      'Comercial sem funil',
-      'Prospecção fraca',
+      'Prospecção fraca e sem método',
       'Share of wallet subutilizado',
+      'Sem critérios para conversão',
+      'Falta de uma rota clara para reverter o cenário',
     ],
   },
   {
@@ -73,11 +77,13 @@ export const problems: Problem[] = [
     title: 'Tecnologia defasada',
     summary: 'Ferramentas abaixo do nível de serviço necessário.',
     description:
-      'Sistemas que não conversam e controles em planilhas limitam o nível de serviço.',
+      'Sistemas independentes que não conversam, controles em planilhas e tecnologia abaixo do nível de serviço exigido.',
     signals: [
-      'Tecnologia defasada',
-      'Ferramentas abaixo do nível de serviço necessário',
-      'Falta de rota clara para reverter o cenário',
+      'Falta de foco nas prioridades',
+      'Sem tempo para decisões assertivas',
+      'Entregas e execução de baixa qualidade',
+      'Engajamento comprometido',
+      'Baixa maturidade técnica',
     ],
   },
 ];

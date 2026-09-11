@@ -19,24 +19,24 @@ export const methodologyStages: MethodologyStage[] = [
     order: '01',
     title: 'Diagnóstico',
     definition:
-      'Coleta e análise de dados gerenciais, operacionais e projeções financeiras.',
+      'Coleta e análise dos dados financeiros, gerenciais, operacionais e projeções futuras.',
     detail:
-      'A etapa parte dos números da empresa. Dados gerenciais, operacionais e projeções financeiras são reunidos e organizados para que a leitura do negócio deixe de depender de percepção e passe a ser sustentada por informação.',
+      'A etapa parte dos números da empresa. Dados gerenciais, operacionais e projeções financeiras são reunidos e organizados para que a leitura do negócio deixe de depender de percepção e passe a ser sustentada por informação estruturada e qualificada.',
     deliverables: [
       'Leitura consolidada dos dados gerenciais',
       'Análise operacional',
       'Projeções financeiras',
     ],
     resource: {
-      label: 'Ver Anexo I — Modelo do Programa D90',
-      href: '/anexo-i-modelo-programa-d90.pdf',
+      label: 'Ver exemplo do Programa D90',
+      href: '#exemplo-programa-d90',
     },
   },
   {
     id: 'identificacao',
     order: '02',
     title: 'Identificação',
-    definition: 'Mapeamento das causas estruturais por área e processo.',
+    definition: 'Mapeamento das causas raízes estruturais por área e processo.',
     detail:
       'Com os dados organizados, o trabalho passa a separar sintoma de causa. Cada desvio é rastreado até a área e o processo que o originam, o que evita ação sobre efeito e concentra o esforço onde o resultado é decidido.',
     deliverables: [
@@ -49,7 +49,7 @@ export const methodologyStages: MethodologyStage[] = [
     id: 'plano-de-acao',
     order: '03',
     title: 'Plano de Ação',
-    definition: 'Direcionamento claro, objetivo e priorizado para 90 dias.',
+    definition: 'Direcionamento claro, objetivo e priorizado do plano de até 90 dias, pronto para implementação.',
     detail:
       'O diagnóstico vira direção. O plano define o que será feito, em que ordem e sob qual responsabilidade dentro de uma janela de 90 dias, com prioridade definida pelo impacto no resultado.',
     deliverables: [
@@ -63,7 +63,7 @@ export const methodologyStages: MethodologyStage[] = [
     order: '04',
     title: 'Execução',
     definition:
-      'Suporte direto da NEXALLOG e da rede de parceiros especializada.',
+      'Suporte direto da NEXALLOG e da rede de parceiros especializados.',
     detail:
       'O plano é acompanhado de perto. A NEXALLOG atua junto ao time da empresa e aciona a rede de parceiros especializados nas frentes que exigem competência técnica específica.',
     deliverables: [

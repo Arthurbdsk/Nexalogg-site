@@ -13,7 +13,7 @@ export function Footer() {
       <div className="shell py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-16">
           <div className="max-w-sm">
-            <Logo withTagline />
+            <Logo surface="dark" />
             <ContactChannels className="mt-8" local="footer" />
             {siteConfig.social.length > 0 ? (
               <ul className="mt-7 flex flex-wrap gap-3">
@@ -23,7 +23,7 @@ export function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex h-9 items-center rounded-full border border-line/20 px-4 text-sm text-content/70 transition-colors duration-300 hover:border-brand-500 hover:text-brand-500"
+                      className="inline-flex h-9 items-center border border-line/20 px-4 text-sm text-content/70 transition-colors duration-300 hover:border-brand-500 hover:text-brand-500"
                     >
                       {item.name}
                     </a>
@@ -80,6 +80,16 @@ export function Footer() {
               >
                 Termos de Uso
               </Link>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/socialy_webdesign/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-content/45 transition-colors duration-300 hover:text-brand-500"
+              >
+                Feito por Socialy
+              </a>
             </li>
           </ul>
         </div>

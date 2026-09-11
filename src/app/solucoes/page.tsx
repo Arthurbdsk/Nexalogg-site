@@ -11,7 +11,7 @@ import { buildMetadata } from '@/lib/seo';
 
 const title = 'Soluções';
 const description =
-  'Nove áreas de atuação da NEXALLOG, de Operações e Tecnologia a WMS, TMS, Comercial e Fiscal, conduzidas com equipe própria e rede de parceiros especializados.';
+  'Dez frentes de atuação da NEXALLOG, de Operações e Tecnologia a WMS, TMS, Comercial e Fiscal, conduzidas com equipe própria e rede de parceiros especializados.';
 const path = '/solucoes';
 
 export const metadata = buildMetadata({ title, description, path });
@@ -40,13 +40,13 @@ export default function SolutionsPage() {
 
       <main id="conteudo" tabIndex={-1}>
         <PageHeader
-          title="Nove frentes, um único plano de trabalho"
+          title="Dez frentes, um único plano de trabalho"
           crumbs={crumbs}
           lead={
             <p>
-              As áreas de atuação da NEXALLOG não funcionam como serviços isolados. Todas partem do
-              mesmo diagnóstico e alimentam o mesmo plano de 90 dias, com equipe própria e rede de
-              parceiros especializados.
+              O escopo de Processos Administrativos é definido pelo diagnóstico. As frentes e ações
+              são acionadas conforme a causa estrutural identificada e a prioridade estabelecida no
+              Programa D90, com equipe própria e rede de parceiros especializados.
             </p>
           }
         />

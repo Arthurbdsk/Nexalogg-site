@@ -8,7 +8,7 @@ type Variant = 'primary' | 'outline' | 'ghost';
 type Size = 'md' | 'lg';
 
 const base =
-  'group relative inline-flex select-none items-center justify-center gap-4 overflow-hidden whitespace-nowrap rounded-full transition-[transform,background-color,border-color,color,box-shadow] duration-300 ease-outexpo active:translate-y-px disabled:pointer-events-none disabled:opacity-55';
+  'group relative inline-flex select-none items-center justify-center gap-4 overflow-hidden whitespace-nowrap transition-[transform,background-color,border-color,color,box-shadow] duration-300 ease-outexpo active:translate-y-px disabled:pointer-events-none disabled:opacity-55';
 
 const variants: Record<Variant, string> = {
   // Amarelo da marca com lettering preto, conforme aplicação oficial

@@ -29,7 +29,7 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
           <div className="lg:col-span-7">
             <Reveal>
               <h2 id="metodologia-titulo" className="text-display-md">
-                Do dado ao <span className="text-brand-500">plano em execução</span>, em 90 dias
+                Do dado ao plano do <span className="text-brand-500">Programa D90</span>
               </h2>
             </Reveal>
           </div>
@@ -79,7 +79,7 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
                   <span
                     aria-hidden="true"
                     className={cx(
-                      'absolute left-0 top-1.5 flex h-4 w-4 items-center justify-center rounded-full border-2 transition-colors duration-500 ease-outexpo lg:top-0',
+                      'absolute left-0 top-1.5 flex h-4 w-4 items-center justify-center border-2 transition-colors duration-500 ease-outexpo lg:top-0',
                       reached ? 'border-brand-500 bg-brand-500' : 'border-line/25 bg-surface',
                     )}
                   />
@@ -115,8 +115,6 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
                         {stage.resource ? (
                           <a
                             href={stage.resource.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             onClick={() => track('recurso_metodologia_click', { etapa: stage.id })}
                             className="group mt-5 inline-flex items-center gap-2 text-[0.8125rem] font-semibold text-brand-600 transition-opacity duration-300 hover:opacity-75"
                           >

@@ -55,7 +55,7 @@ export function AboutSection({ withLink = true }: AboutSectionProps) {
                   key={principle.id}
                   onMouseEnter={() => setActive(index)}
                   className={cx(
-                    'relative py-7 transition-colors duration-500 sm:px-6',
+                    'relative px-6 py-7 transition-colors duration-500',
                     isActive ? 'bg-content/[0.04]' : 'bg-transparent',
                   )}
                 >

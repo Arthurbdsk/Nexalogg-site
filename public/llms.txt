@@ -1,0 +1,17 @@
+# NEXALLOG
+
+Site institucional da NEXALLOG, consultoria voltada a empresas de transporte e logística.
+
+## Conteúdo principal
+
+- A NEXALLOG: https://www.nexallog.com.br/a-nexallog
+- Programa D90: https://www.nexallog.com.br/metodologia
+- Soluções: https://www.nexallog.com.br/solucoes
+- Contato: https://www.nexallog.com.br/contato
+- Política de Privacidade: https://www.nexallog.com.br/politica-de-privacidade
+- Termos de Uso: https://www.nexallog.com.br/termos-de-uso
+
+## Contato
+
+- E-mail: alexandre.felix@nexallog.com
+- Telefone: +55 11 98146-8028

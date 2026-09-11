@@ -46,8 +46,8 @@ export function Hero() {
             className="mt-7 max-w-xl text-lead text-content/70 motion-safe:animate-driftin"
             style={{ animationDelay: '200ms' }}
           >
-            Diagnóstico, plano de ação de 90 dias e execução para empresas de transporte e
-            logística.
+            Do diagnóstico financeiro e operacional à execução do Programa D90, preparado para
+            empresas de Transporte e Logística.
           </p>
 
           <div
