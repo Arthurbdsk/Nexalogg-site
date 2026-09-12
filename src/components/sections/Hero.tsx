@@ -28,6 +28,7 @@ export function Hero() {
           <h1
             id="hero-titulo"
             className="text-[clamp(1.875rem,4vw,3.375rem)] font-bold uppercase leading-[1.08] tracking-[-0.02em] motion-safe:animate-rise"
+            style={{ animationDelay: '360ms' }}
           >
             Soluções logísticas
             <br />
@@ -39,12 +40,12 @@ export function Hero() {
           <span
             aria-hidden="true"
             className="mt-9 block h-1 w-16 bg-accent motion-safe:animate-driftin"
-            style={{ animationDelay: '140ms' }}
+            style={{ animationDelay: '580ms' }}
           />
 
           <p
             className="mt-7 max-w-xl text-lead text-content/70 motion-safe:animate-driftin"
-            style={{ animationDelay: '200ms' }}
+            style={{ animationDelay: '720ms' }}
           >
             Do diagnóstico financeiro e operacional à execução do Programa D90, preparado para
             empresas de Transporte e Logística.
@@ -52,7 +53,7 @@ export function Hero() {
 
           <div
             className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center motion-safe:animate-driftin"
-            style={{ animationDelay: '280ms' }}
+            style={{ animationDelay: '880ms' }}
           >
             <Button
               href="/contato"
@@ -74,7 +75,7 @@ export function Hero() {
 
           <ul
             className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 motion-safe:animate-driftin"
-            style={{ animationDelay: '360ms' }}
+            style={{ animationDelay: '1040ms' }}
           >
             {STEPS.map((step) => (
               <li key={step} className="flex items-center gap-3">

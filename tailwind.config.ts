@@ -81,8 +81,8 @@ const config: Config = {
           '50%': { opacity: '0.6' },
         },
         rise: {
-          from: { transform: 'translate3d(0, 16px, 0)' },
-          to: { transform: 'none' },
+          from: { opacity: '0', transform: 'translate3d(0, 18px, 0)' },
+          to: { opacity: '1', transform: 'none' },
         },
         driftin: {
           from: { opacity: '0', transform: 'translate3d(0, 14px, 0)' },
@@ -99,7 +99,7 @@ const config: Config = {
         travel: 'dash-travel 5.5s linear infinite',
         pulseline: 'pulseline 4.5s ease-in-out infinite',
         driftin: 'driftin 0.7s cubic-bezier(0.16, 1, 0.3, 1) both',
-        rise: 'rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both',
+        rise: 'rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both',
         'marquee-right': 'marquee-right 64s linear infinite',
       },
     },

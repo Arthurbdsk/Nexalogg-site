@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes brand-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes brand-settle {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Tons de seção. Cada bloco redefine superfície, texto e linhas. */
 .tone-light {
 --surface: 255 255 255;
@@ -133,6 +153,25 @@ color-scheme: dark;
 }
 
 @layer components {
+  .brand-mark-settle {
+    transform-origin: center;
+    animation: brand-settle 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .brand-draw-primary,
+  .brand-draw-secondary {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  .brand-draw-primary {
+    animation: brand-draw 1.35s cubic-bezier(0.65, 0, 0.35, 1) 80ms both;
+  }
+
+  .brand-draw-secondary {
+    animation: brand-draw 1.35s cubic-bezier(0.65, 0, 0.35, 1) 260ms both;
+  }
+
   .brand-logo-dark {
     display: none;
   }
@@ -143,6 +182,19 @@ color-scheme: dark;
 
   [data-theme='dark'] .brand-logo-dark {
     display: block;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brand-mark-settle,
+    .brand-draw-primary,
+    .brand-draw-secondary {
+      animation: none;
+    }
+
+    .brand-draw-primary,
+    .brand-draw-secondary {
+      stroke-dashoffset: 0;
+    }
   }
 
   .shell {
