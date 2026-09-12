@@ -1,26 +1,16 @@
 'use client';
 
-import { usePointerOffset } from '@/hooks/usePointerOffset';
-
 export function BrandPanel() {
-  const { ref: pointerRef, offset } = usePointerOffset<HTMLDivElement>(1);
-
   return (
     <div
-      ref={pointerRef}
-      className="pointer-events-none absolute -bottom-3 right-[clamp(1rem,3vw,4rem)] flex w-[68%] justify-end opacity-10 sm:w-[46%] sm:opacity-90 lg:w-[42%] xl:w-[40%]"
+      className="pointer-events-none absolute bottom-0 right-4 w-[68%] opacity-10 sm:right-6 sm:w-[46%] sm:opacity-90 lg:inset-y-0 lg:right-0 lg:h-full lg:w-auto"
       aria-hidden="true"
     >
-      <div
-        className="relative aspect-[1.074] w-full transition-transform duration-700 ease-outexpo"
-        style={{
-          transform: `translate3d(${offset.x * 6}px, 0, 0)`,
-        }}
-      >
+      <div className="relative aspect-[2048/1838] w-full lg:h-full lg:w-auto">
         <div className="brand-mark-settle h-full w-full">
           <svg
-            viewBox="0 0 2048 1907"
-            className="h-full w-full"
+            viewBox="0 62 2048 1838"
+            className="block h-full w-full lg:w-auto lg:max-w-none"
             preserveAspectRatio="xMidYMid meet"
             focusable="false"
           >
