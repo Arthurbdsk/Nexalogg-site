@@ -4,6 +4,19 @@ import { Reveal } from '@/components/ui/Reveal';
 import { solutionAreas } from '@/data/solutions';
 import { SolutionAreaLink } from '@/components/sections/SolutionAreaLink';
 
+const deliveryCards = [
+  {
+    title: 'Equipe NEXALLOG',
+    summary: 'Condução direta do diagnóstico, do plano e do acompanhamento da execução.',
+    href: '/a-nexallog#atuacao-titulo',
+  },
+  {
+    title: 'Rede de parceiros',
+    summary: 'Especialistas acionados conforme a frente e a causa estrutural identificada.',
+    href: '/a-nexallog#atuacao-titulo',
+  },
+] as const;
+
 /**
  * Cobertura completa em grade. Cada área ocupa uma célula da mesma malha, com
  * índice, nome e uma linha de leitura, e leva para a página da área. A grade
@@ -48,6 +61,40 @@ export function EcosystemSection() {
               {solutionAreas.map((area, index) => (
                 <li key={area.slug} className="bg-surface">
                   <SolutionAreaLink area={area} index={index} />
+                </li>
+              ))}
+              {deliveryCards.map((card, index) => (
+                <li key={card.title} className="bg-surface">
+                  <Link
+                    href={card.href}
+                    className="group flex h-full flex-col justify-between gap-6 p-6 transition-colors duration-300 hover:bg-accent hover:text-ink lg:gap-8 lg:p-8"
+                  >
+                    <span>
+                      <span className="block text-[0.6875rem] font-bold tracking-[0.16em] text-accent transition-colors duration-300 group-hover:text-ink/60">
+                        {String(solutionAreas.length + index + 1).padStart(2, '0')}
+                      </span>
+                      <span className="mt-4 block text-[1.1875rem] font-bold leading-tight">
+                        {card.title}
+                      </span>
+                      <span className="mt-2 block text-[0.9375rem] leading-relaxed text-content/55 transition-colors duration-300 group-hover:text-ink/70">
+                        {card.summary}
+                      </span>
+                    </span>
+
+                    <svg
+                      viewBox="0 0 14 14"
+                      className="h-3.5 w-3.5 shrink-0 text-content/30 transition-[transform,color] duration-300 ease-outexpo group-hover:translate-x-1 group-hover:text-ink"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M1 7h11M8 3l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="square"
+                      />
+                    </svg>
+                  </Link>
                 </li>
               ))}
             </ul>
