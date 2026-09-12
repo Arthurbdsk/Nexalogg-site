@@ -8,13 +8,13 @@ export function BrandPanel() {
   return (
     <div
       ref={pointerRef}
-      className="pointer-events-none absolute inset-y-0 right-0 flex w-[86%] items-end justify-end opacity-10 sm:w-[54%] sm:opacity-90 lg:w-[50%]"
+      className="pointer-events-none absolute -bottom-1 right-[clamp(1rem,3vw,4rem)] flex w-[68%] justify-end opacity-10 sm:w-[46%] sm:opacity-90 lg:w-[42%] xl:w-[40%]"
       aria-hidden="true"
     >
       <div
         className="relative aspect-[1.074] w-full transition-transform duration-700 ease-outexpo"
         style={{
-          transform: `translate3d(${offset.x * 10}px, ${offset.y * 10}px, 0)`,
+          transform: `translate3d(${offset.x * 6}px, 0, 0)`,
         }}
       >
         <div className="brand-mark-settle h-full w-full">
