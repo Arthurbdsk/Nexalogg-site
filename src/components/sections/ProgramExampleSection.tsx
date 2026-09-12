@@ -7,7 +7,7 @@ import { cx } from '@/lib/utils';
 const TOTAL_PAGES = 13;
 
 export function ProgramExampleSection() {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(3);
   const image = `/images/programa-d90/pagina-${String(page).padStart(2, '0')}.png`;
 
   const changePage = (next: number) => {
