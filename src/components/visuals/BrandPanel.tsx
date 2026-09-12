@@ -8,7 +8,7 @@ export function BrandPanel() {
   return (
     <div
       ref={pointerRef}
-      className="pointer-events-none absolute inset-y-0 right-[-82%] flex w-[150%] items-center opacity-20 sm:right-[-22%] sm:w-[70%] sm:opacity-90 lg:right-[-12%] lg:w-[54%]"
+      className="pointer-events-none absolute inset-y-0 right-0 flex w-[86%] items-end justify-end opacity-10 sm:w-[54%] sm:opacity-90 lg:w-[50%]"
       aria-hidden="true"
     >
       <div

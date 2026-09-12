@@ -19,7 +19,7 @@ export function Hero() {
     <section
       id="inicio"
       aria-labelledby="hero-titulo"
-      className="tone-light relative flex min-h-[max(34rem,84svh)] items-center overflow-hidden bg-surface pb-14 pt-[calc(var(--header-height)+3rem)] text-content lg:pb-20 lg:pt-[calc(var(--header-height)+4rem)]"
+      className="tone-light relative flex min-h-[100svh] items-center overflow-hidden bg-surface pb-14 pt-[calc(var(--header-height)+3rem)] text-content lg:pb-20 lg:pt-[calc(var(--header-height)+4rem)]"
     >
       <BrandPanel />
 
