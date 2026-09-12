@@ -9,7 +9,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="tone-dark bg-surface text-content">
+    <footer id="rodape" className="tone-dark bg-surface text-content">
       <div className="shell py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-16">
           <div className="max-w-sm">

@@ -45,7 +45,7 @@ export function Logo({ className, markOnly = false, surface = 'auto' }: LogoProp
       ) : null}
       {surface !== 'light' ? (
         <Image
-          src="/images/nexallog-logo-oficial-escuro.png"
+          src="/images/nexallog-logo-oficial-escuro-transparente.png"
           alt="NEXALLOG. Conectando caminhos, gerando resultados."
           width={693}
           height={136}
