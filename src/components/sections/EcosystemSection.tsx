@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Section } from '@/components/layout/Section';
 import { Reveal } from '@/components/ui/Reveal';
@@ -14,6 +15,20 @@ const deliveryCards = [
     title: 'Rede de parceiros',
     summary: 'Especialistas acionados conforme a frente e a causa estrutural identificada.',
     href: '/a-nexallog#atuacao-titulo',
+    partners: [
+      {
+        src: '/images/parceiros/simoes-pires.png',
+        alt: 'Simões Pires',
+        width: 560,
+        height: 101,
+      },
+      {
+        src: '/images/parceiros/numera.png',
+        alt: 'Numera',
+        width: 700,
+        height: 107,
+      },
+    ],
   },
 ] as const;
 
@@ -85,6 +100,25 @@ export function EcosystemSection() {
                       <span className="mt-2 block text-[0.9375rem] leading-relaxed text-ink/70">
                         {card.summary}
                       </span>
+                      {'partners' in card ? (
+                        <span className="mt-6 grid grid-cols-2 gap-2" aria-label="Empresas parceiras">
+                          {card.partners.map((partner) => (
+                            <span
+                              key={partner.src}
+                              className="flex h-14 items-center justify-center bg-paper px-3"
+                            >
+                              <Image
+                                src={partner.src}
+                                alt={partner.alt}
+                                width={partner.width}
+                                height={partner.height}
+                                sizes="(max-width: 639px) 38vw, (max-width: 1023px) 20vw, 10rem"
+                                className="h-auto max-h-8 w-auto max-w-full object-contain"
+                              />
+                            </span>
+                          ))}
+                        </span>
+                      ) : null}
                     </span>
 
                     <svg
