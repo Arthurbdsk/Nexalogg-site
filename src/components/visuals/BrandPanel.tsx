@@ -3,7 +3,7 @@ import Image from 'next/image';
 export function BrandPanel() {
   return (
     <div
-      className="pointer-events-none absolute inset-y-0 right-[clamp(1rem,3vw,4rem)] w-[68%] opacity-10 sm:w-[48%] sm:opacity-90 lg:w-[46%]"
+      className="pointer-events-none absolute inset-y-0 right-[clamp(1rem,3vw,4rem)] w-[68%] opacity-10 sm:w-[48%] sm:opacity-90 lg:w-[42%]"
       aria-hidden="true"
     >
       <Image
@@ -11,7 +11,7 @@ export function BrandPanel() {
         alt=""
         fill
         priority
-        sizes="(max-width: 639px) 68vw, (max-width: 1023px) 48vw, 46vw"
+        sizes="(max-width: 639px) 68vw, (max-width: 1023px) 48vw, 42vw"
         className="object-contain object-right"
       />
     </div>

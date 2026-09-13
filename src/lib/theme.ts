@@ -1,5 +1,5 @@
 /** Chave usada para guardar a preferência de tema no navegador. */
-export const THEME_STORAGE_KEY = 'nexallog-theme';
+export const THEME_STORAGE_KEY = 'nexallog-theme-v2';
 
 export type Theme = 'light' | 'dark';
 
