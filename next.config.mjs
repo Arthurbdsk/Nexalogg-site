@@ -7,7 +7,15 @@ const scriptSources = [
   'https://www.google-analytics.com',
 ].join(' ');
 
+const isPreviewDeployment = ['preview', 'development'].includes(process.env.VERCEL_ENV ?? '');
+
+const robotsHeader = {
+  key: 'X-Robots-Tag',
+  value: isPreviewDeployment ? 'noindex, nofollow' : 'index, follow',
+};
+
 const securityHeaders = [
+  robotsHeader,
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
@@ -42,13 +50,6 @@ const nextConfig = {
   async headers() {
     return [
       { source: '/:path*', headers: securityHeaders },
-      {
-        // Domínios temporários de deploy não devem ser indexados. Quando o
-        // domínio oficial for conectado, esta regra deixa de ser aplicada.
-        source: '/:path*',
-        has: [{ type: 'host', value: '(?<sub>.*)\\.vercel\\.app' }],
-        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
-      },
       {
         source: '/fonts/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
