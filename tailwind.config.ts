@@ -88,6 +88,14 @@ const config: Config = {
           from: { opacity: '0', transform: 'translate3d(0, 14px, 0)' },
           to: { opacity: '1', transform: 'none' },
         },
+        'x-enter-top': {
+          from: { opacity: '0', transform: 'translate3d(0, -18%, 0)' },
+          to: { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+        },
+        'x-enter-bottom': {
+          from: { opacity: '0', transform: 'translate3d(0, 18%, 0)' },
+          to: { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+        },
         // A faixa carrega duas cópias da lista. Deslocar metade da largura
         // devolve o conteúdo à posição inicial, então o laço é imperceptível.
         'marquee-right': {
@@ -100,6 +108,8 @@ const config: Config = {
         pulseline: 'pulseline 4.5s ease-in-out infinite',
         driftin: 'driftin 0.7s cubic-bezier(0.16, 1, 0.3, 1) both',
         rise: 'rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'x-enter-top': 'x-enter-top 1.05s 180ms cubic-bezier(0.16, 1, 0.3, 1) both',
+        'x-enter-bottom': 'x-enter-bottom 1.05s 280ms cubic-bezier(0.16, 1, 0.3, 1) both',
         'marquee-right': 'marquee-right 64s linear infinite',
       },
     },
