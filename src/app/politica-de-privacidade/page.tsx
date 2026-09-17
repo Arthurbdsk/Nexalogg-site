@@ -18,9 +18,12 @@ const crumbs = [
   { name: title, path },
 ];
 
-const { legal, legalName, name } = siteConfig;
+const { address, contact, legal, legalName, name } = siteConfig;
 const controllerName = legalName || name;
 const hasDpoChannel = Boolean(legal.dpoEmail);
+const controllerAddress = [address.street, address.city, address.state]
+  .filter(Boolean)
+  .join(', ');
 
 const sections: LegalSection[] = [
   {
@@ -34,9 +37,11 @@ const sections: LegalSection[] = [
           Geral de Proteção de Dados Pessoais.
         </p>
         {legal.cnpj ? <p>Inscrição no CNPJ sob o nº {legal.cnpj}.</p> : null}
+        {controllerAddress ? <p>Endereço: {controllerAddress}.</p> : null}
         <p>
-          Solicitações relacionadas a dados pessoais podem ser enviadas pelos canais indicados na
-          página de <Link href="/contato">contato</Link>
+          Solicitações relacionadas a dados pessoais podem ser enviadas para{' '}
+          <a href={`mailto:${contact.email.value}`}>{contact.email.value}</a> ou pelos canais
+          indicados na página de <Link href="/contato">contato</Link>
           {hasDpoChannel ? (
             <>
               {' '}

@@ -135,7 +135,7 @@ Copie `.env.example` para `.env.local`:
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Meta tag de verificação do Search Console |
 | `RESEND_API_KEY` | Chave server-side usada para o envio direto das solicitações por e-mail |
 | `CONTACT_FROM_EMAIL` | Remetente autorizado no serviço de e-mail |
-| `CONTACT_INBOX` | Caixa que recebe as solicitações. O padrão do site é alexandre.felix@nexallog.com |
+| `CONTACT_INBOX` | Caixa que recebe as solicitações. O padrão do site é alexandre.felix.75@gmail.com |
 | `CONTACT_WEBHOOK_URL` | Destino alternativo do formulário quando o envio direto não estiver configurado |
 
 Configure `RESEND_API_KEY` e `CONTACT_FROM_EMAIL` antes de publicar. Sem um serviço de envio válido,

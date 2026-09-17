@@ -23,7 +23,7 @@ export type SocialLink = {
 
 export const siteConfig = {
   name: 'NEXALLOG',
-  legalName: '', // preencher com a razão social oficial
+  legalName: 'ADV OMNI BUSINESS SERVICOS ADMINISTRATIVO LTDA',
   tagline: 'Conectando caminhos, gerando resultados.',
   description:
     'A NEXALLOG atua com empresas e empresários de Transportes e Logística em diagnóstico financeiro e operacional, identificação de causas estruturais, plano de ação de 90 dias e suporte na execução.',
@@ -38,8 +38,8 @@ export const siteConfig = {
   /** Canais de contato oficiais. */
   contact: {
     email: {
-      value: 'alexandre.felix@nexallog.com',
-      label: 'alexandre.felix@nexallog.com',
+      value: 'alexandre.felix.75@gmail.com',
+      label: 'alexandre.felix.75@gmail.com',
     } as { value: string | null; label: string | null },
     phone: {
       value: '+5511981468028',
@@ -54,21 +54,21 @@ export const siteConfig = {
 
   /** Endereço oficial. Preencher para habilitar exibição e schema PostalAddress. */
   address: {
-    street: '',
-    city: '',
-    state: '',
+    street: 'Av. Yojiro Takaoka, 4.384, 7º andar, sala 701, Alphaville',
+    city: 'Santana de Parnaíba',
+    state: 'SP',
     postalCode: '',
     country: 'BR',
   },
 
   /** Documentos legais. Usados na Política de Privacidade e no rodapé. */
   legal: {
-    cnpj: '',
+    cnpj: '31.488.116/0001-45',
     /** Encarregado de dados (DPO) exigido pela LGPD. */
     dpoName: '',
     dpoEmail: '',
     /** Data da última atualização dos documentos legais. */
-    lastUpdated: '2026-08-23',
+    lastUpdated: '2026-09-17',
   },
 
   /**
