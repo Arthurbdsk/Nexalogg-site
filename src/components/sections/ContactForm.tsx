@@ -16,7 +16,7 @@ import {
 } from '@/lib/validation';
 import { cx } from '@/lib/utils';
 
-type Status = 'idle' | 'loading' | 'success' | 'fallback' | 'error';
+type Status = 'idle' | 'whatsapp-opened' | 'unavailable';
 
 const EMPTY: ContactFields = {
   name: '',
@@ -55,7 +55,6 @@ export function ContactForm() {
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [touched, setTouched] = useState<Partial<Record<FieldName, boolean>>>({});
   const [status, setStatus] = useState<Status>('idle');
-  const [serverMessage, setServerMessage] = useState<string>('');
   const startedRef = useRef(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -69,7 +68,7 @@ export function ContactForm() {
     if (touched[field]) {
       setErrors((current) => ({ ...current, [field]: validateField(field, nextValue) }));
     }
-    if (status === 'error' || status === 'fallback') setStatus('idle');
+    if (status !== 'idle') setStatus('idle');
   };
 
   const onBlur = (field: FieldName) => {
@@ -77,7 +76,7 @@ export function ContactForm() {
     setErrors((current) => ({ ...current, [field]: validateField(field, values[field] ?? '') }));
   };
 
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const found = validateContact(values);
     setErrors(found);
@@ -90,95 +89,18 @@ export function ContactForm() {
       return;
     }
 
-    setStatus('loading');
     track('form_submit', { form: 'contato', segmento: values.segment });
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
-      });
-
-      if (!response.ok) {
-        const data = (await response.json().catch(() => null)) as
-          | { message?: string; errors?: ValidationErrors }
-          | null;
-        if (data?.errors) setErrors(data.errors);
-        if (response.status >= 500) {
-          setServerMessage(
-            'O envio direto está em manutenção. Continue pelo WhatsApp ou e-mail com os dados já preenchidos.',
-          );
-          setStatus('fallback');
-          track('form_error', { form: 'contato', status: response.status, fallback: true });
-          return;
-        }
-        setServerMessage(
-          data?.message ??
-            'Não foi possível enviar sua solicitação agora. Tente novamente em alguns instantes.',
-        );
-        setStatus('error');
-        track('form_error', { form: 'contato', status: response.status });
-        return;
-      }
-
-      setStatus('success');
-      setValues(EMPTY);
-      setTouched({});
-      setErrors({});
-      startedRef.current = false;
-      track('form_success', { form: 'contato' });
-    } catch {
-      setServerMessage(
-        'Não foi possível concluir o envio automático. Continue pelo WhatsApp ou e-mail com os dados já preenchidos.',
-      );
-      setStatus('fallback');
-      track('form_error', { form: 'contato', status: 'network', fallback: true });
+    const whatsapp = siteConfig.contact.whatsapp.value?.replace(/\D/g, '');
+    if (!whatsapp) {
+      setStatus('unavailable');
+      return;
     }
+
+    const href = `https://wa.me/${whatsapp}?text=${encodeURIComponent(directContactMessage(values))}`;
+    window.open(href, '_blank', 'noopener,noreferrer');
+    setStatus('whatsapp-opened');
+    track('whatsapp_click', { local: 'form_submit' });
   };
-
-  if (status === 'success') {
-    return (
-      <div
-        className="border-2 border-brand-500 bg-brand-500/[0.08] p-8 sm:p-10"
-        role="status"
-        aria-live="polite"
-      >
-        <span className="flex h-11 w-11 items-center justify-center bg-brand-500">
-          <svg viewBox="0 0 20 20" className="h-5 w-5 text-ink" fill="none" aria-hidden="true">
-            <path d="M4 10.5 8 14.5 16 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
-          </svg>
-        </span>
-        <h3 className="mt-6 text-display-sm">Solicitação enviada</h3>
-        <p className="mt-4 max-w-md text-[1.0625rem] leading-[1.7] text-content/65">
-          Recebemos suas informações. A NEXALLOG retorna o contato pelo e-mail ou telefone
-          informados para entender o momento da sua operação.
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus('idle')}
-          className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] font-semibold transition-opacity duration-300 hover:opacity-70"
-        >
-          <span className="relative">
-            Enviar outra solicitação
-            <span
-              aria-hidden="true"
-              className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-brand-500 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
-            />
-          </span>
-        </button>
-      </div>
-    );
-  }
-
-  const isLoading = status === 'loading';
-  const directMessage = directContactMessage(values);
-  const whatsappHref = siteConfig.contact.whatsapp.value
-    ? `https://wa.me/${siteConfig.contact.whatsapp.value.replace(/\D/g, '')}?text=${encodeURIComponent(directMessage)}`
-    : null;
-  const emailHref = siteConfig.contact.email.value
-    ? `mailto:${siteConfig.contact.email.value}?subject=${encodeURIComponent(`Contato pelo site — ${values.company}`)}&body=${encodeURIComponent(directMessage)}`
-    : null;
 
   return (
     <form ref={formRef} onSubmit={onSubmit} noValidate className="w-full">
@@ -208,7 +130,6 @@ export function ContactForm() {
               value={values.name}
               onChange={(event) => setValue('name', event.target.value)}
               onBlur={() => onBlur('name')}
-              disabled={isLoading}
             />
           )}
         </Field>
@@ -224,7 +145,6 @@ export function ContactForm() {
               value={values.company}
               onChange={(event) => setValue('company', event.target.value)}
               onBlur={() => onBlur('company')}
-              disabled={isLoading}
             />
           )}
         </Field>
@@ -241,7 +161,6 @@ export function ContactForm() {
               value={values.email}
               onChange={(event) => setValue('email', event.target.value)}
               onBlur={() => onBlur('email')}
-              disabled={isLoading}
             />
           )}
         </Field>
@@ -258,7 +177,6 @@ export function ContactForm() {
               value={values.phone}
               onChange={(event) => setValue('phone', event.target.value)}
               onBlur={() => onBlur('phone')}
-              disabled={isLoading}
             />
           )}
         </Field>
@@ -278,7 +196,6 @@ export function ContactForm() {
                 value={values.segment}
                 onChange={(event) => setValue('segment', event.target.value)}
                 onBlur={() => onBlur('segment')}
-                disabled={isLoading}
                 className={cx(props.className, 'appearance-none pr-8')}
               >
                 <option value="">Selecione o segmento de atuação</option>
@@ -318,7 +235,6 @@ export function ContactForm() {
               value={values.message}
               onChange={(event) => setValue('message', event.target.value)}
               onBlur={() => onBlur('message')}
-              disabled={isLoading}
               className={cx(props.className, 'h-auto min-h-[8rem] resize-y py-3 leading-relaxed')}
             />
           )}
@@ -328,25 +244,12 @@ export function ContactForm() {
       <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
-          disabled={isLoading}
           className="group relative inline-flex h-[3.375rem] items-center justify-center gap-3 whitespace-nowrap bg-brand-500 px-8 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper disabled:cursor-progress disabled:opacity-70"
         >
-          {isLoading ? (
-            <>
-              <span
-                aria-hidden="true"
-                className="h-4 w-4 animate-spin rounded-full border-2 border-ink/25 border-t-ink"
-              />
-              Enviando
-            </>
-          ) : (
-            <>
-              Enviar solicitação
-              <svg viewBox="0 0 14 14" className="h-3.5 w-3.5 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-                <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
-              </svg>
-            </>
-          )}
+          Continuar pelo WhatsApp
+          <svg viewBox="0 0 14 14" className="h-3.5 w-3.5 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
+            <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+          </svg>
         </button>
 
         <p className="max-w-xs text-xs leading-relaxed text-content/55">
@@ -356,43 +259,16 @@ export function ContactForm() {
       </div>
 
       <div aria-live="polite" className="mt-6">
-        {status === 'fallback' ? (
-          <div className="border-2 border-brand-500 bg-brand-500/[0.08] p-5" role="status">
-            <p className="text-sm font-semibold text-content">{serverMessage}</p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {whatsappHref ? (
-                <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => track('whatsapp_click', { local: 'form_fallback' })}
-                  className="inline-flex min-h-11 items-center justify-center bg-brand-500 px-5 text-xs font-bold uppercase tracking-[0.06em] text-ink transition-colors hover:bg-ink hover:text-paper"
-                >
-                  Continuar pelo WhatsApp
-                </a>
-              ) : null}
-              {emailHref ? (
-                <a
-                  href={emailHref}
-                  onClick={() => track('email_click', { local: 'form_fallback' })}
-                  className="inline-flex min-h-11 items-center justify-center border border-line/25 px-5 text-xs font-bold uppercase tracking-[0.06em] text-content transition-colors hover:bg-ink hover:text-paper"
-                >
-                  Enviar por e-mail
-                </a>
-              ) : null}
-            </div>
-          </div>
-        ) : null}
-        {status === 'error' ? (
-          <p className="flex items-start gap-3 border-2 border-[#C62828] bg-[#C62828]/10 p-4 text-sm font-medium text-[#C62828]">
-            <svg viewBox="0 0 16 16" className="mt-0.5 h-4 w-4 shrink-0" fill="none" aria-hidden="true">
-              <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" />
-              <path d="M8 5v4M8 11h.01" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-            </svg>
-            {serverMessage}
+        {status === 'whatsapp-opened' ? (
+          <p className="border-2 border-brand-500 bg-brand-500/[0.08] p-4 text-sm font-medium text-content" role="status">
+            Abrimos o WhatsApp com seus dados preenchidos. Revise a mensagem e toque em enviar para concluir.
           </p>
         ) : null}
-        {isLoading ? <p className="sr-only">Enviando sua solicitação.</p> : null}
+        {status === 'unavailable' ? (
+          <p className="border-2 border-[#C62828] bg-[#C62828]/10 p-4 text-sm font-medium text-[#C62828]" role="alert">
+            O WhatsApp está temporariamente indisponível. Tente novamente mais tarde.
+          </p>
+        ) : null}
       </div>
     </form>
   );
