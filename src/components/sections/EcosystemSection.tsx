@@ -17,16 +17,18 @@ const deliveryCards = [
     href: '/a-nexallog#atuacao-titulo',
     partners: [
       {
-        src: '/images/parceiros/simoes-pires.png',
+        src: '/images/parceiros/simoes-pires.svg',
         alt: 'Simões Pires',
-        width: 560,
-        height: 101,
+        href: 'https://www.simoespires.com/',
+        width: 2532,
+        height: 372,
       },
       {
-        src: '/images/parceiros/numera.png',
+        src: '/images/parceiros/numera.svg',
         alt: 'Numera',
-        width: 700,
-        height: 107,
+        href: 'https://numera.co/',
+        width: 3864,
+        height: 724,
       },
     ],
   },
@@ -82,30 +84,29 @@ export function EcosystemSection() {
               {deliveryCards.map((card, index) => (
                 <li
                   key={card.title}
-                  className={index === 0 ? 'bg-[#f6e7b5] text-ink' : 'bg-brand-500 text-ink'}
+                  className="bg-surface text-content"
                 >
-                  <Link
-                    href={card.href}
-                    className={`group flex h-full flex-col justify-between gap-6 p-6 transition-colors duration-300 lg:gap-8 lg:p-8 ${
-                      index === 0 ? 'hover:bg-[#efd784]' : 'hover:bg-brand-400'
-                    }`}
-                  >
-                    <span>
-                      <span className="block text-[0.6875rem] font-bold tracking-[0.16em] text-ink/60">
-                        {String(solutionAreas.length + index + 1).padStart(2, '0')}
-                      </span>
-                      <span className="mt-4 block text-[1.1875rem] font-bold leading-tight">
-                        {card.title}
-                      </span>
-                      <span className="mt-2 block text-[0.9375rem] leading-relaxed text-ink/70">
-                        {card.summary}
-                      </span>
-                      {'partners' in card ? (
-                        <span className="mt-6 grid grid-cols-2 gap-2" aria-label="Empresas parceiras">
+                  {'partners' in card ? (
+                    <div className="group flex h-full flex-col justify-between gap-6 p-6 transition-colors duration-300 hover:bg-paper hover:text-ink lg:gap-8 lg:p-8">
+                      <div>
+                        <span className="block text-[0.6875rem] font-bold tracking-[0.16em] text-accent transition-colors duration-300 group-hover:text-ink/60">
+                          {String(solutionAreas.length + index + 1).padStart(2, '0')}
+                        </span>
+                        <h3 className="mt-4 text-[1.1875rem] font-bold leading-tight">
+                          {card.title}
+                        </h3>
+                        <p className="mt-2 text-[0.9375rem] leading-relaxed text-content/55 transition-colors duration-300 group-hover:text-ink/70">
+                          {card.summary}
+                        </p>
+                        <div className="mt-6 grid grid-cols-2 gap-3" aria-label="Empresas parceiras">
                           {card.partners.map((partner) => (
-                            <span
+                            <a
                               key={partner.src}
-                              className="flex h-14 items-center justify-center bg-paper px-3"
+                              href={partner.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`Visitar o site da ${partner.alt}`}
+                              className="flex h-16 items-center justify-center border border-line/15 px-3 transition-colors duration-300 hover:bg-paper-dim group-hover:border-ink/15"
                             >
                               <Image
                                 src={partner.src}
@@ -113,28 +114,40 @@ export function EcosystemSection() {
                                 width={partner.width}
                                 height={partner.height}
                                 sizes="(max-width: 639px) 38vw, (max-width: 1023px) 20vw, 10rem"
-                                className="h-auto max-h-8 w-auto max-w-full object-contain"
+                                className="h-auto max-h-8 w-auto max-w-full object-contain brightness-0 invert transition-[filter] duration-300 group-hover:brightness-100 group-hover:invert-0"
                               />
-                            </span>
+                            </a>
                           ))}
-                        </span>
-                      ) : null}
-                    </span>
-
-                    <svg
-                      viewBox="0 0 14 14"
-                      className="h-3.5 w-3.5 shrink-0 text-ink/50 transition-transform duration-300 ease-outexpo group-hover:translate-x-1"
-                      fill="none"
-                      aria-hidden="true"
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={card.href}
+                      className="group flex h-full flex-col justify-between gap-6 p-6 transition-colors duration-300 hover:bg-paper hover:text-ink lg:gap-8 lg:p-8"
                     >
-                      <path
-                        d="M1 7h11M8 3l4 4-4 4"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="square"
-                      />
-                    </svg>
-                  </Link>
+                      <span>
+                        <span className="block text-[0.6875rem] font-bold tracking-[0.16em] text-accent transition-colors duration-300 group-hover:text-ink/60">
+                          {String(solutionAreas.length + index + 1).padStart(2, '0')}
+                        </span>
+                        <span className="mt-4 block text-[1.1875rem] font-bold leading-tight">
+                          {card.title}
+                        </span>
+                        <span className="mt-2 block text-[0.9375rem] leading-relaxed text-content/55 transition-colors duration-300 group-hover:text-ink/70">
+                          {card.summary}
+                        </span>
+                      </span>
+
+                      <svg
+                        viewBox="0 0 14 14"
+                        className="h-3.5 w-3.5 shrink-0 text-content/30 transition-[transform,color] duration-300 ease-outexpo group-hover:translate-x-1 group-hover:text-ink"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                      </svg>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -144,3 +157,4 @@ export function EcosystemSection() {
     </Section>
   );
 }
+
