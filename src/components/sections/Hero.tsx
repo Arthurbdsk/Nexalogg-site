@@ -30,11 +30,11 @@ export function Hero() {
             className="text-[clamp(1.875rem,4vw,3.375rem)] font-bold uppercase leading-[1.08] tracking-[-0.02em] motion-safe:animate-rise"
             style={{ animationDelay: '360ms' }}
           >
-            Uma gestão de caixa
+            Soluções logísticas
             <br />
-            que conecta dado
+            que conectam, movimentam
             <br />
-            e gera <span className="text-accent">resultado.</span>
+            e geram <span className="text-accent">resultados.</span>
           </h1>
 
           <span
@@ -43,30 +43,13 @@ export function Hero() {
             style={{ animationDelay: '580ms' }}
           />
 
-          <div
-            className="mt-7 max-w-2xl space-y-4 text-lead text-content/70 motion-safe:animate-driftin"
+          <p
+            className="mt-7 max-w-xl text-lead text-content/70 motion-safe:animate-driftin"
             style={{ animationDelay: '720ms' }}
           >
-            <p>
-              Empresas fecham por não acompanhar a geração de caixa. Assuma o controle antes que
-              esse problema vire fechamento.
-            </p>
-            <p>
-              Do diagnóstico financeiro e operacional à execução do Programa D90, entregamos a
-              gestão de caixa em tempo real para empresas de Transporte e Logística.
-            </p>
-            <a
-              href="https://valor.globo.com/financas/noticia/2023/02/27/mais-empresas-tem-geracao-de-caixa-insuficiente-para-cobrir-despesa-financeira.ghtml"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-accent transition-opacity hover:opacity-75"
-            >
-              Leia a matéria no Valor Econômico
-              <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" aria-hidden="true">
-                <path d="M3 11 11 3M5 3h6v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
-              </svg>
-            </a>
-          </div>
+            Do diagnóstico financeiro e operacional à execução do Programa D90, preparado para
+            empresas de Transporte e Logística.
+          </p>
 
           <div
             className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center motion-safe:animate-driftin"

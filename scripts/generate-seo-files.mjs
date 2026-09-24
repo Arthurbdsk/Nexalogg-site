@@ -38,6 +38,7 @@ if (solutionSlugs.length === 0) {
 const routes = [
   { path: '/', priority: '1.0', changefreq: 'monthly' },
   { path: '/a-nexallog', priority: '0.9', changefreq: 'monthly' },
+  { path: '/nexacash', priority: '0.9', changefreq: 'monthly' },
   { path: '/metodologia', priority: '0.9', changefreq: 'monthly' },
   { path: '/solucoes', priority: '0.8', changefreq: 'monthly' },
   ...solutionSlugs.map((slug) => ({
