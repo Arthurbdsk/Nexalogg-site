@@ -104,7 +104,7 @@ export function Header() {
                     href={item.href}
                     aria-current={active ? 'page' : undefined}
                     className={cx(
-                      'group relative inline-flex h-9 items-center px-3.5 text-[0.9375rem] font-medium transition-colors duration-300',
+                      'group relative inline-flex h-9 items-center whitespace-nowrap px-2.5 text-[0.9375rem] font-medium transition-colors duration-300',
                       active ? 'text-content' : 'text-content/55 hover:text-content',
                     )}
                   >
@@ -112,7 +112,7 @@ export function Header() {
                     <span
                       aria-hidden="true"
                       className={cx(
-                        'absolute inset-x-3.5 bottom-1 h-0.5 origin-left bg-accent transition-transform duration-300 ease-outexpo',
+                        'absolute inset-x-2.5 bottom-1 h-0.5 origin-left bg-accent transition-transform duration-300 ease-outexpo',
                         active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
                       )}
                     />
@@ -128,7 +128,7 @@ export function Header() {
           <Link
             href="/contato"
             onClick={() => track('cta_principal_click', { local: 'header' })}
-            className="group hidden h-10 items-center gap-2.5 bg-brand-500 pl-5 pr-4 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper xl:inline-flex"
+            className="group hidden h-10 items-center gap-2.5 whitespace-nowrap bg-brand-500 pl-4 pr-3 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper xl:inline-flex"
           >
             {siteConfig.cta.primary}
             <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
