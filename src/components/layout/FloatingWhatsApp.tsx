@@ -20,18 +20,20 @@ export function FloatingWhatsApp() {
 
   if (!open) {
     return (
-      <button
-        type="button"
-        onClick={() => {
-          setOpen(true);
-          track('whatsapp_click', { local: 'floating_button' });
-        }}
-        aria-label="Iniciar conversa pelo WhatsApp"
-        aria-expanded="false"
-        className="fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center bg-[#25D366] text-white shadow-[0_14px_32px_-12px_rgb(17_17_17/0.55)] transition-transform duration-300 ease-outexpo hover:-translate-y-1 focus-visible:-translate-y-1"
-      >
-        <WhatsAppIcon />
-      </button>
+      <div className="whatsapp-attention fixed bottom-6 right-6 z-[60] rounded-full">
+        <button
+          type="button"
+          onClick={() => {
+            setOpen(true);
+            track('whatsapp_click', { local: 'floating_button' });
+          }}
+          aria-label="Iniciar conversa pelo WhatsApp"
+          aria-expanded="false"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_14px_32px_-12px_rgb(17_17_17/0.55)] transition-transform duration-300 ease-outexpo hover:scale-105 focus-visible:scale-105"
+        >
+          <WhatsAppIcon />
+        </button>
+      </div>
     );
   }
 

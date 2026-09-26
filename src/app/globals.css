@@ -62,6 +62,34 @@ color-scheme: dark;
   font-weight: 700;
 }
 
+@keyframes whatsapp-attention {
+  0%,
+  68%,
+  100% {
+    filter: drop-shadow(0 0 0 rgb(37 211 102 / 0));
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  76% {
+    filter: drop-shadow(0 0 7px rgb(37 211 102 / 0.32));
+    transform: translate3d(0, -2px, 0) scale(1.045);
+  }
+  83% {
+    transform: translate3d(-1px, 0, 0) scale(0.99);
+  }
+  90% {
+    filter: drop-shadow(0 0 4px rgb(37 211 102 / 0.2));
+    transform: translate3d(1px, -1px, 0) scale(1.025);
+  }
+  96% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.whatsapp-attention {
+  animation: whatsapp-attention 4.2s ease-in-out infinite;
+  will-change: filter, transform;
+}
+
 [data-theme='dark'] .iara-highlight {
   color: #ffffff;
 }

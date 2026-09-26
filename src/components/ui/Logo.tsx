@@ -58,15 +58,30 @@ export function Logo({ className, markOnly = false, surface = 'auto' }: LogoProp
 }
 
 export function NexacashLogo({ className }: { className?: string }) {
+  const common = 'h-auto w-full object-contain object-left';
+
   return (
-    <span className={cx('inline-flex flex-col leading-none', className)} aria-label="NEXACASH">
-      <span className="text-[1.4rem] font-extrabold tracking-[0.12em]">
-        <span className="text-accent">NEXA</span>
-        <span className="text-content">CASH</span>
-      </span>
-      <span className="mt-1 text-[0.43rem] font-semibold uppercase tracking-[0.21em] text-content/55">
-        Gestão financeira em tempo real
-      </span>
+    <span
+      className={cx('inline-block w-[13.5rem] max-w-full', className)}
+      role="img"
+      aria-label="NEXACASH. Mais visibilidade. Mais controle. Mais previsibilidade."
+    >
+      <Image
+        src="/images/nexacash/nexacash-logo-claro.svg"
+        alt=""
+        width={1600}
+        height={257}
+        priority
+        className={cx(common, 'brand-logo-light')}
+      />
+      <Image
+        src="/images/nexacash/nexacash-logo-escuro.svg"
+        alt=""
+        width={1600}
+        height={257}
+        priority
+        className={cx(common, 'brand-logo-dark')}
+      />
     </span>
   );
 }
