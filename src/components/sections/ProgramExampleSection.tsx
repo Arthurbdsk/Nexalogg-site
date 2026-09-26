@@ -4,11 +4,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { cx } from '@/lib/utils';
 
-const TOTAL_PAGES = 11;
+const TOTAL_PAGES = 12;
 
 export function ProgramExampleSection() {
   const [page, setPage] = useState(1);
-  const image = `/images/programa-d90-anexo/pagina-${String(page).padStart(2, '0')}.png`;
+  const image = `/images/programa-d90-2026-09/pagina-${String(page).padStart(2, '0')}.png`;
 
   const changePage = (next: number) => {
     setPage(Math.min(TOTAL_PAGES, Math.max(1, next)));
@@ -79,7 +79,7 @@ export function ProgramExampleSection() {
         </div>
 
         <ol
-          className="mt-5 grid grid-cols-6 gap-2 lg:[grid-template-columns:repeat(11,minmax(0,1fr))]"
+          className="mt-5 grid grid-cols-6 gap-2 lg:grid-cols-12"
           aria-label="Selecionar página do exemplo"
         >
           {Array.from({ length: TOTAL_PAGES }, (_, index) => index + 1).map((item) => (
