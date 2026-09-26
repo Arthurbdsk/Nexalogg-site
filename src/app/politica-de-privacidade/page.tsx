@@ -67,10 +67,6 @@ const sections: LegalSection[] = [
         <ul>
           <li>Nome</li>
           <li>Empresa</li>
-          <li>E-mail</li>
-          <li>Telefone</li>
-          <li>Segmento de atuação</li>
-          <li>Mensagem enviada no formulário</li>
         </ul>
         <h3>Dados coletados automaticamente</h3>
         <ul>
@@ -97,7 +93,7 @@ const sections: LegalSection[] = [
             consentimento do usuário quanto a cookies não essenciais.
           </li>
           <li>
-            Garantir a segurança do site e prevenir abusos no envio de formulários, com base no
+            Garantir a segurança do site e prevenir abusos nos canais de contato, com base no
             legítimo interesse.
           </li>
           <li>Cumprir obrigações legais e regulatórias aplicáveis.</li>
@@ -149,9 +145,9 @@ const sections: LegalSection[] = [
     content: (
       <>
         <p>
-          Os dados enviados por formulário são mantidos pelo tempo necessário ao atendimento da
-          solicitação e ao cumprimento de obrigações legais, sendo eliminados quando deixarem de ser
-          necessários para essas finalidades.
+          Os dados informados antes do redirecionamento ao WhatsApp são usados para compor a mensagem
+          inicial. A continuidade do atendimento ocorre no próprio WhatsApp, conforme as configurações
+          e políticas desse serviço.
         </p>
         <p>
           Adotamos medidas técnicas e administrativas para proteger os dados contra acesso não

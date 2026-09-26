@@ -38,8 +38,8 @@ export const siteConfig = {
   /** Canais de contato oficiais. */
   contact: {
     email: {
-      value: 'alexandre.felix.75@gmail.com',
-      label: 'alexandre.felix.75@gmail.com',
+      value: 'contato@nexallog.com',
+      label: 'contato@nexallog.com',
     } as { value: string | null; label: string | null },
     phone: {
       value: '+5511981468028',

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@/components/layout/Analytics';
 import { BackToTop } from '@/components/layout/BackToTop';
 import { Footer } from '@/components/layout/Footer';
+import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp';
 import { Header } from '@/components/layout/Header';
 import { ScrollProgress } from '@/components/layout/ScrollProgress';
 import { SkipLink } from '@/components/layout/SkipLink';
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <FloatingWhatsApp />
         <BackToTop />
         <Analytics />
       </body>

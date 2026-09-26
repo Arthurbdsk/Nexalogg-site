@@ -57,6 +57,15 @@ color-scheme: dark;
 --accent: 224 168 0;
 }
 
+.iara-highlight {
+  color: #b88a00;
+  font-weight: 700;
+}
+
+[data-theme='dark'] .iara-highlight {
+  color: #ffffff;
+}
+
 @layer base {
   :root {
     --shell-padding: clamp(1.25rem, 4vw, 3.5rem);

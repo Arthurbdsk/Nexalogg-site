@@ -9,7 +9,7 @@ import { buildMetadata } from '@/lib/seo';
 
 const title = 'Contato';
 const description =
-  'Fale com a NEXALLOG sobre o momento da sua operação de transporte e logística. Envie sua solicitação e receba o retorno da equipe para definir o escopo do diagnóstico.';
+  'Fale com a NEXALLOG pelo WhatsApp sobre o momento da sua operação de transporte e logística.';
 const path = '/contato';
 
 export const metadata = buildMetadata({ title, description, path });
@@ -35,8 +35,7 @@ export default function ContactPage() {
           crumbs={crumbs}
           lead={
             <p>
-              Envie as informações da sua empresa e o contexto atual da operação. A partir dessa
-              conversa definimos o escopo do diagnóstico e o ponto de partida do Programa D90.
+              Informe seu nome e sua empresa para iniciar a conversa diretamente pelo WhatsApp.
             </p>
           }
         />
@@ -47,12 +46,12 @@ export default function ContactPage() {
               <div className="lg:col-span-7">
                 <Reveal>
                   <h2 id="formulario-titulo" className="text-display-sm">
-                    Solicitação de contato
+                    Conversar pelo WhatsApp
                   </h2>
                 </Reveal>
                 <Reveal delay={80}>
                   <p className="mt-4 max-w-xl text-[1.0625rem] leading-[1.7] text-content/60">
-                    Os campos marcados com asterisco são obrigatórios.
+                    Precisamos apenas do seu nome e da empresa para começar.
                   </p>
                 </Reveal>
                 <Reveal delay={140}>

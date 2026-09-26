@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Logo } from '@/components/ui/Logo';
+import { Logo, NexacashLogo } from '@/components/ui/Logo';
 import { ThemeToggle } from '@/components/layout/ThemeToggle';
 import { mainNav } from '@/data/navigation';
 import { useActiveSection } from '@/hooks/useActiveSection';
@@ -21,6 +21,7 @@ export function Header() {
   const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const isHome = pathname === '/';
+  const isNexacash = pathname === '/nexacash';
   const activeSection = useActiveSection(isHome ? HOME_SECTIONS : []);
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -89,9 +90,9 @@ export function Header() {
         <Link
           href="/"
           className="-ml-1 px-1 py-2"
-          aria-label={`${siteConfig.name}. Ir para a página inicial`}
+          aria-label={`${isNexacash ? 'NEXACASH' : siteConfig.name}. Ir para a página inicial`}
         >
-          <Logo />
+          {isNexacash ? <NexacashLogo /> : <Logo />}
         </Link>
 
         <nav aria-label="Navegação principal" className="hidden xl:block">

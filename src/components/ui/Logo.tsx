@@ -56,3 +56,17 @@ export function Logo({ className, markOnly = false, surface = 'auto' }: LogoProp
     </span>
   );
 }
+
+export function NexacashLogo({ className }: { className?: string }) {
+  return (
+    <span className={cx('inline-flex flex-col leading-none', className)} aria-label="NEXACASH">
+      <span className="text-[1.4rem] font-extrabold tracking-[0.12em]">
+        <span className="text-accent">NEXA</span>
+        <span className="text-content">CASH</span>
+      </span>
+      <span className="mt-1 text-[0.43rem] font-semibold uppercase tracking-[0.21em] text-content/55">
+        Gestão financeira em tempo real
+      </span>
+    </span>
+  );
+}

@@ -1,125 +1,91 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { Field } from '@/components/ui/Field';
 import { track } from '@/lib/analytics';
 import { siteConfig } from '@/lib/site';
-import {
-  contactFieldNames,
-  formatPhone,
-  segments,
-  validateContact,
-  validateField,
-  type ContactFields,
-  type FieldName,
-  type ValidationErrors,
-} from '@/lib/validation';
-import { cx } from '@/lib/utils';
 
-type Status = 'idle' | 'whatsapp-opened' | 'unavailable';
-
-const EMPTY: ContactFields = {
-  name: '',
-  company: '',
-  email: '',
-  phone: '',
-  segment: '',
-  message: '',
-  website: '',
+type ContactFormProps = {
+  compact?: boolean;
+  idPrefix?: string;
+  local?: string;
+  onComplete?: () => void;
 };
 
-const LABELS: Record<FieldName, string> = {
-  name: 'Nome',
-  company: 'Empresa',
-  email: 'E-mail',
-  phone: 'Telefone',
-  segment: 'Segmento',
-  message: 'Mensagem',
+type Values = { name: string; company: string };
+type Errors = Partial<Record<keyof Values, string>>;
+
+const EMPTY: Values = { name: '', company: '' };
+
+const validate = (values: Values): Errors => {
+  const errors: Errors = {};
+  const name = values.name.trim();
+  const company = values.company.trim();
+
+  if (!name) errors.name = 'Informe seu nome.';
+  else if (name.length < 2) errors.name = 'Informe seu nome completo.';
+  else if (name.length > 120) errors.name = 'Use no máximo 120 caracteres.';
+
+  if (!company) errors.company = 'Informe o nome da empresa.';
+  else if (company.length > 140) errors.company = 'Use no máximo 140 caracteres.';
+
+  return errors;
 };
 
-const directContactMessage = (values: ContactFields) =>
-  [
-    'Olá, NEXALLOG! Preenchi o formulário do site e gostaria de conversar.',
-    '',
-    `Nome: ${values.name}`,
-    `Empresa: ${values.company}`,
-    `E-mail: ${values.email}`,
-    `Telefone: ${values.phone}`,
-    `Segmento: ${values.segment}`,
-    '',
-    `Mensagem: ${values.message}`,
-  ].join('\n');
-
-export function ContactForm() {
-  const [values, setValues] = useState<ContactFields>(EMPTY);
-  const [errors, setErrors] = useState<ValidationErrors>({});
-  const [touched, setTouched] = useState<Partial<Record<FieldName, boolean>>>({});
-  const [status, setStatus] = useState<Status>('idle');
+export function ContactForm({
+  compact = false,
+  idPrefix = 'contato',
+  local = 'pagina_contato',
+  onComplete,
+}: ContactFormProps) {
+  const [values, setValues] = useState<Values>(EMPTY);
+  const [errors, setErrors] = useState<Errors>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof Values, boolean>>>({});
   const startedRef = useRef(false);
-  const formRef = useRef<HTMLFormElement>(null);
 
-  const setValue = (field: FieldName, value: string) => {
+  const update = (field: keyof Values, value: string) => {
     if (!startedRef.current) {
       startedRef.current = true;
-      track('form_start', { form: 'contato' });
+      track('form_start', { form: 'whatsapp' });
     }
-    const nextValue = field === 'phone' ? formatPhone(value) : value;
-    setValues((current) => ({ ...current, [field]: nextValue }));
-    if (touched[field]) {
-      setErrors((current) => ({ ...current, [field]: validateField(field, nextValue) }));
-    }
-    if (status !== 'idle') setStatus('idle');
+    const next = { ...values, [field]: value };
+    setValues(next);
+    if (touched[field]) setErrors(validate(next));
   };
 
-  const onBlur = (field: FieldName) => {
+  const blur = (field: keyof Values) => {
     setTouched((current) => ({ ...current, [field]: true }));
-    setErrors((current) => ({ ...current, [field]: validateField(field, values[field] ?? '') }));
+    setErrors(validate(values));
   };
 
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const found = validateContact(values);
+    const found = validate(values);
     setErrors(found);
-    setTouched(Object.fromEntries(contactFieldNames.map((field) => [field, true])));
+    setTouched({ name: true, company: true });
+    if (Object.keys(found).length > 0) return;
 
-    const firstInvalid = contactFieldNames.find((field) => found[field]);
-    if (firstInvalid) {
-      setStatus('idle');
-      formRef.current?.querySelector<HTMLElement>(`#campo-${firstInvalid}`)?.focus();
-      return;
-    }
-
-    track('form_submit', { form: 'contato', segmento: values.segment });
     const whatsapp = siteConfig.contact.whatsapp.value?.replace(/\D/g, '');
-    if (!whatsapp) {
-      setStatus('unavailable');
-      return;
-    }
+    if (!whatsapp) return;
 
-    const href = `https://wa.me/${whatsapp}?text=${encodeURIComponent(directContactMessage(values))}`;
-    window.open(href, '_blank', 'noopener,noreferrer');
-    setStatus('whatsapp-opened');
-    track('whatsapp_click', { local: 'form_submit' });
+    const message = [
+      'Olá, NEXALLOG! Gostaria de conversar.',
+      '',
+      `Nome: ${values.name.trim()}`,
+      `Empresa: ${values.company.trim()}`,
+    ].join('\n');
+
+    track('form_submit', { form: 'whatsapp', local });
+    track('whatsapp_click', { local });
+    window.open(`https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+    onComplete?.();
   };
 
   return (
-    <form ref={formRef} onSubmit={onSubmit} noValidate className="w-full">
-      {/* Campo honeypot: invisível para pessoas, preenchido por robôs. */}
-      <div className="pointer-events-none absolute -z-10 h-px w-px overflow-hidden opacity-0" aria-hidden="true">
-        <label htmlFor="campo-website">Não preencha este campo</label>
-        <input
-          id="campo-website"
-          name="website"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-          value={values.website}
-          onChange={(event) => setValues((current) => ({ ...current, website: event.target.value }))}
-        />
-      </div>
-
-      <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
-        <Field id="campo-name" label={LABELS.name} error={touched.name ? errors.name : undefined} required>
+    <form onSubmit={submit} noValidate className="w-full">
+      <div className={compact ? 'grid gap-5' : 'grid gap-x-10 gap-y-8 sm:grid-cols-2'}>
+        <Field id={`${idPrefix}-name`} label="Nome" error={touched.name ? errors.name : undefined} required>
           {(props) => (
             <input
               {...props}
@@ -128,13 +94,13 @@ export function ContactForm() {
               autoComplete="name"
               placeholder="Nome completo"
               value={values.name}
-              onChange={(event) => setValue('name', event.target.value)}
-              onBlur={() => onBlur('name')}
+              onChange={(event) => update('name', event.target.value)}
+              onBlur={() => blur('name')}
             />
           )}
         </Field>
 
-        <Field id="campo-company" label={LABELS.company} error={touched.company ? errors.company : undefined} required>
+        <Field id={`${idPrefix}-company`} label="Empresa" error={touched.company ? errors.company : undefined} required>
           {(props) => (
             <input
               {...props}
@@ -143,133 +109,29 @@ export function ContactForm() {
               autoComplete="organization"
               placeholder="Razão social ou nome fantasia"
               value={values.company}
-              onChange={(event) => setValue('company', event.target.value)}
-              onBlur={() => onBlur('company')}
-            />
-          )}
-        </Field>
-
-        <Field id="campo-email" label={LABELS.email} error={touched.email ? errors.email : undefined} required>
-          {(props) => (
-            <input
-              {...props}
-              name="email"
-              type="email"
-              inputMode="email"
-              autoComplete="email"
-              placeholder="nome@empresa.com.br"
-              value={values.email}
-              onChange={(event) => setValue('email', event.target.value)}
-              onBlur={() => onBlur('email')}
-            />
-          )}
-        </Field>
-
-        <Field id="campo-phone" label={LABELS.phone} error={touched.phone ? errors.phone : undefined} required>
-          {(props) => (
-            <input
-              {...props}
-              name="phone"
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel"
-              placeholder="(00) 00000-0000"
-              value={values.phone}
-              onChange={(event) => setValue('phone', event.target.value)}
-              onBlur={() => onBlur('phone')}
-            />
-          )}
-        </Field>
-
-        <Field
-          id="campo-segment"
-          label={LABELS.segment}
-          error={touched.segment ? errors.segment : undefined}
-          required
-          className="sm:col-span-2"
-        >
-          {(props) => (
-            <div className="relative">
-              <select
-                {...props}
-                name="segment"
-                value={values.segment}
-                onChange={(event) => setValue('segment', event.target.value)}
-                onBlur={() => onBlur('segment')}
-                className={cx(props.className, 'appearance-none pr-8')}
-              >
-                <option value="">Selecione o segmento de atuação</option>
-                {segments.map((segment) => (
-                  <option key={segment} value={segment}>
-                    {segment}
-                  </option>
-                ))}
-              </select>
-              <svg
-                viewBox="0 0 16 16"
-                className="pointer-events-none absolute right-0 top-4 h-4 w-4 text-content/45"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square" />
-              </svg>
-            </div>
-          )}
-        </Field>
-
-        <Field
-          id="campo-message"
-          label={LABELS.message}
-          error={touched.message ? errors.message : undefined}
-          hint="Contexto da operação, principais desafios e o resultado esperado."
-          required
-          className="sm:col-span-2"
-        >
-          {(props) => (
-            <textarea
-              {...props}
-              name="message"
-              rows={5}
-              maxLength={2000}
-              placeholder="Descreva o momento atual da operação"
-              value={values.message}
-              onChange={(event) => setValue('message', event.target.value)}
-              onBlur={() => onBlur('message')}
-              className={cx(props.className, 'h-auto min-h-[8rem] resize-y py-3 leading-relaxed')}
+              onChange={(event) => update('company', event.target.value)}
+              onBlur={() => blur('company')}
             />
           )}
         </Field>
       </div>
 
-      <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="submit"
-          className="group relative inline-flex h-[3.375rem] items-center justify-center gap-3 whitespace-nowrap bg-brand-500 px-8 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper disabled:cursor-progress disabled:opacity-70"
-        >
-          Continuar pelo WhatsApp
-          <svg viewBox="0 0 14 14" className="h-3.5 w-3.5 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-            <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
-          </svg>
-        </button>
-
-        <p className="max-w-xs text-xs leading-relaxed text-content/55">
-          Ao enviar, você concorda com o tratamento dos dados informados conforme a Política de
-          Privacidade.
-        </p>
-      </div>
-
-      <div aria-live="polite" className="mt-6">
-        {status === 'whatsapp-opened' ? (
-          <p className="border-2 border-brand-500 bg-brand-500/[0.08] p-4 text-sm font-medium text-content" role="status">
-            Abrimos o WhatsApp com seus dados preenchidos. Revise a mensagem e toque em enviar para concluir.
-          </p>
-        ) : null}
-        {status === 'unavailable' ? (
-          <p className="border-2 border-[#C62828] bg-[#C62828]/10 p-4 text-sm font-medium text-[#C62828]" role="alert">
-            O WhatsApp está temporariamente indisponível. Tente novamente mais tarde.
-          </p>
-        ) : null}
-      </div>
+      <button
+        type="submit"
+        className="group mt-7 inline-flex min-h-[3.375rem] w-full items-center justify-center gap-3 bg-brand-500 px-7 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper sm:w-auto"
+      >
+        Abrir no WhatsApp
+        <svg viewBox="0 0 14 14" className="h-3.5 w-3.5 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
+          <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+        </svg>
+      </button>
+      <p className="mt-4 max-w-md text-xs leading-relaxed text-content/55">
+        Ao continuar, você concorda com o tratamento dos dados conforme a{' '}
+        <Link href="/politica-de-privacidade" className="underline underline-offset-4 hover:text-content">
+          Política de Privacidade
+        </Link>
+        .
+      </p>
     </form>
   );
 }

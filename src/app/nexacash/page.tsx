@@ -12,13 +12,13 @@ const description =
 export const metadata = buildMetadata({ title, description, path });
 
 const features = [
-  'Acompanhamento da operação financeira, resultado e caixa',
-  'Conciliação automática',
-  'Classificação das despesas com cartão de crédito',
-  'Projeção de caixa',
+  'Acompanhamento da operação financeira, resultado e fluxo de caixa',
+  'Conciliação automática pelo Open Finance',
   'Análise por IA',
-  'Disparo consolidado para contabilidade',
+  'Classificação das despesas do Cartão de Crédito',
+  'Projeção de caixa futuro',
   'Geração de notas fiscais e boletos',
+  'Disparo consolidado para sua Contabilidade',
 ];
 
 export default function NexacashPage() {
@@ -65,8 +65,9 @@ export default function NexacashPage() {
               </div>
               <p className="self-end text-[1.0625rem] leading-[1.75] text-content/65 lg:col-span-5 lg:col-start-8">
                 Automatiza contas a pagar e receber, conciliação bancária, classificação de lançamentos
-                e organização documental. A nossa IAra transforma os fluxos em análises de projeção
-                de caixa, margem por corte e alertas antes do problema virar prejuízo.
+                e organização documental. A nossa <strong className="iara-highlight">IAra</strong>{' '}
+                transforma os fluxos em análises de projeção de caixa, margem por corte e alertas
+                antes do problema virar prejuízo.
               </p>
             </div>
             <NexacashScreens />
