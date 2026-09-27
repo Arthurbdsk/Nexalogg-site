@@ -1,7 +1,8 @@
+import { useCopy } from '@/i18n/useCopy';
+import { useLocale } from 'next-intl';
 import type { ReactNode } from 'react';
 import { Reveal } from '@/components/ui/Reveal';
 import { siteConfig } from '@/lib/site';
-import { formatDate } from '@/lib/utils';
 
 export type LegalSection = {
   id: string;
@@ -18,13 +19,19 @@ type LegalArticleProps = {
  * hierarquizado à direita, com H2 por seção e âncoras estáveis.
  */
 export function LegalArticle({ sections }: LegalArticleProps) {
+  const t = useCopy();
+  const locale = useLocale();
+  const updated = new Intl.DateTimeFormat(locale === 'pt' ? 'pt-BR' : locale, {
+    dateStyle: 'long',
+    timeZone: 'UTC',
+  }).format(new Date(`${siteConfig.legal.lastUpdated}T12:00:00Z`));
   return (
     <section className="tone-light bg-surface py-section text-content">
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <nav aria-label="Sumário do documento" className="lg:col-span-4">
+          <nav aria-label={t('Sumário do documento')} className="lg:col-span-4">
             <div className="lg:sticky lg:top-32">
-              <h2 className="label">Sumário</h2>
+              <h2 className="label">{t('Sumário')}</h2>
               <ol className="mt-6 space-y-3 border-l-2 border-line/12 pl-5">
                 {sections.map((section, index) => (
                   <li key={section.id} className="flex gap-3">
@@ -35,13 +42,14 @@ export function LegalArticle({ sections }: LegalArticleProps) {
                       href={`#${section.id}`}
                       className="text-[0.9375rem] leading-6 text-content/60 transition-colors duration-300 hover:text-brand-600"
                     >
-                      {section.title}
+                      {t(section.title)}
                     </a>
                   </li>
                 ))}
               </ol>
               <p className="mt-8 text-[0.6875rem] uppercase tracking-[0.14em] text-content/45">
-                Atualizado em {formatDate(siteConfig.legal.lastUpdated)}
+                {t('Atualizado em ')}
+                {updated}
               </p>
             </div>
           </nav>
@@ -50,9 +58,9 @@ export function LegalArticle({ sections }: LegalArticleProps) {
             {sections.map((section, index) => (
               <Reveal key={section.id} as="section" id={section.id} className="scroll-mt-32">
                 <h2 className={index === 0 ? 'mt-0 text-display-sm' : 'text-display-sm'}>
-                  {section.title}
+                  {t(section.title)}
                 </h2>
-                {section.content}
+                {t(section.content)}
               </Reveal>
             ))}
           </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import { useEffect, useState } from 'react';
 import { THEME_STORAGE_KEY, type Theme } from '@/lib/theme';
 import { cx } from '@/lib/utils';
@@ -9,6 +10,7 @@ import { cx } from '@/lib/utils';
  * escolha do usuário fica guardada no navegador.
  */
 export function ThemeToggle({ className }: { className?: string }) {
+  const t = useCopy();
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
@@ -39,15 +41,10 @@ export function ThemeToggle({ className }: { className?: string }) {
         className,
       )}
     >
-      <span className="sr-only">
-        {isDark ? 'Usar tema claro' : 'Usar tema escuro'}
-      </span>
+      <span className="sr-only">{t(isDark ? 'Usar tema claro' : 'Usar tema escuro')}</span>
       <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" aria-hidden="true">
         {isDark ? (
-          <path
-            d="M16.5 12.4A7 7 0 0 1 7.6 3.5a7 7 0 1 0 8.9 8.9Z"
-            fill="currentColor"
-          />
+          <path d="M16.5 12.4A7 7 0 0 1 7.6 3.5a7 7 0 1 0 8.9 8.9Z" fill="currentColor" />
         ) : (
           <>
             <circle cx="10" cy="10" r="3.6" fill="currentColor" />

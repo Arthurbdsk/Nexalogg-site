@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import { useId, useRef, useState } from 'react';
 import { Section } from '@/components/layout/Section';
 import { Reveal } from '@/components/ui/Reveal';
@@ -19,6 +20,7 @@ const financialQuestions = [
  * sem parágrafos longos.
  */
 export function ProblemsSection() {
+  const t = useCopy();
   const [active, setActive] = useState(0);
   const [openMobile, setOpenMobile] = useState<number | null>(0);
   const baseId = useId();
@@ -49,14 +51,14 @@ export function ProblemsSection() {
           <div className="lg:col-span-6">
             <Reveal>
               <h2 id={`${baseId}-titulo`} className="text-display-md">
-                Quando o resultado foge do controle
+                {t('Quando o resultado foge do controle')}
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
             <Reveal delay={100}>
               <p className="text-[1.0625rem] leading-relaxed text-content/65">
-                Problemas estruturais se acumulam em silêncio e só aparecem no resultado.
+                {t('Problemas estruturais se acumulam em silêncio e só aparecem no resultado.')}
               </p>
             </Reveal>
           </div>
@@ -74,7 +76,7 @@ export function ProblemsSection() {
                   index % 2 === 1 && 'sm:border-l',
                 )}
               >
-                {question}
+                {t(question)}
               </li>
             ))}
           </ul>
@@ -86,7 +88,7 @@ export function ProblemsSection() {
             <div
               role="tablist"
               aria-orientation="vertical"
-              aria-label="Problemas estruturais recorrentes"
+              aria-label={t('Problemas estruturais recorrentes')}
               className="border-t border-line/15"
             >
               {problems.map((problem, index) => {
@@ -120,9 +122,11 @@ export function ProblemsSection() {
                       )}
                     />
                     <span className="w-8 text-[0.75rem] font-bold tracking-[0.12em] text-accent">
-                      {problem.index}
+                      {t(problem.index)}
                     </span>
-                    <span className="font-bold text-[1.25rem] leading-tight">{problem.title}</span>
+                    <span className="font-bold text-[1.25rem] leading-tight">
+                      {t(problem.title)}
+                    </span>
                   </button>
                 );
               })}
@@ -138,9 +142,9 @@ export function ProblemsSection() {
               className="tone-light bg-surface p-9 text-content shadow-[0_1px_0_0_rgb(var(--line)/0.10),0_24px_60px_-40px_rgb(17_17_17/0.35)]"
             >
               <div key={current.id} className="motion-safe:animate-driftin">
-                <h3 className="text-display-sm">{current.title}</h3>
+                <h3 className="text-display-sm">{t(current.title)}</h3>
                 <p className="mt-4 text-[1.0625rem] leading-relaxed text-content/65">
-                  {current.description}
+                  {t(current.description)}
                 </p>
                 <ul className="mt-7 border-t border-line/15">
                   {current.signals.map((signal) => (
@@ -148,7 +152,7 @@ export function ProblemsSection() {
                       key={signal}
                       className="border-b border-line/15 py-3 text-[0.875rem] leading-relaxed text-content/70"
                     >
-                      {signal}
+                      {t(signal)}
                     </li>
                   ))}
                 </ul>
@@ -170,12 +174,12 @@ export function ProblemsSection() {
                       onClick={() => setOpenMobile(isOpen ? null : index)}
                       aria-expanded={isOpen}
                       aria-controls={`${baseId}-mobile-${problem.id}`}
-                      className="flex w-full items-center gap-4 py-4 text-left"
+                      className="flex w-full items-center gap-4 py-4 pr-1.5 text-left"
                     >
                       <span className="w-7 text-[0.75rem] font-bold tracking-[0.12em] text-accent">
-                        {problem.index}
+                        {t(problem.index)}
                       </span>
-                      <span className="flex-1 text-[1.0625rem] font-bold">{problem.title}</span>
+                      <span className="flex-1 text-[1.0625rem] font-bold">{t(problem.title)}</span>
                       <span
                         aria-hidden="true"
                         className={cx(
@@ -189,9 +193,13 @@ export function ProblemsSection() {
                       </span>
                     </button>
                   </h3>
-                  <div id={`${baseId}-mobile-${problem.id}`} hidden={!isOpen} className="pb-6 pl-11 pr-2">
+                  <div
+                    id={`${baseId}-mobile-${problem.id}`}
+                    hidden={!isOpen}
+                    className="pb-6 pl-11 pr-2"
+                  >
                     <p className="text-[0.9375rem] leading-relaxed text-content/65">
-                      {problem.description}
+                      {t(problem.description)}
                     </p>
                     <ul className="mt-4 border-t border-line/15">
                       {problem.signals.map((signal) => (
@@ -199,7 +207,7 @@ export function ProblemsSection() {
                           key={signal}
                           className="border-b border-line/15 py-2.5 text-xs leading-relaxed text-content/70"
                         >
-                          {signal}
+                          {t(signal)}
                         </li>
                       ))}
                     </ul>

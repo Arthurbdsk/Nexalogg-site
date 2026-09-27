@@ -1,4 +1,7 @@
 import type { Metadata, Viewport } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale } from 'next-intl/server';
+import { getCopy } from '@/i18n/server';
 import { Analytics } from '@/components/layout/Analytics';
 import { BackToTop } from '@/components/layout/BackToTop';
 import { Footer } from '@/components/layout/Footer';
@@ -13,7 +16,7 @@ import { siteConfig } from '@/lib/site';
 import { themeInitScript } from '@/lib/theme';
 import './globals.css';
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
@@ -43,6 +46,23 @@ export const metadata: Metadata = {
   },
 };
 
+export async function generateMetadata(): Promise<Metadata> {
+  const [t, locale] = await Promise.all([getCopy(), getLocale()]);
+  return {
+    ...baseMetadata,
+    title: {
+      default: `${siteConfig.name} | ${t(siteConfig.tagline)}`,
+      template: `%s | ${siteConfig.name}`,
+    },
+    description: t(siteConfig.description),
+    category: t('Consultoria em Transportes e Logística'),
+    openGraph: {
+      ...baseMetadata.openGraph,
+      locale: { pt: 'pt_BR', en: 'en_US', es: 'es_ES' }[locale],
+    },
+  };
+}
+
 export const viewport: Viewport = {
   themeColor: '#FFFFFF',
   colorScheme: 'light',
@@ -50,9 +70,15 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
   return (
-    <html lang="pt-BR" data-theme="light" className={montserrat.variable} suppressHydrationWarning>
+    <html
+      lang={locale === 'pt' ? 'pt-BR' : locale}
+      data-theme="light"
+      className={montserrat.variable}
+      suppressHydrationWarning
+    >
       <head>
         {/* Define o tema antes da primeira pintura, evitando piscada de cor. */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
@@ -62,15 +88,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body>
-        <JsonLd data={graph([organizationSchema(), websiteSchema()])} />
-        <SkipLink />
-        <ScrollProgress />
-        <Header />
-        {children}
-        <Footer />
-        <FloatingWhatsApp />
-        <BackToTop />
-        <Analytics />
+        <NextIntlClientProvider>
+          <JsonLd data={graph([organizationSchema(), websiteSchema()])} />
+          <SkipLink />
+          <ScrollProgress />
+          <Header />
+          {children}
+          <Footer />
+          <FloatingWhatsApp />
+          <BackToTop />
+          <Analytics />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

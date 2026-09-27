@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { ContactForm } from '@/components/sections/ContactForm';
 import { ContactChannels } from '@/components/ui/ContactChannels';
@@ -5,14 +6,16 @@ import { JsonLd } from '@/components/ui/JsonLd';
 import { Reveal } from '@/components/ui/Reveal';
 import { methodologyStages } from '@/data/methodology';
 import { breadcrumbSchema, graph, webPageSchema } from '@/lib/jsonld';
-import { buildMetadata } from '@/lib/seo';
+import { localizedMetadata } from '@/lib/seo';
 
 const title = 'Contato';
 const description =
   'Fale com a NEXALLOG pelo WhatsApp sobre o momento da sua operação de transporte e logística.';
 const path = '/contato';
 
-export const metadata = buildMetadata({ title, description, path });
+export function generateMetadata() {
+  return localizedMetadata({ title, description, path });
+}
 
 const crumbs = [
   { name: 'Início', path: '/' },
@@ -20,6 +23,7 @@ const crumbs = [
 ];
 
 export default function ContactPage() {
+  const t = useCopy();
   return (
     <>
       <JsonLd
@@ -31,27 +35,32 @@ export default function ContactPage() {
 
       <main id="conteudo" tabIndex={-1}>
         <PageHeader
-          title="Falar com a NEXALLOG"
+          title={t('Falar com a NEXALLOG')}
           crumbs={crumbs}
           lead={
             <p>
-              Informe seu nome e sua empresa para iniciar a conversa diretamente pelo WhatsApp.
+              {t(
+                'Informe seu nome e sua empresa para iniciar a conversa diretamente pelo WhatsApp.',
+              )}
             </p>
           }
         />
 
-        <section aria-labelledby="formulario-titulo" className="tone-light bg-surface py-section text-content">
+        <section
+          aria-labelledby="formulario-titulo"
+          className="tone-light bg-surface py-section text-content"
+        >
           <div className="shell">
             <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-7">
                 <Reveal>
                   <h2 id="formulario-titulo" className="text-display-sm">
-                    Conversar pelo WhatsApp
+                    {t('Conversar pelo WhatsApp')}
                   </h2>
                 </Reveal>
                 <Reveal delay={80}>
                   <p className="mt-4 max-w-xl text-[1.0625rem] leading-[1.7] text-content/60">
-                    Precisamos apenas do seu nome e da empresa para começar.
+                    {t('Precisamos apenas do seu nome e da empresa para começar.')}
                   </p>
                 </Reveal>
                 <Reveal delay={140}>
@@ -64,26 +73,29 @@ export default function ContactPage() {
               <aside className="lg:col-span-4 lg:col-start-9">
                 <Reveal delay={200}>
                   <div className="border-2 border-line/10 bg-content/[0.03] p-8">
-                    <h2 className="label">O que acontece depois</h2>
+                    <h2 className="label">{t('O que acontece depois')}</h2>
                     <ol className="mt-6 space-y-6">
                       {methodologyStages.slice(0, 3).map((stage) => (
                         <li key={stage.id} className="flex gap-4">
                           <span className="mt-1 text-[0.6875rem] tracking-[0.16em] text-brand-600">
-                            {stage.order}
+                            {t(stage.order)}
                           </span>
                           <span>
                             <span className="block text-[1.0625rem] font-semibold text-content">
-                              {stage.title}
+                              {t(stage.title)}
                             </span>
                             <span className="mt-1 block text-sm leading-relaxed text-content/55">
-                              {stage.definition}
+                              {t(stage.definition)}
                             </span>
                           </span>
                         </li>
                       ))}
                     </ol>
 
-                    <ContactChannels className="mt-8 border-t border-line/15 pt-8" local="pagina_contato" />
+                    <ContactChannels
+                      className="mt-8 border-t border-line/15 pt-8"
+                      local="pagina_contato"
+                    />
                   </div>
                 </Reveal>
               </aside>

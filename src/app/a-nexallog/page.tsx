@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { AboutSection } from '@/components/sections/AboutSection';
@@ -6,19 +7,21 @@ import { FinalCta } from '@/components/sections/FinalCta';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { Reveal } from '@/components/ui/Reveal';
 import { breadcrumbSchema, graph, personSchema, webPageSchema } from '@/lib/jsonld';
-import { buildMetadata } from '@/lib/seo';
+import { localizedMetadata } from '@/lib/seo';
 
 const title = 'A NEXALLOG';
 const description =
   'A NEXALLOG conecta caminhos, pessoas e empresas do setor de Transportes e Logística. Conheça a atuação, os princípios e a liderança por trás do Programa D90.';
 const path = '/a-nexallog';
 
-export const metadata = buildMetadata({
-  title,
-  description,
-  path,
-  absoluteTitle: 'A NEXALLOG | Consultoria em Transportes e Logística',
-});
+export function generateMetadata() {
+  return localizedMetadata({
+    title,
+    description,
+    path,
+    absoluteTitle: 'A NEXALLOG | Consultoria em Transportes e Logística',
+  });
+}
 
 /** Frentes conduzidas diretamente pela NEXALLOG. */
 const capabilities = [
@@ -37,6 +40,7 @@ const crumbs = [
 ];
 
 export default function AboutPage() {
+  const t = useCopy();
   return (
     <>
       <JsonLd
@@ -49,14 +53,13 @@ export default function AboutPage() {
 
       <main id="conteudo" tabIndex={-1}>
         <PageHeader
-          title="Uma empresa construída de dentro da Operação Logística"
+          title={t('Uma empresa construída de dentro da Operação Logística')}
           crumbs={crumbs}
           lead={
             <p>
-              A NEXALLOG atua com empresas e empresários do segmento de Transportes e Logística.
-              Trabalhamos sobre os números financeiros da operação, apontamos a origem dos desvios
-              estruturais dentro das suas áreas e processos, e conduzimos o plano até a execução, ao
-              lado do time da empresa.
+              {t(
+                'A NEXALLOG atua com empresas e empresários do segmento de Transportes e Logística. Trabalhamos sobre os números financeiros da operação, apontamos a origem dos desvios estruturais dentro das suas áreas e processos, e conduzimos o plano até a execução, ao lado do time da empresa.',
+              )}
             </p>
           }
         />
@@ -70,14 +73,14 @@ export default function AboutPage() {
               <div className="lg:col-span-5">
                 <Reveal>
                   <h2 id="atuacao-titulo" className="text-display-md">
-                    O que conduzimos diretamente
+                    {t('O que conduzimos diretamente')}
                   </h2>
                 </Reveal>
                 <Reveal delay={100}>
                   <p className="mt-6 text-[1.0625rem] leading-[1.75] text-content/60">
-                    Estas são as frentes conduzidas pela equipe NEXALLOG ao longo do programa. Nas
-                    áreas que exigem competência técnica específica, a rede de parceiros
-                    especializados entra junto, sem transferir a coordenação do trabalho.
+                    {t(
+                      'Estas são as frentes conduzidas pela equipe NEXALLOG ao longo do programa. Nas áreas que exigem competência técnica específica, a rede de parceiros especializados entra junto, sem transferir a coordenação do trabalho.',
+                    )}
                   </p>
                 </Reveal>
                 <Reveal delay={160}>
@@ -86,14 +89,24 @@ export default function AboutPage() {
                     className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-600 transition-colors duration-300 hover:text-brand-600"
                   >
                     <span className="relative">
-                      Ver as áreas de cobertura
+                      {t('Ver as áreas de cobertura')}
                       <span
                         aria-hidden="true"
                         className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
                       />
                     </span>
-                    <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-                      <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+                    <svg
+                      viewBox="0 0 14 14"
+                      className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M1 7h11M8 3l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="square"
+                      />
                     </svg>
                   </Link>
                 </Reveal>
@@ -108,7 +121,7 @@ export default function AboutPage() {
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <span className="text-[1.0625rem] text-content transition-colors duration-300 group-hover:text-brand-600">
-                          {capability}
+                          {t(capability)}
                         </span>
                       </div>
                     </Reveal>

@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { track } from '@/lib/analytics';
 import type { SolutionArea } from '@/data/solutions';
@@ -10,6 +11,7 @@ import type { SolutionArea } from '@/data/solutions';
  * exija JavaScript.
  */
 export function SolutionAreaLink({ area, index }: { area: SolutionArea; index: number }) {
+  const t = useCopy();
   return (
     <Link
       href={`/solucoes/${area.slug}`}
@@ -20,9 +22,9 @@ export function SolutionAreaLink({ area, index }: { area: SolutionArea; index: n
         <span className="block text-[0.6875rem] font-bold tracking-[0.16em] text-accent transition-colors duration-300 group-hover:text-ink/60">
           {String(index + 1).padStart(2, '0')}
         </span>
-        <span className="mt-4 block text-[1.1875rem] font-bold leading-tight">{area.name}</span>
+        <span className="mt-4 block text-[1.1875rem] font-bold leading-tight">{t(area.name)}</span>
         <span className="mt-2 block text-[0.9375rem] leading-relaxed text-content/55 transition-colors duration-300 group-hover:text-ink/70">
-          {area.summary}
+          {t(area.summary)}
         </span>
       </span>
 
@@ -32,7 +34,12 @@ export function SolutionAreaLink({ area, index }: { area: SolutionArea; index: n
         fill="none"
         aria-hidden="true"
       >
-        <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+        <path
+          d="M1 7h11M8 3l4 4-4 4"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="square"
+        />
       </svg>
     </Link>
   );

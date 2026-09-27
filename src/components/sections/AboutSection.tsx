@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Section } from '@/components/layout/Section';
@@ -13,6 +14,7 @@ type AboutSectionProps = {
 
 /** Pilares da marca em um bloco escuro e curto, com uma linha cada. */
 export function AboutSection({ withLink = true }: AboutSectionProps) {
+  const t = useCopy();
   const [active, setActive] = useState(0);
 
   return (
@@ -22,7 +24,8 @@ export function AboutSection({ withLink = true }: AboutSectionProps) {
           <div className="lg:col-span-7">
             <Reveal>
               <h2 id="a-nexallog-titulo" className="text-display-md">
-                Conectamos caminhos, pessoas e <span className="text-brand-500">empresas</span>
+                {t('Conectamos caminhos, pessoas e ')}
+                <span className="text-brand-500">{t('empresas')}</span>
               </h2>
             </Reveal>
           </div>
@@ -33,9 +36,19 @@ export function AboutSection({ withLink = true }: AboutSectionProps) {
                   href="/a-nexallog"
                   className="group inline-flex items-center gap-3 text-[0.9375rem] font-semibold text-brand-500 transition-opacity duration-300 hover:opacity-75"
                 >
-                  Conhecer a NEXALLOG
-                  <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-                    <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                  {t('Conhecer a NEXALLOG')}
+                  <svg
+                    viewBox="0 0 14 14"
+                    className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M1 7h11M8 3l4 4-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="square"
+                    />
                   </svg>
                 </Link>
               </Reveal>
@@ -67,10 +80,10 @@ export function AboutSection({ withLink = true }: AboutSectionProps) {
                     )}
                   />
                   <h3 className="text-[1.0625rem] font-bold uppercase tracking-[0.06em]">
-                    {principle.title}
+                    {t(principle.title)}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-content/60">
-                    {principle.description}
+                    {t(principle.description)}
                   </p>
                 </li>
               );

@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import { BrandMark } from '@/components/ui/Logo';
 import { solutionAreas } from '@/data/solutions';
 
@@ -12,11 +13,12 @@ import { solutionAreas } from '@/data/solutions';
  * inicial, pela regra global de movimento reduzido.
  */
 export function KeywordMarquee() {
+  const t = useCopy();
   const words = solutionAreas.map((area) => area.name);
 
   return (
     <section
-      aria-label="Áreas de atuação da NEXALLOG"
+      aria-label={t('Áreas de atuação da NEXALLOG')}
       className="tone-brand relative overflow-hidden bg-surface py-5 text-content"
     >
       <div className="flex w-max motion-safe:animate-marquee-right">
@@ -29,7 +31,7 @@ export function KeywordMarquee() {
             {words.map((word) => (
               <li key={word} className="flex shrink-0 items-center">
                 <span className="whitespace-nowrap px-7 text-[0.9375rem] font-bold uppercase tracking-[0.18em] sm:text-[1.0625rem]">
-                  {word}
+                  {t(word)}
                 </span>
                 <BrandMark className="h-2.5 w-2.5 shrink-0 brightness-0 opacity-60" />
               </li>

@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import type { ReactNode } from 'react';
 import { cx } from '@/lib/utils';
 
@@ -27,23 +28,23 @@ const controlClasses =
  * nunca apenas por cor.
  */
 export function Field({ id, label, error, hint, required, className, children }: FieldProps) {
+  const t = useCopy();
   const errorId = error ? `${id}-erro` : undefined;
   const hintId = hint ? `${id}-ajuda` : undefined;
   const describedBy = [errorId, hintId].filter(Boolean).join(' ') || undefined;
 
   return (
     <div className={cx('flex flex-col', className)}>
-      <label
-        htmlFor={id}
-        className="text-[0.6875rem] uppercase tracking-[0.16em] text-content/45"
-      >
-        {label}
+      <label htmlFor={id} className="text-[0.6875rem] uppercase tracking-[0.16em] text-content/45">
+        {t(label)}
         {required ? (
           <span className="ml-1 text-brand-600" aria-hidden="true">
             *
           </span>
         ) : (
-          <span className="ml-2 font-medium normal-case tracking-normal text-content/40">(opcional)</span>
+          <span className="ml-2 font-medium normal-case tracking-normal text-content/40">
+            {t('(opcional)')}
+          </span>
         )}
       </label>
 
@@ -58,17 +59,25 @@ export function Field({ id, label, error, hint, required, className, children }:
 
       {hint ? (
         <p id={hintId} className="mt-2 text-xs text-content/50">
-          {hint}
+          {t(hint)}
         </p>
       ) : null}
 
       {error ? (
-        <p id={errorId} className="mt-2 flex items-center gap-2 text-xs font-semibold text-[#B3261E]">
+        <p
+          id={errorId}
+          className="mt-2 flex items-center gap-2 text-xs font-semibold text-[#B3261E]"
+        >
           <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 shrink-0" fill="none" aria-hidden="true">
             <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.3" />
-            <path d="M8 5v4M8 11h.01" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+            <path
+              d="M8 5v4M8 11h.01"
+              stroke="currentColor"
+              strokeWidth="1.3"
+              strokeLinecap="round"
+            />
           </svg>
-          {error}
+          {t(error)}
         </p>
       ) : null}
     </div>

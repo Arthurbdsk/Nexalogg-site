@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import Image from 'next/image';
 import { cx } from '@/lib/utils';
 
@@ -6,11 +7,12 @@ type MarkProps = {
 };
 
 export function BrandMark({ className }: MarkProps) {
+  const t = useCopy();
   return (
     <span className={cx('relative inline-block aspect-[1.074]', className)} aria-hidden="true">
       <Image
         src="/images/nexallog-simbolo-oficial.png"
-        alt=""
+        alt={t('')}
         fill
         sizes="(max-width: 768px) 40vw, 32rem"
         className="object-contain"
@@ -27,6 +29,7 @@ type LogoProps = {
 };
 
 export function Logo({ className, markOnly = false, surface = 'auto' }: LogoProps) {
+  const t = useCopy();
   if (markOnly) return <BrandMark className={className} />;
 
   const common = 'h-auto w-full object-contain object-left';
@@ -36,7 +39,7 @@ export function Logo({ className, markOnly = false, surface = 'auto' }: LogoProp
       {surface !== 'dark' ? (
         <Image
           src="/images/nexallog-logo-oficial-claro.png"
-          alt="NEXALLOG. Conectando caminhos, gerando resultados."
+          alt={t('NEXALLOG. Conectando caminhos, gerando resultados.')}
           width={800}
           height={148}
           priority
@@ -46,7 +49,7 @@ export function Logo({ className, markOnly = false, surface = 'auto' }: LogoProp
       {surface !== 'light' ? (
         <Image
           src="/images/nexallog-logo-oficial-escuro-transparente.png"
-          alt="NEXALLOG. Conectando caminhos, gerando resultados."
+          alt={t('NEXALLOG. Conectando caminhos, gerando resultados.')}
           width={693}
           height={136}
           priority
@@ -58,17 +61,18 @@ export function Logo({ className, markOnly = false, surface = 'auto' }: LogoProp
 }
 
 export function NexacashLogo({ className }: { className?: string }) {
+  const t = useCopy();
   const common = 'h-auto w-full object-contain object-left';
 
   return (
     <span
       className={cx('inline-block w-[13.5rem] max-w-full', className)}
       role="img"
-      aria-label="NEXACASH. Mais visibilidade. Mais controle. Mais previsibilidade."
+      aria-label={t('NEXACASH. Mais visibilidade. Mais controle. Mais previsibilidade.')}
     >
       <Image
         src="/images/nexacash/nexacash-logo-claro.svg"
-        alt=""
+        alt={t('')}
         width={1600}
         height={257}
         priority
@@ -76,7 +80,7 @@ export function NexacashLogo({ className }: { className?: string }) {
       />
       <Image
         src="/images/nexacash/nexacash-logo-escuro.svg"
-        alt=""
+        alt={t('')}
         width={1600}
         height={257}
         priority

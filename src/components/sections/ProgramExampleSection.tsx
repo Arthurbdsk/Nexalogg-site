@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import Image from 'next/image';
 import { useState } from 'react';
 import { cx } from '@/lib/utils';
@@ -7,6 +8,7 @@ import { cx } from '@/lib/utils';
 const TOTAL_PAGES = 12;
 
 export function ProgramExampleSection() {
+  const t = useCopy();
   const [page, setPage] = useState(1);
   const image = `/images/programa-d90-2026-09/pagina-${String(page).padStart(2, '0')}.png`;
 
@@ -24,13 +26,14 @@ export function ProgramExampleSection() {
         <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-12">
           <div className="lg:col-span-7">
             <h2 id="exemplo-programa-d90-titulo" className="text-display-md">
-              Exemplo do Programa D90
+              {t('Exemplo do Programa D90')}
             </h2>
           </div>
           <div className="lg:col-span-5">
             <p className="text-[1.0625rem] leading-relaxed text-[#111111]/65">
-              O material abaixo mostra como o diagnóstico financeiro se transforma em leitura,
-              causa-raiz e plano de ação. Os números apresentados são ilustrativos.
+              {t(
+                'O material abaixo mostra como o diagnóstico financeiro se transforma em leitura, causa-raiz e plano de ação. Os números apresentados são ilustrativos.',
+              )}
             </p>
           </div>
         </div>
@@ -43,7 +46,10 @@ export function ProgramExampleSection() {
             <Image
               key={image}
               src={image}
-              alt={`Exemplo do Programa D90, página ${page} de ${TOTAL_PAGES}`}
+              alt={t('Exemplo do Programa D90, página {page} de {total}', {
+                page,
+                total: TOTAL_PAGES,
+              })}
               fill
               sizes="(max-width: 1320px) 100vw, 1320px"
               loading="lazy"
@@ -54,7 +60,10 @@ export function ProgramExampleSection() {
 
           <div className="flex flex-col gap-5 border-t border-[#111111]/15 px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm font-semibold">
-              Página {page} de {TOTAL_PAGES}
+              {t('Página ')}
+              {t(page)}
+              {t(' de ')}
+              {t(TOTAL_PAGES)}
             </p>
 
             <div className="flex items-center gap-3">
@@ -64,7 +73,7 @@ export function ProgramExampleSection() {
                 disabled={page === 1}
                 className="inline-flex h-11 items-center border border-[#111111]/25 px-5 text-sm font-semibold transition-colors hover:border-[#111111] disabled:cursor-not-allowed disabled:opacity-35"
               >
-                Anterior
+                {t('Anterior')}
               </button>
               <button
                 type="button"
@@ -72,7 +81,7 @@ export function ProgramExampleSection() {
                 disabled={page === TOTAL_PAGES}
                 className="inline-flex h-11 items-center bg-[#111111] px-5 text-sm font-semibold text-white transition-colors hover:bg-[#333333] disabled:cursor-not-allowed disabled:opacity-35"
               >
-                Próxima
+                {t('Próxima')}
               </button>
             </div>
           </div>
@@ -80,7 +89,7 @@ export function ProgramExampleSection() {
 
         <ol
           className="mt-5 grid grid-cols-6 gap-2 lg:grid-cols-12"
-          aria-label="Selecionar página do exemplo"
+          aria-label={t('Selecionar página do exemplo')}
         >
           {Array.from({ length: TOTAL_PAGES }, (_, index) => index + 1).map((item) => (
             <li key={item}>
@@ -88,15 +97,15 @@ export function ProgramExampleSection() {
                 type="button"
                 onClick={() => changePage(item)}
                 aria-current={item === page ? 'page' : undefined}
-                aria-label={`Abrir página ${item}`}
+                aria-label={t('Abrir página {page}', { page: item })}
                 className={cx(
-                  'h-9 w-full border text-xs font-semibold transition-colors',
+                  'h-11 w-full border text-xs font-semibold transition-colors',
                   item === page
                     ? 'border-[#111111] bg-[#111111] text-white'
                     : 'border-[#111111]/20 bg-white text-[#111111] hover:border-[#111111]',
                 )}
               >
-                {item}
+                {t(item)}
               </button>
             </li>
           ))}
