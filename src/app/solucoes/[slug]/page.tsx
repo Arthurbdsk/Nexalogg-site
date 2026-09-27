@@ -1,3 +1,4 @@
+import { getCopy } from '@/i18n/server';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PageHeader } from '@/components/layout/PageHeader';
@@ -6,7 +7,7 @@ import { JsonLd } from '@/components/ui/JsonLd';
 import { Reveal } from '@/components/ui/Reveal';
 import { getSolutionArea, solutionAreas } from '@/data/solutions';
 import { breadcrumbSchema, graph, serviceSchema, webPageSchema } from '@/lib/jsonld';
-import { buildMetadata } from '@/lib/seo';
+import { localizedMetadata } from '@/lib/seo';
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -15,11 +16,12 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
+  const t = await getCopy();
   const { slug } = await params;
   const area = getSolutionArea(slug);
 
   if (!area) {
-    return buildMetadata({
+    return localizedMetadata({
       title: 'Área não encontrada',
       description: 'A área de atuação solicitada não existe no site da NEXALLOG.',
       path: `/solucoes/${slug}`,
@@ -27,14 +29,15 @@ export async function generateMetadata({ params }: PageProps) {
     });
   }
 
-  return buildMetadata({
+  return localizedMetadata({
     title: area.name,
-    description: `${area.summary} Frente de atuação da NEXALLOG dentro do Programa D90, para empresas de Transportes e Logística.`,
+    description: `${t(area.summary)} ${t('Frente de atuação da NEXALLOG dentro do Programa D90, para empresas de Transportes e Logística.')}`,
     path: `/solucoes/${area.slug}`,
   });
 }
 
 export default async function SolutionAreaPage({ params }: PageProps) {
+  const t = await getCopy();
   const { slug } = await params;
   const area = getSolutionArea(slug);
 
@@ -59,26 +62,27 @@ export default async function SolutionAreaPage({ params }: PageProps) {
       />
 
       <main id="conteudo" tabIndex={-1}>
-        <PageHeader
-          title={area.name}
-          crumbs={crumbs}
-          lead={<p>{area.intro}</p>}
-        />
+        <PageHeader title={t(area.name)} crumbs={crumbs} lead={<p>{t(area.intro)}</p>} />
 
-        <section aria-labelledby="frentes-titulo" className="tone-light bg-surface py-section text-content">
+        <section
+          aria-labelledby="frentes-titulo"
+          className="tone-light bg-surface py-section text-content"
+        >
           <div className="shell">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
                 <Reveal>
                   <h2 id="frentes-titulo" className="text-display-md">
-                    Frentes de trabalho
+                    {t('Frentes de trabalho')}
                   </h2>
                 </Reveal>
                 <Reveal delay={100}>
                   <p className="mt-6 text-[1.0625rem] leading-[1.75] text-content/60">
-                    O escopo dentro de {area.name} é definido pelo diagnóstico. As frentes abaixo são
-                    acionadas conforme a causa estrutural identificada e a prioridade estabelecida no
-                    plano de 90 dias.
+                    {t('O escopo dentro de ')}
+                    {t(area.name)}
+                    {t(
+                      ' é definido pelo diagnóstico. As frentes abaixo são acionadas conforme a causa estrutural identificada e a prioridade estabelecida no plano de 90 dias.',
+                    )}
                   </p>
                 </Reveal>
               </div>
@@ -92,7 +96,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <span className="text-[1.0625rem] leading-relaxed text-content/85 transition-colors duration-300 group-hover:text-brand-600">
-                          {front}
+                          {t(front)}
                         </span>
                       </div>
                     </Reveal>
@@ -103,11 +107,14 @@ export default async function SolutionAreaPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section aria-labelledby="sinais-titulo" className="tone-muted bg-surface py-section text-content">
+        <section
+          aria-labelledby="sinais-titulo"
+          className="tone-muted bg-surface py-section text-content"
+        >
           <div className="shell">
             <Reveal>
               <h2 id="sinais-titulo" className="text-display-md">
-                Sinais que costumam apontar para esta frente
+                {t('Sinais que costumam apontar para esta frente')}
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-px sm:grid-cols-3">
@@ -117,7 +124,9 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                     <span className="text-[0.6875rem] tracking-[0.16em] text-brand-600">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <p className="mt-4 text-[1.0625rem] leading-[1.6] text-content/75">{signal}</p>
+                    <p className="mt-4 text-[1.0625rem] leading-[1.6] text-content/75">
+                      {t(signal)}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -125,7 +134,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
 
             <Reveal delay={160}>
               <div className="mt-14 border-t border-line/15 pt-10">
-                <h3 className="label">Outras áreas</h3>
+                <h3 className="label">{t('Outras áreas')}</h3>
                 <ul className="mt-6 flex flex-wrap gap-3">
                   {related.map((item) => (
                     <li key={item.slug}>
@@ -133,7 +142,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                         href={`/solucoes/${item.slug}`}
                         className="inline-flex h-10 items-center border border-line/15 px-5 text-sm text-content/70 transition-colors duration-300 hover:border-brand-500 hover:text-brand-600"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </Link>
                     </li>
                   ))}
@@ -142,7 +151,7 @@ export default async function SolutionAreaPage({ params }: PageProps) {
                       href="/solucoes"
                       className="inline-flex h-10 items-center border border-brand-500 px-5 text-sm text-brand-600 transition-colors duration-300 hover:border-brand-400 hover:text-brand-600"
                     >
-                      Ver todas as áreas
+                      {t('Ver todas as áreas')}
                     </Link>
                   </li>
                 </ul>

@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import Image from 'next/image';
 import { Section } from '@/components/layout/Section';
 import { Counter } from '@/components/ui/Counter';
@@ -7,6 +8,7 @@ import { siteConfig } from '@/lib/site';
 const { advisor } = siteConfig;
 
 export function AdvisorSection() {
+  const t = useCopy();
   return (
     <Section tone="light" id="alexandre-felix" labelledBy="advisor-titulo">
       <div className="shell">
@@ -21,7 +23,7 @@ export function AdvisorSection() {
                 <div className="relative aspect-[3/2] w-full overflow-hidden bg-ink">
                   <Image
                     src={advisor.photo}
-                    alt={advisor.photoAlt || `Retrato de ${advisor.name}`}
+                    alt={t(advisor.photoAlt || `Retrato de ${advisor.name}`)}
                     width={1024}
                     height={683}
                     quality={90}
@@ -40,13 +42,13 @@ export function AdvisorSection() {
                 >
                   <Image
                     src={advisor.linkedinQr}
-                    alt={`QR code para o perfil de ${advisor.name} no LinkedIn`}
+                    alt={t('QR code para o perfil de {name} no LinkedIn', { name: advisor.name })}
                     width={72}
                     height={72}
                     className="h-[72px] w-[72px]"
                   />
                   <span className="text-[0.5625rem] font-bold uppercase tracking-[0.16em] text-ink">
-                    LinkedIn
+                    {t('LinkedIn')}
                   </span>
                 </a>
               ) : null}
@@ -56,11 +58,11 @@ export function AdvisorSection() {
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal>
               <h2 id="advisor-titulo" className="text-display-md">
-                {advisor.name}
+                {t(advisor.name)}
               </h2>
             </Reveal>
             <Reveal delay={80}>
-              <p className="mt-3 text-lead font-semibold text-accent">{advisor.role}</p>
+              <p className="mt-3 text-lead font-semibold text-accent">{t(advisor.role)}</p>
             </Reveal>
 
             <Reveal delay={140}>
@@ -69,7 +71,7 @@ export function AdvisorSection() {
                   <Counter value={advisor.experienceYears} suffix="+" />
                 </span>
                 <span className="text-[1.0625rem] leading-snug text-content/65">
-                  {advisor.experienceLabel}
+                  {t(advisor.experienceLabel)}
                 </span>
               </p>
             </Reveal>
@@ -79,7 +81,7 @@ export function AdvisorSection() {
                 <Reveal as="li" key={item} delay={180 + index * 60}>
                   <div className="flex items-start gap-3">
                     <span aria-hidden="true" className="mt-2 h-0.5 w-4 shrink-0 bg-accent" />
-                    <span className="text-[0.9375rem] leading-snug text-content/70">{item}</span>
+                    <span className="text-[0.9375rem] leading-snug text-content/70">{t(item)}</span>
                   </div>
                 </Reveal>
               ))}
@@ -93,9 +95,19 @@ export function AdvisorSection() {
                   rel="noopener noreferrer"
                   className="group mt-9 inline-flex items-center gap-3 text-[0.9375rem] font-semibold transition-opacity duration-300 hover:opacity-70"
                 >
-                  Ver perfil no LinkedIn
-                  <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-                    <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                  {t('Ver perfil no LinkedIn')}
+                  <svg
+                    viewBox="0 0 14 14"
+                    className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M1 7h11M8 3l4 4-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="square"
+                    />
                   </svg>
                 </a>
               </Reveal>

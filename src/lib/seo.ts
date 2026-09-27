@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { getLocale } from 'next-intl/server';
+import { getCopy } from '@/i18n/server';
 import { absoluteUrl, siteConfig } from './site';
 
 type SeoInput = {
@@ -13,6 +15,20 @@ type SeoInput = {
   absoluteTitle?: string;
   type?: 'website' | 'article' | 'profile';
 };
+
+export async function localizedMetadata(input: SeoInput): Promise<Metadata> {
+  const [t, locale] = await Promise.all([getCopy(), getLocale()]);
+  const metadata = buildMetadata({
+    ...input,
+    title: t(input.title),
+    description: t(input.description),
+    absoluteTitle: input.absoluteTitle ? t(input.absoluteTitle) : undefined,
+  });
+  return {
+    ...metadata,
+    openGraph: { ...metadata.openGraph, locale: { pt: 'pt_BR', en: 'en_US', es: 'es_ES' }[locale] },
+  };
+}
 
 /**
  * Constrói o metadata de uma página com canonical, Open Graph e Twitter Card

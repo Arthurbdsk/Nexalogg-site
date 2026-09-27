@@ -9,17 +9,24 @@ import { MethodologySection } from '@/components/sections/MethodologySection';
 import { ProblemsSection } from '@/components/sections/ProblemsSection';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { graph, personSchema, serviceSchema, webPageSchema } from '@/lib/jsonld';
-import { buildMetadata } from '@/lib/seo';
+import { localizedMetadata } from '@/lib/seo';
+import { getCopy } from '@/i18n/server';
 import { siteConfig } from '@/lib/site';
 
 const title = `${siteConfig.name} | ${siteConfig.tagline}`;
 const description =
   'Consultoria para empresas de Transportes e Logística. Diagnóstico financeiro e operacional, identificação de causas estruturais, plano de ação de 90 dias e suporte direto na execução.';
 
-export const metadata = {
-  ...buildMetadata({ title, description, path: '/' }),
-  title,
-};
+export async function generateMetadata() {
+  const t = await getCopy();
+  const localizedTitle = `${siteConfig.name} | ${t(siteConfig.tagline)}`;
+  return localizedMetadata({
+    title: localizedTitle,
+    absoluteTitle: localizedTitle,
+    description,
+    path: '/',
+  });
+}
 
 export default function HomePage() {
   return (

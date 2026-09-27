@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Section } from '@/components/layout/Section';
@@ -41,6 +42,7 @@ const deliveryCards = [
  * se mantém em uma, duas ou três colunas sem regra de borda por célula.
  */
 export function EcosystemSection() {
+  const t = useCopy();
   return (
     <Section tone="dark" id="solucoes" labelledBy="solucoes-titulo">
       <div className="shell">
@@ -48,13 +50,15 @@ export function EcosystemSection() {
           <div className="lg:col-span-7">
             <Reveal>
               <h2 id="solucoes-titulo" className="text-display-md">
-                Equipe própria e <span className="text-accent">rede de parceiros</span>
+                {t('Equipe própria e ')}
+                <span className="text-accent">{t('rede de parceiros')}</span>
               </h2>
             </Reveal>
             <Reveal delay={80}>
               <p className="mt-5 max-w-xl text-[1.0625rem] leading-relaxed text-content/60">
-                Dez frentes de atuação, sustentadas pela equipe NEXALLOG e por uma rede de
-                parceiros especializados. São 12 blocos distintos no total.
+                {t(
+                  'Dez frentes de atuação, sustentadas pela equipe NEXALLOG e por uma rede de parceiros especializados. São 12 blocos distintos no total.',
+                )}
               </p>
             </Reveal>
           </div>
@@ -64,9 +68,19 @@ export function EcosystemSection() {
                 href="/solucoes"
                 className="group inline-flex items-center gap-3 text-[0.9375rem] font-semibold text-accent transition-opacity duration-300 hover:opacity-75"
               >
-                Ver todas as áreas
-                <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-                  <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                {t('Ver todas as áreas')}
+                <svg
+                  viewBox="0 0 14 14"
+                  className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1 7h11M8 3l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="square"
+                  />
                 </svg>
               </Link>
             </Reveal>
@@ -82,10 +96,7 @@ export function EcosystemSection() {
                 </li>
               ))}
               {deliveryCards.map((card, index) => (
-                <li
-                  key={card.title}
-                  className="bg-surface text-content"
-                >
+                <li key={card.title} className="bg-surface text-content">
                   {'partners' in card ? (
                     <div className="group flex h-full flex-col justify-between gap-6 p-6 transition-colors duration-300 hover:bg-paper hover:text-ink lg:gap-8 lg:p-8">
                       <div>
@@ -93,24 +104,27 @@ export function EcosystemSection() {
                           {String(solutionAreas.length + index + 1).padStart(2, '0')}
                         </span>
                         <h3 className="mt-4 text-[1.1875rem] font-bold leading-tight">
-                          {card.title}
+                          {t(card.title)}
                         </h3>
                         <p className="mt-2 text-[0.9375rem] leading-relaxed text-content/55 transition-colors duration-300 group-hover:text-ink/70">
-                          {card.summary}
+                          {t(card.summary)}
                         </p>
-                        <div className="mt-6 grid grid-cols-2 gap-3" aria-label="Empresas parceiras">
+                        <div
+                          className="mt-6 grid grid-cols-2 gap-3"
+                          aria-label={t('Empresas parceiras')}
+                        >
                           {card.partners.map((partner) => (
                             <a
                               key={partner.src}
                               href={partner.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              aria-label={`Visitar o site da ${partner.alt}`}
+                              aria-label={t('Visitar o site da {name}', { name: partner.alt })}
                               className="flex h-16 items-center justify-center border border-line/15 px-3 transition-colors duration-300 hover:bg-paper-dim group-hover:border-ink/15"
                             >
                               <Image
                                 src={partner.src}
-                                alt={partner.alt}
+                                alt={t(partner.alt)}
                                 width={partner.width}
                                 height={partner.height}
                                 sizes="(max-width: 639px) 38vw, (max-width: 1023px) 20vw, 10rem"
@@ -131,10 +145,10 @@ export function EcosystemSection() {
                           {String(solutionAreas.length + index + 1).padStart(2, '0')}
                         </span>
                         <span className="mt-4 block text-[1.1875rem] font-bold leading-tight">
-                          {card.title}
+                          {t(card.title)}
                         </span>
                         <span className="mt-2 block text-[0.9375rem] leading-relaxed text-content/55 transition-colors duration-300 group-hover:text-ink/70">
-                          {card.summary}
+                          {t(card.summary)}
                         </span>
                       </span>
 
@@ -144,7 +158,12 @@ export function EcosystemSection() {
                         fill="none"
                         aria-hidden="true"
                       >
-                        <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                        <path
+                          d="M1 7h11M8 3l4 4-4 4"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="square"
+                        />
                       </svg>
                     </Link>
                   )}

@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import { useReveal } from '@/hooks/useReveal';
 import { usePointerOffset } from '@/hooks/usePointerOffset';
 import { cx } from '@/lib/utils';
@@ -47,15 +48,12 @@ const SATELLITES: [number, number][] = [
 ];
 
 export function RouteCanvas({ className }: { className?: string }) {
+  const t = useCopy();
   const { ref: revealRef, visible } = useReveal<HTMLDivElement>({ threshold: 0.25 });
   const { ref: pointerRef, offset } = usePointerOffset<HTMLDivElement>(1);
 
   return (
-    <div
-      ref={pointerRef}
-      className={cx('relative isolate w-full', className)}
-      aria-hidden="true"
-    >
+    <div ref={pointerRef} className={cx('relative isolate w-full', className)} aria-hidden="true">
       <div
         ref={revealRef}
         className="relative w-full"
@@ -81,14 +79,26 @@ export function RouteCanvas({ className }: { className?: string }) {
               <stop offset="100%" stopColor="#B88A00" stopOpacity="0" />
             </radialGradient>
             <pattern id="route-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M60 0H0v60" fill="none" stroke="#FFFFFF" strokeOpacity="0.06" strokeWidth="1" />
+              <path
+                d="M60 0H0v60"
+                fill="none"
+                stroke="#FFFFFF"
+                strokeOpacity="0.06"
+                strokeWidth="1"
+              />
             </pattern>
           </defs>
 
           <rect x="0" y="0" width="720" height="520" fill="url(#route-grid)" />
 
-          <circle cx="566" cy="106" r="150" fill="url(#route-glow)" opacity={visible ? 1 : 0}
-            style={{ transition: 'opacity 1.6s ease-out 600ms' }} />
+          <circle
+            cx="566"
+            cy="106"
+            r="150"
+            fill="url(#route-glow)"
+            opacity={visible ? 1 : 0}
+            style={{ transition: 'opacity 1.6s ease-out 600ms' }}
+          />
 
           {MESH.map(([x1, y1, x2, y2], index) => (
             <line
@@ -170,7 +180,14 @@ export function RouteCanvas({ className }: { className?: string }) {
                     className="motion-safe:animate-pulseline"
                   />
                 ) : null}
-                <circle cx={point.x} cy={point.y} r="7" fill="#111111" stroke="#E0A800" strokeWidth="2" />
+                <circle
+                  cx={point.x}
+                  cy={point.y}
+                  r="7"
+                  fill="#111111"
+                  stroke="#E0A800"
+                  strokeWidth="2"
+                />
                 <circle cx={point.x} cy={point.y} r="2.5" fill="#E0A800" />
                 <text
                   x={point.x}
@@ -180,7 +197,7 @@ export function RouteCanvas({ className }: { className?: string }) {
                   letterSpacing="1.8"
                   fontFamily="var(--font-sans), sans-serif"
                 >
-                  {point.code}
+                  {t(point.code)}
                 </text>
                 <text
                   x={point.x}
@@ -190,7 +207,7 @@ export function RouteCanvas({ className }: { className?: string }) {
                   fontSize="13"
                   fontFamily="var(--font-sans), sans-serif"
                 >
-                  {point.label}
+                  {t(point.label)}
                 </text>
               </g>
             );

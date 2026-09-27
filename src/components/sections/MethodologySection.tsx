@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { Section } from '@/components/layout/Section';
 import { Reveal } from '@/components/ui/Reveal';
@@ -19,6 +20,7 @@ type MethodologySectionProps = {
  * as etapas na ordem, horizontalmente no desktop e verticalmente no mobile.
  */
 export function MethodologySection({ detailed = false, withLink = true }: MethodologySectionProps) {
+  const t = useCopy();
   const { ref, progress } = useSectionProgress<HTMLDivElement>();
   const total = methodologyStages.length;
 
@@ -29,7 +31,8 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
           <div className="lg:col-span-7">
             <Reveal>
               <h2 id="metodologia-titulo" className="text-display-md">
-                Do dado ao plano do <span className="text-brand-500">Programa D90</span>
+                {t('Do dado ao plano do ')}
+                <span className="text-brand-500">{t('Programa D90')}</span>
               </h2>
             </Reveal>
           </div>
@@ -41,9 +44,19 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
                   onClick={() => track('cta_metodologia_click', { local: 'home_metodologia' })}
                   className="group inline-flex items-center gap-3 text-[0.9375rem] font-semibold transition-opacity duration-300 hover:opacity-70"
                 >
-                  Ver a metodologia
-                  <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-                    <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                  {t('Ver a metodologia')}
+                  <svg
+                    viewBox="0 0 14 14"
+                    className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M1 7h11M8 3l4 4-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="square"
+                    />
                   </svg>
                 </Link>
               </Reveal>
@@ -90,16 +103,16 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
                     )}
                   >
                     <span className="text-[0.75rem] font-bold tracking-[0.14em] text-brand-600">
-                      {stage.order}
+                      {t(stage.order)}
                     </span>
-                    <h3 className="mt-3 text-[1.375rem] leading-tight">{stage.title}</h3>
+                    <h3 className="mt-3 text-[1.375rem] leading-tight">{t(stage.title)}</h3>
                     <p className="mt-3 text-[0.9375rem] leading-relaxed text-content/65">
-                      {stage.definition}
+                      {t(stage.definition)}
                     </p>
                     {detailed ? (
                       <>
                         <p className="mt-3 text-[0.9375rem] leading-relaxed text-content/55">
-                          {stage.detail}
+                          {t(stage.detail)}
                         </p>
                         <ul className="mt-5 space-y-2 border-t border-line/15 pt-4">
                           {stage.deliverables.map((item) => (
@@ -107,8 +120,11 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
                               key={item}
                               className="flex items-start gap-3 text-[0.8125rem] leading-relaxed text-content/60"
                             >
-                              <span aria-hidden="true" className="mt-2 h-0.5 w-3 shrink-0 bg-brand-500" />
-                              {item}
+                              <span
+                                aria-hidden="true"
+                                className="mt-2 h-0.5 w-3 shrink-0 bg-brand-500"
+                              />
+                              {t(item)}
                             </li>
                           ))}
                         </ul>
@@ -118,9 +134,19 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
                             onClick={() => track('recurso_metodologia_click', { etapa: stage.id })}
                             className="group mt-5 inline-flex items-center gap-2 text-[0.8125rem] font-semibold text-brand-600 transition-opacity duration-300 hover:opacity-75"
                           >
-                            {stage.resource.label}
-                            <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-                              <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                            {t(stage.resource.label)}
+                            <svg
+                              viewBox="0 0 14 14"
+                              className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1"
+                              fill="none"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M1 7h11M8 3l4 4-4 4"
+                                stroke="currentColor"
+                                strokeWidth="1.8"
+                                strokeLinecap="square"
+                              />
                             </svg>
                           </a>
                         ) : null}
@@ -136,13 +162,13 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
         {/* O que a empresa recebe ao final: uma linha por item */}
         <Reveal delay={80}>
           <div className="mt-14 border-t border-line/15 pt-10 lg:mt-20">
-            <p className="max-w-3xl text-display-sm">{methodologyOutcome}</p>
+            <p className="max-w-3xl text-display-sm">{t(methodologyOutcome)}</p>
             <ul className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
               {expectedResults.map((result) => (
                 <li key={result.id} className="flex items-start gap-3">
                   <span aria-hidden="true" className="mt-2 h-0.5 w-4 shrink-0 bg-brand-500" />
                   <span className="text-[0.9375rem] leading-snug text-content/70">
-                    {result.title}
+                    {t(result.title)}
                   </span>
                 </li>
               ))}

@@ -1,10 +1,12 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Logo, NexacashLogo } from '@/components/ui/Logo';
 import { ThemeToggle } from '@/components/layout/ThemeToggle';
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 import { mainNav } from '@/data/navigation';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { useScrollState } from '@/hooks/useScrollState';
@@ -15,6 +17,7 @@ import { cx } from '@/lib/utils';
 const HOME_SECTIONS = ['inicio', 'a-nexallog', 'problemas', 'metodologia', 'solucoes'];
 
 export function Header() {
+  const t = useCopy();
   const pathname = usePathname();
   const { scrolled } = useScrollState(16);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,7 +46,9 @@ export function Header() {
         return;
       }
       if (event.key !== 'Tab') return;
-      const focusables = panelRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
+      const focusables = panelRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled])',
+      );
       if (!focusables || focusables.length === 0) return;
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
@@ -83,19 +88,21 @@ export function Header() {
     >
       <div
         className={cx(
-          'shell flex items-center justify-between transition-[height] duration-300 ease-outexpo',
+          'shell flex items-center justify-between gap-3 transition-[height] duration-300 ease-outexpo',
           scrolled || menuOpen ? 'h-[var(--header-height-compact)]' : 'h-[var(--header-height)]',
         )}
       >
         <Link
           href="/"
-          className="-ml-1 px-1 py-2"
-          aria-label={`${isNexacash ? 'NEXACASH' : siteConfig.name}. Ir para a página inicial`}
+          className="-ml-1 w-[min(42vw,13.5rem)] shrink px-1 py-2"
+          aria-label={t('{brand}. Ir para a página inicial', {
+            brand: isNexacash ? 'NEXACASH' : siteConfig.name,
+          })}
         >
           {isNexacash ? <NexacashLogo /> : <Logo />}
         </Link>
 
-        <nav aria-label="Navegação principal" className="hidden xl:block">
+        <nav aria-label={t('Navegação principal')} className="hidden 2xl:block">
           <ul className="flex items-center gap-1">
             {mainNav.map((item) => {
               const active = isActive(item.href, item.sectionId);
@@ -109,7 +116,7 @@ export function Header() {
                       active ? 'text-content' : 'text-content/55 hover:text-content',
                     )}
                   >
-                    {item.label}
+                    {t(item.label)}
                     <span
                       aria-hidden="true"
                       className={cx(
@@ -124,16 +131,27 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+        <div className="flex shrink-0 items-center gap-2">
+          <LanguageSwitcher />
+          <ThemeToggle className="hidden sm:flex" />
           <Link
             href="/contato"
             onClick={() => track('cta_principal_click', { local: 'header' })}
-            className="group hidden h-10 items-center gap-2.5 whitespace-nowrap bg-brand-500 pl-4 pr-3 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper xl:inline-flex"
+            className="group hidden h-10 items-center gap-2.5 whitespace-nowrap bg-brand-500 pl-4 pr-3 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-ink hover:text-paper 2xl:inline-flex"
           >
-            {siteConfig.cta.primary}
-            <svg viewBox="0 0 14 14" className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1" fill="none" aria-hidden="true">
-              <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+            {t(siteConfig.cta.primary)}
+            <svg
+              viewBox="0 0 14 14"
+              className="h-3 w-3 transition-transform duration-300 ease-outexpo group-hover:translate-x-1"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M1 7h11M8 3l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="square"
+              />
             </svg>
           </Link>
 
@@ -143,9 +161,9 @@ export function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-controls="menu-mobile"
-            className="relative -mr-2 flex h-11 w-11 items-center justify-center text-content transition-colors duration-300 xl:hidden"
+            className="relative -mr-2 flex h-11 w-11 items-center justify-center text-content transition-colors duration-300 2xl:hidden"
           >
-            <span className="sr-only">{menuOpen ? 'Fechar menu' : 'Abrir menu'}</span>
+            <span className="sr-only">{t(menuOpen ? 'Fechar menu' : 'Abrir menu')}</span>
             <span aria-hidden="true" className="flex h-3.5 w-6 flex-col justify-between">
               <span
                 className={cx(
@@ -170,9 +188,9 @@ export function Header() {
         </div>
       </div>
 
-      <div id="menu-mobile" ref={panelRef} hidden={!menuOpen} className="xl:hidden">
+      <div id="menu-mobile" ref={panelRef} hidden={!menuOpen} className="2xl:hidden">
         <div className="tone-light h-[calc(100dvh-var(--header-height-compact))] overflow-y-auto border-t border-line/10 bg-surface">
-          <nav aria-label="Navegação principal, versão compacta" className="shell py-6">
+          <nav aria-label={t('Navegação principal, versão compacta')} className="shell py-6">
             <ul className="flex flex-col">
               {mainNav.map((item) => (
                 <li key={item.href} className="border-b border-line/10">
@@ -181,14 +199,27 @@ export function Header() {
                     onClick={closeMenu}
                     className="flex items-center justify-between py-4 text-[1.375rem] font-bold"
                   >
-                    {item.label}
-                    <svg viewBox="0 0 14 14" className="h-4 w-4 text-accent" fill="none" aria-hidden="true">
-                      <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                    {t(item.label)}
+                    <svg
+                      viewBox="0 0 14 14"
+                      className="h-4 w-4 text-accent"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M1 7h11M8 3l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="square"
+                      />
                     </svg>
                   </Link>
                 </li>
               ))}
             </ul>
+            <div className="mt-6 sm:hidden">
+              <ThemeToggle />
+            </div>
 
             <Link
               href="/contato"
@@ -196,9 +227,9 @@ export function Header() {
                 track('cta_principal_click', { local: 'menu_mobile' });
                 closeMenu();
               }}
-              className="mt-8 flex h-14 w-full items-center justify-center bg-brand-500 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink"
+              className="mt-8 flex min-h-14 w-full items-center justify-center bg-brand-500 px-4 py-3 text-center text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink"
             >
-              {siteConfig.cta.primary}
+              {t(siteConfig.cta.primary)}
             </Link>
           </nav>
         </div>

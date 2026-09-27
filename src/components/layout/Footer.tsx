@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { ContactChannels } from '@/components/ui/ContactChannels';
 import { FooterWordmark } from '@/components/layout/FooterWordmark';
@@ -6,6 +7,7 @@ import { footerNav } from '@/data/navigation';
 import { siteConfig } from '@/lib/site';
 
 export function Footer() {
+  const t = useCopy();
   const year = new Date().getFullYear();
 
   return (
@@ -25,7 +27,7 @@ export function Footer() {
                       rel="noopener noreferrer"
                       className="inline-flex h-9 items-center border border-line/20 px-4 text-sm text-content/70 transition-colors duration-300 hover:border-brand-500 hover:text-brand-500"
                     >
-                      {item.name}
+                      {t(item.name)}
                     </a>
                   </li>
                 ))}
@@ -33,11 +35,11 @@ export function Footer() {
             ) : null}
           </div>
 
-          <nav aria-label="Navegação do rodapé">
+          <nav aria-label={t('Navegação do rodapé')}>
             <div className="grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-4">
               {footerNav.map((column) => (
                 <div key={column.title}>
-                  <h2 className="label">{column.title}</h2>
+                  <h2 className="label">{t(column.title)}</h2>
                   <ul className="mt-4 space-y-2.5">
                     {column.items.map((item) => (
                       <li key={`${column.title}-${item.href}`}>
@@ -45,7 +47,7 @@ export function Footer() {
                           href={item.href}
                           className="text-[0.9375rem] text-content/65 transition-colors duration-300 hover:text-brand-500"
                         >
-                          {item.label}
+                          {t(item.label)}
                         </Link>
                       </li>
                     ))}
@@ -60,9 +62,9 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-line/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-content/45">
-            {year} {siteConfig.name}
-            {siteConfig.legalName ? `. ${siteConfig.legalName}` : ''}
-            {siteConfig.legal.cnpj ? `. CNPJ ${siteConfig.legal.cnpj}` : ''}
+            {t(year)} {t(siteConfig.name)}
+            {t(siteConfig.legalName ? `. ${siteConfig.legalName}` : '')}
+            {t(siteConfig.legal.cnpj ? `. CNPJ ${siteConfig.legal.cnpj}` : '')}
           </p>
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <li>
@@ -70,7 +72,7 @@ export function Footer() {
                 href="/politica-de-privacidade"
                 className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-content/45 transition-colors duration-300 hover:text-brand-500"
               >
-                Política de Privacidade
+                {t('Política de Privacidade')}
               </Link>
             </li>
             <li>
@@ -78,7 +80,7 @@ export function Footer() {
                 href="/termos-de-uso"
                 className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-content/45 transition-colors duration-300 hover:text-brand-500"
               >
-                Termos de Uso
+                {t('Termos de Uso')}
               </Link>
             </li>
             <li>
@@ -88,7 +90,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-content/45 transition-colors duration-300 hover:text-brand-500"
               >
-                Feito por Socialy
+                {t('Feito por Socialy')}
               </a>
             </li>
           </ul>

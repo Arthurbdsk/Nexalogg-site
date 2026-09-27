@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import { track, type AnalyticsEvent } from '@/lib/analytics';
 import { siteConfig } from '@/lib/site';
 import { cx } from '@/lib/utils';
@@ -29,6 +30,7 @@ const digits = (value: string) => value.replace(/\D/g, '');
  * entrada, evitando repetição do mesmo dado no rodapé e na página de contato.
  */
 export function ContactChannels({ className, local, variant = 'stacked' }: ContactChannelsProps) {
+  const t = useCopy();
   const { email, phone, whatsapp } = siteConfig.contact;
   const channels: Channel[] = [];
 
@@ -43,7 +45,9 @@ export function ContactChannels({ className, local, variant = 'stacked' }: Conta
   }
 
   const sameNumber =
-    Boolean(phone.value) && Boolean(whatsapp.value) && digits(phone.value!) === digits(whatsapp.value!);
+    Boolean(phone.value) &&
+    Boolean(whatsapp.value) &&
+    digits(phone.value!) === digits(whatsapp.value!);
 
   if (phone.value) {
     channels.push({
@@ -90,9 +94,9 @@ export function ContactChannels({ className, local, variant = 'stacked' }: Conta
             rel={channel.href.startsWith('https') ? 'noopener noreferrer' : undefined}
             className="group inline-flex flex-col gap-1"
           >
-            <span className="label">{channel.caption}</span>
+            <span className="label">{t(channel.caption)}</span>
             <span className="relative w-fit text-[1.0625rem] text-content/85 transition-colors duration-300 group-hover:text-brand-500">
-              {channel.label}
+              {t(channel.label)}
               <span
                 aria-hidden="true"
                 className="absolute -bottom-0.5 left-0 h-0.5 w-full origin-left scale-x-0 bg-brand-500 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
@@ -121,7 +125,7 @@ export function ContactChannels({ className, local, variant = 'stacked' }: Conta
                 />
               </svg>
               <span className="relative">
-                {channel.secondary.label}
+                {t(channel.secondary.label)}
                 <span
                   aria-hidden="true"
                   className="absolute -bottom-0.5 left-0 h-0.5 w-full origin-left scale-x-0 bg-brand-500 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"

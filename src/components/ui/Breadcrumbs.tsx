@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 
 export type Crumb = { name: string; path: string };
@@ -11,8 +12,9 @@ type BreadcrumbsProps = {
  * conforme prática recomendada de acessibilidade.
  */
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
+  const t = useCopy();
   return (
-    <nav aria-label="Trilha de navegação">
+    <nav aria-label={t('Trilha de navegação')}>
       <ol className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-content/45">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
@@ -20,19 +22,17 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
             <li key={item.path} className="flex items-center gap-3">
               {isLast ? (
                 <span aria-current="page" className="text-content/75">
-                  {item.name}
+                  {t(item.name)}
                 </span>
               ) : (
                 <Link
                   href={item.path}
                   className="transition-colors duration-200 hover:text-brand-600"
                 >
-                  {item.name}
+                  {t(item.name)}
                 </Link>
               )}
-              {isLast ? null : (
-                <span aria-hidden="true" className="h-px w-4 bg-line/25" />
-              )}
+              {isLast ? null : <span aria-hidden="true" className="h-px w-4 bg-line/25" />}
             </li>
           );
         })}

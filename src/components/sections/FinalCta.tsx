@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { Section } from '@/components/layout/Section';
 import { track } from '@/lib/analytics';
@@ -24,6 +25,7 @@ const digits = (value: string) => value.replace(/\D/g, '');
 
 /** Fechamento comercial com contexto, próximos passos e canais diretos. */
 export function FinalCta() {
+  const t = useCopy();
   const email = siteConfig.contact.email;
   const whatsapp = siteConfig.contact.whatsapp;
 
@@ -34,19 +36,19 @@ export function FinalCta() {
           <div className="grid lg:grid-cols-12">
             <div className="flex flex-col justify-between px-6 py-9 sm:px-10 sm:py-12 lg:col-span-7 lg:min-h-[27rem] lg:px-12 lg:py-14">
               <h2 id="proximo-passo-titulo" className="max-w-3xl text-display-md">
-                Vamos conectar caminhos e gerar resultados na sua operação?
+                {t('Vamos conectar caminhos e gerar resultados na sua operação?')}
               </h2>
               <p className="mt-10 max-w-2xl text-lead text-content/75 lg:mt-16">
-                Conte o momento atual da operação, onde o resultado está pressionado e quais
-                decisões precisam ganhar clareza. A primeira conversa organiza as prioridades e
-                identifica como a NEXALLOG pode apoiar a execução.
+                {t(
+                  'Conte o momento atual da operação, onde o resultado está pressionado e quais decisões precisam ganhar clareza. A primeira conversa organiza as prioridades e identifica como a NEXALLOG pode apoiar a execução.',
+                )}
               </p>
             </div>
 
             <aside className="flex flex-col justify-between bg-ink px-6 py-9 text-paper sm:px-10 sm:py-12 lg:col-span-5 lg:px-12 lg:py-14">
               <div>
                 <p className="max-w-sm text-[1.0625rem] leading-7 text-paper/75">
-                  Prefere falar diretamente? Entre em contato por e-mail ou WhatsApp.
+                  {t('Prefere falar diretamente? Entre em contato por e-mail ou WhatsApp.')}
                 </p>
 
                 <address className="mt-8 flex flex-col gap-4 not-italic">
@@ -56,7 +58,7 @@ export function FinalCta() {
                       onClick={() => track('email_click', { local: 'cta_final' })}
                       className="w-fit border-b border-paper/25 pb-1 text-[0.9375rem] font-semibold text-paper transition-colors hover:border-brand-500 hover:text-brand-500"
                     >
-                      {email.label ?? email.value}
+                      {t(email.label ?? email.value)}
                     </a>
                   ) : null}
                   {whatsapp.value ? (
@@ -67,7 +69,8 @@ export function FinalCta() {
                       onClick={() => track('whatsapp_click', { local: 'cta_final' })}
                       className="w-fit border-b border-paper/25 pb-1 text-[0.9375rem] font-semibold text-paper transition-colors hover:border-brand-500 hover:text-brand-500"
                     >
-                      WhatsApp {whatsapp.label ?? whatsapp.value}
+                      {t('WhatsApp ')}
+                      {t(whatsapp.label ?? whatsapp.value)}
                     </a>
                   ) : null}
                 </address>
@@ -78,10 +81,15 @@ export function FinalCta() {
                 onClick={() => track('cta_principal_click', { local: 'cta_final' })}
                 className="group mt-12 inline-flex h-14 w-full items-center justify-between gap-4 bg-brand-500 pl-6 pr-2 text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-300 ease-outexpo hover:bg-paper"
               >
-                {siteConfig.cta.primary}
+                {t(siteConfig.cta.primary)}
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-ink/20 text-ink transition-transform duration-300 ease-outexpo group-hover:translate-x-1">
                   <svg viewBox="0 0 14 14" className="h-3.5 w-3.5" fill="none" aria-hidden="true">
-                    <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                    <path
+                      d="M1 7h11M8 3l4 4-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="square"
+                    />
                   </svg>
                 </span>
               </Link>
@@ -97,9 +105,9 @@ export function FinalCta() {
                 <span className="text-sm font-bold text-ink/55 transition-colors duration-300 group-hover:text-brand-500">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <h3 className="mt-7 text-base font-bold">{step.title}</h3>
+                <h3 className="mt-7 text-base font-bold">{t(step.title)}</h3>
                 <p className="mt-2 max-w-sm text-sm leading-6 text-content/70 transition-colors duration-300 group-hover:text-paper/65">
-                  {step.description}
+                  {t(step.description)}
                 </p>
               </li>
             ))}

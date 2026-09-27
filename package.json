@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
+    "check:i18n": "node scripts/check-i18n.mjs",
     "seo:generate": "node scripts/generate-seo-files.mjs",
     "qr:generate": "node scripts/generate-qr.mjs",
     "marca:generate": "node scripts/generate-brand-kit.mjs"
   },
   "dependencies": {
     "next": "^15.5.24",
+    "next-intl": "^4.14.7",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "sharp": "^0.35.4"

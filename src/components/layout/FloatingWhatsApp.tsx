@@ -1,10 +1,12 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import { useEffect, useRef, useState } from 'react';
 import { ContactForm } from '@/components/sections/ContactForm';
 import { track } from '@/lib/analytics';
 
 export function FloatingWhatsApp() {
+  const t = useCopy();
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -27,7 +29,7 @@ export function FloatingWhatsApp() {
             setOpen(true);
             track('whatsapp_click', { local: 'floating_button' });
           }}
-          aria-label="Iniciar conversa pelo WhatsApp"
+          aria-label={t('Iniciar conversa pelo WhatsApp')}
           aria-expanded="false"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_14px_32px_-12px_rgb(17_17_17/0.55)] transition-transform duration-300 ease-outexpo hover:scale-105 focus-visible:scale-105"
         >
@@ -39,28 +41,33 @@ export function FloatingWhatsApp() {
 
   return (
     <aside
-      aria-label="Acesso rápido ao WhatsApp"
+      aria-label={t('Acesso rápido ao WhatsApp')}
       className="tone-dark fixed bottom-5 right-5 z-[60] w-[min(24rem,calc(100vw-2.5rem))] border border-line/25 bg-surface p-6 text-content shadow-[0_24px_70px_rgb(0_0_0/0.35)]"
     >
       <div className="flex items-start justify-between gap-6">
         <div>
-          <p className="text-lg font-bold">Falar pelo WhatsApp</p>
+          <p className="text-lg font-bold">{t('Falar pelo WhatsApp')}</p>
           <p className="mt-2 text-sm leading-relaxed text-content/65">
-            Informe seu nome e sua empresa para iniciar a conversa.
+            {t('Informe seu nome e sua empresa para iniciar a conversa.')}
           </p>
         </div>
         <button
           ref={closeRef}
           type="button"
           onClick={() => setOpen(false)}
-          aria-label="Fechar acesso ao WhatsApp"
+          aria-label={t('Fechar acesso ao WhatsApp')}
           className="flex h-9 w-9 shrink-0 items-center justify-center border border-line/25 text-xl leading-none transition-colors hover:border-line"
         >
-          ×
+          {t('×')}
         </button>
       </div>
       <div className="mt-6">
-        <ContactForm compact idPrefix="whatsapp-flutuante" local="floating_panel" onComplete={() => setOpen(false)} />
+        <ContactForm
+          compact
+          idPrefix="whatsapp-flutuante"
+          local="floating_panel"
+          onComplete={() => setOpen(false)}
+        />
       </div>
     </aside>
   );

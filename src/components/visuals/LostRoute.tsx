@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import { useState } from 'react';
 
 /**
@@ -8,6 +9,7 @@ import { useState } from 'react';
  * recalcular caminho sem recorrer a ilustração decorativa.
  */
 export function LostRoute() {
+  const t = useCopy();
   const [rerouted, setRerouted] = useState(false);
 
   return (
@@ -22,7 +24,13 @@ export function LostRoute() {
       <svg viewBox="0 0 520 260" className="h-auto w-full" role="presentation">
         <defs>
           <pattern id="lost-grid" width="52" height="52" patternUnits="userSpaceOnUse">
-            <path d="M52 0H0v52" fill="none" stroke="#FFFFFF" strokeOpacity="0.06" strokeWidth="1" />
+            <path
+              d="M52 0H0v52"
+              fill="none"
+              stroke="#FFFFFF"
+              strokeOpacity="0.06"
+              strokeWidth="1"
+            />
           </pattern>
         </defs>
         <rect width="520" height="260" fill="url(#lost-grid)" />
@@ -45,8 +53,21 @@ export function LostRoute() {
           strokeDasharray="5 7"
         />
         <g>
-          <circle cx="268" cy="68" r="9" fill="none" stroke="#FFFFFF" strokeOpacity="0.25" strokeWidth="2" />
-          <path d="M263 63 l10 10 M273 63 l-10 10" stroke="#FFFFFF" strokeOpacity="0.4" strokeWidth="1.6" />
+          <circle
+            cx="268"
+            cy="68"
+            r="9"
+            fill="none"
+            stroke="#FFFFFF"
+            strokeOpacity="0.25"
+            strokeWidth="2"
+          />
+          <path
+            d="M263 63 l10 10 M273 63 l-10 10"
+            stroke="#FFFFFF"
+            strokeOpacity="0.4"
+            strokeWidth="1.6"
+          />
         </g>
 
         {/* Trajeto alternativo */}
@@ -81,7 +102,7 @@ export function LostRoute() {
           fontFamily="var(--font-sans), sans-serif"
           style={{ opacity: rerouted ? 1 : 0.35, transition: 'opacity 600ms ease 300ms' }}
         >
-          INÍCIO
+          {t('INÍCIO')}
         </text>
       </svg>
     </div>

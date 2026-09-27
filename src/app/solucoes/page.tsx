@@ -1,3 +1,4 @@
+import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { EcosystemSection } from '@/components/sections/EcosystemSection';
@@ -7,14 +8,16 @@ import { Reveal } from '@/components/ui/Reveal';
 import { methodologyStages } from '@/data/methodology';
 import { solutionAreas } from '@/data/solutions';
 import { breadcrumbSchema, graph, serviceSchema, webPageSchema } from '@/lib/jsonld';
-import { buildMetadata } from '@/lib/seo';
+import { localizedMetadata } from '@/lib/seo';
 
 const title = 'Soluções';
 const description =
   'Dez frentes de atuação da NEXALLOG, de Operações e Tecnologia a WMS, TMS, Comercial e Fiscal, conduzidas com equipe própria e rede de parceiros especializados.';
 const path = '/solucoes';
 
-export const metadata = buildMetadata({ title, description, path });
+export function generateMetadata() {
+  return localizedMetadata({ title, description, path });
+}
 
 const crumbs = [
   { name: 'Início', path: '/' },
@@ -22,6 +25,7 @@ const crumbs = [
 ];
 
 export default function SolutionsPage() {
+  const t = useCopy();
   return (
     <>
       <JsonLd
@@ -40,13 +44,13 @@ export default function SolutionsPage() {
 
       <main id="conteudo" tabIndex={-1}>
         <PageHeader
-          title="Dez frentes, um único plano de trabalho"
+          title={t('Dez frentes, um único plano de trabalho')}
           crumbs={crumbs}
           lead={
             <p>
-              O escopo de Processos Administrativos é definido pelo diagnóstico. As frentes e ações
-              são acionadas conforme a causa estrutural identificada e a prioridade estabelecida no
-              Programa D90, com equipe própria e rede de parceiros especializados.
+              {t(
+                'O escopo de Processos Administrativos é definido pelo diagnóstico. As frentes e ações são acionadas conforme a causa estrutural identificada e a prioridade estabelecida no Programa D90, com equipe própria e rede de parceiros especializados.',
+              )}
             </p>
           }
         />
@@ -62,14 +66,14 @@ export default function SolutionsPage() {
               <div className="lg:col-span-5">
                 <Reveal>
                   <h2 id="conexao-titulo" className="text-display-md">
-                    Como as áreas entram no Programa D90
+                    {t('Como as áreas entram no Programa D90')}
                   </h2>
                 </Reveal>
                 <Reveal delay={100}>
                   <p className="mt-6 text-[1.0625rem] leading-[1.75] text-content/60">
-                    A escolha das frentes não é feita no início por preferência. Ela decorre do
-                    diagnóstico: cada causa estrutural identificada aponta a área que precisa ser
-                    acionada e o momento em que isso acontece dentro do plano.
+                    {t(
+                      'A escolha das frentes não é feita no início por preferência. Ela decorre do diagnóstico: cada causa estrutural identificada aponta a área que precisa ser acionada e o momento em que isso acontece dentro do plano.',
+                    )}
                   </p>
                 </Reveal>
                 <Reveal delay={160}>
@@ -78,7 +82,7 @@ export default function SolutionsPage() {
                     className="group mt-8 inline-flex items-center gap-3 text-[0.9375rem] text-brand-600 transition-colors duration-300 hover:text-brand-600"
                   >
                     <span className="relative">
-                      Ver como funciona o D90
+                      {t('Ver como funciona o D90')}
                       <span
                         aria-hidden="true"
                         className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-brand-400 transition-transform duration-300 ease-outexpo group-hover:scale-x-100"
@@ -95,12 +99,12 @@ export default function SolutionsPage() {
                       <div className="border-b border-line/15 py-6">
                         <div className="flex items-baseline gap-5">
                           <span className="text-[0.6875rem] tracking-[0.16em] text-brand-600">
-                            {stage.order}
+                            {t(stage.order)}
                           </span>
-                          <h3 className="text-[1.25rem] text-content">{stage.title}</h3>
+                          <h3 className="text-[1.25rem] text-content">{t(stage.title)}</h3>
                         </div>
                         <p className="mt-3 pl-11 text-[0.9375rem] leading-[1.7] text-content/55">
-                          {stage.definition}
+                          {t(stage.definition)}
                         </p>
                       </div>
                     </Reveal>

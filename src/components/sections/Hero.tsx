@@ -1,5 +1,6 @@
 'use client';
 
+import { useCopy } from '@/i18n/useCopy';
 import { Button } from '@/components/ui/Button';
 import { BrandPanel } from '@/components/visuals/BrandPanel';
 import { track } from '@/lib/analytics';
@@ -15,6 +16,7 @@ const STEPS = ['Diagnóstico', 'Plano de 90 dias', 'Execução acompanhada'];
  * manter o contraste do título.
  */
 export function Hero() {
+  const t = useCopy();
   return (
     <section
       id="inicio"
@@ -30,11 +32,12 @@ export function Hero() {
             className="text-[clamp(1.875rem,4vw,3.375rem)] font-bold uppercase leading-[1.08] tracking-[-0.02em] motion-safe:animate-rise"
             style={{ animationDelay: '360ms' }}
           >
-            Soluções logísticas
+            {t('Soluções logísticas')}
             <br />
-            que conectam, movimentam
+            {t('que conectam, movimentam')}
             <br />
-            e geram <span className="text-accent">resultados.</span>
+            {t('e geram ')}
+            <span className="text-accent">{t('resultados.')}</span>
           </h1>
 
           <span
@@ -47,8 +50,9 @@ export function Hero() {
             className="mt-7 max-w-xl text-lead text-content/70 motion-safe:animate-driftin"
             style={{ animationDelay: '720ms' }}
           >
-            Do diagnóstico financeiro e operacional à execução do Programa D90, preparado para
-            empresas de Transporte e Logística.
+            {t(
+              'Do diagnóstico financeiro e operacional à execução do Programa D90, preparado para empresas de Transporte e Logística.',
+            )}
           </p>
 
           <div
@@ -61,7 +65,7 @@ export function Hero() {
               withArrow
               onClick={() => track('cta_principal_click', { local: 'hero' })}
             >
-              {siteConfig.cta.hero}
+              {t(siteConfig.cta.hero)}
             </Button>
             <Button
               href="/metodologia"
@@ -69,7 +73,7 @@ export function Hero() {
               size="lg"
               onClick={() => track('cta_metodologia_click', { local: 'hero' })}
             >
-              {siteConfig.cta.methodology}
+              {t(siteConfig.cta.methodology)}
             </Button>
           </div>
 
@@ -81,7 +85,7 @@ export function Hero() {
               <li key={step} className="flex items-center gap-3">
                 <span aria-hidden="true" className="h-0.5 w-5 bg-accent" />
                 <span className="text-sm font-semibold uppercase tracking-[0.1em] text-content/60">
-                  {step}
+                  {t(step)}
                 </span>
               </li>
             ))}
