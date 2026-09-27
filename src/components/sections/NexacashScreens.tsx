@@ -2,7 +2,7 @@
 
 import { useCopy } from '@/i18n/useCopy';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 
 const screens = [
   {
@@ -28,44 +28,66 @@ const screens = [
 export function NexacashScreens() {
   const t = useCopy();
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [stopped, setStopped] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (paused || stopped || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const timer = window.setInterval(
-      () => setActive((current) => (current + 1) % screens.length),
-      5500,
-    );
-    return () => window.clearInterval(timer);
-  }, [paused, stopped]);
+  const showScreen = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const next = (index + screens.length) % screens.length;
+    track.scrollTo({
+      left: next * track.clientWidth,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'instant'
+        : 'smooth',
+    });
+  };
 
   return (
-    <div
-      className="overflow-hidden border border-line/10 bg-surface shadow-[0_24px_70px_rgb(0_0_0_/_0.12)]"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false);
-      }}
-    >
-      <div className="relative aspect-[2/1] w-full overflow-hidden bg-[#e9f2f6]">
+    <div className="overflow-hidden border border-line/10 bg-surface shadow-[0_24px_70px_rgb(0_0_0_/_0.12)]">
+      <div
+        ref={trackRef}
+        role="group"
+        aria-label={t('Telas da NEXACASH')}
+        tabIndex={0}
+        className="flex w-full snap-x snap-mandatory overflow-x-auto overscroll-x-contain bg-[#e9f2f6] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        onScroll={(event) => {
+          const track = event.currentTarget;
+          if (track.clientWidth) {
+            setActive(
+              Math.max(
+                0,
+                Math.min(screens.length - 1, Math.round(track.scrollLeft / track.clientWidth)),
+              ),
+            );
+          }
+        }}
+        onKeyDown={(event) => {
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+            event.preventDefault();
+            showScreen(active + (event.key === 'ArrowLeft' ? -1 : 1));
+          }
+        }}
+      >
         {screens.map((screen, index) => (
-          <Image
+          <div
             key={screen.src}
-            src={screen.src}
-            alt={t(index === active ? screen.alt : '')}
-            aria-hidden={index !== active}
-            fill
-            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1440px) 92vw, 1260px"
-            className={`object-contain transition-opacity duration-700 motion-reduce:transition-none ${index === active ? 'opacity-100' : 'opacity-0'}`}
-            priority={index === 0}
-          />
+            className="relative aspect-[2/1] w-full shrink-0 snap-center snap-always"
+          >
+            <Image
+              src={screen.src}
+              alt={t(index === active ? screen.alt : '')}
+              aria-hidden={index !== active}
+              fill
+              sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1440px) 92vw, 1260px"
+              className="select-none object-contain"
+              draggable={false}
+              priority={index === 0}
+            />
+          </div>
         ))}
       </div>
       <div className="flex flex-col gap-3 border-t border-line/10 px-4 py-4 sm:px-8 sm:py-5">
-        <div aria-live={paused || stopped ? 'polite' : 'off'}>
+        <div aria-live="polite" aria-atomic="true">
           <p className="text-sm font-bold uppercase tracking-[0.08em]">
             {t(screens[active].title)}
           </p>
@@ -77,31 +99,43 @@ export function NexacashScreens() {
             role="group"
             aria-label={t('Telas da NEXACASH')}
           >
-            {screens.map((screen, index) => (
-              <button
-                key={screen.src}
-                type="button"
-                aria-label={t('Mostrar {title}', { title: t(screen.title) })}
-                aria-pressed={index === active}
-                onClick={() => {
-                  setActive(index);
-                  setStopped(true);
-                }}
-                className="flex h-11 w-11 items-center justify-center"
-              >
-                <span
-                  aria-hidden="true"
-                  className={`h-2 w-8 transition-colors ${index === active ? 'bg-brand-500' : 'bg-content/20 hover:bg-content/45'}`}
-                />
-              </button>
-            ))}
             <button
               type="button"
-              onClick={() => setStopped(!stopped)}
-              aria-label={t(stopped ? 'Reproduzir apresentação' : 'Pausar apresentação')}
-              className="flex h-11 w-11 items-center justify-center border border-line/20 text-xs"
+              onClick={() => showScreen(active - 1)}
+              aria-label={t('Anterior')}
+              className="flex h-11 w-11 items-center justify-center border border-line/25 transition-colors hover:bg-brand-500 hover:text-ink"
             >
-              <span aria-hidden="true">{stopped ? '▶' : 'Ⅱ'}</span>
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                <path
+                  d="m14 5-7 7 7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <span
+              className="min-w-14 text-center text-xs font-semibold tabular-nums"
+              aria-hidden="true"
+            >
+              {active + 1} / {screens.length}
+            </span>
+            <button
+              type="button"
+              onClick={() => showScreen(active + 1)}
+              aria-label={t('Próxima')}
+              className="flex h-11 w-11 items-center justify-center border border-line/25 transition-colors hover:bg-brand-500 hover:text-ink"
+            >
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                <path
+                  d="m10 5 7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
           </div>
           <a
