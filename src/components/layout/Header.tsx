@@ -3,7 +3,6 @@
 import { useCopy } from '@/i18n/useCopy';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useCallback, useEffect, useRef, useState } from 'react';
 import { Logo, NexacashLogo } from '@/components/ui/Logo';
 import { ThemeToggle } from '@/components/layout/ThemeToggle';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
@@ -20,54 +19,9 @@ export function Header() {
   const t = useCopy();
   const pathname = usePathname();
   const { scrolled } = useScrollState(16);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const toggleRef = useRef<HTMLButtonElement>(null);
   const isHome = pathname === '/';
   const isNexacash = pathname === '/nexacash';
   const activeSection = useActiveSection(isHome ? HOME_SECTIONS : []);
-
-  const closeMenu = useCallback(() => setMenuOpen(false), []);
-
-  useEffect(() => {
-    closeMenu();
-  }, [pathname, closeMenu]);
-
-  useEffect(() => {
-    if (!menuOpen) return;
-    const { style } = document.body;
-    const previousOverflow = style.overflow;
-    style.overflow = 'hidden';
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setMenuOpen(false);
-        toggleRef.current?.focus();
-        return;
-      }
-      if (event.key !== 'Tab') return;
-      const focusables = panelRef.current?.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled])',
-      );
-      if (!focusables || focusables.length === 0) return;
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-
-    document.addEventListener('keydown', onKeyDown);
-    panelRef.current?.querySelector<HTMLElement>('a[href]')?.focus();
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      style.overflow = previousOverflow;
-    };
-  }, [menuOpen]);
 
   const isActive = (href: string, sectionId?: string) => {
     if (href.startsWith('/#')) return isHome && activeSection === sectionId;
@@ -76,20 +30,24 @@ export function Header() {
   };
 
   // Na home o cabeçalho começa transparente sobre o hero, que segue o tema.
-  const overHero = isHome && !scrolled && !menuOpen;
+  const overHero = isHome && !scrolled;
 
   return (
     <header
       className={cx(
         'fixed inset-x-0 top-0 z-50 text-content transition-[background-color,box-shadow] duration-300',
         'tone-light',
-        overHero ? 'bg-transparent' : 'bg-surface shadow-[0_1px_0_0_rgb(var(--line)/0.12)]',
+        overHero
+          ? 'bg-surface 2xl:bg-transparent'
+          : 'bg-surface shadow-[0_1px_0_0_rgb(var(--line)/0.12)]',
       )}
     >
       <div
         className={cx(
           'shell flex items-center justify-between gap-3 transition-[height] duration-300 ease-outexpo',
-          scrolled || menuOpen ? 'h-[var(--header-height-compact)]' : 'h-[var(--header-height)]',
+          scrolled
+            ? 'h-[3.5rem] 2xl:h-[var(--header-height-compact)]'
+            : 'h-[3.75rem] 2xl:h-[var(--header-height)]',
         )}
       >
         <Link
@@ -133,7 +91,7 @@ export function Header() {
 
         <div className="flex shrink-0 items-center gap-2">
           <LanguageSwitcher />
-          <ThemeToggle className="hidden sm:flex" />
+          <ThemeToggle />
           <Link
             href="/contato"
             onClick={() => track('cta_principal_click', { local: 'header' })}
@@ -155,85 +113,40 @@ export function Header() {
             </svg>
           </Link>
 
-          <button
-            ref={toggleRef}
-            type="button"
-            onClick={() => setMenuOpen((open) => !open)}
-            aria-expanded={menuOpen}
-            aria-controls="menu-mobile"
-            className="relative -mr-2 flex h-11 w-11 items-center justify-center text-content transition-colors duration-300 2xl:hidden"
-          >
-            <span className="sr-only">{t(menuOpen ? 'Fechar menu' : 'Abrir menu')}</span>
-            <span aria-hidden="true" className="flex h-3.5 w-6 flex-col justify-between">
-              <span
-                className={cx(
-                  'block h-0.5 w-full origin-center bg-current transition-transform duration-300 ease-outexpo',
-                  menuOpen && 'translate-y-[6px] rotate-45',
-                )}
-              />
-              <span
-                className={cx(
-                  'block h-0.5 w-full bg-current transition-opacity duration-200',
-                  menuOpen && 'opacity-0',
-                )}
-              />
-              <span
-                className={cx(
-                  'block h-0.5 w-full origin-center bg-current transition-transform duration-300 ease-outexpo',
-                  menuOpen && '-translate-y-[6px] -rotate-45',
-                )}
-              />
-            </span>
-          </button>
         </div>
       </div>
 
-      <div id="menu-mobile" ref={panelRef} hidden={!menuOpen} className="2xl:hidden">
-        <div className="tone-light h-[calc(100dvh-var(--header-height-compact))] overflow-y-auto border-t border-line/10 bg-surface">
-          <nav aria-label={t('Navegação principal, versão compacta')} className="shell py-6">
-            <ul className="flex flex-col">
-              {mainNav.map((item) => (
-                <li key={item.href} className="border-b border-line/10">
-                  <Link
-                    href={item.href}
-                    onClick={closeMenu}
-                    className="flex items-center justify-between py-4 text-[1.375rem] font-bold"
-                  >
-                    {t(item.label)}
-                    <svg
-                      viewBox="0 0 14 14"
-                      className="h-4 w-4 text-accent"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M1 7h11M8 3l4 4-4 4"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="square"
-                      />
-                    </svg>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 sm:hidden">
-              <ThemeToggle />
-            </div>
-
-            <Link
-              href="/contato"
-              onClick={() => {
-                track('cta_principal_click', { local: 'menu_mobile' });
-                closeMenu();
-              }}
-              className="mt-8 flex min-h-14 w-full items-center justify-center bg-brand-500 px-4 py-3 text-center text-[0.8125rem] font-bold uppercase tracking-[0.06em] text-ink"
-            >
-              {t(siteConfig.cta.primary)}
-            </Link>
-          </nav>
-        </div>
-      </div>
+      <nav
+        aria-label={t('Navegação principal')}
+        className="h-12 overflow-x-auto overscroll-x-contain border-t border-line/10 bg-surface [scrollbar-width:none] [&::-webkit-scrollbar]:hidden 2xl:hidden"
+      >
+        <ul className="flex w-max items-center gap-1 px-[var(--shell-padding)]">
+          {mainNav.map((item) => {
+            const active = isActive(item.href, item.sectionId);
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={cx(
+                    'relative inline-flex h-12 shrink-0 items-center whitespace-nowrap px-3 text-xs font-semibold uppercase tracking-[0.04em] transition-colors',
+                    active ? 'text-content' : 'text-content/65 hover:text-content',
+                  )}
+                >
+                  {t(item.label)}
+                  <span
+                    aria-hidden="true"
+                    className={cx(
+                      'absolute inset-x-3 bottom-0 h-0.5 bg-accent',
+                      active ? 'block' : 'hidden',
+                    )}
+                  />
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </header>
   );
 }
