@@ -97,8 +97,8 @@ color-scheme: dark;
 @layer base {
   :root {
     --shell-padding: clamp(1.25rem, 4vw, 3.5rem);
-    --header-height: 5.25rem;
-    --header-height-compact: 4rem;
+    --header-height: 6.75rem;
+    --header-height-compact: 6.5rem;
     --brand: #e0a800;
 
     /* Tom padrão da página: claro */
@@ -107,6 +107,13 @@ color-scheme: dark;
     --content: 17 17 17;
     --line: 17 17 17;
     color-scheme: light;
+  }
+
+  @media (min-width: 1536px) {
+    :root {
+      --header-height: 5.25rem;
+      --header-height-compact: 4rem;
+    }
   }
 
   * {
