@@ -6,22 +6,22 @@ import { useRef, useState } from 'react';
 
 const screens = [
   {
-    src: '/images/nexacash/resultado.webp',
-    title: 'Acompanhamento de resultado',
-    description: 'Da receita ao resultado final, com os impactos de cada grupo.',
-    alt: 'Tela demonstrativa de acompanhamento de resultado com receita, despesas e margem',
+    src: '/images/nexacash/painel-fluxo-caixa.png',
+    title: 'Fluxo de caixa em tempo real',
+    description: 'Entradas, saídas, contas a receber e contas a pagar em uma visão executiva.',
+    alt: 'Painel escuro da NEXACASH com indicadores e gráficos de fluxo de caixa',
   },
   {
-    src: '/images/nexacash/fluxo-de-caixa.webp',
-    title: 'Fluxo de caixa',
-    description: 'Entradas, saídas e saldo projetado em uma visão diária.',
-    alt: 'Tela demonstrativa do fluxo de caixa com recebimentos, pagamentos e saldo projetado',
+    src: '/images/nexacash/painel-resultado-setembro.png',
+    title: 'Formação do resultado',
+    description: 'Da receita bruta ao resultado final, com cada impacto financeiro identificado.',
+    alt: 'Painel escuro da NEXACASH com a formação do resultado financeiro mensal',
   },
   {
-    src: '/images/nexacash/operacao.webp',
-    title: 'Visão da operação',
-    description: 'Os números da operação financeira em um só lugar.',
-    alt: 'Tela demonstrativa da operação financeira com indicadores de saldo e resultado',
+    src: '/images/nexacash/painel-tendencia-resultado.png',
+    title: 'Tendência anual do resultado',
+    description: 'Receita, despesas e resultado comparados mês a mês, incluindo projeções.',
+    alt: 'Painel escuro da NEXACASH com a tendência anual de receita, despesas e resultado',
   },
 ] as const;
 
@@ -49,7 +49,7 @@ export function NexacashScreens() {
         role="group"
         aria-label={t('Telas da NEXACASH')}
         tabIndex={0}
-        className="flex w-full snap-x snap-mandatory overflow-x-auto overscroll-x-contain bg-[#e9f2f6] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex w-full snap-x snap-mandatory overflow-x-auto overscroll-x-contain bg-[#0d1117] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         onScroll={(event) => {
           const track = event.currentTarget;
           if (track.clientWidth) {
@@ -71,7 +71,7 @@ export function NexacashScreens() {
         {screens.map((screen, index) => (
           <div
             key={screen.src}
-            className="relative aspect-[2/1] w-full shrink-0 snap-center snap-always"
+            className="relative aspect-video w-full shrink-0 snap-center snap-always"
           >
             <Image
               src={screen.src}
