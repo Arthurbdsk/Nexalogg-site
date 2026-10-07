@@ -13,6 +13,7 @@ export const mainNav: NavItem[] = [
   { label: 'Problemas', href: '/#problemas', sectionId: 'problemas' },
   { label: 'Metodologia', href: '/metodologia', sectionId: 'metodologia' },
   { label: 'Soluções', href: '/solucoes', sectionId: 'solucoes' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contato', href: '/contato', sectionId: 'contato' },
 ];
 
@@ -25,6 +26,7 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
       { label: 'Alexandre Felix', href: '/a-nexallog#alexandre-felix' },
       { label: 'Cobertura completa', href: '/solucoes' },
       { label: 'NEXACASH', href: '/nexacash' },
+      { label: 'Blog', href: '/blog' },
     ],
   },
   {

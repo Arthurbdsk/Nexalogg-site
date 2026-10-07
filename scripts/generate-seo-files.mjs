@@ -41,6 +41,7 @@ const routes = [
   { path: '/nexacash', priority: '0.9', changefreq: 'monthly' },
   { path: '/metodologia', priority: '0.9', changefreq: 'monthly' },
   { path: '/solucoes', priority: '0.8', changefreq: 'monthly' },
+  { path: '/blog', priority: '0.8', changefreq: 'weekly' },
   ...solutionSlugs.map((slug) => ({
     path: `/solucoes/${slug}`,
     priority: '0.7',
