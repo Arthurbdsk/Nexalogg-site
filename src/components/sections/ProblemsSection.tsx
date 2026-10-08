@@ -58,7 +58,7 @@ export function ProblemsSection() {
           <div className="lg:col-span-5 lg:col-start-8">
             <Reveal delay={100}>
               <p className="text-[1.0625rem] leading-relaxed text-content/65">
-                {t('Problemas estruturais se acumulam em silêncio e só aparecem no resultado.')}
+                {t('Problemas estruturais se acumulam e só aparecem no resultado.')}
               </p>
             </Reveal>
           </div>

@@ -50,7 +50,7 @@ export default function NexacashPage() {
             </p>
             <p className="mt-5 max-w-3xl text-[1.0625rem] leading-[1.75] text-content/65">
               {t(
-                'Do diagnóstico ao Programa D90, oferecemos às empresas de Transporte e Logística uma ferramenta que proporciona uma visão completa do fluxo de caixa em tempo real, permitindo decisões mais ágeis e uma gestão financeira estratégica.',
+                'A NEXACASH reúne fluxo de caixa, projeções e resultado em tempo real para apoiar decisões mais rápidas e uma gestão financeira estratégica em empresas de Transporte e Logística.',
               )}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">

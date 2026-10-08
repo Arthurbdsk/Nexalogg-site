@@ -32,11 +32,11 @@ export function Hero() {
             className="text-[clamp(1.875rem,4vw,3.375rem)] font-bold uppercase leading-[1.08] tracking-[-0.02em] motion-safe:animate-rise"
             style={{ animationDelay: '360ms' }}
           >
-            {t('Soluções logísticas')}
+            {t('Consultoria para empresas')}
             <br />
-            {t('que conectam, movimentam')}
+            {t('de Transporte e Logística')}
             <br />
-            {t('e geram ')}
+            {t('que transforma dados em ')}
             <span className="text-accent">{t('resultados.')}</span>
           </h1>
 
@@ -51,7 +51,7 @@ export function Hero() {
             style={{ animationDelay: '720ms' }}
           >
             {t(
-              'Do diagnóstico financeiro e operacional à execução do Programa D90, preparado para empresas de Transporte e Logística.',
+              'Diagnóstico financeiro e operacional, plano de ação de até 90 dias e suporte direto na execução.',
             )}
           </p>
 
