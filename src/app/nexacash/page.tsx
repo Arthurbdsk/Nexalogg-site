@@ -54,17 +54,22 @@ export default function NexacashPage() {
               )}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
+              <a
+                href="https://nexacash.nexallog.com.br/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-12 items-center gap-3 bg-brand-500 px-6 text-sm font-bold uppercase tracking-[0.06em] text-ink transition-colors hover:bg-ink hover:text-paper"
+              >
+                {t('Ir para a NEXACASH agora')}
+                <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
               <Link
                 href="#ferramenta"
-                className="inline-flex min-h-12 items-center bg-brand-500 px-6 text-sm font-bold uppercase tracking-[0.06em] text-ink transition-colors hover:bg-ink hover:text-paper"
+                className="inline-flex min-h-12 items-center bg-ink px-6 text-sm font-bold uppercase tracking-[0.06em] text-paper transition-colors hover:bg-brand-500 hover:text-ink"
               >
                 {t('Conhecer a ferramenta')}
-              </Link>
-              <Link
-                href="/contato"
-                className="inline-flex min-h-12 items-center border border-line/30 px-6 text-sm font-bold uppercase tracking-[0.06em] transition-colors hover:border-line"
-              >
-                {t('Falar com a NEXALLOG')}
               </Link>
             </div>
           </div>
