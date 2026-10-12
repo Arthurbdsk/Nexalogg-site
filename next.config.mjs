@@ -36,6 +36,7 @@ const securityHeaders = [
       "font-src 'self'",
       "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
       "frame-ancestors 'self'",
+      "frame-src 'self' https://www.youtube-nocookie.com",
       "base-uri 'self'",
       "form-action 'self'",
       "object-src 'none'",

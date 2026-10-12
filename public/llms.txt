@@ -1,18 +1,32 @@
 # NEXALLOG
 
-Site institucional da NEXALLOG, consultoria voltada a empresas de transporte e logística.
+Consultoria para Transporte e Logística. Diagnóstico financeiro e operacional, plano de ação e suporte na execução.
 
-## Conteúdo principal
+## Páginas principais
 
-- A NEXALLOG: https://www.nexallog.com.br/a-nexallog
-- Programa D90: https://www.nexallog.com.br/metodologia
-- Soluções: https://www.nexallog.com.br/solucoes
-- Blog: https://www.nexallog.com.br/blog
-- Contato: https://www.nexallog.com.br/contato
-- Política de Privacidade: https://www.nexallog.com.br/politica-de-privacidade
-- Termos de Uso: https://www.nexallog.com.br/termos-de-uso
+- https://www.nexallog.com.br/
+- https://www.nexallog.com.br/a-nexallog
+- https://www.nexallog.com.br/nexacash
+- https://www.nexallog.com.br/metodologia
+- https://www.nexallog.com.br/solucoes
+- https://www.nexallog.com.br/blog
+- https://www.nexallog.com.br/contato
+- https://www.nexallog.com.br/politica-de-privacidade
+- https://www.nexallog.com.br/termos-de-uso
+
+## Blog
+
+Conteúdo editorial em português, com exemplos ilustrativos e referências primárias.
+
+- [Alexandre Felix no Logística do Futuro: crescer exige controle do caixa](https://www.nexallog.com.br/blog/alexandre-felix-logistica-do-futuro-mundologistica): Assista à entrevista de Alexandre Felix publicada pela MundoLogística sobre crescimento, concentração de clientes e caixa nas transportadoras.
+- [Gestão financeira para transportadoras: caixa, margem e operação na mesma decisão](https://www.nexallog.com.br/blog/gestao-financeira-para-transportadoras): Como organizar a gestão financeira de uma transportadora: margem por contrato, capital de giro, projeção de caixa e decisões operacionais.
+- [Custo por km na transportadora: como calcular e usar na precificação](https://www.nexallog.com.br/blog/custo-por-km-transportadora): Calcule o custo por km com custos fixos, variáveis e quilômetros vazios. Veja um exemplo e os cuidados ao transformar custo em preço de frete.
+- [Margem por cliente, rota e frete: onde a transportadora ganha e perde resultado](https://www.nexallog.com.br/blog/margem-por-cliente-rota-frete): Compare margem de contribuição e resultado por contrato. Avalie clientes e rotas com custo de servir, capacidade e prazo de recebimento.
+- [DRE e fluxo de caixa na transportadora: lucro não significa dinheiro disponível](https://www.nexallog.com.br/blog/dre-e-fluxo-de-caixa-transportadora): Compare DRE e fluxo de caixa com um exemplo. Entenda competência, recebimento, depreciação, financiamento e projeção financeira na transportadora.
+- [Indicadores de transportadora: conecte serviço, margem e caixa](https://www.nexallog.com.br/blog/indicadores-transportadora-scor): Monte um painel de KPIs para transportadoras com entrega no prazo, custo por km, margem por contrato, utilização de capacidade e recebimento.
+- [Plano de ação de 90 dias para transportadoras: do diagnóstico à execução](https://www.nexallog.com.br/blog/plano-acao-90-dias-transportadora): Organize um plano de ação para transportadoras com diagnóstico, causa raiz, responsáveis, prioridades e verificação de resultado em 90 dias.
 
 ## Contato
 
 - E-mail: contato@nexallog.com
-- Telefone: +55 11 98146-8028
+- WhatsApp: +55 11 98146-8028

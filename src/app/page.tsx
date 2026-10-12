@@ -1,4 +1,5 @@
 import { ScrollDepthTracker } from '@/components/layout/ScrollDepthTracker';
+import { InterviewFeature } from '@/components/blog/InterviewFeature';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { AdvisorSection } from '@/components/sections/AdvisorSection';
 import { EcosystemSection } from '@/components/sections/EcosystemSection';
@@ -53,6 +54,7 @@ export default function HomePage() {
         <MethodologySection />
         <EcosystemSection />
         <AdvisorSection />
+        <InterviewFeature />
         <FinalCta />
       </main>
     </>
