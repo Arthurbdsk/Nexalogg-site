@@ -5,6 +5,8 @@ import { JsonLd } from '@/components/ui/JsonLd';
 import { InterviewVideo } from '@/components/blog/InterviewVideo';
 import { ArticleActions } from '@/components/blog/ArticleActions';
 import { CostPerKmCalculator } from '@/components/blog/CostPerKmCalculator';
+import { PracticalCalculator } from '@/components/blog/PracticalCalculator';
+import { getBlogTool } from '@/lib/blog-calculators';
 import { ScrollDepthTracker } from '@/components/layout/ScrollDepthTracker';
 import { graph, webPageSchema, breadcrumbSchema } from '@/lib/jsonld';
 import { buildMetadata } from '@/lib/seo';
@@ -29,6 +31,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function ArticlePage({ params }: Props) {
   const post = getPost((await params).slug);
   if (!post) notFound();
+  const tool = getBlogTool(post.calculator);
   const crumbs = [{ name: 'Início', path: '/' }, { name: 'Blog', path: '/blog' }, { name: post.title, path: postPath(post) }];
   const related = post.related.map(getPost).filter((item) => item !== undefined);
   return (
@@ -54,6 +57,7 @@ export default async function ArticlePage({ params }: Props) {
               <p className="border-l-4 border-brand-500 bg-content/[0.04] p-6 text-xl font-semibold leading-relaxed">{post.takeaway}</p>
               {post.videoId ? <InterviewVideo videoId={post.videoId} /> : null}
               {post.slug === 'custo-por-km-transportadora' ? <CostPerKmCalculator /> : null}
+              {tool ? <PracticalCalculator key={post.slug} kind={tool.kind} articleSlug={post.slug} /> : null}
               {post.sections.map((section) => (
                 <section key={section.id} id={section.id} aria-labelledby={section.id + '-titulo'} className="mt-12 scroll-mt-28">
                   <h2 id={section.id + '-titulo'} className="text-[clamp(1.5rem,2.5vw,2rem)] font-semibold leading-tight tracking-tight">{section.title}</h2>
@@ -94,6 +98,7 @@ export default async function ArticlePage({ params }: Props) {
             <aside className="min-w-0">
               <nav aria-label="Nesta análise" className="border-l border-line/20 pl-6 lg:sticky lg:top-28">
                 <h2 className="text-lg font-semibold">Nesta análise</h2>
+                {tool ? <a href="#ferramenta" className="mt-5 inline-block text-sm font-semibold underline underline-offset-4">Usar o simulador</a> : null}
                 <ul className="mt-5 space-y-4 text-sm leading-relaxed">{post.sections.map((section) => <li key={section.id}><a href={'#' + section.id} className="text-content/65 hover:text-content">{section.title}</a></li>)}</ul>
                 <a href="#referencias" className="mt-5 inline-block text-sm font-semibold underline underline-offset-4">Fontes e referências</a>
               </nav>

@@ -6,4 +6,5 @@ export type BlogPreview = {
   publishedAt: string;
   minutes: number;
   hasVideo: boolean;
+  toolLabel?: string;
 };

@@ -148,3 +148,35 @@ Referências técnicas:
 A fonte editorial fica em src/data/blog.json. Novos registros precisam de slug, título, descrição, categoria, datas, introdução, seções, referências, conteúdos relacionados e CTA. O build gera os arquivos de descoberta e valida slugs e relações.
 
 Antes de publicar: verificar fontes, contas dos exemplos, legibilidade no celular, canonical, JSON-LD, imagem de compartilhamento e links internos. Depois de publicar: confirmar conteúdo no domínio público e registrar a versão do deployment.
+
+## Segunda entrega editorial, 12 de outubro de 2026
+
+Cinco conteúdos adicionais, cada um com um simulador que funciona no navegador:
+
+| Artigo | Ferramenta |
+| --- | --- |
+| Frete vazio e ociosidade da frota | Percentual de km vazios, custo variável e economia de distância eliminada |
+| Da entrega ao recebimento | Ciclo de cobrança e efeito aproximado da redução de prazo |
+| Ponto de equilíbrio da transportadora | Receita de equilíbrio, meta de resultado e margem de segurança |
+| Custo de servir por cliente | Custo total do contrato, resultado e margem após atendimento |
+| Concentração de clientes | Participação na receita e impacto da perda de contribuição |
+
+Todos os simuladores permitem baixar as entradas, resultados, fórmula, premissas e endereço do artigo em CSV. Os valores digitados não são enviados ao servidor; o evento de download registra apenas artigo e ferramenta quando Analytics está configurado.
+
+Os novos conteúdos aparecem primeiro na listagem. A entrevista segue no destaque principal. Sitemap, RSS e llms.txt incluem os 12 conteúdos.
+
+Referências adicionais:
+
+- APQC, order-to-cash: https://www.apqc.org/How-Should-Order-to-Cash-And-Accounts-Receivable-Performance-Be-Measured-And-Improved
+- Lean Enterprise Institute, standardized work: https://www.lean.org/lexicon-terms/standardized-work/
+- Corporate Finance Institute, break-even: https://corporatefinanceinstitute.com/resources/accounting/break-even-analysis/
+- Corporate Finance Institute, contribution: https://corporatefinanceinstitute.com/resources/accounting/contribution-analysis/
+- AICPA & CIMA, activity-based costing: https://www.aicpa-cima.com/resources/article/activity-based-costing-abc
+- IFRS 8, parágrafo 34: https://www.ifrs.org/content/dam/ifrs/publications/pdf-standards/english/2021/issued/part-a/ifrs-8-operating-segments.pdf
+
+As simulações seguem hipóteses explícitas. A redução de prazo não é lucro; a economia de km vazios considera apenas custos variáveis elimináveis; o ponto de equilíbrio não é uma projeção de caixa; o modelo de cliente não inclui custos de transição. O critério de divulgação da IFRS 8 não é apresentado como limite gerencial universal de risco.
+
+Verificações de manutenção:
+
+- npm run test:blog-tools: valida os cinco modelos, campos inválidos, limites cruzados, zero, prejuízo e exportação.
+- node scripts/check-blog.mjs: valida conteúdo renderizado, canonical, JSON-LD, referências, imagens, ferramentas, sitemap, RSS e 404.

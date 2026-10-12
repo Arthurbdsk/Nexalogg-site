@@ -21,6 +21,7 @@ export type BlogPost = {
   intro: string;
   takeaway: string;
   videoId?: string;
+  calculator?: string;
   sources: BlogSource[];
   sections: BlogSection[];
   related: string[];

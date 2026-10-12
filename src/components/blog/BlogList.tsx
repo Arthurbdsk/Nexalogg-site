@@ -40,6 +40,7 @@ export function BlogList({ posts }: { posts: BlogPreview[] }) {
                 <Link href={'/blog/' + post.slug} className="transition-colors hover:text-accent">{post.title}</Link>
               </h3>
               <p className="mt-5 text-[0.9375rem] leading-[1.75] text-content/70">{post.description}</p>
+              {post.toolLabel ? <p className="mt-4 border-l-2 border-brand-500 pl-3 text-sm font-semibold">{post.toolLabel}</p> : null}
               <p className="mt-5 text-sm text-content/60">{post.category} · {post.minutes} min de leitura</p>
               <time dateTime={post.publishedAt} className="mt-2 text-xs text-content/60">{new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(post.publishedAt + 'T12:00:00Z'))}</time>
               <Link href={'/blog/' + post.slug} className="mt-auto flex min-h-12 items-center gap-4 pt-8 font-semibold" aria-label={'Ler: ' + post.title}>

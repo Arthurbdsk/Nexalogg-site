@@ -15,6 +15,10 @@ for (const post of posts) {
   assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1, 'H1: ' + path);
   assert(html.includes('href="' + canonicalBase + path + '"'), 'Canonical: ' + path);
   assert(html.includes(post.intro), 'Texto não renderizado no servidor: ' + path);
+  if (post.calculator) {
+    assert(html.includes('id="ferramenta"'), 'Simulador ausente: ' + path);
+    assert(html.includes('Baixar memória do cálculo'), 'Exportação ausente: ' + path);
+  }
   const graphs = [...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)]
     .flatMap((match) => JSON.parse(match[1])['@graph'] ?? []);
   const article = graphs.find((node) => node['@type'] === 'BlogPosting');

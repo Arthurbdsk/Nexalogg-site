@@ -36,10 +36,11 @@ export default function BlogPage() {
       <main id="conteudo" tabIndex={-1} lang="pt-BR">
         <PageHeader title="Gestão financeira e operação para transportadoras." lead={<p>Caixa, margem e operação na mesma conversa. Análises práticas para quem precisa decidir e executar em Transporte e Logística.</p>} crumbs={crumbs} />
         <InterviewFeature />
-        <BlogList posts={blogPosts.map(({ slug, title, description, category, publishedAt, ...post }) => ({
+        <BlogList posts={blogPosts.toReversed().map(({ slug, title, description, category, publishedAt, ...post }) => ({
           slug, title, description, category, publishedAt,
           minutes: readingMinutes({ slug, title, description, category, publishedAt, ...post }),
           hasVideo: Boolean(post.videoId),
+          toolLabel: post.calculator ? 'Simulador com memória de cálculo' : slug === 'custo-por-km-transportadora' ? 'Calculadora interativa' : undefined,
         }))} />
         <FinalCta />
       </main>

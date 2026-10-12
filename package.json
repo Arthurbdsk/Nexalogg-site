@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
+    "test:blog-tools": "node scripts/check-blog-tools.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
     "seo:generate": "node scripts/generate-seo-files.mjs",
     "qr:generate": "node scripts/generate-qr.mjs",

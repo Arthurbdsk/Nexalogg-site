@@ -9,6 +9,7 @@ import { siteConfig } from './site';
 export type AnalyticsEvent =
   | 'blog_cta_click'
   | 'blog_video_play'
+  | 'blog_calculator_export'
   | 'cta_principal_click'
   | 'cta_metodologia_click'
   | 'cta_solucoes_click'
