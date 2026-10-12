@@ -44,7 +44,7 @@ export function Header() {
     >
       <div
         className={cx(
-          'shell flex items-center justify-between gap-3 transition-[height] duration-300 ease-outexpo',
+          'shell flex items-center justify-between gap-3 transition-[height] duration-300 ease-outexpo 2xl:max-w-[100rem] 2xl:gap-5',
           scrolled
             ? 'h-[3.5rem] 2xl:h-[var(--header-height-compact)]'
             : 'h-[3.75rem] 2xl:h-[var(--header-height)]',
@@ -60,12 +60,12 @@ export function Header() {
           {isNexacash ? <NexacashLogo /> : <Logo />}
         </Link>
 
-        <nav aria-label={t('Navegação principal')} className="hidden 2xl:block">
-          <ul className="flex items-center gap-1">
+        <nav aria-label={t('Navegação principal')} className="hidden shrink-0 2xl:block">
+          <ul className="flex items-center gap-3">
             {mainNav.map((item) => {
               const active = isActive(item.href, item.sectionId);
               return (
-                <li key={item.href}>
+                <li key={item.href} className="shrink-0">
                   <Link
                     href={item.href}
                     aria-current={active ? 'page' : undefined}
@@ -120,7 +120,7 @@ export function Header() {
         aria-label={t('Navegação principal')}
         className="h-12 overflow-x-auto overscroll-x-contain border-t border-line/10 bg-surface [scrollbar-width:none] [&::-webkit-scrollbar]:hidden 2xl:hidden"
       >
-        <ul className="flex w-max items-center gap-1 px-[var(--shell-padding)]">
+        <ul className="flex w-max items-center gap-4 px-[var(--shell-padding)] sm:gap-6">
           {mainNav.map((item) => {
             const active = isActive(item.href, item.sectionId);
             return (
