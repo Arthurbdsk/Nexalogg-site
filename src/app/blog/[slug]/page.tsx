@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: Props) {
   const metadata = buildMetadata({ title: post.title, description: post.description, path: postPath(post), image: postImage(post), type: 'article' });
   return {
     ...metadata,
-    authors: [{ name: 'NEXALLOG', url: '/a-nexallog' }],
-    openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.publishedAt + 'T09:00:00-03:00', modifiedTime: post.updatedAt + 'T09:00:00-03:00', authors: ['https://www.nexallog.com.br/a-nexallog'], section: post.category },
+    authors: [{ name: 'NEXALLOG', url: '/' }],
+    openGraph: { ...metadata.openGraph, type: 'article', publishedTime: post.publishedAt + 'T09:00:00-03:00', modifiedTime: post.updatedAt + 'T09:00:00-03:00', authors: ['https://www.nexallog.com.br/'], section: post.category },
   };
 }
 
@@ -45,7 +45,7 @@ export default async function ArticlePage({ params }: Props) {
             <h1 className="mt-9 max-w-5xl text-[clamp(2rem,4.5vw,4.6rem)] font-bold leading-[1.08] tracking-tight">{post.title}</h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-content/75">{post.intro}</p>
             <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-y border-line/15 py-5 text-sm text-content/65">
-              <Link href="/a-nexallog" className="font-semibold text-content underline underline-offset-4">Por NEXALLOG</Link>
+              <Link href="/#a-nexallog" className="font-semibold text-content underline underline-offset-4">Por NEXALLOG</Link>
               <span>{post.category}</span>
               <time dateTime={post.publishedAt}>Publicado em {formatPostDate(post.publishedAt)}</time>
               {post.updatedAt !== post.publishedAt ? <time dateTime={post.updatedAt}>Atualizado em {formatPostDate(post.updatedAt)}</time> : null}
@@ -55,7 +55,7 @@ export default async function ArticlePage({ params }: Props) {
           <div className="shell grid gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
             <div className="min-w-0 max-w-3xl">
               <p className="border-l-4 border-brand-500 bg-content/[0.04] p-6 text-xl font-semibold leading-relaxed">{post.takeaway}</p>
-              {post.videoId ? <InterviewVideo videoId={post.videoId} /> : null}
+              {post.videoId ? <InterviewVideo videoId={post.videoId} title={post.videoTitle} subtitle={post.videoSubtitle} source={post.videoSource} /> : null}
               {post.slug === 'custo-por-km-transportadora' ? <CostPerKmCalculator /> : null}
               {tool ? <PracticalCalculator key={post.slug} kind={tool.kind} articleSlug={post.slug} /> : null}
               {post.sections.map((section) => (
@@ -82,12 +82,12 @@ export default async function ArticlePage({ params }: Props) {
               <section id="referencias" className="mt-12 scroll-mt-28 border-t border-line/20 pt-8" aria-labelledby="referencias-titulo">
                 <h2 id="referencias-titulo" className="text-2xl font-semibold">Referências e critérios editoriais</h2>
                 <ul className="mt-5 space-y-4">{post.sources.map((source) => <li key={source.id}><a href={source.url} target="_blank" rel="noopener noreferrer" className="text-sm underline underline-offset-4">{source.name}</a></li>)}</ul>
-                <p className="mt-5 text-sm leading-relaxed text-content/60">Conteúdo editorial da NEXALLOG. Referências consultadas em 12 de outubro de 2026. Os exemplos numéricos são ilustrativos e não representam resultados de clientes. As fontes citadas não implicam parceria, certificação ou endosso.</p>
+                <p className="mt-5 text-sm leading-relaxed text-content/60">Conteúdo editorial da NEXALLOG. Referências consultadas em {formatPostDate(post.updatedAt)}. Os exemplos numéricos são ilustrativos e não representam resultados de clientes. As fontes citadas não implicam parceria, certificação ou endosso.</p>
               </section>
               <section className="mt-10 border-y border-line/15 py-7" aria-labelledby="autoria-titulo">
                 <h2 id="autoria-titulo" className="text-xl font-semibold">Sobre a NEXALLOG</h2>
-                <p className="mt-3 leading-relaxed text-content/75">Consultoria para empresas de Transporte e Logística, com diagnóstico financeiro e operacional, plano de ação e suporte na execução. Fundada por Alexandre Felix, com 25 anos de experiência no setor.</p>
-                <Link href="/a-nexallog" className="mt-4 inline-block font-semibold underline underline-offset-4">Conheça a empresa e a trajetória do fundador</Link>
+                <p className="mt-3 leading-relaxed text-content/75">Diagnóstico financeiro e operacional, plano de ação e suporte na execução para empresas de Transporte e Logística. A NEXALLOG foi fundada por Alexandre Felix, com mais de 25 anos de experiência no setor.</p>
+                <Link href="/#a-nexallog" className="mt-4 inline-block font-semibold underline underline-offset-4">Conheça a empresa e a trajetória do fundador</Link>
               </section>
               <section className="tone-brand mt-10 bg-surface p-7 text-content md:p-9" aria-labelledby="artigo-cta-titulo">
                 <h2 id="artigo-cta-titulo" className="text-2xl font-bold">{post.cta.title}</h2>

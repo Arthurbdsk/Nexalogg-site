@@ -1,11 +1,10 @@
 # NEXALLOG
 
-Consultoria para Transporte e Logística. Diagnóstico financeiro e operacional, plano de ação e suporte na execução.
+Gestão financeira e operacional para Transporte e Logística. Diagnóstico, NEXACASH, plano de ação e suporte na execução. A apresentação da empresa e de Alexandre Felix está reunida na página inicial.
 
 ## Páginas principais
 
 - https://www.nexallog.com.br/
-- https://www.nexallog.com.br/a-nexallog
 - https://www.nexallog.com.br/nexacash
 - https://www.nexallog.com.br/metodologia
 - https://www.nexallog.com.br/solucoes
@@ -30,6 +29,7 @@ Conteúdo editorial em português, com exemplos ilustrativos e referências prim
 - [Ponto de equilíbrio da transportadora: quanto precisa faturar para cobrir a estrutura](https://www.nexallog.com.br/blog/ponto-equilibrio-transportadora): Calcule a receita de equilíbrio, a margem de segurança e o faturamento necessário para atingir um resultado operacional desejado.
 - [Custo de servir: calcule o trabalho que cada cliente exige da transportadora](https://www.nexallog.com.br/blog/custo-de-servir-cliente-transportadora): Estime o custo total de um contrato com transporte, equipe dedicada, atendimento e retrabalho. Compare o resultado com um simulador por cliente.
 - [Concentração de clientes: o que acontece com a transportadora se o maior contrato sair](https://www.nexallog.com.br/blog/concentracao-clientes-transportadora): Calcule a participação de um cliente e simule a perda de contribuição. Avalie custos que permanecem e a capacidade de adaptação da transportadora.
+- [Alexandre Felix no Algoritmo.Pro: gestão e caixa em Transporte e Logística](https://www.nexallog.com.br/blog/alexandre-felix-podcast-algoritmo-pro): Assista ao episódio #118 do Algoritmo.Pro com Alexandre Felix, da NEXALLOG e NEXACASH. Gestão, caixa e desafios de Transporte e Logística.
 
 ## Contato
 

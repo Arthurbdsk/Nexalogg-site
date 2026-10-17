@@ -8,7 +8,7 @@ export type NavItem = {
 /** Navegação principal do header. */
 export const mainNav: NavItem[] = [
   { label: 'Início', href: '/', sectionId: 'inicio' },
-  { label: 'A NEXALLOG', href: '/a-nexallog', sectionId: 'a-nexallog' },
+  { label: 'A NEXALLOG', href: '/#a-nexallog', sectionId: 'a-nexallog' },
   { label: 'NEXACASH', href: '/nexacash' },
   { label: 'Problemas', href: '/#problemas', sectionId: 'problemas' },
   { label: 'Metodologia', href: '/metodologia', sectionId: 'metodologia' },
@@ -22,8 +22,8 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
   {
     title: 'Empresa',
     items: [
-      { label: 'A NEXALLOG', href: '/a-nexallog' },
-      { label: 'Alexandre Felix', href: '/a-nexallog#alexandre-felix' },
+      { label: 'A NEXALLOG', href: '/#a-nexallog' },
+      { label: 'Alexandre Felix', href: '/#alexandre-felix' },
       { label: 'Cobertura completa', href: '/solucoes' },
       { label: 'NEXACASH', href: '/nexacash' },
       { label: 'Blog', href: '/blog' },

@@ -29,12 +29,12 @@ export function Hero() {
         <div className="max-w-[46rem]">
           <h1
             id="hero-titulo"
-            className="text-[clamp(1.875rem,4vw,3.375rem)] font-bold uppercase leading-[1.08] tracking-[-0.02em] motion-safe:animate-rise"
+            className="text-[clamp(1.875rem,3.25vw,3rem)] font-bold uppercase leading-[1.08] tracking-[-0.02em] motion-safe:animate-rise"
             style={{ animationDelay: '360ms' }}
           >
-            {t('Consultoria para empresas')}
+            {t('Uma empresa construída')}
             <br />
-            {t('de Transporte e Logística')}
+            {t('de dentro da Operação Logística')}
             <br />
             {t('que transforma dados em ')}
             <span className="text-accent">{t('resultados.')}</span>
@@ -51,7 +51,7 @@ export function Hero() {
             style={{ animationDelay: '720ms' }}
           >
             {t(
-              'Diagnóstico financeiro e operacional, plano de ação de até 90 dias e suporte direto na execução.',
+              'Diagnóstico financeiro e operacional, com suporte direto na execução.',
             )}
           </p>
 

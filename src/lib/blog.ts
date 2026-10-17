@@ -21,6 +21,9 @@ export type BlogPost = {
   intro: string;
   takeaway: string;
   videoId?: string;
+  videoTitle?: string;
+  videoSubtitle?: string;
+  videoSource?: string;
   calculator?: string;
   sources: BlogSource[];
   sections: BlogSection[];
@@ -30,6 +33,7 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = entries;
 export const interview = blogPosts[0];
+export const podcast = blogPosts.find((post) => post.slug === 'alexandre-felix-podcast-algoritmo-pro');
 export const getPost = (slug: string) => blogPosts.find((post) => post.slug === slug);
 export const postPath = (post: BlogPost) => '/blog/' + post.slug;
 export const postImage = (post: BlogPost) => postPath(post) + '/opengraph-image';
@@ -57,7 +61,7 @@ export function articleSchema(post: BlogPost) {
     dateModified: post.updatedAt + 'T09:00:00-03:00',
     inLanguage: 'pt-BR',
     articleSection: post.category,
-    author: { '@type': 'Organization', '@id': siteConfig.url + '/#organization', name: 'NEXALLOG', url: absoluteUrl('/a-nexallog') },
+    author: { '@type': 'Organization', '@id': siteConfig.url + '/#organization', name: 'NEXALLOG', url: absoluteUrl('/') },
     publisher: { '@id': siteConfig.url + '/#organization' },
     citation: post.sources.map((source) => source.url),
   };

@@ -49,7 +49,7 @@ export function organizationSchema() {
       'TMS',
     ],
     sameAs: social.map((item) => item.href),
-    founder: { '@id': `${siteConfig.url}/a-nexallog#alexandre-felix` },
+    founder: { '@id': `${siteConfig.url}/#alexandre-felix` },
     contactPoint: contact.email.value
       ? {
           '@type': 'ContactPoint',
@@ -126,7 +126,7 @@ export function serviceSchema(input: { name: string; description: string; path: 
   });
 }
 
-const personId = `${siteConfig.url}/a-nexallog#alexandre-felix`;
+const personId = `${siteConfig.url}/#alexandre-felix`;
 
 /** Person montado a partir dos dados oficiais em siteConfig.advisor. */
 export function personSchema(input: { path: string }) {

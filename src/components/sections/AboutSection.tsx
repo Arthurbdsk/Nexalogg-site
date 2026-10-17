@@ -18,12 +18,12 @@ export function AboutSection({ withLink = true }: AboutSectionProps) {
   const [active, setActive] = useState(0);
 
   return (
-    <Section tone="dark" id="a-nexallog" labelledBy="a-nexallog-titulo">
+    <Section tone="dark" id="principios" labelledBy="principios-titulo">
       <div className="shell">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
           <div className="lg:col-span-7">
             <Reveal>
-              <h2 id="a-nexallog-titulo" className="text-display-md">
+              <h2 id="principios-titulo" className="text-display-md">
                 {t('Conectamos caminhos, pessoas e ')}
                 <span className="text-brand-500">{t('empresas')}</span>
               </h2>
@@ -33,7 +33,7 @@ export function AboutSection({ withLink = true }: AboutSectionProps) {
             <div className="lg:col-span-4 lg:col-start-9 lg:text-right">
               <Reveal delay={120}>
                 <Link
-                  href="/a-nexallog"
+                  href="/#a-nexallog"
                   className="group inline-flex items-center gap-3 text-[0.9375rem] font-semibold text-brand-500 transition-opacity duration-300 hover:opacity-75"
                 >
                   {t('Conhecer a NEXALLOG')}

@@ -27,7 +27,7 @@ const baseMetadata: Metadata = {
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
-  category: 'Consultoria em Transportes e Logística',
+  category: 'Gestão financeira e operacional em Transportes e Logística',
   formatDetection: { telephone: false, address: false, email: false },
   alternates: { canonical: '/' },
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
@@ -55,7 +55,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${siteConfig.name}`,
     },
     description: t(siteConfig.description),
-    category: t('Consultoria em Transportes e Logística'),
+    category: t('Gestão financeira e operacional em Transportes e Logística'),
     openGraph: {
       ...baseMetadata.openGraph,
       locale: { pt: 'pt_BR', en: 'en_US', es: 'es_ES' }[locale],

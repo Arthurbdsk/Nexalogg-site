@@ -1,5 +1,7 @@
 import { ScrollDepthTracker } from '@/components/layout/ScrollDepthTracker';
 import { InterviewFeature } from '@/components/blog/InterviewFeature';
+import { PodcastFeature } from '@/components/blog/PodcastFeature';
+import { CompanyOverview } from '@/components/sections/CompanyOverview';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { AdvisorSection } from '@/components/sections/AdvisorSection';
 import { EcosystemSection } from '@/components/sections/EcosystemSection';
@@ -16,7 +18,7 @@ import { siteConfig } from '@/lib/site';
 
 const title = `${siteConfig.name} | ${siteConfig.tagline}`;
 const description =
-  'Consultoria para empresas de Transportes e Logística. Diagnóstico financeiro e operacional, identificação de causas estruturais, plano de ação de 90 dias e suporte direto na execução.';
+  'Uma empresa construída de dentro da Operação Logística que transforma dados em resultados. Diagnóstico financeiro e operacional, NEXACASH e suporte direto na execução.';
 
 export async function generateMetadata() {
   const t = await getCopy();
@@ -41,7 +43,7 @@ export default function HomePage() {
               'Programa de diagnóstico financeiro e operacional, identificação de causas estruturais, plano de ação de 90 dias e suporte na execução para empresas de Transportes e Logística.',
             path: '/metodologia',
           }),
-          personSchema({ path: '/a-nexallog' }),
+          personSchema({ path: '/' }),
         ])}
       />
       <ScrollDepthTracker />
@@ -49,11 +51,13 @@ export default function HomePage() {
       <main id="conteudo" tabIndex={-1}>
         <Hero />
         <KeywordMarquee />
-        <AboutSection />
+        <CompanyOverview />
+        <AboutSection withLink={false} />
         <ProblemsSection />
         <MethodologySection />
         <EcosystemSection />
         <AdvisorSection />
+        <PodcastFeature />
         <InterviewFeature />
         <FinalCta />
       </main>

@@ -10,12 +10,12 @@ const deliveryCards = [
   {
     title: 'Equipe NEXALLOG',
     summary: 'Condução direta do diagnóstico, do plano e do acompanhamento da execução.',
-    href: '/a-nexallog#atuacao-titulo',
+    href: '/#atuacao-titulo',
   },
   {
     title: 'Rede de parceiros',
     summary: 'Especialistas acionados conforme a frente e a causa estrutural identificada.',
-    href: '/a-nexallog#atuacao-titulo',
+    href: '/#atuacao-titulo',
     partners: [
       {
         src: '/images/parceiros/simoes-pires.svg',

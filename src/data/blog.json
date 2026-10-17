@@ -250,5 +250,45 @@
     ],
     "related": ["margem-por-cliente-rota-frete", "ponto-equilibrio-transportadora", "alexandre-felix-logistica-do-futuro-mundologistica"],
     "cta": {"title": "Teste a resiliência da carteira antes de expandir", "text": "Avalie contribuição, estrutura e capacidade de reação com a NEXALLOG.", "href": "/metodologia", "label": "Conhecer o Programa D90"}
+  },
+  {
+    "slug": "alexandre-felix-podcast-algoritmo-pro",
+    "title": "Alexandre Felix no Algoritmo.Pro: gestão e caixa em Transporte e Logística",
+    "description": "Assista ao episódio #118 do Algoritmo.Pro com Alexandre Felix, da NEXALLOG e NEXACASH. Gestão, caixa e desafios de Transporte e Logística.",
+    "category": "Entrevistas",
+    "publishedAt": "2026-10-17",
+    "updatedAt": "2026-10-17",
+    "videoId": "V3BqdK1TdpE",
+    "videoTitle": "Alexandre Felix, NEXALLOG e NEXACASH | Algoritmo #118",
+    "videoSubtitle": "Algoritmo.Pro #118 · Alexandre Felix",
+    "videoSource": "Algoritmo Pro",
+    "intro": "Alexandre Felix participou do episódio #118 do Algoritmo.Pro, com Cleber Barbosa e Felipe Peixoto. A conversa aproxima gestão, caixa e os desafios das empresas de Transporte e Logística. O episódio completo está disponível nesta página.",
+    "takeaway": "Crescer em receita é apenas uma parte da decisão. Entender o caixa e conectar os números à operação também precisa fazer parte da gestão.",
+    "sources": [
+      {"id": "episodio", "name": "Algoritmo Pro: Alexandre Felix, NEXALLOG e NEXACASH, episódio #118", "url": "https://www.youtube.com/watch?v=V3BqdK1TdpE"},
+      {"id": "anuncio", "name": "Alexandre Felix: anúncio da participação no Algoritmo.Pro em 5 de outubro de 2026", "url": "https://pt.linkedin.com/posts/alexandrefelix75_algoritmo-nexallog-gest%C3%A3ofinanceira-activity-7511877738517913600-qiAw"},
+      {"id": "recorte", "name": "Instagram: recorte do podcast enviado por Alexandre Felix", "url": "https://www.instagram.com/reel/DeOxvZszNnw/"}
+    ],
+    "sections": [
+      {
+        "id": "episodio",
+        "title": "Uma conversa sobre gestão e caixa",
+        "paragraphs": ["A participação foi anunciada para 5 de outubro de 2026. No convite, Alexandre destacou gestão, caixa e os desafios enfrentados no Transporte e na Logística. O vídeo reúne a conversa completa, identificada pelo canal como Algoritmo #118.", "O player acima permite assistir sem sair do site. O YouTube só é carregado quando você inicia a reprodução. Para acompanhar um trecho curto, acesse o recorte no Instagram indicado nas referências."],
+        "sourceIds": ["episodio", "anuncio", "recorte"]
+      },
+      {
+        "id": "levar-para-operacao",
+        "title": "Da conversa para a rotina da empresa",
+        "paragraphs": ["Como leitura editorial da NEXALLOG, propomos três perguntas para aproximar o tema da realidade da operação. Elas são um roteiro de gestão, não uma transcrição ou citação dos participantes."],
+        "bullets": ["As entradas e saídas estão conciliadas para que a projeção parta de uma base confiável?", "O prazo entre executar o serviço e receber está visível na decisão de crescer?", "Cada problema identificado tem um responsável, uma ação e uma data para acompanhamento?"]
+      },
+      {
+        "id": "nexacash-e-execucao",
+        "title": "Visibilidade financeira e acompanhamento da execução",
+        "paragraphs": ["A NEXACASH é a solução financeira da NEXALLOG para apoiar a leitura do caixa e dos resultados. O Programa D90 conecta o diagnóstico financeiro e operacional ao plano de ação e ao acompanhamento da execução.", "A ferramenta e o trabalho com o time atendem etapas complementares: organizar a informação, entender as causas e definir o que fazer e como executar. Conheça as funcionalidades na página da NEXACASH e a condução do trabalho na metodologia D90."]
+      }
+    ],
+    "related": ["gestao-financeira-para-transportadoras", "dre-e-fluxo-de-caixa-transportadora", "alexandre-felix-logistica-do-futuro-mundologistica"],
+    "cta": {"title": "Traga o caixa para a decisão", "text": "Conheça a NEXACASH e veja como organizar a leitura financeira da sua operação.", "href": "/nexacash", "label": "Conhecer a NEXACASH"}
   }
 ]

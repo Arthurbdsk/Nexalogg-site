@@ -66,8 +66,9 @@ const nextConfig = {
     return [
       { source: '/home', destination: '/', permanent: true },
       { source: '/index', destination: '/', permanent: true },
-      { source: '/sobre', destination: '/a-nexallog', permanent: true },
-      { source: '/quem-somos', destination: '/a-nexallog', permanent: true },
+      { source: '/a-nexallog', destination: '/', permanent: true },
+      { source: '/sobre', destination: '/#a-nexallog', permanent: true },
+      { source: '/quem-somos', destination: '/#a-nexallog', permanent: true },
       { source: '/d90', destination: '/metodologia', permanent: true },
       { source: '/programa-d90', destination: '/metodologia', permanent: true },
       { source: '/servicos', destination: '/solucoes', permanent: true },

@@ -48,8 +48,7 @@ if (solutionSlugs.length === 0) {
 
 /** Rotas indexáveis. Páginas com noindex nunca entram aqui. */
 const routes = [
-  { path: '/', priority: '1.0', changefreq: 'monthly' },
-  { path: '/a-nexallog', priority: '0.9', changefreq: 'monthly' },
+  { path: '/', priority: '1.0', changefreq: 'monthly', lastmod: '2026-10-17' },
   { path: '/nexacash', priority: '0.9', changefreq: 'monthly' },
   { path: '/metodologia', priority: '0.9', changefreq: 'monthly' },
   { path: '/solucoes', priority: '0.8', changefreq: 'monthly' },
@@ -115,7 +114,7 @@ const rss = [
 ].join('\n') + '\n';
 writeFileSync(resolve(root, 'public/blog-feed.xml'), rss);
 
-const llms = '# NEXALLOG\n\nConsultoria para Transporte e Logística. Diagnóstico financeiro e operacional, plano de ação e suporte na execução.\n\n## Páginas principais\n\n' +
+const llms = '# NEXALLOG\n\nGestão financeira e operacional para Transporte e Logística. Diagnóstico, NEXACASH, plano de ação e suporte na execução. A apresentação da empresa e de Alexandre Felix está reunida na página inicial.\n\n## Páginas principais\n\n' +
   routes.filter((route) => !route.path.startsWith('/blog/') && !route.path.startsWith('/solucoes/')).map((route) => '- ' + siteUrl + route.path).join('\n') +
   '\n\n## Blog\n\nConteúdo editorial em português, com exemplos ilustrativos e referências primárias.\n\n' +
   posts.map((post) => '- [' + post.title + '](' + siteUrl + '/blog/' + post.slug + '): ' + post.description).join('\n') +
