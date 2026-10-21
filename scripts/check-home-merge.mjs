@@ -6,6 +6,15 @@ const response = await fetch(base + '/');
 assert.equal(response.status, 200);
 assert(!/noindex/.test(response.headers.get('x-robots-tag') ?? ''));
 const html = await response.text();
+const header = html.match(/<header\b[^>]*>[\s\S]*?<\/header>/)?.[0];
+assert(header, 'Cabeçalho ausente');
+for (const nav of header.matchAll(/<nav\b[^>]*>([\s\S]*?)<\/nav>/g)) {
+  const links = [...nav[1].matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)];
+  assert.equal(links.length, 7, 'Menu deve ter sete opções no desktop e no celular');
+  assert(links[0][1].includes('href="/"'), 'A NEXALLOG deve levar à página inicial');
+  assert(links[0][2].includes('A NEXALLOG'), 'A NEXALLOG deve ser o primeiro item');
+  assert(!links.some((link) => link[2].includes('Início')), 'Início não deve aparecer no menu');
+}
 assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1);
 const heading = html.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ');
 assert(heading?.includes('Uma empresa construída de dentro da Operação Logística que transforma dados em resultados.'));

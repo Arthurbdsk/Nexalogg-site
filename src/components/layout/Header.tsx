@@ -25,7 +25,7 @@ export function Header() {
 
   const isActive = (href: string, sectionId?: string) => {
     if (href.startsWith('/#')) return isHome && activeSection === sectionId;
-    if (href === '/') return isHome && (activeSection === null || activeSection === 'inicio');
+    if (href === '/') return isHome && (activeSection === null || activeSection === 'inicio' || activeSection === 'a-nexallog');
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 

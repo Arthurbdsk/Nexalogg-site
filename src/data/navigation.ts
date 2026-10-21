@@ -7,8 +7,7 @@ export type NavItem = {
 
 /** Navegação principal do header. */
 export const mainNav: NavItem[] = [
-  { label: 'Início', href: '/', sectionId: 'inicio' },
-  { label: 'A NEXALLOG', href: '/#a-nexallog', sectionId: 'a-nexallog' },
+  { label: 'A NEXALLOG', href: '/', sectionId: 'a-nexallog' },
   { label: 'NEXACASH', href: '/nexacash' },
   { label: 'Problemas', href: '/#problemas', sectionId: 'problemas' },
   { label: 'Metodologia', href: '/metodologia', sectionId: 'metodologia' },
