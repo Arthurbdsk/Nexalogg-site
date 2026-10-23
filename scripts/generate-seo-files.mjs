@@ -49,7 +49,7 @@ if (solutionSlugs.length === 0) {
 /** Rotas indexáveis. Páginas com noindex nunca entram aqui. */
 const routes = [
   { path: '/', priority: '1.0', changefreq: 'monthly', lastmod: '2026-10-17' },
-  { path: '/nexacash', priority: '0.9', changefreq: 'monthly' },
+  { path: '/nexacash', priority: '0.9', changefreq: 'monthly', lastmod: '2026-10-23' },
   { path: '/metodologia', priority: '0.9', changefreq: 'monthly' },
   { path: '/solucoes', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog', priority: '0.8', changefreq: 'weekly', lastmod: posts.map((post) => post.updatedAt).sort().at(-1) },

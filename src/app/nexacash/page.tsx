@@ -86,7 +86,7 @@ export default function NexacashPage() {
                 <p className="label">{t('A ferramenta')}</p>
                 <h2 id="ferramenta-titulo" className="mt-5 text-display-md">
                   {t(
-                    'O ERP financeiro que automatiza e facilita os seus controles e a gestão do caixa.',
+                    'A solução financeira que automatiza e facilita os seus controles para gestão do caixa.',
                   )}
                 </h2>
               </div>
