@@ -290,5 +290,704 @@
     ],
     "related": ["gestao-financeira-para-transportadoras", "dre-e-fluxo-de-caixa-transportadora", "alexandre-felix-logistica-do-futuro-mundologistica"],
     "cta": {"title": "Traga o caixa para a decisão", "text": "Conheça a NEXACASH e veja como organizar a leitura financeira da sua operação.", "href": "/nexacash", "label": "Conhecer a NEXACASH"}
+  },
+  {
+    "slug": "projecao-caixa-13-semanas-transportadora",
+    "title": "Projeção de caixa de 13 semanas: antecipe os apertos da transportadora",
+    "description": "Monte uma projeção semanal de caixa para a transportadora, teste atrasos de clientes e organize decisões antes de faltar dinheiro.",
+    "category": "Gestão financeira",
+    "publishedAt": "2026-10-23",
+    "updatedAt": "2026-10-23",
+    "intro": "A transportadora pode terminar o mês com saldo positivo e ficar sem recursos para abastecer no dia 15. O fechamento mensal esconde o intervalo entre pagamentos e recebimentos. Uma projeção de 13 semanas abre esse calendário e mostra quando a operação precisa agir, quem depende de quem e quais compromissos ainda não têm cobertura.",
+    "takeaway": "O número mais importante da projeção pode ser o menor saldo ao longo do período, não o saldo da última semana.",
+    "sources": [
+      {
+        "id": "pwc",
+        "name": "PwC: gestão de caixa com projeção de curto prazo de 13 semanas",
+        "url": "https://www.pwc.com/it/it/services/deals/turnaround-management.html"
+      },
+      {
+        "id": "ias7",
+        "name": "IFRS Foundation: IAS 7, classificação dos fluxos de caixa",
+        "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/"
+      }
+    ],
+    "sections": [
+      {
+        "id": "horizonte",
+        "title": "Por que abrir o caixa por semana",
+        "paragraphs": [
+          "A PwC inclui a projeção de 13 semanas em sua abordagem de gestão de caixa em situações de pressão financeira. O horizonte ajuda a enxergar compromissos próximos e a preparar ações. Para uma transportadora, nossa proposta é usar essa disciplina também na rotina, antes de o aperto se tornar uma urgência.",
+          "Treze semanas representam um recorte próximo de um trimestre, não uma regra universal. O período precisa conversar com folha, tributos, fornecedores e recebimentos. Quando a pressão está concentrada em poucos dias, complemente a visão semanal com um calendário diário. Um saldo positivo na sexta-feira não paga uma obrigação vencida na terça."
+        ],
+        "sourceIds": [
+          "pwc"
+        ]
+      },
+      {
+        "id": "base-confiavel",
+        "title": "Comece pelo saldo disponível, com as restrições à vista",
+        "paragraphs": [
+          "Escolha uma data de corte e concilie todas as contas da empresa. Separe recursos disponíveis de valores bloqueados ou comprometidos. Limite de crédito não utilizado deve aparecer como alternativa de financiamento, com condições próprias, e não como se já fosse dinheiro da operação.",
+          "Na sequência, reúna contas a receber por data provável de liquidação. Um serviço vendido, mas ainda sem liberação documental, não tem a mesma previsibilidade de um título aceito pelo cliente. A projeção perde utilidade quando transforma toda receita comercial em recebimento certo."
+        ]
+      },
+      {
+        "id": "estrutura",
+        "title": "Monte uma estrutura que explique a origem do dinheiro",
+        "paragraphs": [
+          "A IAS 7 distingue fluxos operacionais, de investimento e de financiamento. A previsão gerencial não substitui a demonstração contábil, mas pode aproveitar essa separação para evitar que um empréstimo esconda um déficit da atividade. A classificação deve ser consistente e alinhada com a contabilidade.",
+          "Organize cada linha com valor, data, responsável e evidência. Não use uma categoria genérica para tudo que não foi identificado: isso impede investigar os desvios depois."
+        ],
+        "sourceIds": [
+          "ias7"
+        ],
+        "table": {
+          "headers": [
+            "Grupo",
+            "O que registrar",
+            "Conferência"
+          ],
+          "rows": [
+            [
+              "Recebimentos operacionais",
+              "Títulos, adiantamentos de clientes e cobrança",
+              "Data provável e situação documental"
+            ],
+            [
+              "Pagamentos operacionais",
+              "Combustível, pessoal, terceiros e demais obrigações",
+              "Vencimento e compromisso assumido"
+            ],
+            [
+              "Investimentos",
+              "Aquisição e venda de ativos",
+              "Datas efetivas de pagamento e recebimento"
+            ],
+            [
+              "Financiamentos",
+              "Aportes, liberações e serviço da dívida",
+              "Aprovação, disponibilidade e contrato"
+            ],
+            [
+              "Saldo final",
+              "Saldo inicial mais entradas menos saídas",
+              "Conexão com a abertura da semana seguinte"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "exemplo",
+        "title": "Veja o que um mês positivo pode esconder",
+        "paragraphs": [
+          "Neste exemplo ilustrativo, a empresa inicia com R$ 80 mil disponíveis. As quatro primeiras semanas abaixo terminam com R$ 95 mil, mas a segunda fecha negativa em R$ 35 mil. O problema não está no total do mês: está no momento em que os pagamentos precisam acontecer.",
+          "O quadro é um recorte didático de quatro semanas, sem financiamento, investimentos ou reserva mínima. Na aplicação, estenda até a semana 13 e abra os dias críticos. Os valores não são referência de mercado."
+        ],
+        "formula": "Saldo final da semana = saldo inicial + recebimentos previstos − pagamentos previstos",
+        "table": {
+          "headers": [
+            "Semana",
+            "Saldo inicial",
+            "Recebimentos",
+            "Pagamentos",
+            "Saldo final"
+          ],
+          "rows": [
+            [
+              "1",
+              "R$ 80.000",
+              "R$ 100.000",
+              "R$ 120.000",
+              "R$ 60.000"
+            ],
+            [
+              "2",
+              "R$ 60.000",
+              "R$ 90.000",
+              "R$ 185.000",
+              "−R$ 35.000"
+            ],
+            [
+              "3",
+              "−R$ 35.000",
+              "R$ 160.000",
+              "R$ 100.000",
+              "R$ 25.000"
+            ],
+            [
+              "4",
+              "R$ 25.000",
+              "R$ 180.000",
+              "R$ 110.000",
+              "R$ 95.000"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "cenarios",
+        "title": "Teste atrasos sem contar duas vezes o recebimento",
+        "paragraphs": [
+          "Crie um cenário base com premissas verificáveis e outro com atraso nos clientes mais relevantes. Se um recebimento migra da semana 2 para a 4, retire-o da origem e inclua-o no destino. Somente somar uma reserva genérica pode esconder o efeito real do calendário.",
+          "Compare o menor saldo com a reserva operacional definida pela empresa. Uma necessidade de recursos deve entrar como problema a resolver. Só registre uma captação como disponível quando houver evidência de aprovação e prazo compatível; proposta em negociação não é caixa contratado."
+        ]
+      },
+      {
+        "id": "rotina",
+        "title": "Feche a semana e abra mais uma",
+        "paragraphs": [
+          "A cada atualização, substitua a semana encerrada pelos valores realizados, explique os desvios relevantes e acrescente uma nova semana ao final. Esse movimento mantém o horizonte vivo. O relatório precisa gerar decisões com responsável e prazo, não apenas uma nova versão de planilha."
+        ],
+        "bullets": [
+          "Conciliar o saldo de abertura antes de projetar.",
+          "Revisar os maiores recebimentos com cobrança e operação.",
+          "Identificar a semana e o dia de menor disponibilidade.",
+          "Separar ações aprovadas de alternativas ainda em negociação.",
+          "Registrar por que o realizado diferiu do previsto.",
+          "Acompanhar se a decisão tomada alterou o caixa esperado."
+        ]
+      }
+    ],
+    "related": [
+      "conciliacao-bancaria-transportadora",
+      "capital-giro-crescimento-transportadora",
+      "prazo-entrega-faturamento-recebimento"
+    ],
+    "cta": {
+      "title": "Organize o caixa antes do próximo compromisso",
+      "text": "Conheça a NEXACASH e aproxime a leitura financeira das decisões da operação.",
+      "href": "/nexacash",
+      "label": "Conhecer a NEXACASH"
+    }
+  },
+  {
+    "slug": "conciliacao-bancaria-transportadora",
+    "title": "Conciliação bancária na transportadora: como fechar o caixa sem distorcer o resultado",
+    "description": "Organize a conciliação bancária da transportadora, trate transferências e recebimentos parciais e entenda onde o Open Finance ajuda.",
+    "category": "Gestão financeira",
+    "publishedAt": "2026-10-23",
+    "updatedAt": "2026-10-23",
+    "intro": "Um cliente paga vários fretes em um único depósito. O banco desconta uma tarifa. Uma transferência entre contas entra como receita. Ao final do dia, o saldo parece correto, mas o relatório não explica quanto a operação recebeu. A conciliação bancária precisa resolver essas diferenças sem inventar lançamentos para fazer a conta fechar.",
+    "takeaway": "Bater o saldo é necessário. Identificar corretamente cada movimento é o que permite usar o caixa para decidir.",
+    "sources": [
+      {
+        "id": "reconciliation",
+        "name": "AccountingCoach, Harold Averkamp: definição de conciliação bancária",
+        "url": "https://www.accountingcoach.com/terms/B/bank-reconciliation"
+      },
+      {
+        "id": "bcb-dados",
+        "name": "Banco Central: dados e serviços que podem ser compartilhados no Open Finance",
+        "url": "https://www.bcb.gov.br/meubc/faqs/p/tipos-de-dados-e-servicos-que-podem-ser-compartilhados-com-o-open-finance"
+      },
+      {
+        "id": "bcb-cliente",
+        "name": "Banco Central: funcionamento e autorização do compartilhamento pelo cliente",
+        "url": "https://www.bcb.gov.br/estabilidadefinanceira/cliente-open-finance"
+      }
+    ],
+    "sections": [
+      {
+        "id": "comparacao",
+        "title": "Compare duas bases que contam a mesma movimentação",
+        "paragraphs": [
+          "Na definição do AccountingCoach, a conciliação compara os registros de caixa da empresa com o extrato bancário, buscando consistência e integridade. Na transportadora, isso exige ligar a movimentação financeira ao título e ao documento que a justificam.",
+          "Use a mesma conta e a mesma data de corte nos dois lados. Verifique saldo inicial, entradas, saídas e saldo final. Diferenças podem vir de datas, registros ausentes, duplicidade ou classificação. Cada causa pede tratamento próprio; um ajuste genérico apaga a pista que permitiria corrigi-la."
+        ],
+        "sourceIds": [
+          "reconciliation"
+        ]
+      },
+      {
+        "id": "casos",
+        "title": "Trate os movimentos que mais geram confusão",
+        "table": {
+          "headers": [
+            "Movimento",
+            "Distorção possível",
+            "Tratamento gerencial"
+          ],
+          "rows": [
+            [
+              "Transferência entre contas próprias",
+              "Registrar entrada como nova receita",
+              "Vincular saída e entrada sem criar venda"
+            ],
+            [
+              "Pagamento agrupado de fretes",
+              "Dar baixa em apenas um título",
+              "Distribuir o valor pelos títulos identificados"
+            ],
+            [
+              "Recebimento parcial",
+              "Encerrar a cobrança integralmente",
+              "Manter o saldo restante em aberto"
+            ],
+            [
+              "Tarifa descontada",
+              "Diminuir receita sem explicação",
+              "Identificar a tarifa e seu lançamento"
+            ],
+            [
+              "Crédito sem identificação",
+              "Atribuir ao cliente errado",
+              "Manter pendência até obter evidência"
+            ],
+            [
+              "Liquidação de cartão",
+              "Contar compra e fatura como nova despesa",
+              "Vincular obrigação e pagamento sem duplicidade"
+            ]
+          ]
+        },
+        "paragraphs": [
+          "Defina essas regras com financeiro e contabilidade. Uma conciliação automática pode sugerir correspondências, mas a política de classificação continua sendo uma decisão da empresa. Operações entre empresas distintas do mesmo grupo também não devem ser tratadas automaticamente como simples transferências internas."
+        ]
+      },
+      {
+        "id": "exemplo",
+        "title": "Um depósito não precisa corresponder a um único título",
+        "paragraphs": [
+          "Exemplo ilustrativo: o cliente informa que liquidou dois títulos, de R$ 6 mil e R$ 4 mil. O extrato mostra crédito de R$ 9.970 e uma tarifa de R$ 30 é comprovada no demonstrativo de liquidação. A baixa e o registro da tarifa precisam preservar a informação de que os títulos somavam R$ 10 mil.",
+          "Se o cliente transferiu somente R$ 9.970 e não existe evidência de tarifa ou abatimento autorizado, o tratamento é outro. Pode haver um saldo a cobrar. A identificação depende dos documentos; não é correto presumir a causa apenas porque a diferença parece pequena.",
+          "Quando o comprovante não permite concluir, registre a pendência, o responsável e a data de retorno. Um recebimento não identificado não deve ser distribuído por conveniência para limpar a fila."
+        ]
+      },
+      {
+        "id": "open-finance",
+        "title": "O Open Finance ajuda na entrada dos dados",
+        "paragraphs": [
+          "O Banco Central informa que o Open Finance pode envolver dados de contas, como extratos e saldos, mediante a autorização aplicável. Também esclarece que senhas, tokens e credenciais de segurança não são compartilhados. Isso não significa que todo sistema tenha acesso a todos os bancos ou produtos.",
+          "Antes de ativar uma conexão, confirme as contas cobertas, quem participa do compartilhamento, a finalidade, a validade e como gerenciar o consentimento. Verifique também o horário da última atualização. Dados importados apoiam a conciliação, mas não substituem documentos, regras de baixa e revisão das exceções."
+        ],
+        "sourceIds": [
+          "bcb-dados",
+          "bcb-cliente"
+        ]
+      },
+      {
+        "id": "excecoes",
+        "title": "Meça a pendência que continua aberta",
+        "paragraphs": [
+          "Acompanhe o valor não conciliado, a antiguidade e o motivo das diferenças. Uma taxa alta de correspondência automática pode coexistir com poucos itens de grande valor sem solução. Por isso, olhe quantidade e valor, separando o que afeta recebimentos, obrigações e classificação.",
+          "Defina uma rotina proporcional ao risco e ao volume. O financeiro pode resolver ocorrências comuns com regras documentadas; abatimentos, estornos e reclassificações relevantes precisam da aprovação adequada. Quem revisa deve conseguir reconstruir o caminho da decisão."
+        ]
+      },
+      {
+        "id": "checklist",
+        "title": "Checklist para o próximo fechamento",
+        "bullets": [
+          "Confirmar que todas as contas e o período correto foram importados.",
+          "Investigar duplicidades e movimentos sem correspondência.",
+          "Separar transferências próprias de receitas e despesas.",
+          "Conferir pagamentos parciais e agrupados antes de baixar títulos.",
+          "Exigir documento para tarifas, abatimentos e ajustes.",
+          "Registrar quem resolveu cada exceção e com qual evidência.",
+          "Comparar o saldo conciliado com a abertura da projeção de caixa."
+        ],
+        "paragraphs": [
+          "A utilidade da conciliação aparece no restante da gestão: cobrança conhece o saldo real do cliente, contas a pagar evita duplicidade e a projeção parte de uma abertura confiável. Sem essa base, um painel pode apresentar números precisos na forma e frágeis no conteúdo."
+        ]
+      }
+    ],
+    "related": [
+      "projecao-caixa-13-semanas-transportadora",
+      "dre-e-fluxo-de-caixa-transportadora",
+      "gestao-financeira-para-transportadoras"
+    ],
+    "cta": {
+      "title": "Dê uma base confiável à gestão do caixa",
+      "text": "Conheça a NEXACASH e as funcionalidades de conciliação e acompanhamento financeiro apresentadas pela NEXALLOG.",
+      "href": "/nexacash",
+      "label": "Conhecer a NEXACASH"
+    }
+  },
+  {
+    "slug": "capital-giro-crescimento-transportadora",
+    "title": "Capital de giro para crescer: o contrato novo cabe no caixa da transportadora?",
+    "description": "Avalie o caixa necessário para iniciar um contrato de transporte, incluindo implantação, prazos, capacidade e atraso no primeiro recebimento.",
+    "category": "Gestão financeira",
+    "publishedAt": "2026-10-23",
+    "updatedAt": "2026-10-23",
+    "intro": "O contrato está assinado, a receita parece atrativa e a operação já prepara a entrada. Antes do primeiro recebimento, porém, a transportadora pode ter de pagar mobilização, combustível, pessoal e terceiros. Crescer exige saber quanto dinheiro fica comprometido nesse intervalo e se a empresa consegue sustentar o restante da carteira.",
+    "takeaway": "A margem estimada indica a atratividade do contrato. O calendário de desembolsos mostra se a empresa consegue colocá-lo de pé.",
+    "sources": [
+      {
+        "id": "bdc",
+        "name": "BDC: crescimento, ciclo de caixa e necessidades de financiamento",
+        "url": "https://www.bdc.ca/en/articles-tools/money-finance/get-financing/what-is-cash-flow-loan"
+      },
+      {
+        "id": "working-capital",
+        "name": "Corporate Finance Institute: definição e cálculo de working capital",
+        "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/working-capital-formula/"
+      }
+    ],
+    "sections": [
+      {
+        "id": "conceitos",
+        "title": "Capital de giro e caixa para implantação são medidas diferentes",
+        "paragraphs": [
+          "O Corporate Finance Institute apresenta o capital de giro líquido como ativo circulante menos passivo circulante. Esse indicador patrimonial não responde sozinho quanto dinheiro será necessário na entrada de um contrato específico. Recebíveis podem existir sem estarem disponíveis na data do abastecimento.",
+          "Para decidir a implantação, construa uma projeção incremental: o que muda nas entradas e saídas por causa do contrato. Depois, some esse cenário à projeção da empresa. O novo cliente pode ser financiável isoladamente e, ainda assim, disputar recursos com folha, dívida e obrigações da carteira atual."
+        ],
+        "sourceIds": [
+          "working-capital"
+        ]
+      },
+      {
+        "id": "antes-de-receber",
+        "title": "Mapeie tudo o que acontece antes de o cliente pagar",
+        "paragraphs": [
+          "O BDC destaca que empresas em crescimento podem enfrentar desembolsos relevantes antes de recuperar os recursos pelas vendas. Também relaciona a análise de financiamento ao ciclo de caixa e às necessidades da expansão. Aqui usamos esse princípio para avaliar a entrada de uma operação, sem recomendar uma modalidade de crédito.",
+          "Comece pelo que já foi prometido: data de início, capacidade dedicada, equipe, equipamentos, integração e condição de faturamento. A implantação pode acrescentar custos que não aparecem na margem recorrente. Se existirem, precisam entrar no calendário e na avaliação econômica."
+        ],
+        "sourceIds": [
+          "bdc"
+        ],
+        "table": {
+          "headers": [
+            "Etapa",
+            "Pergunta",
+            "Evidência"
+          ],
+          "rows": [
+            [
+              "Mobilização",
+              "O que será pago antes do início?",
+              "Orçamentos, contratos e datas"
+            ],
+            [
+              "Execução",
+              "Quando saem combustível, pessoal e terceiros?",
+              "Escala, operação e vencimentos"
+            ],
+            [
+              "Faturamento",
+              "Qual evento libera a emissão e o aceite?",
+              "Regra contratual e documentação"
+            ],
+            [
+              "Recebimento",
+              "Quando o recurso estará disponível?",
+              "Calendário e processo do cliente"
+            ],
+            [
+              "Capacidade",
+              "O volume adicional exige um degrau de estrutura?",
+              "Plano de frota, equipe e terceiros"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "exemplo",
+        "title": "Um exemplo de contrato com margem e aperto de caixa",
+        "paragraphs": [
+          "Exemplo ilustrativo: um contrato prevê R$ 200 mil de receita mensal e R$ 160 mil de desembolsos operacionais mensais. A mobilização exige R$ 50 mil. Suponha que, até a entrada do primeiro recebimento, a empresa pague a mobilização e todos os desembolsos dos dois primeiros meses.",
+          "Nesse recorte, a saída acumulada anterior ao recebimento chega a R$ 370 mil: R$ 50 mil mais dois meses de R$ 160 mil. A diferença mensal entre receita e desembolsos, de R$ 40 mil, não elimina a necessidade inicial. Essa diferença também não deve ser chamada automaticamente de lucro: o exemplo não detalha competência, depreciação, tributos e demais custos.",
+          "O valor não é uma fórmula geral de capital de giro. Se fornecedores financiarem parte da execução, o pico muda. Se o cliente atrasar a liberação ou houver gastos adicionais, pode subir. A necessidade deve ser medida na linha do tempo efetiva."
+        ],
+        "formula": "Necessidade de caixa do cenário = maior déficit acumulado das entradas e saídas incrementais, antes de financiamentos"
+      },
+      {
+        "id": "estresse",
+        "title": "Atrasar a primeira cobrança pode custar mais que reduzir a margem",
+        "paragraphs": [
+          "Faça pelo menos três leituras: implantação conforme o plano, atraso no primeiro recebimento e entrada gradual do volume. Um contrato que só fecha se todos os eventos ocorrerem na data mais otimista merece revisão das premissas.",
+          "Teste também o intervalo entre contratar capacidade e alcançar o volume previsto. Equipamento e equipe podem começar a custar antes de a demanda estabilizar. A simulação deve mostrar o efeito, em vez de diluí-lo silenciosamente em uma média anual.",
+          "Cada alternativa precisa de contrapartidas explícitas. Antecipação, prazo negociado, adiantamento de cliente e escalonamento da entrada não são recursos gratuitos nem automaticamente disponíveis. Avalie custo, risco e aprovação antes de incluí-los como solução."
+        ]
+      },
+      {
+        "id": "aprovacao",
+        "title": "Defina critérios de entrada antes de comprometer a estrutura",
+        "bullets": [
+          "A margem tem escopo claro e custos de implantação separados?",
+          "O maior déficit tem data, valor e premissas documentadas?",
+          "A empresa mantém recursos para a carteira atual durante a implantação?",
+          "A capacidade prometida está disponível no calendário contratado?",
+          "O primeiro faturamento depende de cadastros ou integrações ainda pendentes?",
+          "O cenário de atraso tem resposta aprovada, com responsável?"
+        ],
+        "paragraphs": [
+          "Essas perguntas permitem levar comercial, operação e financeiro à mesma decisão. O objetivo não é travar contratos novos, mas evitar uma entrada baseada em uma receita que ainda não virou disponibilidade. Registre também o que faria a empresa adiar ou redimensionar o início."
+        ]
+      },
+      {
+        "id": "acompanhar",
+        "title": "Compare o contratado com as primeiras semanas reais",
+        "paragraphs": [
+          "Depois da entrada, acompanhe mobilização, produtividade, prazo documental, receita e pagamentos. Uma diferença de volume ou rendimento muda a necessidade de caixa e pode exigir correção da operação. Não espere o trimestre fechar para descobrir que a premissa de implantação estava errada.",
+          "A projeção de 13 semanas ajuda a acompanhar esse caminho. O diagnóstico D90 complementa a leitura quando o desvio exige reorganizar processos, capacidade ou responsabilidades. A solução depende da causa encontrada, não apenas de conseguir mais prazo no banco."
+        ]
+      }
+    ],
+    "related": [
+      "projecao-caixa-13-semanas-transportadora",
+      "concentracao-clientes-transportadora",
+      "plano-acao-90-dias-transportadora"
+    ],
+    "cta": {
+      "title": "Avalie o próximo contrato com financeiro e operação",
+      "text": "Conheça o Programa D90 e conecte diagnóstico, prioridades e acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "diesel-custo-frete-transportadora",
+    "title": "Diesel e custo do frete: calcule o impacto antes de negociar o preço",
+    "description": "Simule a mudança do diesel no custo da transportadora e sua proporção na receita. Separe preço por litro, consumo e condições de negociação.",
+    "category": "Custos e margem",
+    "publishedAt": "2026-10-23",
+    "updatedAt": "2026-10-23",
+    "calculator": "diesel-impact",
+    "intro": "O diesel sobe e a primeira reação é pedir o mesmo percentual de aumento no frete. A conta precisa considerar quanto a operação consome, a participação do combustível no custo e o período até a nova condição comercial produzir efeito. Uma negociação ganha consistência quando parte da exposição real da empresa.",
+    "takeaway": "O percentual de variação do diesel não é, por si só, o percentual de reajuste do frete.",
+    "sources": [
+      {
+        "id": "eia",
+        "name": "U.S. Energy Information Administration: diesel fuel surcharges",
+        "url": "https://www.eia.gov/energyexplained/diesel-fuel/diesel-fuel-surcharges.php"
+      },
+      {
+        "id": "anp",
+        "name": "ANP: levantamento de preços de combustíveis das últimas semanas",
+        "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas"
+      }
+    ],
+    "sections": [
+      {
+        "id": "exposicao",
+        "title": "Meça quantos litros a operação realmente exige",
+        "paragraphs": [
+          "Calcule os litros a partir da distância total e do rendimento médio compatível com o serviço. Inclua deslocamentos vazios, reposicionamento e demais trechos necessários à execução. O custo não desaparece quando o veículo roda sem receita.",
+          "Use o mesmo período e o mesmo grupo de veículos em toda a comparação. Uma média que mistura equipamentos, rotas e cargas diferentes pode esconder a exposição de um contrato. Se a base for uma frota, obtenha o rendimento agregado pela razão entre quilômetros e litros totais, sem tirar uma média simples de rendimentos incompatíveis."
+        ],
+        "formula": "Litros estimados = quilômetros totais ÷ rendimento médio em km/l"
+      },
+      {
+        "id": "exemplo",
+        "title": "Quanto representa uma alta de R$ 0,50 por litro",
+        "paragraphs": [
+          "Exemplo ilustrativo: a operação percorre 10 mil km por mês com rendimento de 3 km/l. O consumo estimado é de 3.333,33 litros. Com preço base de R$ 6,00 por litro, o custo é de R$ 20 mil. A R$ 6,50, passa para aproximadamente R$ 21.666,67.",
+          "O acréscimo mensal é de R$ 1.666,67. Sobre R$ 50 mil de receita líquida no mesmo período, corresponde a 3,33%. Já a variação do combustível é de 8,33%. Os percentuais respondem a perguntas diferentes: um mede a alta do insumo; o outro relaciona a diferença de custo à receita.",
+          "Os preços são apenas premissas didáticas, não cotações atuais. A calculadora permite substituí-los pelos valores efetivamente pagos ou por um cenário de negociação."
+        ],
+        "formula": "Diferença de custo = (km ÷ km/l) × (preço do cenário − preço base)"
+      },
+      {
+        "id": "referencia",
+        "title": "Escolha uma referência que a outra parte consiga conferir",
+        "paragraphs": [
+          "A ANP publica levantamentos de preços com recortes geográficos. Esses dados podem apoiar uma referência externa, mas não são automaticamente o preço pago pela transportadora. A comparação precisa registrar produto, localidade, período e fonte.",
+          "A EIA explica o uso de adicionais de combustível em operações de transporte nos Estados Unidos e esclarece que não define nem regula sua forma de cálculo. É uma referência sobre a prática, não uma fórmula aplicável aos contratos brasileiros. Na negociação local, documente a base combinada e a revisão correspondente."
+        ],
+        "sourceIds": [
+          "anp",
+          "eia"
+        ]
+      },
+      {
+        "id": "consumo",
+        "title": "Preço e consumo não devem ficar na mesma explicação",
+        "paragraphs": [
+          "Se o preço por litro e a quilometragem permanecem iguais, mas o rendimento cai, o custo também cresce. Compare a evolução dos litros por quilômetro por operação. Investigue espera com motor ligado, perfil de carga, manutenção, percurso e qualidade do apontamento antes de atribuir toda a diferença ao mercado.",
+          "Em uma análise de variação, segure uma variável por vez: primeiro altere só o preço, depois só o consumo. Assim, a empresa separa a exposição ao insumo dos fatores operacionais que precisa corrigir. O simulador desta página faz a primeira leitura, com distância e rendimento constantes."
+        ]
+      },
+      {
+        "id": "negociacao",
+        "title": "A diferença de custo não fecha sozinha a negociação",
+        "paragraphs": [
+          "Repor R$ 1.666,67 de custo preservaria a contribuição em reais somente em um cenário sem outros efeitos. Se a nova receita gera tributos, comissões ou custos adicionais, a conta muda. Preservar a margem percentual é ainda outra meta.",
+          "Verifique também a data de vigência e a forma de faturamento. Um ajuste aprovado hoje pode só ser recebido depois, deixando um intervalo a financiar. Esta simulação não calcula preço mínimo, cláusulas contratuais, tributos ou obrigações regulatórias; essas verificações devem ser feitas com os responsáveis pela empresa."
+        ],
+        "table": {
+          "headers": [
+            "Ponto",
+            "O que deixar documentado"
+          ],
+          "rows": [
+            [
+              "Base de comparação",
+              "Preço, produto, período, fonte e operação"
+            ],
+            [
+              "Consumo",
+              "Km totais e rendimento utilizados"
+            ],
+            [
+              "Efeito financeiro",
+              "Valor adicional e período afetado"
+            ],
+            [
+              "Condição comercial",
+              "Escopo, vigência e regra de revisão acordados"
+            ],
+            [
+              "Caixa",
+              "Data em que a mudança deve aparecer no recebimento"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "uso",
+        "title": "Use o simulador para preparar a conversa",
+        "paragraphs": [
+          "Preencha distância, rendimento, preço base, preço de cenário e receita líquida do mesmo período. A ferramenta mostra os custos comparáveis, a diferença e sua proporção na receita. Uma redução do preço pode produzir diferença negativa, mantendo as mesmas premissas.",
+          "Baixe a memória do cálculo para levar as entradas e limitações à reunião. O resultado é uma simulação gerencial, sem dados de mercado carregados automaticamente. Revise a base depois da negociação e compare-a com consumo e valores realizados."
+        ]
+      }
+    ],
+    "related": [
+      "custo-por-km-transportadora",
+      "desconto-frete-margem-contribuicao",
+      "frete-vazio-ociosidade-frota"
+    ],
+    "cta": {
+      "title": "Leve custo e operação para a mesma negociação",
+      "text": "Avalie os fatores que pressionam a margem com o diagnóstico financeiro e operacional da NEXALLOG.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "desconto-frete-margem-contribuicao",
+    "title": "Desconto no frete: quanto volume é preciso para recuperar a contribuição?",
+    "description": "Calcule o impacto do desconto no frete sobre a margem de contribuição e simule o aumento de volume necessário para compensá-lo.",
+    "category": "Custos e margem",
+    "publishedAt": "2026-10-23",
+    "updatedAt": "2026-10-23",
+    "calculator": "freight-discount",
+    "intro": "Um desconto de 10% no frete pode exigir muito mais que 10% de volume adicional para compensar a perda. Isso acontece porque o desconto reduz o preço inteiro, enquanto a contribuição representa apenas o que sobra depois dos custos variáveis. A proposta comercial precisa mostrar como a nova condição paga a operação e a estrutura.",
+    "takeaway": "Com preço líquido de R$ 1.000 e custo variável de R$ 700, um desconto de 10% exige 50% mais volume para manter a contribuição total, se todas as demais condições permanecerem iguais.",
+    "sources": [
+      {
+        "id": "contribution",
+        "name": "Corporate Finance Institute: conceito e cálculo da margem de contribuição",
+        "url": "https://corporatefinanceinstitute.com/resources/accounting/contribution-margin-overview/"
+      },
+      {
+        "id": "cvp",
+        "name": "Corporate Finance Institute: análise custo-volume-lucro e suas premissas",
+        "url": "https://corporatefinanceinstitute.com/resources/accounting/cvp-analysis-guide/"
+      }
+    ],
+    "sections": [
+      {
+        "id": "base",
+        "title": "Calcule a contribuição antes de oferecer o desconto",
+        "paragraphs": [
+          "O Corporate Finance Institute define a contribuição a partir da receita líquida menos os custos variáveis. Ela pode ser analisada por unidade e como proporção da receita. Não se confunde com lucro líquido: ainda precisa ajudar a cobrir estrutura fixa e demais itens do resultado.",
+          "Na transportadora, escolha uma unidade comparável, como uma viagem equivalente, tonelada ou entrega de determinado perfil. Misturar serviços com custos diferentes produz uma conta que não explica a carteira. Informe preço líquido e custos variáveis no mesmo critério, com apoio da contabilidade para evitar tributos ou créditos contados duas vezes."
+        ],
+        "sourceIds": [
+          "contribution"
+        ],
+        "formula": "Contribuição por serviço = preço líquido por serviço − custo variável por serviço"
+      },
+      {
+        "id": "exemplo",
+        "title": "Por que 10% de desconto pode pedir 50% mais volume",
+        "paragraphs": [
+          "Considere o exemplo ilustrativo de R$ 1.000 de preço líquido e R$ 700 de custo variável. Cada serviço contribui com R$ 300. Cem serviços deixam R$ 30 mil para a estrutura e o resultado. Depois do desconto de 10%, o preço cai para R$ 900 e a contribuição por serviço para R$ 200.",
+          "Para continuar gerando R$ 30 mil de contribuição, seriam necessários 150 serviços. O volume aumenta 50%, embora o desconto tenha sido de 10%. A margem de contribuição unitária também muda: de 30% para aproximadamente 22,22% da nova receita.",
+          "Esse cálculo mantém o custo variável por serviço em R$ 700 e não adiciona estrutura fixa. Não é uma previsão de vendas nem uma recomendação de preço. Sua utilidade é tornar explícita a condição que a negociação precisa cumprir."
+        ],
+        "formula": "Aumento de volume necessário = (contribuição original ÷ contribuição após desconto − 1) × 100",
+        "table": {
+          "headers": [
+            "Cenário ilustrativo",
+            "Preço líquido",
+            "Contribuição por serviço",
+            "Volume para R$ 30 mil"
+          ],
+          "rows": [
+            [
+              "Sem desconto",
+              "R$ 1.000",
+              "R$ 300",
+              "100 serviços"
+            ],
+            [
+              "Desconto de 5%",
+              "R$ 950",
+              "R$ 250",
+              "120 serviços"
+            ],
+            [
+              "Desconto de 10%",
+              "R$ 900",
+              "R$ 200",
+              "150 serviços"
+            ],
+            [
+              "Desconto de 20%",
+              "R$ 800",
+              "R$ 100",
+              "300 serviços"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "capacidade",
+        "title": "O volume compensatório precisa caber na capacidade",
+        "paragraphs": [
+          "A análise custo-volume-lucro apresentada pelo CFI relaciona custos, volume e resultado. Na aplicação a um contrato, seus limites precisam ficar claros. Uma frota pode absorver algumas viagens adicionais, mas exigir novos recursos quando ultrapassa certo nível.",
+          "Se os 50 serviços extras pedirem equipamento dedicado, um turno ou mais estrutura, recuperar a contribuição original não basta para manter o resultado. Refaça o cenário com o custo adicional. Compare também o uso alternativo da capacidade: ocupar recursos com menor contribuição pode impedir atender uma demanda melhor."
+        ],
+        "sourceIds": [
+          "cvp"
+        ]
+      },
+      {
+        "id": "caixa",
+        "title": "Desconto, prazo e exigência de atendimento formam uma só condição",
+        "paragraphs": [
+          "Uma redução de preço acompanhada de prazo maior de pagamento exige duas análises. A primeira mede a contribuição. A segunda verifica quanto a execução consome antes de o cliente pagar. O simulador desta página calcula somente a primeira.",
+          "Inclua exigências que mudam o serviço: janelas mais restritas, espera, documentação, integração, devoluções e atendimento fora do padrão. Se elas aumentarem o custo variável ou a estrutura dedicada, atualize a base antes de aprovar o preço. Não trate esse trabalho como gratuito por não estar detalhado na proposta."
+        ]
+      },
+      {
+        "id": "limites",
+        "title": "Quando o volume deixa de resolver",
+        "paragraphs": [
+          "No exemplo, um desconto de 30% reduz o preço a R$ 700 e zera a contribuição. Nenhum volume finito recupera a contribuição positiva anterior, mantendo o mesmo custo variável. Abaixo disso, cada serviço acrescenta contribuição negativa.",
+          "A calculadora interrompe a simulação quando o preço original ou o preço com desconto não supera o custo variável informado. Isso evita apresentar um aumento de volume sem sentido econômico. O diagnóstico não significa que todos os custos da empresa estejam representados: a base continua dependendo de quem os apurou."
+        ]
+      },
+      {
+        "id": "checklist",
+        "title": "O que levar para a aprovação comercial",
+        "bullets": [
+          "Preço líquido e custo variável da mesma unidade de serviço.",
+          "Contribuição antes e depois da proposta.",
+          "Volume adicional necessário e evidência de demanda.",
+          "Capacidade disponível e eventual degrau de estrutura.",
+          "Prazo de recebimento e necessidade de financiar a execução.",
+          "Exigências operacionais incluídas no acordo.",
+          "Responsável e data para conferir o cenário após a entrada."
+        ],
+        "paragraphs": [
+          "Use a ferramenta para preparar a discussão, exporte a memória e confira as premissas com comercial, financeiro e operação. Em quantidades indivisíveis, arredonde a necessidade calculada para cima. Uma proposta bem documentada permite revisar o acordo quando a realidade não acompanha o volume ou o custo prometido."
+        ]
+      }
+    ],
+    "related": [
+      "ponto-equilibrio-transportadora",
+      "margem-por-cliente-rota-frete",
+      "diesel-custo-frete-transportadora"
+    ],
+    "cta": {
+      "title": "Negocie com uma leitura clara da contribuição",
+      "text": "Conecte preço, custo de servir e capacidade ao diagnóstico da NEXALLOG.",
+      "href": "/contato",
+      "label": "Falar com a NEXALLOG"
+    }
   }
 ]

@@ -1,4 +1,4 @@
-export type CalculatorKind = 'empty-distance' | 'receivables' | 'break-even' | 'cost-to-serve' | 'client-loss';
+export type CalculatorKind = 'empty-distance' | 'receivables' | 'break-even' | 'cost-to-serve' | 'client-loss' | 'diesel-impact' | 'freight-discount';
 type Field = { key: string; label: string; defaultValue: number; min: number; max?: number; step: number };
 export type ToolDefinition = { kind: CalculatorKind; title: string; description: string; note: string; formula: string; fields: Field[] };
 export type ToolMetric = { label: string; value: number; format: 'currency' | 'percent' | 'days' };
@@ -75,6 +75,32 @@ export const blogTools: Record<CalculatorKind, ToolDefinition> = {
       { key: 'removedFixed', label: 'Custos fixos removíveis no período (R$)', defaultValue: 10000, min: 0, step: 1000 },
     ],
   },
+  'diesel-impact': {
+    kind: 'diesel-impact',
+    title: 'Simule o impacto do diesel na operação',
+    description: 'Compare dois preços por litro, mantendo distância e rendimento constantes. Veja a diferença de custo e sua proporção na receita líquida.',
+    note: 'Preços ilustrativos ou informados por você, sem cotação automática. Inclua km carregados e vazios no mesmo período da receita. Não considera mudança de consumo, créditos tributários, taxas sobre receita ou condições contratuais. A proporção calculada não é um reajuste obrigatório ou suficiente para preservar margem percentual.',
+    formula: 'Litros = km / rendimento; custo = litros × preço/litro; diferença = litros × (preço cenário − preço base); diferença / receita líquida × 100.',
+    fields: [
+      { key: 'distance', label: 'Km totais no período', defaultValue: 10000, min: 0, step: 100 },
+      { key: 'efficiency', label: 'Rendimento médio (km/l)', defaultValue: 3, min: 0.1, step: 0.1 },
+      { key: 'basePrice', label: 'Preço base do diesel (R$/l)', defaultValue: 6, min: 0, step: 0.01 },
+      { key: 'scenarioPrice', label: 'Preço no cenário (R$/l)', defaultValue: 6.5, min: 0, step: 0.01 },
+      { key: 'revenue', label: 'Receita líquida no mesmo período (R$)', defaultValue: 50000, min: 1, step: 1 },
+    ],
+  },
+  'freight-discount': {
+    kind: 'freight-discount',
+    title: 'Calcule o efeito do desconto no frete',
+    description: 'Veja quanto a contribuição por serviço diminui e qual aumento de volume compensaria essa queda.',
+    note: 'Use preço líquido e custos variáveis líquidos comparáveis por serviço. Supõe custo variável unitário, mix e estrutura fixa constantes, com capacidade disponível. O aumento é contínuo; quantidades indivisíveis devem ser arredondadas para cima. Não considera custos adicionais de expansão, prazo de recebimento ou risco comercial.',
+    formula: 'Preço com desconto = preço × (1 − desconto %); contribuição = preço − custo variável; aumento de volume = (contribuição original / contribuição após desconto − 1) × 100.',
+    fields: [
+      { key: 'price', label: 'Preço líquido por serviço (R$)', defaultValue: 1000, min: 0.01, step: 0.01 },
+      { key: 'variableCost', label: 'Custo variável por serviço (R$)', defaultValue: 700, min: 0, step: 0.01 },
+      { key: 'discount', label: 'Desconto proposto (%)', defaultValue: 10, min: 0, max: 99.99, step: 0.1 },
+    ],
+  },
 };
 
 export function getBlogTool(kind: string | undefined) {
@@ -95,6 +121,22 @@ export function calculateBlogTool(kind: CalculatorKind, values: ToolValues): Too
   const percent = (label: string, value: number): ToolMetric => ({ label, value, format: 'percent' });
   let metrics: ToolMetric[];
   switch (kind) {
+    case 'diesel-impact': {
+      const liters = values.distance / values.efficiency;
+      const before = liters * values.basePrice;
+      const after = liters * values.scenarioPrice;
+      metrics = [currency('Custo do diesel na base', before), currency('Custo do diesel no cenário', after), currency('Diferença de custo no período', after - before), percent('Diferença como proporção da receita', (after - before) / values.revenue * 100)];
+      break;
+    }
+    case 'freight-discount': {
+      const before = values.price - values.variableCost;
+      const priceAfter = values.price * (1 - values.discount / 100);
+      const after = priceAfter - values.variableCost;
+      if (before <= 0) return { error: 'O preço original precisa superar o custo variável para existir contribuição positiva neste modelo.', metrics: [] };
+      if (after <= 0) return { error: 'Com esse desconto, o preço não supera o custo variável. Nenhum aumento de volume recupera a contribuição original neste modelo.', metrics: [] };
+      metrics = [currency('Contribuição original por serviço', before), currency('Contribuição após o desconto', after), percent('Margem de contribuição após desconto', after / priceAfter * 100), percent('Aumento de volume necessário', (before / after - 1) * 100)];
+      break;
+    }
     case 'empty-distance': {
       const { totalKm, emptyKm, variable, eliminatedKm } = values;
       if (emptyKm > totalKm) return { error: 'Os km vazios não podem superar os km totais.', metrics: [] };

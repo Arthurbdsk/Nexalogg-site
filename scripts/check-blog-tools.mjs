@@ -8,6 +8,8 @@ const cases = [
   ['break-even', [400000, 30000, 500000, 20]],
   ['cost-to-serve', [93000, 7000, 7, 13000]],
   ['client-loss', [40, 70000, -10000]],
+  ['diesel-impact', [20000, 21666.666666666668, 1666.666666666668, 3.333333333333336]],
+  ['freight-discount', [300, 200, 200 / 900 * 100, 50]],
 ];
 for (const [kind, expected] of cases) {
   const values = defaultToolValues(kind);
@@ -41,6 +43,16 @@ checkError('break-even', { contribution: 101 });
 checkError('cost-to-serve', { revenue: 0 });
 checkError('client-loss', { clientRevenue: 600000 });
 checkError('client-loss', { contribution: 101 });
+checkError('diesel-impact', { efficiency: 0 });
+checkError('diesel-impact', { revenue: 0 });
+checkError('freight-discount', { discount: 100 });
+checkError('freight-discount', { discount: 30 });
+checkError('freight-discount', { discount: 40 });
+checkError('freight-discount', { variableCost: 1000 });
+checkError('freight-discount', { variableCost: 1200 });
+assert.equal(calculateBlogTool('diesel-impact', { ...defaultToolValues('diesel-impact'), distance: 0 }).metrics[2].value, 0);
+assert(calculateBlogTool('diesel-impact', { ...defaultToolValues('diesel-impact'), scenarioPrice: 5.5 }).metrics[2].value < 0);
+assert.equal(calculateBlogTool('freight-discount', { ...defaultToolValues('freight-discount'), discount: 0 }).metrics[3].value, 0);
 assert.equal(calculateBlogTool('empty-distance', { ...defaultToolValues('empty-distance'), emptyKm: 0, eliminatedKm: 0 }).metrics[2].value, 0);
 const noRevenue = calculateBlogTool('break-even', { ...defaultToolValues('break-even'), revenue: 0 });
 assert(!noRevenue.error);
@@ -50,6 +62,7 @@ const loss = calculateBlogTool('cost-to-serve', { ...defaultToolValues('cost-to-
 assert.equal(loss.metrics[1].value, -43000);
 assert.equal(loss.metrics[2].value, -86);
 const posts = JSON.parse(readFileSync(new URL('../src/data/blog.json', import.meta.url), 'utf8'));
-assert.equal(posts.filter((post) => post.calculator).length, 5);
+assert.equal(posts.filter((post) => post.calculator).length, 7);
+assert.deepEqual(new Set(posts.filter((post) => post.calculator).map((post) => post.calculator)), new Set(Object.keys(blogTools)));
 for (const post of posts.filter((post) => post.calculator)) assert(Object.hasOwn(blogTools, post.calculator), post.slug);
-console.log('OK limites cruzados, zero, resultado negativo e associação dos cinco posts');
+console.log('OK limites cruzados, zero, resultado negativo e associação dos sete simuladores');
