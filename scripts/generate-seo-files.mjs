@@ -103,7 +103,7 @@ const rss = [
   '<link>' + escapeXml(siteUrl + '/blog') + '</link>',
   '<description>Gestão financeira e operação para Transporte e Logística.</description>',
   '<language>pt-br</language>',
-  ...posts.toSorted((a, b) => b.publishedAt.localeCompare(a.publishedAt)).map((post) => {
+  ...posts.toReversed().toSorted((a, b) => b.publishedAt.localeCompare(a.publishedAt)).map((post) => {
     const url = escapeXml(siteUrl + '/blog/' + post.slug);
     return '<item><title>' + escapeXml(post.title) + '</title><link>' + url +
       '</link><guid isPermaLink="true">' + url + '</guid><description>' +

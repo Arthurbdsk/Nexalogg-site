@@ -1495,5 +1495,1986 @@
       "href": "/contato",
       "label": "Falar com a NEXALLOG"
     }
+  },
+  {
+    "slug": "frete-retorno-precificacao-contribuicao",
+    "title": "Frete de retorno: como avaliar a carga adicional sem comprometer a próxima viagem",
+    "description": "Compare receita incremental, desvio, espera e disponibilidade antes de aceitar um frete de retorno. Inclui exemplo de contribuição e checklist.",
+    "category": "Custos e margem",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Um veículo que voltaria vazio recebe uma oferta de carga. A receita parece uma oportunidade imediata, mas a coleta pode exigir desvio, espera e mudança no horário de chegada. A decisão deve considerar o retorno completo e o compromisso que vem depois dele.",
+    "takeaway": "O frete de retorno precisa melhorar a contribuição da programação inteira, respeitando prazo, capacidade e atendimento.",
+    "sources": [
+      {
+        "id": "costs",
+        "name": "ACCA: Relevant costs e decisões incrementais",
+        "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/relevant-costs.html"
+      }
+    ],
+    "sections": [
+      {
+        "id": "decisao",
+        "title": "Compare as alternativas que realmente estão disponíveis",
+        "paragraphs": [
+          "A análise de custos relevantes da ACCA considera os efeitos que mudam entre alternativas. Aplicada ao retorno, essa lógica pede comparar voltar sem a nova carga com aceitar o serviço e cumprir suas exigências.",
+          "O gasto da viagem de ida já realizada não deve ser apresentado como se fosse provocado pela nova coleta. Ao mesmo tempo, um custo fixo que permanece na empresa continua existindo no resultado total. A conta incremental ajuda uma decisão específica e não substitui a avaliação da rentabilidade da rota.",
+          "Confirme se a alternativa de retorno vazio é real. Se existem duas cargas concorrentes, a comparação passa a ser entre as contribuições e as restrições das duas ofertas. Aceitar a primeira pode consumir a janela necessária para uma condição melhor."
+        ],
+        "sourceIds": [
+          "costs"
+        ]
+      },
+      {
+        "id": "custos",
+        "title": "Inclua o trabalho adicional da coleta até a liberação",
+        "paragraphs": [
+          "Registre quilômetros de desvio, combustível incremental, pedágios adicionais, movimentação e qualquer recurso que só será utilizado se o serviço acontecer. Aplique a mesma base líquida à receita e aos custos.",
+          "A espera também pode alterar a programação. Se o atraso exigir uma substituição para a próxima viagem, considere o custo adicional dessa solução. Se uma viagem for perdida, a consequência relevante pode ser sua contribuição não realizada, sem somar duas vezes o mesmo efeito."
+        ],
+        "table": {
+          "headers": [
+            "Pergunta",
+            "Informação necessária"
+          ],
+          "rows": [
+            [
+              "Onde a carga está?",
+              "Desvio até a coleta e até o destino"
+            ],
+            [
+              "Quando haverá liberação?",
+              "Janela e duração provável da operação"
+            ],
+            [
+              "O equipamento é compatível?",
+              "Peso, volume e requisitos do serviço"
+            ],
+            [
+              "Qual compromisso vem depois?",
+              "Horário de apresentação e alternativa de atendimento"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "exemplo",
+        "title": "Veja uma comparação com números ilustrativos",
+        "paragraphs": [
+          "Uma oferta gera R$ 2.400 de receita líquida e exige R$ 900 de custos adicionais. Antes de outros efeitos, a contribuição incremental é de R$ 1.500. Essa diferença é mais informativa do que avaliar apenas o valor do frete.",
+          "Se a coleta também exigir R$ 1.200 de substituição para preservar a viagem seguinte, a diferença cai para R$ 300. Caso a espera ainda seja incerta, esse valor precisa ser lido com a margem de risco da programação. O exemplo não define um preço mínimo para outros contratos.",
+          "Registre a estimativa e o resultado realizado. Uma oferta que parecia adequada pode revelar uma fila recorrente, uma distância maior ou uma cobrança que não estava incluída na análise inicial."
+        ]
+      },
+      {
+        "id": "aprovacao",
+        "title": "Use uma aprovação curta e verificável",
+        "paragraphs": [],
+        "bullets": [
+          "Receita e custos adicionais na mesma base.",
+          "Compatibilidade do veículo e da carga confirmada.",
+          "Janela de coleta, entrega e retorno documentada.",
+          "Próxima viagem preservada ou alternativa precificada.",
+          "Prazo de recebimento e documentação definidos.",
+          "Conferência posterior da contribuição e do horário efetivo."
+        ]
+      }
+    ],
+    "related": [
+      "frete-vazio-ociosidade-frota",
+      "fila-carga-descarga-custo-espera",
+      "margem-por-cliente-rota-frete"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "fila-carga-descarga-custo-espera",
+    "title": "Fila na carga e descarga: como transformar tempo de espera em informação de custo",
+    "description": "Meça chegada, atendimento e liberação para entender a espera em carga e descarga. Separe ocupação do veículo, gasto adicional e capacidade perdida.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "A viagem pode cumprir a distância prevista e ainda consumir muito mais tempo do que o planejado. Quando a fila se repete, a transportadora perde capacidade de programação e passa a tratar o atraso como parte invisível do serviço. O primeiro passo é registrar o evento com precisão.",
+    "takeaway": "Separe fila, atendimento e liberação. O tempo total de permanência não explica sozinho a causa nem o custo do atraso.",
+    "sources": [
+      {
+        "id": "wait",
+        "name": "FMCSA: Driver Detention Times in Commercial Motor Vehicle Operations",
+        "url": "https://rosap.ntl.bts.gov/view/dot/193"
+      }
+    ],
+    "sections": [
+      {
+        "id": "eventos",
+        "title": "Registre os horários que permitem explicar a permanência",
+        "paragraphs": [
+          "O estudo de detention time patrocinado pela FMCSA discute a permanência de veículos em instalações de carga e descarga. É uma referência de investigação operacional dos Estados Unidos, não uma regra de cobrança ou um parâmetro legal brasileiro.",
+          "Na gestão do contrato, registre agendamento, chegada, início do atendimento, fim da operação e liberação. Sem essas marcas, uma permanência longa pode ser atribuída à fila quando houve chegada antecipada, execução demorada ou pendência documental.",
+          "Defina quem registra cada horário e qual evidência confirma o evento. Um apontamento feito no dia seguinte, sem vínculo com a viagem, tem menor utilidade para corrigir o processo do que um registro consistente na própria operação."
+        ],
+        "sourceIds": [
+          "wait"
+        ]
+      },
+      {
+        "id": "segmentacao",
+        "title": "Compare instalações e serviços semelhantes",
+        "paragraphs": [
+          "Separe cliente, unidade, tipo de carga, turno e equipamento. Uma média geral pode melhorar porque aumentou a participação de uma operação rápida, enquanto uma instalação específica continua bloqueando a frota.",
+          "Acompanhe tanto a frequência das esperas quanto sua duração. Poucas ocorrências muito longas podem exigir uma ação diferente de atrasos curtos em quase todas as viagens. Considere também os casos que impediram o compromisso seguinte."
+        ],
+        "table": {
+          "headers": [
+            "Trecho do evento",
+            "O que ajuda a investigar"
+          ],
+          "rows": [
+            [
+              "Chegada até atendimento",
+              "Fila, agendamento e disponibilidade da doca"
+            ],
+            [
+              "Atendimento até fim da operação",
+              "Equipe, equipamento, carga e procedimento"
+            ],
+            [
+              "Fim até liberação",
+              "Conferência, documentação e autorização de saída"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "impacto",
+        "title": "Diferencie gasto, ocupação e contribuição não realizada",
+        "paragraphs": [
+          "Em um exemplo ilustrativo, dez viagens acumulam duas horas adicionais cada: são vinte horas de veículo ocupadas além da programação. Isso não significa automaticamente vinte horas vendáveis perdidas. É preciso verificar se havia serviço viável naquele intervalo.",
+          "Se houve contratação extra, registre o gasto incremental. Se uma viagem deixou de acontecer, avalie a contribuição que não foi recuperada. Um rateio de custo fixo por hora pode ajudar a visualizar a ocupação, mas não deve ser somado novamente a uma conta que já inclui essa estrutura.",
+          "Use o histórico para discutir janela, preparação da carga e padrão de liberação com o cliente. A existência de um custo operacional não determina, por si, uma cobrança contratual. Condições comerciais devem ser tratadas conforme o acordo e a orientação responsável."
+        ]
+      },
+      {
+        "id": "acao",
+        "title": "Faça uma correção por vez e confira a recorrência",
+        "paragraphs": [],
+        "bullets": [
+          "Selecionar a unidade com impacto relevante.",
+          "Confirmar a causa com registros de eventos.",
+          "Combinar uma mudança de agendamento ou preparação.",
+          "Medir o mesmo grupo antes e depois da mudança.",
+          "Conferir atendimento e custo, além do tempo.",
+          "Manter a ação somente se a melhoria se sustentar."
+        ]
+      }
+    ],
+    "related": [
+      "frete-retorno-precificacao-contribuicao",
+      "roteirizacao-entregas-janelas",
+      "custo-de-servir-cliente-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "ocupacao-cubagem-peso-frota",
+    "title": "Ocupação da frota: por que peso e cubagem precisam de leituras separadas",
+    "description": "Compare peso, volume e posições de carga sem confundir seus limites. Entenda como o perfil da mercadoria afeta a ocupação e a programação.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Um caminhão pode sair com pouco peso e estar sem espaço para outra carga. Outro pode atingir o limite de peso com parte do volume livre. Tratar as duas situações como ociosidade equivalente produz decisões ruins sobre veículo, consolidação e preço do serviço.",
+    "takeaway": "Meça o recurso que limita a operação: peso, volume, posições, distribuição ou uma combinação de restrições.",
+    "sources": [
+      {
+        "id": "gs1",
+        "name": "GS1: Package and Product Measurement Standard",
+        "url": "https://ref.gs1.org/standards/ppm/"
+      }
+    ],
+    "sections": [
+      {
+        "id": "medicao",
+        "title": "Comece por medidas físicas consistentes",
+        "paragraphs": [
+          "O padrão de medição de produtos e embalagens da GS1 busca tornar dimensões e pesos comunicáveis de forma consistente. Para a programação, essa disciplina evita comparar cadastros medidos em orientações ou unidades diferentes.",
+          "Registre comprimento, largura, altura e peso com a unidade de medida identificada. Diferencie embalagem unitária, caixa e unidade de movimentação. Uma medida da caixa individual não pode ser usada como se descrevesse automaticamente um palete montado.",
+          "Considere o envelope real da carga e os requisitos de manuseio. O produto das dimensões é uma aproximação geométrica: não confirma empilhamento, estabilidade, compatibilidade ou distribuição segura no veículo."
+        ],
+        "sourceIds": [
+          "gs1"
+        ]
+      },
+      {
+        "id": "indicadores",
+        "title": "Mostre os limites em indicadores separados",
+        "paragraphs": [
+          "A ocupação em peso relaciona o peso embarcado à capacidade aplicável ao veículo e ao serviço. A ocupação volumétrica relaciona o volume ocupado a uma base de volume útil definida. A programação precisa respeitar todos os limites técnicos e legais aplicáveis.",
+          "Em um exemplo ilustrativo, um espaço operacional comporta 40 m³ úteis e uma carga ocupa 36 m³: a referência volumétrica é 90%. Se ela pesa 6 toneladas em uma base admissível de 12 toneladas para aquele cenário, a referência de peso é 50%. A conclusão não é que metade da capacidade está livre para qualquer mercadoria."
+        ],
+        "table": {
+          "headers": [
+            "Leitura",
+            "Pergunta que responde"
+          ],
+          "rows": [
+            [
+              "Peso",
+              "Quanto da capacidade admissível foi utilizado?"
+            ],
+            [
+              "Volume útil",
+              "Quanto espaço físico a carga exige?"
+            ],
+            [
+              "Posições",
+              "Quantas unidades de movimentação cabem no arranjo?"
+            ],
+            [
+              "Restrições",
+              "O que impede combinar ou empilhar cargas?"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "decisao",
+        "title": "Avalie consolidação pelo perfil da carga",
+        "paragraphs": [
+          "Cruze origem, destino, janela e compatibilidade antes de juntar serviços. Uma combinação que parece boa em metros cúbicos pode exigir segregação ou descarga em uma sequência que inviabiliza o aproveitamento.",
+          "Mantenha a distinção entre medição física e regra comercial de cubagem. O fator utilizado para converter volume em peso tarifável depende da condição comercial aplicável; o exemplo deste texto não estabelece um fator universal.",
+          "Compare o resultado por classe de equipamento e família de carga. A frota pode estar bem utilizada em um grupo e mal dimensionada em outro, mesmo quando a média total parece aceitável."
+        ]
+      },
+      {
+        "id": "rotina",
+        "title": "Confira o cadastro e a programação na mesma reunião",
+        "paragraphs": [],
+        "bullets": [
+          "Padronizar unidades e níveis de embalagem.",
+          "Validar dimensões de itens com divergência recorrente.",
+          "Comparar o previsto e o carregado por viagem.",
+          "Registrar o motivo de espaço não aproveitável.",
+          "Rever equipamento e consolidação por perfil.",
+          "Atualizar a base quando a embalagem mudar."
+        ]
+      }
+    ],
+    "related": [
+      "roteirizacao-entregas-janelas",
+      "frete-vazio-ociosidade-frota",
+      "custo-por-km-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "roteirizacao-entregas-janelas",
+    "title": "Roteirização com janelas de entrega: a menor distância nem sempre atende a operação",
+    "description": "Organize tempo de viagem, atendimento, capacidade e janelas antes de comparar rotas. Inclui exemplo e checklist de validação da programação.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Uma sequência curta no mapa pode chegar fora da janela do cliente ou consumir todo o turno em atendimento. Roteirizar exige representar o serviço que será executado, incluindo os limites que não aparecem apenas na distância entre endereços.",
+    "takeaway": "Uma rota útil precisa ser executável em tempo, capacidade e condições de atendimento, além de fazer sentido em custo.",
+    "sources": [
+      {
+        "id": "routing",
+        "name": "Google Maps Platform: Time windows em otimização de rotas",
+        "url": "https://developers.google.com/maps/documentation/route-optimization/concepts/time-windows"
+      }
+    ],
+    "sections": [
+      {
+        "id": "restricoes",
+        "title": "Declare as restrições antes de otimizar a sequência",
+        "paragraphs": [
+          "A documentação de janelas de tempo do Google Maps Platform mostra como intervalos permitidos condicionam os eventos de uma rota. A referência é técnica e ajuda a entender a diferença entre escolher uma sequência e respeitar compromissos.",
+          "Na operação, registre janela, duração do atendimento, restrição de equipamento, capacidade e horário de saída. Diferencie uma condição obrigatória de uma preferência que pode ser negociada. Essa classificação deve refletir o serviço combinado.",
+          "Uma janela informada como dia inteiro, quando o recebimento só funciona pela manhã, transforma um cadastro incompleto em uma programação aparentemente viável. A qualidade dos dados precisa ser verificada antes de atribuir o erro ao roteirizador."
+        ],
+        "sourceIds": [
+          "routing"
+        ]
+      },
+      {
+        "id": "tempo",
+        "title": "Some deslocamento e atendimento",
+        "paragraphs": [
+          "Considere um exemplo ilustrativo com cinco paradas e 35 minutos de atendimento por parada. São 175 minutos antes de somar trânsito, deslocamentos e outras atividades da rota. Uma estimativa baseada apenas em quilômetros deixaria quase três horas fora do plano.",
+          "Use durações observadas por perfil de entrega. Um atendimento com agendamento e descarga por equipe do cliente não tem necessariamente o mesmo tempo de uma entrega fracionada com conferência detalhada. Evite transformar uma média da rede em regra para todos."
+        ],
+        "table": {
+          "headers": [
+            "Dado da programação",
+            "Validação operacional"
+          ],
+          "rows": [
+            [
+              "Endereço e acesso",
+              "Local correto, restrições e ponto de atendimento"
+            ],
+            [
+              "Janela",
+              "Intervalo confirmado e regra de tolerância"
+            ],
+            [
+              "Tempo de serviço",
+              "Perfil de carga, descarga e conferência"
+            ],
+            [
+              "Capacidade",
+              "Peso, volume e arranjo compatíveis"
+            ],
+            [
+              "Saída",
+              "Carga pronta e recursos disponíveis"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "comparacao",
+        "title": "Compare cenários com a mesma demanda",
+        "paragraphs": [
+          "Para avaliar duas programações, mantenha a mesma carteira de entregas e as mesmas restrições. Uma rota pode parecer mais barata simplesmente porque deixou um serviço pendente. Registre entregas atendidas, distância, tempo e necessidade de recursos adicionais.",
+          "Teste pequenas mudanças de forma controlada: antecipar a preparação da carga, negociar uma janela ou redistribuir uma parada. A consequência precisa ser conferida no conjunto, inclusive na capacidade da operação que receberá a mudança.",
+          "Depois da execução, preserve os horários reais e as ocorrências. O aprendizado deve atualizar premissas de atendimento e deslocamento, sem apagar os compromissos originais usados para medir o desempenho."
+        ]
+      },
+      {
+        "id": "liberacao",
+        "title": "Libere a programação com critérios claros",
+        "paragraphs": [],
+        "bullets": [
+          "Confirmar carga, veículo e documentação.",
+          "Revisar incompatibilidades de janela e capacidade.",
+          "Identificar paradas com maior variabilidade.",
+          "Definir tratamento de exceções com responsáveis.",
+          "Acompanhar entregas previstas e pendentes.",
+          "Revisar as causas dos desvios após a execução."
+        ]
+      }
+    ],
+    "related": [
+      "ocupacao-cubagem-peso-frota",
+      "fila-carga-descarga-custo-espera",
+      "otif-entregas-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "reentrega-devolucao-custo-logistica-reversa",
+    "title": "Reentrega e devolução: organize o fluxo antes de calcular o custo da ocorrência",
+    "description": "Separe reentrega, recusa e retorno físico para medir custos e causas. Veja um modelo de controle de logística reversa para a operação.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Um pedido que volta para a base pode exigir nova programação, conferência, armazenagem e decisão sobre destino. Sem identificar o motivo e o fluxo de cada caso, a empresa mistura serviços diferentes em uma única conta de devolução e perde a chance de corrigir a origem.",
+    "takeaway": "A ocorrência só termina quando o destino físico, o registro do serviço e o tratamento financeiro estão definidos.",
+    "sources": [
+      {
+        "id": "returns",
+        "name": "ASCM: Reverse Logistics",
+        "url": "https://www.ascm.org/topics/reverse-logistics/"
+      }
+    ],
+    "sections": [
+      {
+        "id": "fluxos",
+        "title": "Dê um significado operacional a cada ocorrência",
+        "paragraphs": [
+          "A ASCM apresenta a logística reversa como um conjunto de fluxos que pode incluir devoluções, recondicionamento e gestão de embalagens. Essa visão ajuda a perceber que todo retorno não exige o mesmo tratamento.",
+          "Na transportadora, diferencie tentativa sem atendimento, reentrega autorizada, recusa total, recusa parcial e coleta de retorno. Registre o motivo confirmado e a evidência disponível. A classificação deve orientar a próxima ação e manter vínculo com o serviço original.",
+          "Não conclua responsabilidade ou cobrança apenas pelo código da ocorrência. Uma recusa pode decorrer de pedido, embalagem, agendamento, condição da carga ou outro motivo. O tratamento comercial depende da apuração e do acordo aplicável."
+        ],
+        "sourceIds": [
+          "returns"
+        ]
+      },
+      {
+        "id": "custos",
+        "title": "Acompanhe o esforço adicional por etapa",
+        "paragraphs": [
+          "Use a mesma identificação para relacionar retorno, triagem, permanência e nova saída. Essa rastreabilidade permite conferir se o custo foi provocado por uma ocorrência ou já estava incluído no serviço contratado.",
+          "Em um exemplo ilustrativo, um retorno demanda R$ 180 de transporte adicional, R$ 45 de triagem e R$ 25 de movimentação. O esforço apurado é de R$ 250, antes de outros itens definidos no escopo. Se houver nova entrega, sua execução deve ser registrada separadamente.",
+          "Não apresente valor de mercadoria devolvida como se fosse receita perdida da transportadora. Separe custo do serviço, eventual ressarcimento e efeito comercial, respeitando a responsabilidade efetivamente reconhecida."
+        ],
+        "table": {
+          "headers": [
+            "Etapa",
+            "Registro mínimo"
+          ],
+          "rows": [
+            [
+              "Ocorrência",
+              "Motivo, evidência e serviço de origem"
+            ],
+            [
+              "Retorno",
+              "Trajeto, recurso e horário"
+            ],
+            [
+              "Recebimento",
+              "Quantidade, condição e localização"
+            ],
+            [
+              "Decisão",
+              "Destino autorizado e responsável"
+            ],
+            [
+              "Conclusão",
+              "Nova entrega, coleta, baixa ou outro tratamento"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "prevencao",
+        "title": "Leve as causas recorrentes para a origem do processo",
+        "paragraphs": [
+          "Se a causa é estabelecimento fechado, a ação pode estar na confirmação da janela. Se é divergência de quantidade, pode começar na separação e conferência. Uma taxa total de devolução não aponta, sozinha, qual processo precisa mudar.",
+          "Compare ocorrências com a mesma definição e base. Acompanhe também o tempo de conclusão, pois uma redução de novas ocorrências pode esconder um estoque antigo de retornos sem destino. Esse estoque ocupa espaço e exige trabalho mesmo sem nova movimentação.",
+          "Uma reunião curta entre atendimento, operação e financeiro deve definir destino, próximo contato e prazo de cada pendência relevante. O objetivo é evitar que a mercadoria circule enquanto a informação permanece parada."
+        ]
+      },
+      {
+        "id": "controle",
+        "title": "Use um controle que feche o ciclo",
+        "paragraphs": [],
+        "bullets": [
+          "Identificação única ligada ao serviço original.",
+          "Motivo validado e evidência acessível.",
+          "Destino físico e autorização registrados.",
+          "Custos adicionais sem dupla contagem.",
+          "Tratamento comercial e financeiro acompanhado.",
+          "Data de conclusão e causa devolvida ao processo responsável."
+        ]
+      }
+    ],
+    "related": [
+      "avarias-carga-prevencao",
+      "sla-contrato-logistico-indicadores",
+      "custo-de-servir-cliente-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "avarias-carga-prevencao",
+    "title": "Avarias na carga: investigue onde o dano acontece antes de escolher a solução",
+    "description": "Organize evidências, pontos de transferência e critérios de inspeção para reduzir avarias. Inclui matriz de investigação e exemplo de priorização.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "A carga chega danificada e a discussão começa pelo último trecho do transporte. Sem evidências dos pontos anteriores, a empresa pode trocar embalagem, equipe ou procedimento sem saber qual mudança resolverá o problema. Uma investigação útil acompanha a passagem da carga pelo processo.",
+    "takeaway": "A prevenção depende de relacionar tipo de dano, condição de manuseio e evidência de cada transferência.",
+    "sources": [
+      {
+        "id": "ista",
+        "name": "International Safe Transit Association: Test Procedures",
+        "url": "https://ista.org/test_procedures.php"
+      }
+    ],
+    "sections": [
+      {
+        "id": "criterio",
+        "title": "Defina o que será considerado dano e como será observado",
+        "paragraphs": [
+          "A ISTA disponibiliza procedimentos de teste que ajudam a avaliar o desempenho de embalagens em condições de distribuição. A escolha e a interpretação de um ensaio exigem adequação ao produto e ao ambiente; não basta selecionar qualquer teste e supor proteção universal.",
+          "Na operação cotidiana, padronize a descrição da avaria. Separe dano à embalagem, dano ao produto, falta de quantidade e sinal de violação. Uma embalagem amassada e um produto inutilizado não têm necessariamente a mesma consequência.",
+          "Defina os pontos de inspeção possíveis e o registro esperado. Fotos devem ter vínculo com a carga e o momento observado, sem exposição desnecessária de pessoas ou documentos. O objetivo é produzir uma sequência confiável do estado da mercadoria."
+        ],
+        "sourceIds": [
+          "ista"
+        ]
+      },
+      {
+        "id": "transferencias",
+        "title": "Rastreie os pontos em que a condição pode mudar",
+        "paragraphs": [
+          "Relacione recebimento, separação, movimentação, carregamento, transporte e descarga. Verifique se a carga passou por transferência, reembalagem ou armazenagem temporária. O histórico permite testar hipóteses em vez de atribuir a causa ao último responsável.",
+          "Compare produto, embalagem, rota e método de manuseio. Uma concentração de danos em um item pode apontar incompatibilidade de acondicionamento. Uma concentração em um ponto operacional pode exigir observação do procedimento e dos recursos utilizados."
+        ],
+        "table": {
+          "headers": [
+            "Sinal observado",
+            "Hipótese a verificar"
+          ],
+          "rows": [
+            [
+              "Dano recorrente no mesmo produto",
+              "Embalagem e perfil de distribuição"
+            ],
+            [
+              "Dano em uma etapa específica",
+              "Manuseio, apoio e condições do processo"
+            ],
+            [
+              "Divergência após transferência",
+              "Conferência e registro de passagem"
+            ],
+            [
+              "Ausência de evidência anterior",
+              "Qualidade da inspeção e da rastreabilidade"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "priorizacao",
+        "title": "Priorize impacto e recorrência sem antecipar a culpa",
+        "paragraphs": [
+          "Em um cenário ilustrativo, há vinte ocorrências: doze em um mesmo produto, cinco dispersas e três ainda sem identificação suficiente. Investigar primeiro o grupo de doze pode ser eficiente, mas apenas se a classificação estiver correta e os casos forem comparáveis.",
+          "Registre separadamente o custo do retrabalho, a substituição do serviço e os valores cuja responsabilidade foi reconhecida. Um pedido de ressarcimento não é automaticamente um custo definitivo. Também não some o valor integral da mercadoria a uma perda já registrada em outra conta.",
+          "Antes de ampliar uma mudança, teste seu efeito em um grupo acompanhado. Uma embalagem mais robusta pode alterar peso, volume e produtividade; a solução precisa proteger o produto e continuar executável na operação."
+        ]
+      },
+      {
+        "id": "rotina",
+        "title": "Feche a investigação com uma verificação de eficácia",
+        "paragraphs": [],
+        "bullets": [
+          "Descrever o dano com um critério comum.",
+          "Reunir os eventos e as evidências disponíveis.",
+          "Confirmar a hipótese com as áreas envolvidas.",
+          "Definir a mudança e seu responsável.",
+          "Comparar a recorrência no mesmo perfil de serviço.",
+          "Atualizar o procedimento e o treinamento quando a solução funcionar."
+        ]
+      }
+    ],
+    "related": [
+      "reentrega-devolucao-custo-logistica-reversa",
+      "qualidade-dados-tms-financeiro",
+      "otif-entregas-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "terceiros-agregados-gestao-desempenho",
+    "title": "Terceiros e agregados: acompanhe desempenho sem olhar apenas o valor da viagem",
+    "description": "Monte uma avaliação operacional de parceiros com prazo, ocorrências, documentação e custo adicional. Compare serviços equivalentes e trate os desvios.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "O parceiro com a menor cotação pode exigir mais acompanhamento, gerar substituições ou atrasar a conclusão documental. Uma comparação útil reúne o valor contratado e a capacidade de cumprir o serviço. O objetivo é orientar a gestão da rede com critérios consistentes.",
+    "takeaway": "Compare parceiros no mesmo perfil de serviço e mantenha custo, atendimento e qualidade do registro visíveis.",
+    "sources": [
+      {
+        "id": "suppliers",
+        "name": "ASCM: Supply Chain Management, fornecedores e execução",
+        "url": "https://www.ascm.org/topics/supply-chain-management/"
+      }
+    ],
+    "sections": [
+      {
+        "id": "escopo",
+        "title": "Defina o serviço antes de avaliar quem o executa",
+        "paragraphs": [
+          "A ASCM inclui gestão de fornecedores, execução e monitoramento entre os elementos da gestão da cadeia. Para a rede de transporte, essa visão reforça que contratar e acompanhar não são atividades separadas do resultado entregue ao cliente.",
+          "Registre equipamento, rota, janela, exigências de atendimento e documentação esperada. Um parceiro dedicado a viagens longas não deve ser comparado diretamente a outro que atende distribuição urbana sem considerar essas diferenças.",
+          "A verificação documental e as obrigações aplicáveis devem ser tratadas pelos responsáveis competentes. O quadro de desempenho sugerido aqui organiza a gestão do serviço e não substitui habilitações, controles de segurança ou análise jurídica."
+        ],
+        "sourceIds": [
+          "suppliers"
+        ]
+      },
+      {
+        "id": "painel",
+        "title": "Escolha poucos indicadores que tenham consequência operacional",
+        "paragraphs": [
+          "Use definições simples, origem conhecida e uma base comparável. A taxa de apresentação considera compromissos confirmados; a taxa de entrega no prazo segue a janela combinada. Registre os casos cancelados e a regra de exclusão para não melhorar o indicador pela retirada das falhas.",
+          "Observe a conclusão documental, pois uma execução física encerrada pode continuar exigindo trabalho para faturar ou responder ao cliente. A avaliação deve mostrar o custo desse esforço sem atribuir ao parceiro uma pendência que começou internamente."
+        ],
+        "table": {
+          "headers": [
+            "Dimensão",
+            "Leitura sugerida"
+          ],
+          "rows": [
+            [
+              "Disponibilidade",
+              "Compromissos atendidos na condição confirmada"
+            ],
+            [
+              "Prazo",
+              "Cumprimento da janela definida"
+            ],
+            [
+              "Qualidade",
+              "Ocorrências verificadas por serviço"
+            ],
+            [
+              "Documentação",
+              "Conclusão no prazo e no padrão combinado"
+            ],
+            [
+              "Custo adicional",
+              "Substituições e retrabalho atribuíveis ao evento"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "comparacao",
+        "title": "Acrescente as exceções à comparação econômica",
+        "paragraphs": [
+          "Imagine cem viagens semelhantes. O parceiro A custa R$ 20 mil e gera R$ 1 mil de trabalho e substituições adicionais apurados. O parceiro B custa R$ 19 mil e gera R$ 3 mil. Nesse recorte ilustrativo, os totais acompanhados são R$ 21 mil e R$ 22 mil.",
+          "Essa leitura não encerra a decisão: diferenças de serviço, capacidade de atendimento, concentração e incerteza ainda importam. Custos devem estar bem atribuídos, sem repetir valores já incluídos na remuneração ou tratar uma previsão como gasto realizado.",
+          "Uma ocorrência relevante pede ação e retorno. Registre o fato, permita a conferência, combine uma correção e acompanhe o mesmo indicador no período seguinte. Um ranking sem essa rotina apenas classifica problemas."
+        ]
+      },
+      {
+        "id": "decisao",
+        "title": "Use a avaliação para compor e desenvolver a rede",
+        "paragraphs": [],
+        "bullets": [
+          "Segmentar parceiros por serviço e equipamento.",
+          "Preservar critérios de entrada e permanência.",
+          "Conferir dados antes de aplicar uma avaliação.",
+          "Tratar recorrências com responsável e prazo.",
+          "Evitar dependência sem alternativa de capacidade.",
+          "Revisar o resultado com operação e contratação."
+        ]
+      }
+    ],
+    "related": [
+      "frota-propria-terceirizada-comparacao",
+      "sla-contrato-logistico-indicadores",
+      "custo-de-servir-cliente-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "frota-propria-terceirizada-comparacao",
+    "title": "Frota própria ou terceirizada: compare o que muda na operação e no caixa",
+    "description": "Estruture a comparação entre frota própria e terceirização com custos evitáveis, capacidade, investimento e nível de serviço na mesma base.",
+    "category": "Custos e margem",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Comparar a parcela de um veículo com o preço cobrado por um terceiro coloca bases diferentes lado a lado. Uma decisão sobre o modelo de atendimento precisa reunir operação, investimento, disponibilidade e os custos que efetivamente mudam entre as alternativas.",
+    "takeaway": "Compare o serviço completo e os efeitos incrementais de cada modelo, deixando explícita a estrutura que continuará existindo.",
+    "sources": [
+      {
+        "id": "costs",
+        "name": "ACCA: Relevant costs e decisões incrementais",
+        "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/relevant-costs.html"
+      }
+    ],
+    "sections": [
+      {
+        "id": "base",
+        "title": "Mantenha demanda e nível de serviço equivalentes",
+        "paragraphs": [
+          "A análise de custos relevantes apresentada pela ACCA distingue efeitos futuros que variam entre decisões. A aplicação à frota pede identificar custos evitáveis, compromissos mantidos e uso alternativo da capacidade.",
+          "Descreva o mesmo volume, tipo de equipamento, período e padrão de atendimento para os dois cenários. Se a frota própria oferece disponibilidade exclusiva e o terceiro apenas viagens sob demanda, essa diferença precisa aparecer na comparação.",
+          "Não trate um rateio de estrutura como economia imediata. O custo administrativo atribuído a um veículo pode permanecer depois da terceirização. Por outro lado, uma redução comprovada de estrutura deve ser identificada com prazo e condição de realização."
+        ],
+        "sourceIds": [
+          "costs"
+        ]
+      },
+      {
+        "id": "componentes",
+        "title": "Organize custo econômico e desembolso separadamente",
+        "paragraphs": [
+          "Na leitura econômica, considere os componentes definidos para o serviço, incluindo consumo, manutenção, equipe, disponibilidade e custo do ativo. Na leitura do caixa, mostre aquisição, financiamento, pagamentos operacionais e eventual venda em suas datas.",
+          "Depreciação e parcela de financiamento não representam a mesma coisa. Somá-las de forma indiscriminada a uma conta pode repetir o efeito do investimento. Defina se a análise é de resultado ou fluxo de caixa antes de montar a tabela."
+        ],
+        "table": {
+          "headers": [
+            "Questão",
+            "Cenário próprio",
+            "Cenário terceirizado"
+          ],
+          "rows": [
+            [
+              "Capacidade",
+              "Ativo disponível e utilização esperada",
+              "Disponibilidade e condição contratada"
+            ],
+            [
+              "Custos",
+              "Itens operacionais e estrutura definida",
+              "Preço, adicionais e gestão do parceiro"
+            ],
+            [
+              "Caixa",
+              "Aquisição, operação e compromissos",
+              "Calendário de pagamento do serviço"
+            ],
+            [
+              "Risco de demanda",
+              "Capacidade pode ficar ociosa",
+              "Condição depende da oferta contratada"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "sensibilidade",
+        "title": "Teste o modelo quando o volume muda",
+        "paragraphs": [
+          "Em um exemplo simplificado, a estrutura própria exige R$ 30 mil fixos mensais e R$ 2 por unidade executada. Uma alternativa terceirizada custa R$ 5 por unidade, sem compromisso mínimo nesse cenário. As curvas se igualam em 10 mil unidades, antes dos itens que ficaram fora do modelo.",
+          "Esse ponto não define a escolha. Se o serviço exigir capacidade reservada, a proposta do terceiro pode incluir mínimo. Se a frota própria precisar ampliar equipe ou equipamento acima de certo volume, o custo fixo deixa de ser constante.",
+          "Compare também meses de menor demanda e o tempo necessário para mudar de modelo. Uma condição vantajosa na média pode não financiar os compromissos da transição ou atender uma janela crítica."
+        ]
+      },
+      {
+        "id": "aprovacao",
+        "title": "Documente o que sustenta a decisão",
+        "paragraphs": [],
+        "bullets": [
+          "Demanda e padrão de atendimento equivalentes.",
+          "Custos que mudam e custos mantidos identificados.",
+          "Investimento e fluxo de caixa em quadro próprio.",
+          "Sensibilidade ao volume e à indisponibilidade.",
+          "Capacidade alternativa confirmada.",
+          "Plano de transição e revisão do resultado."
+        ]
+      }
+    ],
+    "related": [
+      "terceiros-agregados-gestao-desempenho",
+      "renovacao-frota-custo-total-propriedade",
+      "ponto-equilibrio-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "renovacao-frota-custo-total-propriedade",
+    "title": "Renovação de frota: monte o custo total antes de comparar a parcela",
+    "description": "Avalie compra, operação, disponibilidade e valor de saída no mesmo horizonte. Entenda os cuidados com resultado, caixa e custo total de propriedade.",
+    "category": "Custos e margem",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Uma parcela menor não comprova que um veículo custa menos para a operação. O prazo, o valor inicial, a manutenção, o consumo e a disponibilidade alteram a comparação. Renovar a frota exige uma visão do período em que o equipamento será utilizado e do serviço que ele precisa atender.",
+    "takeaway": "Compare os equipamentos no mesmo horizonte, com hipóteses de utilização e valor de saída verificáveis.",
+    "sources": [
+      {
+        "id": "tco",
+        "name": "U.S. Department of Energy, AFDC: Vehicle Cost Calculator Methodology",
+        "url": "https://afdc.energy.gov/calc/cost_calculator_methodology.html"
+      }
+    ],
+    "sections": [
+      {
+        "id": "horizonte",
+        "title": "Defina o período e a função do equipamento",
+        "paragraphs": [
+          "A metodologia do Vehicle Cost Calculator, do AFDC ligado ao Departamento de Energia dos Estados Unidos, utiliza uma visão de custo de propriedade para comparar veículos. Sua base de mercado não deve ser transportada automaticamente para preços e condições brasileiras.",
+          "Para a transportadora, registre o horizonte de uso, a aplicação, a quilometragem e o nível de disponibilidade necessário. Um veículo pode ter desempenho adequado em uma rota e não oferecer o mesmo resultado em outra.",
+          "Use propostas e histórico da própria operação para preencher as premissas. Se um dado ainda for estimado, identifique a origem e teste uma faixa. Uma diferença pequena entre alternativas pode desaparecer com uma mudança razoável no valor de revenda ou no uso anual."
+        ],
+        "sourceIds": [
+          "tco"
+        ]
+      },
+      {
+        "id": "quadro",
+        "title": "Separe os componentes sem repetir o investimento",
+        "paragraphs": [
+          "Monte uma comparação de aquisição líquida, operação, manutenção e valor de saída. Caso a decisão inclua financiamento, faça também o calendário dos pagamentos e seus encargos. A análise econômica e a análise de caixa devem conversar, mas não são a mesma tabela.",
+          "Em um quadro simplificado sem valor do dinheiro no tempo, um equipamento comprado por R$ 400 mil, com R$ 300 mil de gastos de uso e venda prevista de R$ 150 mil, apresenta R$ 550 mil de custo líquido no horizonte. O exemplo não inclui financiamento ou todas as particularidades de um contrato."
+        ],
+        "table": {
+          "headers": [
+            "Componente",
+            "Conferência necessária"
+          ],
+          "rows": [
+            [
+              "Entrada e aquisição",
+              "Preço, condições e itens incluídos"
+            ],
+            [
+              "Uso",
+              "Consumo, distância e perfil operacional"
+            ],
+            [
+              "Manutenção",
+              "Plano, histórico e indisponibilidade"
+            ],
+            [
+              "Saída",
+              "Hipótese de venda e custos associados"
+            ],
+            [
+              "Caixa",
+              "Datas e compromissos de cada alternativa"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "disponibilidade",
+        "title": "Inclua a continuidade do atendimento",
+        "paragraphs": [
+          "Um veículo com gasto menor pode exigir mais dias indisponíveis. Verifique como a empresa atenderá nesse intervalo e qual custo adicional realmente ocorrerá. Não some ao mesmo tempo toda a receita supostamente perdida e a substituição que preservou essa receita.",
+          "Teste utilização menor, manutenção acima do previsto e venda por valor inferior ao estimado. Se a decisão só se sustenta em uma combinação otimista de premissas, o risco precisa ser exposto antes da aprovação.",
+          "A comparação é uma análise gerencial inicial, não uma recomendação universal de compra. Segurança, condição técnica, regras aplicáveis e adequação do equipamento exigem avaliação dos responsáveis competentes."
+        ]
+      },
+      {
+        "id": "acompanhamento",
+        "title": "Confira o cenário depois da entrada em operação",
+        "paragraphs": [],
+        "bullets": [
+          "Guardar a base usada na aprovação.",
+          "Acompanhar uso e consumo no perfil contratado.",
+          "Registrar manutenção e tempo indisponível.",
+          "Conferir efeitos do financiamento no caixa.",
+          "Rever as premissas de saída quando necessário.",
+          "Explicar os desvios antes de repetir a próxima aquisição."
+        ]
+      }
+    ],
+    "related": [
+      "frota-propria-terceirizada-comparacao",
+      "pneus-custo-km-controle",
+      "manutencao-preventiva-custo-parada-frota"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "pneus-custo-km-controle",
+    "title": "Custo de pneus por km: acompanhe o ciclo completo, não apenas o preço de compra",
+    "description": "Organize identificação, quilometragem e movimentações para comparar o custo dos pneus. Separe ciclos abertos, encerrados e condições de uso.",
+    "category": "Custos e margem",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "O pneu com menor preço na nota pode não apresentar o menor custo no ciclo de uso. Sem identificação e histórico de movimentação, a empresa perde a ligação entre aquisição, intervenções e quilômetros efetivamente percorridos. A gestão começa antes de calcular a média.",
+    "takeaway": "Compare ciclos rastreáveis e condições semelhantes. Quilometragem sem histórico confiável produz um custo por km pouco útil.",
+    "sources": [
+      {
+        "id": "tires",
+        "name": "NHTSA: Tire Safety Ratings and Awareness",
+        "url": "https://www.nhtsa.gov/vehicle-safety/tires"
+      }
+    ],
+    "sections": [
+      {
+        "id": "identificacao",
+        "title": "Dê uma identidade ao item e preserve as movimentações",
+        "paragraphs": [
+          "A NHTSA ressalta a importância da manutenção dos pneus para sua condição de uso. Na frota, procedimentos, pressão e critérios de retirada devem seguir as orientações técnicas aplicáveis ao equipamento e à operação.",
+          "O controle gerencial deve registrar identificação, data de entrada, veículo, posição e leitura de quilometragem nos eventos relevantes. Uma transferência entre veículos precisa preservar o histórico do item, sem reiniciar sua vida no sistema.",
+          "Separe itens novos, em uso, retirados para avaliação e encerrados. Um pneu comprado e ainda não utilizado não possui o mesmo denominador de comparação de outro cujo ciclo já terminou."
+        ],
+        "sourceIds": [
+          "tires"
+        ]
+      },
+      {
+        "id": "calculo",
+        "title": "Defina quais gastos compõem o ciclo",
+        "paragraphs": [
+          "Use os gastos atribuídos ao item ou ao conjunto definido e divida pela quilometragem comprovada desse mesmo escopo. Inclua intervenções previstas na política de apuração, evitando repetir um gasto já registrado em outro grupo.",
+          "Em um exemplo ilustrativo, o custo apurado de um item é de R$ 2.100 e o ciclo rastreado alcança 70 mil km. A referência é R$ 0,03 por km para esse item. Não é o custo de todos os pneus do veículo nem uma meta de durabilidade.",
+          "Se o mesmo item passa por novos ciclos autorizados tecnicamente, mantenha os custos e as distâncias identificados. Não compare um ciclo parcial com outro encerrado como se ambos representassem a mesma etapa de vida."
+        ],
+        "table": {
+          "headers": [
+            "Registro",
+            "Erro que ajuda a evitar"
+          ],
+          "rows": [
+            [
+              "Identificação do item",
+              "Mistura de históricos"
+            ],
+            [
+              "Quilometragem por movimentação",
+              "Distância atribuída ao veículo errado"
+            ],
+            [
+              "Gasto por ciclo",
+              "Duplicidade ou omissão"
+            ],
+            [
+              "Motivo da retirada",
+              "Conclusão baseada apenas no custo"
+            ],
+            [
+              "Perfil operacional",
+              "Comparação de condições incompatíveis"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "comparacao",
+        "title": "Investigue as diferenças antes de padronizar a compra",
+        "paragraphs": [
+          "Separe aplicações, eixos, carga e condições de rota. Um resultado pior pode decorrer de uso incompatível, apontamento incorreto ou manutenção do conjunto. O preço do fornecedor é apenas uma das variáveis a verificar.",
+          "Acompanhe perdas prematuras e causas confirmadas, em vez de atribuir toda diferença à marca. A seleção técnica e qualquer intervenção devem ser conduzidas pelos responsáveis, preservando segurança e requisitos aplicáveis.",
+          "No fechamento do período, mostre quais ciclos estão abertos e quais foram encerrados. Essa distinção evita interpretar a compra de estoque ou uma concentração de retiradas como mudança imediata de eficiência operacional."
+        ]
+      },
+      {
+        "id": "rotina",
+        "title": "Crie uma rotina de conferência entre oficina e financeiro",
+        "paragraphs": [],
+        "bullets": [
+          "Conferir a identificação no recebimento.",
+          "Registrar entrada e saída por evento.",
+          "Vincular gastos ao item e ao ciclo correto.",
+          "Revisar inconsistências de quilometragem.",
+          "Apurar causas de retirada precoce.",
+          "Comparar resultados somente em bases equivalentes."
+        ]
+      }
+    ],
+    "related": [
+      "renovacao-frota-custo-total-propriedade",
+      "estoque-pecas-manutencao-capital",
+      "custo-por-km-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "estoque-pecas-manutencao-capital",
+    "title": "Estoque de peças: equilibre disponibilidade da frota e dinheiro parado",
+    "description": "Organize peças por criticidade, consumo e prazo de reposição. Evite excesso de itens sem uso e falta de componentes que impedem o retorno da frota.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Uma peça de baixo valor pode manter um veículo parado enquanto outra, cara e pouco utilizada, permanece meses na prateleira. Reduzir o estoque apenas pelo total financeiro não resolve esse desequilíbrio. A decisão precisa combinar risco de falta e possibilidade real de uso.",
+    "takeaway": "Classifique as peças pela consequência da falta, pelo prazo de reposição e pela compatibilidade com os equipamentos em operação.",
+    "sources": [
+      {
+        "id": "inventory",
+        "name": "ASCM: Inventory Discrepancy Inquiries",
+        "url": "https://www.ascm.org/ascm-insights/inventory-discrepancy-inquiries/"
+      }
+    ],
+    "sections": [
+      {
+        "id": "prioridade",
+        "title": "Cruze valor, criticidade e possibilidade de substituição",
+        "paragraphs": [
+          "O primeiro grupo é formado pelos itens cuja falta impede uma manutenção importante e que não têm substituição rápida. Outro grupo reúne peças de reposição frequente e fornecimento previsível. Itens específicos de equipamentos que já saíram da frota precisam de tratamento próprio.",
+          "Registre a aplicação técnica de cada peça e quem pode confirmar sua compatibilidade. Um código parecido não comprova equivalência. Qualquer substituição precisa passar pelos responsáveis técnicos, e não apenas pela disponibilidade no estoque.",
+          "A quantidade física também deve ser confiável. A ASCM, ao discutir divergências de inventário, aponta a necessidade de investigar registros e movimentações. Na manutenção, um saldo incorreto pode levar à promessa de retorno de um veículo com uma peça que não está disponível."
+        ],
+        "sourceIds": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "reposicao",
+        "title": "Use o consumo e o prazo de reposição como ponto de partida",
+        "paragraphs": [
+          "Em um exemplo simplificado, o consumo observado é de duas unidades por semana e o prazo de reposição é de três semanas. A demanda média durante esse intervalo seria de seis unidades. Esse cálculo não cobre sozinho variação de consumo, atraso de entrega ou uma falha simultânea.",
+          "A proteção adicional deve ser definida pela incerteza e pela criticidade, com revisão periódica. Não transforme a média histórica em compra automática se a frota, o plano de manutenção ou o fornecedor mudaram.",
+          "Considere também pedidos já colocados, itens reservados e material em avaliação. Comprar olhando apenas o saldo de prateleira pode repetir uma reposição em trânsito ou ignorar uma reserva para serviço já programado."
+        ],
+        "table": {
+          "headers": [
+            "Grupo de controle",
+            "Decisão de gestão"
+          ],
+          "rows": [
+            [
+              "Crítico e demorado",
+              "Acompanhar cobertura e alternativa de fornecimento"
+            ],
+            [
+              "Frequente e previsível",
+              "Repor conforme consumo e prazo observado"
+            ],
+            [
+              "Baixo uso e alto valor",
+              "Revisar necessidade e possibilidade de compra sob demanda"
+            ],
+            [
+              "Sem aplicação atual",
+              "Definir destinação após validação técnica e financeira"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "capital",
+        "title": "Diferencie compra, consumo e perda de valor",
+        "paragraphs": [
+          "Uma compra de peças gera compromisso de caixa, mas não significa que todos os itens foram consumidos no mesmo mês. Preserve a ligação entre recebimento, saída para manutenção e apropriação do gasto, conforme a política definida com a contabilidade.",
+          "Acompanhe tempo sem movimentação e mudanças de aplicação. Uma peça sem saída recente não é automaticamente inútil: pode ser crítica e de uso raro. A conclusão depende do equipamento atendido, da condição do item e do custo da indisponibilidade.",
+          "Uma reunião entre almoxarifado, manutenção e financeiro deve decidir o que repor, o que conferir e o que reavaliar. A redução do estoque só é útil quando a disponibilidade necessária continua sustentada."
+        ]
+      },
+      {
+        "id": "cadastro",
+        "title": "Mantenha uma ficha mínima por item",
+        "paragraphs": [],
+        "bullets": [
+          "Código e descrição técnica sem duplicidade.",
+          "Aplicação e responsável pela validação.",
+          "Saldo físico, reservas e pedidos em aberto.",
+          "Consumo e prazo de reposição observados.",
+          "Criticidade e alternativa aprovada.",
+          "Data da última revisão dos parâmetros."
+        ]
+      }
+    ],
+    "related": [
+      "pneus-custo-km-controle",
+      "acuracidade-estoque-inventario-ciclico",
+      "manutencao-preventiva-custo-parada-frota"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "produtividade-armazem-picking",
+    "title": "Produtividade no picking: medir mais linhas por hora não basta",
+    "description": "Defina a unidade de separação, a base de horas e a qualidade antes de comparar produtividade. Veja como investigar deslocamento, espera e retrabalho.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "A equipe separa mais pedidos, mas os erros e a fila de conferência aumentam. O ganho de velocidade em uma etapa pode estar transferindo trabalho para a seguinte. Para avaliar o picking, a operação precisa enxergar a saída correta do processo e a composição da carga de trabalho.",
+    "takeaway": "Compare produtividade com qualidade e fluxo. Uma contagem maior não comprova que mais pedidos corretos ficaram prontos para expedir.",
+    "sources": [
+      {
+        "id": "work",
+        "name": "Lean Enterprise Institute: Standardized Work",
+        "url": "https://www.lean.org/lexicon-terms/standardized-work/"
+      }
+    ],
+    "sections": [
+      {
+        "id": "unidade",
+        "title": "Escolha o que está sendo contado",
+        "paragraphs": [
+          "Pedido, linha, unidade e volume descrevem trabalhos diferentes. Um pedido com uma linha não exige necessariamente o mesmo esforço de um pedido com vinte. Preserve a unidade escolhida e segmente os perfis que mudam a execução.",
+          "Defina também a base de horas. Horas pagas, horas disponíveis e horas registradas em separação não são equivalentes. Excluir esperas da conta pode ser útil para estudar o método, mas essas horas precisam continuar visíveis na avaliação da operação total.",
+          "Em um exemplo ilustrativo, 960 linhas corretas em 24 horas de trabalho registradas representam 40 linhas por hora naquela base. A comparação só tem sentido se outra equipe tiver o mesmo conceito de linha correta, tempo e perfil."
+        ]
+      },
+      {
+        "id": "metodo",
+        "title": "Observe a sequência real antes de cobrar velocidade",
+        "paragraphs": [
+          "O Lean Enterprise Institute relaciona trabalho padronizado à sequência de execução, ao tempo e às condições necessárias para o processo. No armazém, essa disciplina pode orientar a observação do método sem presumir que toda diferença depende do ritmo individual.",
+          "Acompanhe deslocamento, procura, leitura, retirada e tratamento de exceções. Uma reposição de endereço que não aconteceu ou um cadastro confuso pode interromper repetidamente o separador. A causa deve voltar para quem controla essa condição.",
+          "Registre o processo que realmente funciona e treine a equipe com critérios comuns. Um padrão que só existe no documento, mas não cabe no layout ou no equipamento disponível, precisa ser revisto."
+        ],
+        "sourceIds": [
+          "work"
+        ],
+        "table": {
+          "headers": [
+            "Componente observado",
+            "Pergunta de melhoria"
+          ],
+          "rows": [
+            [
+              "Deslocamento",
+              "O endereçamento favorece o perfil de pedidos?"
+            ],
+            [
+              "Espera",
+              "Há falta de reposição, equipamento ou liberação?"
+            ],
+            [
+              "Procura",
+              "Identificação e cadastro estão consistentes?"
+            ],
+            [
+              "Retrabalho",
+              "Qual erro exige nova passagem pelo processo?"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "piloto",
+        "title": "Teste o ganho no fluxo completo",
+        "paragraphs": [
+          "Ao alterar endereçamento ou sequência, compare grupos de pedidos equivalentes. Observe linhas corretas, horas, erros e tempo até a expedição. Se a separação melhora e a conferência acumula fila, o resultado precisa ser lido no conjunto.",
+          "Separe uma diferença causada pelo método de outra causada pela mudança do mix. Mais itens pequenos em uma semana podem elevar a contagem sem representar melhoria de processo.",
+          "O objetivo é identificar uma condição repetível, que preserve segurança e qualidade. A meta deve considerar o serviço e o histórico observado; os números do exemplo não são um benchmark universal de armazém."
+        ]
+      },
+      {
+        "id": "painel",
+        "title": "Leve quatro leituras à rotina operacional",
+        "paragraphs": [],
+        "bullets": [
+          "Produtividade com unidade e horas definidas.",
+          "Qualidade da separação na primeira passagem.",
+          "Tempo de espera e fila entre etapas.",
+          "Causas de exceção com responsável pela correção.",
+          "Perfil dos pedidos usado na comparação.",
+          "Efeito da mudança após treinamento e estabilização."
+        ]
+      }
+    ],
+    "related": [
+      "acuracidade-estoque-inventario-ciclico",
+      "analise-investimento-automacao-logistica",
+      "qualidade-dados-tms-financeiro"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "acuracidade-estoque-inventario-ciclico",
+    "title": "Inventário cíclico: corrija a causa da divergência, não apenas o saldo",
+    "description": "Estruture contagens cíclicas com base definida, controle de movimentos e análise de causa. Diferencie acuracidade de registros e diferença de quantidade.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "O sistema mostra um item disponível, mas a separação não o encontra. Ajustar o saldo resolve o pedido de hoje e pode deixar intacta a origem da divergência. O inventário cíclico serve para conferir a base e devolver as falhas ao processo que as produz.",
+    "takeaway": "Uma contagem útil gera evidência, investigação e correção. O ajuste do estoque é apenas uma parte do trabalho.",
+    "sources": [
+      {
+        "id": "cycle",
+        "name": "APQC: How Can Cycle Counting Improve Inventory Accuracy?",
+        "url": "https://www.apqc.org/How-Can-Cycle-Counting-Improve-Inventory-Accuracy"
+      }
+    ],
+    "sections": [
+      {
+        "id": "base",
+        "title": "Defina qual registro está sendo conferido",
+        "paragraphs": [
+          "A APQC relaciona a contagem cíclica à comparação recorrente entre estoque físico e registro contínuo. Para aplicar o conceito, a empresa precisa definir o que torna uma linha correta e como tratar as movimentações durante a conferência.",
+          "SKU, endereço, lote e condição podem compor uma mesma identificação de estoque. Conferir apenas o total do produto pode esconder mercadoria no endereço errado ou com condição de uso diferente.",
+          "Em uma base ilustrativa de duzentos registros, 190 conferem exatamente com o físico. A acuracidade por registro é de 95%. Uma medida de diferença de quantidade ou de valor responderá a outra pergunta e não deve substituir esse percentual sem explicação."
+        ],
+        "sourceIds": [
+          "cycle"
+        ]
+      },
+      {
+        "id": "contagem",
+        "title": "Controle os movimentos e preserve a evidência",
+        "paragraphs": [
+          "Defina o instante de corte e como a operação tratará entradas, saídas e transferências durante a contagem. Sem esse controle, um registro pode parecer errado porque mudou enquanto a equipe estava conferindo.",
+          "Quando houver diferença, confirme identificação e unidade de medida antes de ajustar. Uma caixa cadastrada como unidade pode produzir uma divergência aparente grande, embora a mercadoria esteja fisicamente correta.",
+          "Se o caso exigir recontagem, preserve o primeiro registro e a justificativa da validação. O histórico permite separar erro de contagem de erro operacional e evita que a rotina vire apenas uma forma de fazer o sistema coincidir com o último número informado."
+        ],
+        "table": {
+          "headers": [
+            "Divergência",
+            "Causa a verificar"
+          ],
+          "rows": [
+            [
+              "Quantidade",
+              "Entrada, saída ou unidade de medida"
+            ],
+            [
+              "Localização",
+              "Transferência sem registro ou endereço incorreto"
+            ],
+            [
+              "Lote",
+              "Mistura, identificação ou conferência"
+            ],
+            [
+              "Condição",
+              "Bloqueio ou liberação não atualizados"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "prioridade",
+        "title": "Escolha a frequência pela necessidade de controle",
+        "paragraphs": [
+          "Itens de grande movimentação, alta criticidade ou histórico de falhas podem exigir acompanhamento mais frequente. Um critério baseado apenas no valor financeiro pode deixar de fora um item barato que interrompe muitos pedidos.",
+          "Depois da correção, volte ao processo de origem. Se o problema é transferência sem leitura, uma nova contagem não substitui a mudança no procedimento. Verifique se a mesma causa voltou a aparecer após a ação.",
+          "Acompanhe cobertura das contagens, divergências por causa e tempo de resolução. Um índice alto com uma amostra restrita não representa necessariamente a condição de todo o estoque. Informe sempre qual população foi conferida."
+        ]
+      },
+      {
+        "id": "encerramento",
+        "title": "Feche cada diferença com uma decisão rastreável",
+        "paragraphs": [],
+        "bullets": [
+          "Registro e data de corte identificados.",
+          "Movimentações conciliadas com a contagem.",
+          "Diferença confirmada e aprovada.",
+          "Causa investigada quando relevante.",
+          "Correção atribuída ao processo responsável.",
+          "Recontagem ou verificação posterior da eficácia."
+        ]
+      }
+    ],
+    "related": [
+      "produtividade-armazem-picking",
+      "estoque-pecas-manutencao-capital",
+      "qualidade-dados-tms-financeiro"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "sla-contrato-logistico-indicadores",
+    "title": "SLA logístico: transforme a promessa de serviço em uma regra que possa ser medida",
+    "description": "Defina indicadores, bases, janelas e evidências para acompanhar o serviço logístico. Evite metas sem critério e resultados que mudam de interpretação.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "O cliente afirma que a entrega atrasou e a transportadora considera o serviço concluído no prazo. As duas partes podem estar usando relógios, bases ou eventos diferentes. Uma regra de acompanhamento precisa eliminar essa ambiguidade antes de discutir o percentual alcançado.",
+    "takeaway": "Todo indicador de serviço precisa de definição, fonte, base de cálculo, responsável e tratamento de exceções.",
+    "sources": [
+      {
+        "id": "scor",
+        "name": "ASCM SCOR: Perfect Customer Order Fulfillment",
+        "url": "https://scor.ascm.org/performance/reliability/RL.1.1"
+      }
+    ],
+    "sections": [
+      {
+        "id": "dicionario",
+        "title": "Escreva a definição antes de escolher a meta",
+        "paragraphs": [
+          "O SCOR, da ASCM, descreve critérios para avaliar o cumprimento de pedidos e serviços. Essa referência ajuda a separar dimensões que não devem ser confundidas, como prazo, quantidade, condição e documentação.",
+          "Na operação, transforme a promessa em um dicionário de indicadores. Defina o evento que inicia e encerra a medição, a população avaliada e a regra de corte. Uma entrega física concluída pode não representar a conclusão documental necessária ao cliente.",
+          "O texto aqui trata da organização gerencial do serviço. Cláusulas, responsabilidades e consequências contratuais devem ser avaliadas pelos profissionais responsáveis; um indicador não determina sozinho a validade de uma cobrança."
+        ],
+        "sourceIds": [
+          "scor"
+        ]
+      },
+      {
+        "id": "regras",
+        "title": "Deixe o cálculo reproduzível",
+        "paragraphs": [
+          "Em um exemplo ilustrativo, a meta é cumprir a janela em 98% de mil entregas previstas no período. São necessárias 980 entregas conformes nessa definição. Se a base muda para considerar somente entregas realizadas, o resultado pode deixar pendências fora da leitura.",
+          "Documente cancelamentos, reagendamentos e casos com informação insuficiente. Uma exclusão pode ser justificável, mas precisa de critério e histórico. Caso contrário, o indicador melhora sem que o serviço ao cliente tenha melhorado.",
+          "Evite combinar vários percentuais em uma nota sem mostrar sua composição. Uma média pode compensar uma falha crítica com bom desempenho em outro item, dificultando a decisão operacional."
+        ],
+        "table": {
+          "headers": [
+            "Campo do indicador",
+            "Definição necessária"
+          ],
+          "rows": [
+            [
+              "Objeto",
+              "Qual compromisso será medido"
+            ],
+            [
+              "Base",
+              "Quais serviços entram no cálculo"
+            ],
+            [
+              "Evento",
+              "Qual marca de tempo ou evidência vale"
+            ],
+            [
+              "Exceção",
+              "Quando e como haverá tratamento diferente"
+            ],
+            [
+              "Rotina",
+              "Quem confere, discute e corrige o desvio"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "reuniao",
+        "title": "Faça a reunião de serviço terminar em ações",
+        "paragraphs": [
+          "Apresente o resultado, as ocorrências relevantes e o efeito observado. Separe causas confirmadas de casos ainda em apuração. Cada desvio recorrente deve gerar uma ação com responsável e prazo de verificação.",
+          "Cruze serviço e custo quando houver evidência. Reentrega, substituição e retrabalho podem explicar por que um contrato exige mais recursos do que a proposta previa. Não transforme toda ocorrência em perda financeira sem apurar seu tratamento.",
+          "Revise metas e premissas quando o escopo mudar. Preserve a versão anterior para que o histórico não seja reinterpretado com uma regra que ainda não existia naquele período."
+        ]
+      },
+      {
+        "id": "verificacao",
+        "title": "Confira a regra com um pequeno grupo de serviços",
+        "paragraphs": [],
+        "bullets": [
+          "Aplicar a definição aos mesmos casos com as duas equipes.",
+          "Comparar os resultados e explicar divergências.",
+          "Ajustar eventos ou fontes ambíguas.",
+          "Registrar a versão aprovada do indicador.",
+          "Manter a base e as exclusões consultáveis.",
+          "Repetir a conferência após mudanças de processo."
+        ]
+      }
+    ],
+    "related": [
+      "otif-entregas-transportadora",
+      "implantacao-cliente-logistico",
+      "terceiros-agregados-gestao-desempenho"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "implantacao-cliente-logistico",
+    "title": "Implantação de cliente logístico: valide a operação antes de ampliar o volume",
+    "description": "Organize escopo, cadastro, teste e passagem para a rotina ao implantar um cliente. Inclui critérios de liberação e exemplo de piloto operacional.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "O contrato foi aprovado, mas a primeira semana revela endereços incompletos, janelas incompatíveis e documentos que o financeiro não consegue utilizar. Uma implantação precisa provar que o serviço pode ser executado e concluído, não apenas que os recursos foram contratados.",
+    "takeaway": "A entrada em operação deve ter critérios verificáveis de liberação e uma rotina clara para tratar exceções.",
+    "sources": [
+      {
+        "id": "pdca",
+        "name": "ASQ: Plan-Do-Check-Act Cycle",
+        "url": "https://asq.org/quality-resources/pdca-cycle"
+      }
+    ],
+    "sections": [
+      {
+        "id": "escopo",
+        "title": "Faça as áreas enxergarem o mesmo serviço",
+        "paragraphs": [
+          "Descreva demanda, origem, destino, perfil de carga, janela e exigências de informação. Relacione o que foi vendido aos recursos, aos cadastros e aos procedimentos que permitirão executar o combinado.",
+          "Operação, atendimento, tecnologia, comercial e financeiro precisam conhecer os pontos de passagem. Uma etiqueta correta não encerra o teste se o comprovante de entrega não retorna ou se a condição de faturamento não está cadastrada.",
+          "Registre também despesas de implantação, prazo até o primeiro recebimento e recursos que continuam sendo exigidos após o início. A liberação operacional deve conversar com a leitura de caixa já preparada para a entrada do contrato."
+        ]
+      },
+      {
+        "id": "piloto",
+        "title": "Use um piloto para encontrar falhas antes da escala",
+        "paragraphs": [
+          "O ciclo PDCA apresentado pela ASQ organiza a mudança em planejamento, execução, verificação e ajuste. Na implantação, essa lógica favorece um teste acompanhado antes da ampliação do volume.",
+          "Em um piloto ilustrativo com trinta entregas, três têm erro de etiqueta e duas apresentam divergência de janela. O registro deve identificar se são cinco serviços diferentes ou ocorrências sobrepostas. O total de eventos não é necessariamente o total de entregas afetadas.",
+          "Corrija as causas e teste novamente o fluxo relevante. O objetivo não é repetir toda a operação indefinidamente, mas produzir evidência de que as condições que falharam foram tratadas."
+        ],
+        "sourceIds": [
+          "pdca"
+        ],
+        "table": {
+          "headers": [
+            "Frente de teste",
+            "Evidência de liberação"
+          ],
+          "rows": [
+            [
+              "Cadastro",
+              "Dados conferidos na entrada e no destino"
+            ],
+            [
+              "Execução",
+              "Serviço realizado na condição prevista"
+            ],
+            [
+              "Integração",
+              "Eventos transmitidos e reconhecidos"
+            ],
+            [
+              "Faturamento",
+              "Condição e documentação utilizáveis"
+            ],
+            [
+              "Exceções",
+              "Responsável e procedimento de tratamento definidos"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "transicao",
+        "title": "Defina quando a implantação vira rotina",
+        "paragraphs": [
+          "A passagem deve informar o que foi validado, quais pendências permanecem e quem assume seu acompanhamento. Um problema aceito temporariamente precisa de prazo e condição explícita, para não se tornar uma exceção permanente sem responsável.",
+          "Nos primeiros ciclos, compare volume, recursos, ocorrências e documentação com as premissas. Se a demanda real tiver outro perfil, registre o efeito sobre capacidade, custo e prazo. Essa informação sustenta uma revisão de escopo mais objetiva.",
+          "Mantenha uma reunião curta de estabilização até que a rotina consiga tratar os desvios de forma consistente. Depois, incorpore os indicadores relevantes à gestão normal do contrato, sem manter controles paralelos que se contradizem."
+        ]
+      },
+      {
+        "id": "liberacao",
+        "title": "Confira os critérios antes de crescer",
+        "paragraphs": [],
+        "bullets": [
+          "Escopo e responsáveis confirmados.",
+          "Cadastros e integrações testados.",
+          "Capacidade e plano de atendimento disponíveis.",
+          "Documentação e faturamento validados.",
+          "Pendências com prazo e condição de tratamento.",
+          "Primeiros resultados comparados ao cenário aprovado."
+        ]
+      }
+    ],
+    "related": [
+      "sla-contrato-logistico-indicadores",
+      "qualidade-dados-tms-financeiro",
+      "capital-giro-crescimento-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "qualidade-dados-tms-financeiro",
+    "title": "Integração entre TMS e financeiro: como conferir se os dados chegaram corretos",
+    "description": "Valide identificação, valores, datas e eventos na integração entre operação e financeiro. Organize totais de controle, rejeições e reprocessamentos.",
+    "category": "Operação e execução",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "A integração informa sucesso, mas o financeiro recebe um valor diferente ou não encontra parte das viagens. Uma transmissão concluída não comprova que a informação está completa e utilizável. O controle precisa acompanhar o evento desde a origem até a conferência no destino.",
+    "takeaway": "Confirme conteúdo, identificação e resultado do processamento. A mensagem enviada não é a última etapa do controle.",
+    "sources": [
+      {
+        "id": "data",
+        "name": "UK Government: The Government Data Quality Framework guidance",
+        "url": "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework-guidance"
+      }
+    ],
+    "sections": [
+      {
+        "id": "qualidade",
+        "title": "Defina o que significa um registro válido",
+        "paragraphs": [
+          "O Government Data Quality Framework, do governo britânico, diferencia dimensões como completude, unicidade, consistência e atualidade. Esses conceitos ajudam a formular regras de qualidade sem confundir um campo preenchido com um dado correto.",
+          "Na transportadora, associe a cada serviço uma identificação estável e documente como ela será reconhecida no destino. Cliente, filial, valor, data e condição comercial precisam manter o significado entre os sistemas.",
+          "Um cadastro pode estar completo e apontar para o cliente errado. Um evento pode ter valor correto e chegar tarde demais para o fechamento. A definição de qualidade deve considerar o uso que o financeiro fará daquela informação."
+        ],
+        "sourceIds": [
+          "data"
+        ]
+      },
+      {
+        "id": "totais",
+        "title": "Confronte quantidade, valores e situação dos registros",
+        "paragraphs": [
+          "Monte totais de controle para uma janela definida. Compare o número de registros elegíveis na origem, enviados, aceitos, rejeitados e ainda pendentes. Quando houver valores, confira a soma na mesma base.",
+          "Em um exemplo ilustrativo, a origem possui mil registros elegíveis. O destino aceita 980 e rejeita vinte. Uma nova tentativa dos vinte não deve duplicar aqueles que já haviam sido aceitos. A identificação e o tratamento do reprocessamento precisam estar definidos com a equipe técnica.",
+          "O sucesso de uma chamada técnica pode significar apenas recebimento da mensagem. Verifique se existe uma confirmação posterior de processamento e qual situação autoriza o próximo passo operacional ou financeiro."
+        ],
+        "table": {
+          "headers": [
+            "Controle",
+            "Falha que ajuda a encontrar"
+          ],
+          "rows": [
+            [
+              "Identificação",
+              "Duplicidade ou associação ao serviço errado"
+            ],
+            [
+              "Quantidade",
+              "Registros ausentes ou fora da janela"
+            ],
+            [
+              "Valores",
+              "Base, arredondamento ou composição diferente"
+            ],
+            [
+              "Datas",
+              "Competência e vencimento mal interpretados"
+            ],
+            [
+              "Situação",
+              "Rejeição tratada como conclusão"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "excecoes",
+        "title": "Dê um destino às rejeições",
+        "paragraphs": [
+          "Cada erro recorrente deve ter uma classificação e um responsável. Campo ausente pode exigir correção na origem; regra de associação pode depender do cadastro; indisponibilidade técnica exige tratamento distinto. Uma fila única sem prioridade transforma todas as falhas em espera.",
+          "Preserve histórico de tentativas, resposta e correção. Evite editar uma cópia no financeiro sem devolver a causa ao cadastro de origem, pois a próxima transmissão pode repetir ou sobrescrever o problema.",
+          "Restrinja o acesso aos dados e aos registros técnicos conforme a necessidade de trabalho. Informações de integração podem incluir dados pessoais ou comerciais. A investigação deve usar somente o necessário para conferir a ocorrência."
+        ]
+      },
+      {
+        "id": "liberacao",
+        "title": "Teste o caminho completo antes de encerrar a mudança",
+        "paragraphs": [],
+        "bullets": [
+          "Registro válido chega uma única vez.",
+          "Campo inválido produz rejeição identificável.",
+          "Reprocessamento não duplica o serviço.",
+          "Totais conferem na mesma janela.",
+          "A situação final permite a etapa seguinte.",
+          "Responsáveis conhecem a rotina de exceção."
+        ]
+      }
+    ],
+    "related": [
+      "implantacao-cliente-logistico",
+      "fechamento-gerencial-mensal-transportadora",
+      "conciliacao-bancaria-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "slug": "plano-contas-centro-custos-transportadora",
+    "title": "Plano de contas e centro de custos: organize a base para entender a transportadora",
+    "description": "Separe natureza do gasto, unidade responsável e objeto de análise. Veja como estruturar classificações sem criar contas para cada cliente e veículo.",
+    "category": "Gestão financeira",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "O mesmo gasto aparece como combustível em uma filial, despesa operacional em outra e custo de viagem em uma terceira. Mesmo com os valores corretos, a empresa não consegue comparar as operações. A base de classificação precisa ter conceitos estáveis e dimensões que respondam às perguntas da gestão.",
+    "takeaway": "Natureza do gasto e responsabilidade são dimensões diferentes. Mantê-las organizadas evita transformar o plano de contas em uma lista sem padrão.",
+    "sources": [
+      {
+        "id": "centers",
+        "name": "OpenStax, Rice University: Types of Responsibility Centers",
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/9-3-describe-the-types-of-responsibility-centers"
+      }
+    ],
+    "sections": [
+      {
+        "id": "dimensoes",
+        "title": "Diferencie o que foi gasto e onde ele foi utilizado",
+        "paragraphs": [
+          "A natureza descreve o tipo de item, como combustível, manutenção ou serviço contratado. O centro de custos identifica a unidade ou responsabilidade definida pela empresa. Cliente, veículo e rota podem ser outras dimensões, conforme a necessidade e a disponibilidade de informação.",
+          "A OpenStax diferencia centros de responsabilidade e as decisões atribuídas a cada um. Essa abordagem ajuda a evitar avaliações que cobram de uma unidade custos sobre os quais ela não tem controle.",
+          "O desenho gerencial deve ser alinhado com a contabilidade e com a estrutura de sistemas existente. Não é necessário criar uma nova conta para cada combinação de cliente, veículo e filial se essas informações podem ser mantidas em dimensões próprias."
+        ],
+        "sourceIds": [
+          "centers"
+        ]
+      },
+      {
+        "id": "padrao",
+        "title": "Defina a regra de classificação com exemplos",
+        "paragraphs": [
+          "Um guia curto deve indicar conceito, itens incluídos, itens excluídos e responsável por resolver dúvidas. Se duas pessoas classificam a mesma ocorrência de formas diferentes, o relatório depende do operador, e não de uma política comum.",
+          "Em um exemplo ilustrativo, uma nota de oficina pode conter peças e serviços para dois veículos. O registro precisa permitir identificar essa composição quando ela for relevante à análise. Lançar tudo no primeiro veículo disponível produz um número preciso para o total e errado para a decisão.",
+          "Preveja um tratamento de exceção para documentos insuficientes. O uso de uma conta transitória exige revisão e prazo; caso contrário, ela se torna um depósito permanente de gastos sem explicação."
+        ],
+        "table": {
+          "headers": [
+            "Dimensão",
+            "Pergunta respondida"
+          ],
+          "rows": [
+            [
+              "Natureza",
+              "Qual tipo de gasto ocorreu?"
+            ],
+            [
+              "Centro de custos",
+              "Qual unidade ou responsabilidade utiliza o recurso?"
+            ],
+            [
+              "Objeto",
+              "Qual cliente, veículo ou operação está sendo analisado?"
+            ],
+            [
+              "Período",
+              "A qual competência o evento pertence?"
+            ],
+            [
+              "Documento",
+              "Qual evidência sustenta o registro?"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "rateio",
+        "title": "Separe atribuição direta de distribuição gerencial",
+        "paragraphs": [
+          "Quando há ligação verificável com o objeto, preserve a atribuição direta. Para custos compartilhados, documente o critério de distribuição e a pergunta que ele ajuda a responder. Um rateio pela receita pode ter utilidade em uma visão e distorcer outra.",
+          "Não apresente um custo distribuído como se desaparecesse automaticamente com a saída de um cliente. O valor atribuído e o custo evitável são leituras diferentes, importantes para decisões comerciais e de capacidade.",
+          "Mantenha uma versão dos critérios e confira se mudanças afetam a comparação histórica. Uma melhora de margem pode ter ocorrido porque a regra mudou, sem alteração na execução do serviço."
+        ]
+      },
+      {
+        "id": "implantacao",
+        "title": "Comece pela informação que já pode ser conferida",
+        "paragraphs": [],
+        "bullets": [
+          "Mapear as classificações existentes.",
+          "Definir conceitos e responsáveis.",
+          "Validar dimensões disponíveis nos documentos e sistemas.",
+          "Testar uma amostra de registros com as áreas.",
+          "Conferir relatórios e custos compartilhados.",
+          "Revisar exceções antes do fechamento."
+        ]
+      }
+    ],
+    "related": [
+      "fechamento-gerencial-mensal-transportadora",
+      "custo-de-servir-cliente-transportadora",
+      "orcamento-realizado-transportadora"
+    ],
+    "cta": {
+      "title": "Dê mais clareza aos controles financeiros",
+      "text": "Conheça a proposta da NEXACASH para organizar a leitura do caixa e apoiar as decisões da operação.",
+      "href": "/nexacash",
+      "label": "Conhecer a NEXACASH"
+    }
+  },
+  {
+    "slug": "antecipacao-recebiveis-custo-caixa",
+    "title": "Antecipação de recebíveis: compare o valor líquido e o calendário do caixa",
+    "description": "Entenda como ler valor líquido, prazo e custos ao avaliar antecipação de recebíveis. Separe alívio de caixa, despesa e recebimento futuro.",
+    "category": "Gestão financeira",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Antecipar um recebível pode cobrir uma necessidade imediata, mas também reduz uma entrada futura e acrescenta custos. A avaliação começa pela diferença entre o valor de face e o dinheiro disponível hoje, seguida da conferência do calendário e das condições da operação.",
+    "takeaway": "A antecipação desloca uma entrada no tempo. Ela precisa aparecer como uma decisão completa, com custo e efeito nas próximas semanas.",
+    "sources": [
+      {
+        "id": "credit",
+        "name": "Banco Central do Brasil: Glossário Simplificado de Termos Financeiros",
+        "url": "https://www.bcb.gov.br/content/cidadaniafinanceira/documentos_cidadania/Informacoes_gerais/glossario_cidadania_financeira.pdf"
+      }
+    ],
+    "sections": [
+      {
+        "id": "liquido",
+        "title": "Peça a composição do valor que será recebido",
+        "paragraphs": [
+          "Confira valor de face, valor líquido liberado, data da liberação e vencimento original. Relacione tarifas, tributos, juros e outros itens previstos na proposta. Um percentual isolado não descreve todas as condições.",
+          "O glossário de cidadania financeira do Banco Central apresenta o CET como uma taxa que reúne encargos e despesas de operações de crédito. Quando esse indicador for aplicável à proposta, ele deve ser lido junto com os valores e datas; o exemplo simplificado deste artigo não calcula um CET regulamentar.",
+          "Os formatos de antecipação e as condições de responsabilidade variam. Confira retenções, garantias, eventual obrigação de recomposição e tratamento da falta de pagamento com os responsáveis financeiros e contratuais antes de decidir."
+        ],
+        "sourceIds": [
+          "credit"
+        ]
+      },
+      {
+        "id": "exemplo",
+        "title": "Mantenha valor de face e base líquida separados",
+        "paragraphs": [
+          "Em um exemplo ilustrativo, um recebível de R$ 100 mil previsto para trinta dias pode liberar R$ 97 mil hoje, com R$ 3 mil de diferença total no cenário informado. Essa diferença equivale a 3% do valor de face e a aproximadamente 3,09% do valor líquido.",
+          "Os percentuais têm denominadores distintos e não são uma taxa anual. Não use essa conta para comparar propostas de prazos diferentes sem colocar todos os fluxos e encargos em uma base consistente.",
+          "Verifique se os R$ 97 mil resolvem a necessidade da semana e qual compromisso ficará sem a entrada de R$ 100 mil no vencimento original. Se a necessidade reaparece integralmente no mês seguinte, a operação pode estar apenas renovando o mesmo intervalo de caixa."
+        ],
+        "table": {
+          "headers": [
+            "Informação",
+            "Uso na decisão"
+          ],
+          "rows": [
+            [
+              "Valor líquido",
+              "Quanto dinheiro ficará disponível"
+            ],
+            [
+              "Prazo",
+              "Por quanto tempo a entrada foi antecipada"
+            ],
+            [
+              "Custo completo",
+              "Qual diferença será assumida"
+            ],
+            [
+              "Entrada futura",
+              "O que sai da previsão no vencimento original"
+            ],
+            [
+              "Condições",
+              "Quais responsabilidades permanecem"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "projecao",
+        "title": "Atualize a previsão sem contar o recebível duas vezes",
+        "paragraphs": [
+          "No calendário de caixa, registre a entrada líquida na data efetiva e trate a entrada original conforme a modalidade contratada. Não mantenha os dois valores como se fossem recebimentos independentes pelo mesmo serviço.",
+          "Compare o cenário sem antecipação, o cenário com a operação e alternativas viáveis de ajuste de pagamentos ou cobrança. A escolha depende do custo, da disponibilidade e das condições reais, sem uma recomendação única para todas as empresas.",
+          "Se a antecipação se torna recorrente, investigue preço, margem, prazo do cliente e previsibilidade das despesas. O acompanhamento deve distinguir o financiamento necessário ao ciclo de uma insuficiência persistente de resultado."
+        ]
+      },
+      {
+        "id": "checagem",
+        "title": "Leve uma ficha objetiva à aprovação",
+        "paragraphs": [],
+        "bullets": [
+          "Títulos elegíveis e vencimentos conferidos.",
+          "Valor líquido e data de crédito confirmados.",
+          "Encargos e responsabilidades compreendidos.",
+          "Projeção ajustada nas semanas futuras.",
+          "Alternativas comparadas no mesmo prazo.",
+          "Custo e utilização conferidos após a contratação."
+        ]
+      }
+    ],
+    "related": [
+      "projecao-caixa-13-semanas-transportadora",
+      "prazo-fornecedores-caixa-transportadora",
+      "inadimplencia-cobranca-transportadora"
+    ],
+    "cta": {
+      "title": "Dê mais clareza aos controles financeiros",
+      "text": "Conheça a proposta da NEXACASH para organizar a leitura do caixa e apoiar as decisões da operação.",
+      "href": "/nexacash",
+      "label": "Conhecer a NEXACASH"
+    }
+  },
+  {
+    "slug": "fechamento-gerencial-mensal-transportadora",
+    "title": "Fechamento gerencial mensal: transforme números conferidos em decisões da operação",
+    "description": "Organize corte, responsabilidades, conciliações e análise no fechamento da transportadora. Inclui roteiro de entrega e tratamento de pendências.",
+    "category": "Gestão financeira",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "O relatório chega tarde, recebe ajustes sucessivos e a reunião termina discutindo se os números estão certos. Um fechamento gerencial útil combina calendário, qualidade da base e explicação dos desvios. A velocidade importa quando preserva a confiança necessária para decidir.",
+    "takeaway": "O fechamento precisa indicar o que foi conferido, o que permanece estimado e qual decisão cada desvio relevante exige.",
+    "sources": [
+      {
+        "id": "close",
+        "name": "APQC: Cycle Time to Perform the Monthly Close",
+        "url": "https://www.apqc.org/resource-library/resource/cycle-time-perform-monthly-close"
+      }
+    ],
+    "sections": [
+      {
+        "id": "calendario",
+        "title": "Defina entregas e responsáveis antes do fim do mês",
+        "paragraphs": [
+          "A APQC trata o tempo de fechamento como um processo que pode ser melhorado com qualidade de dados e preparação. A referência pública consultada não estabelece um prazo ideal único para a transportadora.",
+          "Organize o corte de receitas e custos, o recebimento de documentos, as conciliações e a revisão gerencial com a contabilidade. Cada entrega precisa ter responsável, condição de aceite e tratamento da informação que não chegar a tempo.",
+          "Um calendário sugerido pode separar coleta, conferência e análise, mas sua duração deve caber na empresa. Prometer um dia específico sem conhecer a base apenas desloca as pendências para depois da apresentação."
+        ],
+        "sourceIds": [
+          "close"
+        ]
+      },
+      {
+        "id": "base",
+        "title": "Confira as passagens que mais alteram o resultado",
+        "paragraphs": [
+          "Verifique serviços executados, documentação pendente, custos de terceiros, manutenção, estoque consumido e classificações. Use a competência e os critérios definidos com os responsáveis contábeis, sem confundir o pagamento do mês com todo o custo desse período.",
+          "Registre o que foi estimado e o fundamento utilizado. Uma estimativa controlada é diferente de um valor lançado para fechar a conta. Quando a evidência definitiva chegar, o tratamento precisa seguir a política estabelecida e manter rastreabilidade.",
+          "A conciliação bancária ajuda a conferir movimentos de dinheiro, mas não substitui a conferência da operação e de suas apropriações. O fechamento deve permitir entender por que o resultado econômico e a variação de caixa não são iguais."
+        ],
+        "table": {
+          "headers": [
+            "Entrega",
+            "Condição de conferência"
+          ],
+          "rows": [
+            [
+              "Receita",
+              "Serviço, competência e ajustes identificados"
+            ],
+            [
+              "Custos",
+              "Escopo, documento e classificação coerentes"
+            ],
+            [
+              "Caixa",
+              "Movimentos conciliados e diferenças explicadas"
+            ],
+            [
+              "Pendências",
+              "Valor, risco e responsável registrados"
+            ],
+            [
+              "Análise",
+              "Desvio ligado a causa e ação"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "analise",
+        "title": "Escolha os desvios que pedem ação",
+        "paragraphs": [
+          "Em um exemplo ilustrativo, um gasto ficou R$ 20 mil acima do orçamento. A conferência identifica R$ 12 mil de volume adicional e R$ 8 mil ainda sem explicação. A reunião deve separar o efeito da atividade da diferença que exige investigação.",
+          "Compare cliente, filial ou operação em bases equivalentes. Uma mudança de rateio pode alterar a margem atribuída sem mudar o resultado da empresa. Uma nota ainda não registrada pode produzir uma melhora que será revertida depois.",
+          "Ao encerrar, defina o que será feito, por quem e quando haverá verificação. A apresentação do mês seguinte deve retomar essas ações, para que o fechamento não se limite a uma nova coleção de explicações."
+        ]
+      },
+      {
+        "id": "historico",
+        "title": "Preserve a versão apresentada e os ajustes posteriores",
+        "paragraphs": [],
+        "bullets": [
+          "Data e versão do fechamento registradas.",
+          "Critérios e estimativas identificados.",
+          "Pendências relevantes visíveis.",
+          "Ajustes posteriores com justificativa.",
+          "Ações retomadas na reunião seguinte.",
+          "Indicadores de qualidade e prazo acompanhados."
+        ]
+      }
+    ],
+    "related": [
+      "plano-contas-centro-custos-transportadora",
+      "orcamento-realizado-transportadora",
+      "dre-e-fluxo-de-caixa-transportadora"
+    ],
+    "cta": {
+      "title": "Dê mais clareza aos controles financeiros",
+      "text": "Conheça a proposta da NEXACASH para organizar a leitura do caixa e apoiar as decisões da operação.",
+      "href": "/nexacash",
+      "label": "Conhecer a NEXACASH"
+    }
+  },
+  {
+    "slug": "analise-investimento-automacao-logistica",
+    "title": "Automação logística: monte o caso de investimento antes de comprar a solução",
+    "description": "Avalie problema, capacidade, fluxo incremental e payback de uma automação logística. Separe horas liberadas de economia efetiva de caixa.",
+    "category": "Custos e margem",
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "intro": "Uma proposta promete eliminar horas de trabalho e aumentar a capacidade do armazém. Antes de converter essa promessa em retorno financeiro, a empresa precisa entender qual restrição será removida, quais recursos continuarão existindo e como o benefício aparecerá no resultado e no caixa.",
+    "takeaway": "O caso de investimento deve provar a ligação entre mudança operacional, benefício utilizável e fluxo financeiro incremental.",
+    "sources": [
+      {
+        "id": "payback",
+        "name": "OpenStax, Rice University: Payback em decisões de investimento",
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/11-2-evaluate-the-payback-and-accounting-rate-of-return-in-capital-investment-decisions"
+      }
+    ],
+    "sections": [
+      {
+        "id": "problema",
+        "title": "Defina a restrição que a solução pretende remover",
+        "paragraphs": [
+          "Identifique o problema observado: erro, deslocamento, capacidade, tempo de espera ou qualidade do registro. Uma solução que acelera uma etapa sem tratar a fila seguinte pode não ampliar a saída do processo.",
+          "Use uma base atual de volume, horas, falhas e custos. Se o benefício depende de crescimento, registre a evidência de demanda e os recursos necessários para atendê-la. Capacidade disponível sem utilização prevista não é receita garantida.",
+          "Diferencie horas liberadas de redução efetiva de gasto. A equipe pode usar o tempo em outras atividades, o que pode ser valioso, mas não representa automaticamente uma economia de folha no caixa."
+        ]
+      },
+      {
+        "id": "fluxos",
+        "title": "Inclua implantação, adaptação e custo recorrente",
+        "paragraphs": [
+          "O investimento pode exigir integração, adequação física, treinamento e período de estabilização, além da compra principal. Registre desembolsos e benefícios ao longo do tempo, incluindo eventuais impactos na operação durante a entrada.",
+          "Compare com uma alternativa viável sem a solução proposta. Uma melhoria de processo menos complexa pode resolver parte do problema e deve aparecer na análise. Custos já incorridos não devem ser tratados como desembolsos futuros provocados pela decisão.",
+          "Para benefícios, use apenas parcelas sustentadas pelo cenário: redução de gasto que será realizada, contribuição adicional com demanda e capacidade comprovadas ou retrabalho efetivamente evitado. Não some duas vezes efeitos que descrevem a mesma melhoria."
+        ],
+        "table": {
+          "headers": [
+            "Parte do caso",
+            "Evidência necessária"
+          ],
+          "rows": [
+            [
+              "Problema atual",
+              "Medição e causa identificadas"
+            ],
+            [
+              "Investimento",
+              "Escopo completo e calendário"
+            ],
+            [
+              "Benefício",
+              "Mecanismo de realização e base de cálculo"
+            ],
+            [
+              "Recorrência",
+              "Manutenção, suporte e operação adicionais"
+            ],
+            [
+              "Risco",
+              "Atraso, adesão, capacidade e demanda"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "payback",
+        "title": "Use o payback como uma leitura inicial",
+        "paragraphs": [
+          "A OpenStax apresenta o payback como o tempo de recuperação do investimento pelos fluxos de caixa. Na versão simples, esse indicador não considera o valor do dinheiro no tempo nem descreve, sozinho, o retorno ao longo de toda a vida do projeto.",
+          "Em um exemplo ilustrativo, R$ 180 mil de investimento inicial e R$ 10 mil de benefício líquido mensal constante dariam dezoito meses de payback simples. Essa leitura pressupõe que o fluxo começa na condição prevista e não inclui atrasos ou mudanças de utilização.",
+          "Se há implantação e crescimento gradual do benefício, monte a sequência de fluxos e acumule os valores por período. Um prazo de recuperação apresentado sem essa curva pode antecipar um resultado que a operação ainda não consegue produzir."
+        ],
+        "sourceIds": [
+          "payback"
+        ]
+      },
+      {
+        "id": "verificacao",
+        "title": "Aprove e acompanhe as mesmas premissas",
+        "paragraphs": [],
+        "bullets": [
+          "Responsável pelo benefício identificado.",
+          "Alternativa sem investimento comparada.",
+          "Implantação e custos recorrentes incluídos.",
+          "Cenário menos favorável analisado.",
+          "Fluxo financeiro separado de ganhos não monetizados.",
+          "Conferência após a entrada com a mesma base da aprovação."
+        ]
+      }
+    ],
+    "related": [
+      "produtividade-armazem-picking",
+      "renovacao-frota-custo-total-propriedade",
+      "capital-giro-crescimento-transportadora"
+    ],
+    "cta": {
+      "title": "Leve a análise para a execução",
+      "text": "Conheça o Programa D90 da NEXALLOG e sua atuação no diagnóstico, no plano de ação e no acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
   }
 ]

@@ -46,7 +46,7 @@ const sitemap = await (await fetch(base + '/sitemap.xml')).text();
 for (const post of posts) assert(sitemap.includes(canonicalBase + '/blog/' + post.slug), 'Artigo fora do sitemap');
 const rss = await (await fetch(base + '/blog-feed.xml')).text();
 assert.equal((rss.match(/<item>/g) ?? []).length, posts.length);
-const newest = posts.toSorted((a, b) => b.publishedAt.localeCompare(a.publishedAt))[0];
+const newest = posts.toReversed().toSorted((a, b) => b.publishedAt.localeCompare(a.publishedAt))[0];
 assert(rss.slice(rss.indexOf('<item>'), rss.indexOf('</item>')).includes(canonicalBase + '/blog/' + newest.slug), 'RSS deve começar pelas publicações mais recentes');
 const unknown = await fetch(base + '/blog/artigo-inexistente');
 assert.equal(unknown.status, 404, 'Artigo inexistente deve retornar 404');
