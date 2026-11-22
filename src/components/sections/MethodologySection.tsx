@@ -160,7 +160,7 @@ export function MethodologySection({ detailed = false, withLink = true }: Method
         </div>
 
         {/* O que a empresa recebe ao final: uma linha por item */}
-        <Reveal delay={80}>
+        <Reveal delay={80} id="resultados" className="scroll-mt-28">
           <div className="mt-14 border-t border-line/15 pt-10 lg:mt-20">
             <p className="max-w-3xl text-display-sm">{t(methodologyOutcome)}</p>
             <ul className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">

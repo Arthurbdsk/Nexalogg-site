@@ -19,16 +19,19 @@ export function BackToTop() {
     const onScroll = () => {
       if (!frame) frame = window.requestAnimationFrame(measure);
     };
+    measure();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
 
   const toTop = () => {
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
-    document.getElementById('conteudo')?.focus?.();
+    document.getElementById('conteudo')?.focus({ preventScroll: true });
   };
 
   return (

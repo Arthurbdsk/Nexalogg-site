@@ -4,7 +4,6 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { InterviewVideo } from '@/components/blog/InterviewVideo';
 import { ArticleActions } from '@/components/blog/ArticleActions';
-import { CostPerKmCalculator } from '@/components/blog/CostPerKmCalculator';
 import { PracticalCalculator } from '@/components/blog/PracticalCalculator';
 import { getBlogTool } from '@/lib/blog-calculators';
 import { ScrollDepthTracker } from '@/components/layout/ScrollDepthTracker';
@@ -56,7 +55,6 @@ export default async function ArticlePage({ params }: Props) {
             <div className="min-w-0 max-w-3xl">
               <p className="border-l-4 border-brand-500 bg-content/[0.04] p-6 text-xl font-semibold leading-relaxed">{post.takeaway}</p>
               {post.videoId ? <InterviewVideo videoId={post.videoId} title={post.videoTitle} subtitle={post.videoSubtitle} source={post.videoSource} /> : null}
-              {post.slug === 'custo-por-km-transportadora' ? <CostPerKmCalculator /> : null}
               {tool ? <PracticalCalculator key={post.slug} kind={tool.kind} articleSlug={post.slug} /> : null}
               {post.sections.map((section) => (
                 <section key={section.id} id={section.id} aria-labelledby={section.id + '-titulo'} className="mt-12 scroll-mt-28">

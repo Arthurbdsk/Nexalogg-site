@@ -5,14 +5,17 @@ import Link from 'next/link';
 import type { BlogPreview } from '@/lib/blog-preview';
 
 const categories = ['Todos', 'Gestão financeira', 'Custos e margem', 'Operação e execução', 'Entrevistas'];
+const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
 export function BlogList({ posts }: { posts: BlogPreview[] }) {
   const [category, setCategory] = useState('Todos');
   const [query, setQuery] = useState('');
-  const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const [toolsOnly, setToolsOnly] = useState(false);
+  const terms = normalize(query).trim().split(/\s+/).filter(Boolean);
   const visible = posts.filter((post) =>
     (category === 'Todos' || post.category === category) &&
-    normalize(post.title + ' ' + post.description).includes(normalize(query.trim())),
+    (!toolsOnly || Boolean(post.toolLabel)) &&
+    terms.every((term) => normalize(post.title + ' ' + post.description).includes(term)),
   );
 
   return (
@@ -31,25 +34,27 @@ export function BlogList({ posts }: { posts: BlogPreview[] }) {
               {item}
             </button>
           ))}
+          <button type="button" onClick={() => setToolsOnly((current) => !current)} aria-pressed={toolsOnly} className={'min-h-11 border px-4 py-2 text-sm font-semibold transition-colors ' + (toolsOnly ? 'border-content bg-content text-surface' : 'border-line/20 hover:border-content')}>Com calculadora</button>
         </div>
         <p className="mb-5 text-sm text-content/60" role="status" aria-live="polite">{visible.length} {visible.length === 1 ? 'conteúdo encontrado' : 'conteúdos encontrados'}</p>
         <div className="grid border-l border-t border-line/15 md:grid-cols-2 lg:grid-cols-3">
           {visible.map((post) => (
             <article key={post.slug} className="flex h-full flex-col border-b border-r border-line/15 p-7 md:p-8">
               <h3 className="text-2xl font-semibold leading-tight tracking-tight">
-                <Link href={'/blog/' + post.slug} className="transition-colors hover:text-accent">{post.title}</Link>
+                <Link href={'/blog/' + post.slug} prefetch={false} className="transition-colors hover:text-accent">{post.title}</Link>
               </h3>
               <p className="mt-5 text-[0.9375rem] leading-[1.75] text-content/70">{post.description}</p>
               {post.toolLabel ? <p className="mt-4 border-l-2 border-brand-500 pl-3 text-sm font-semibold">{post.toolLabel}</p> : null}
               <p className="mt-5 text-sm text-content/60">{post.category} · {post.minutes} min de leitura</p>
               <time dateTime={post.publishedAt} className="mt-2 text-xs text-content/60">{new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(post.publishedAt + 'T12:00:00Z'))}</time>
-              <Link href={'/blog/' + post.slug} className="mt-auto flex min-h-12 items-center gap-4 pt-8 font-semibold" aria-label={'Ler: ' + post.title}>
+              {post.toolLabel ? <Link href={'/blog/' + post.slug + '#ferramenta'} prefetch={false} className="mt-4 inline-flex min-h-11 items-center gap-3 text-sm font-semibold underline underline-offset-4">Usar calculadora <span aria-hidden="true">→</span></Link> : null}
+              <Link href={'/blog/' + post.slug} prefetch={false} className="mt-auto flex min-h-12 items-center gap-4 pt-8 font-semibold" aria-label={'Ler: ' + post.title}>
                 {post.hasVideo ? 'Ver entrevista' : 'Ler análise'} <span aria-hidden="true">→</span>
               </Link>
             </article>
           ))}
         </div>
-        {visible.length === 0 ? <p className="py-12">Nenhum artigo encontrado. Experimente outro assunto ou selecione Todos.</p> : null}
+        {visible.length === 0 ? <div className="py-12"><p>Nenhum artigo encontrado com estes filtros.</p><button type="button" onClick={() => { setQuery(''); setCategory('Todos'); setToolsOnly(false); }} className="mt-4 min-h-11 border border-line/30 px-5 py-2 font-semibold hover:border-content">Limpar busca e filtros</button></div> : null}
       </div>
     </section>
   );

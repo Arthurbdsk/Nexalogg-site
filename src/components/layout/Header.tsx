@@ -14,6 +14,7 @@ import { siteConfig } from '@/lib/site';
 import { cx } from '@/lib/utils';
 
 const HOME_SECTIONS = ['inicio', 'a-nexallog', 'problemas', 'metodologia', 'solucoes'];
+const NO_SECTIONS: string[] = [];
 
 export function Header() {
   const t = useCopy();
@@ -21,7 +22,7 @@ export function Header() {
   const { scrolled } = useScrollState(16);
   const isHome = pathname === '/';
   const isNexacash = pathname === '/nexacash';
-  const activeSection = useActiveSection(isHome ? HOME_SECTIONS : []);
+  const activeSection = useActiveSection(isHome ? HOME_SECTIONS : NO_SECTIONS);
 
   const isActive = (href: string, sectionId?: string) => {
     if (href.startsWith('/#')) return isHome && activeSection === sectionId;

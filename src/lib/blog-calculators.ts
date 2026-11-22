@@ -1,4 +1,4 @@
-export type CalculatorKind = 'empty-distance' | 'receivables' | 'break-even' | 'cost-to-serve' | 'client-loss' | 'diesel-impact' | 'freight-discount';
+export type CalculatorKind = 'cost-per-km' | 'otif' | 'flex-budget' | 'empty-distance' | 'receivables' | 'break-even' | 'cost-to-serve' | 'client-loss' | 'diesel-impact' | 'freight-discount';
 type Field = { key: string; label: string; defaultValue: number; min: number; max?: number; step: number };
 export type ToolDefinition = { kind: CalculatorKind; title: string; description: string; note: string; formula: string; fields: Field[] };
 export type ToolMetric = { label: string; value: number; format: 'currency' | 'percent' | 'days' };
@@ -6,6 +6,45 @@ export type ToolResult = { error?: string; metrics: ToolMetric[] };
 export type ToolValues = Record<string, number>;
 
 export const blogTools: Record<CalculatorKind, ToolDefinition> = {
+  'cost-per-km': {
+    kind: 'cost-per-km',
+    title: 'Simule o custo por km',
+    description: 'Compare o custo por quilômetro e o efeito de variar a utilização em 20%. Inclua quilômetros carregados e vazios no total.',
+    note: 'Custos fixos e custo variável por km constantes, no mesmo mês. Os cenários não incluem degraus de capacidade, tributos sobre receita ou margem desejada. O resultado não define o preço final do frete.',
+    formula: 'Custo/km = custos fixos / km totais + custo variável/km; cenários usam 80% e 120% da distância informada.',
+    fields: [
+      { key: 'fixed', label: 'Custos fixos mensais (R$)', defaultValue: 18000, min: 0, step: 100 },
+      { key: 'variable', label: 'Custo variável por km (R$)', defaultValue: 2.2, min: 0, step: 0.01 },
+      { key: 'kilometers', label: 'Quilômetros totais por mês', defaultValue: 10000, min: 0.01, step: 100 },
+    ],
+  },
+  'otif': {
+    kind: 'otif',
+    title: 'Calcule o OTIF das entregas',
+    description: 'Informe a mesma população de entregas e conte quantas cumpriram prazo e quantidade simultaneamente.',
+    note: 'Use contagens inteiras e uma base fechada do mesmo período, conforme a regra acordada com o cliente. OTIF usa a interseção real; não multiplica percentuais. O modelo não mede avarias, documentação ou todos os critérios de pedido perfeito do SCOR.',
+    formula: 'No prazo % = entregas no prazo / total × 100; completas % = completas / total × 100; OTIF % = no prazo e completas / total × 100.',
+    fields: [
+      { key: 'total', label: 'Total de entregas avaliadas', defaultValue: 100, min: 1, step: 1 },
+      { key: 'onTime', label: 'Entregas no prazo', defaultValue: 92, min: 0, step: 1 },
+      { key: 'inFull', label: 'Entregas completas', defaultValue: 95, min: 0, step: 1 },
+      { key: 'both', label: 'No prazo e completas ao mesmo tempo', defaultValue: 89, min: 0, step: 1 },
+    ],
+  },
+  'flex-budget': {
+    kind: 'flex-budget',
+    title: 'Compare custo real e orçamento ajustado',
+    description: 'Separe o efeito do volume do desvio de custo usando uma única unidade de atividade, como km ou entregas comparáveis.',
+    note: 'Custo variável unitário e estrutura fixa orçados constantes na faixa de atividade analisada. Use custos por competência, na mesma base e período. Não isola preço de consumo, mistura de rotas ou degraus de capacidade. Desvio positivo significa custo acima do orçamento ajustado.',
+    formula: 'Orçamento original = fixos + variável/unidade × volume previsto; ajustado = fixos + variável/unidade × volume real; desvio = custo real − ajustado.',
+    fields: [
+      { key: 'fixed', label: 'Custos fixos orçados (R$)', defaultValue: 120000, min: 0, step: 100 },
+      { key: 'unitCost', label: 'Custo variável orçado por unidade (R$)', defaultValue: 2.2, min: 0, step: 0.01 },
+      { key: 'planned', label: 'Volume previsto (km ou entregas)', defaultValue: 10000, min: 0, step: 1 },
+      { key: 'actual', label: 'Volume realizado na mesma unidade', defaultValue: 12000, min: 0, step: 1 },
+      { key: 'actualCost', label: 'Custo total realizado (R$)', defaultValue: 149000, min: 0, step: 100 },
+    ],
+  },
   'empty-distance': {
     kind: 'empty-distance',
     title: 'Simule o custo dos quilômetros vazios',
@@ -121,6 +160,24 @@ export function calculateBlogTool(kind: CalculatorKind, values: ToolValues): Too
   const percent = (label: string, value: number): ToolMetric => ({ label, value, format: 'percent' });
   let metrics: ToolMetric[];
   switch (kind) {
+    case 'cost-per-km': {
+      metrics = [currency('Custo por km', values.fixed / values.kilometers + values.variable), currency('Com 20% menos km', values.fixed / (values.kilometers * 0.8) + values.variable), currency('Com 20% mais km', values.fixed / (values.kilometers * 1.2) + values.variable)];
+      break;
+    }
+    case 'otif': {
+      const { total, onTime, inFull, both } = values;
+      if ([total, onTime, inFull, both].some((value) => !Number.isSafeInteger(value))) return { error: 'Informe contagens inteiras de entregas dentro do limite numérico.', metrics: [] };
+      if (onTime > total || inFull > total) return { error: 'As entregas no prazo ou completas não podem superar o total.', metrics: [] };
+      if (both > Math.min(onTime, inFull) || both < Math.max(0, onTime + inFull - total)) return { error: 'As contagens de entregas no prazo e completas são incompatíveis. Confira a interseção na mesma base.', metrics: [] };
+      metrics = [percent('Entregas no prazo', onTime / total * 100), percent('Entregas completas', inFull / total * 100), percent('OTIF', both / total * 100)];
+      break;
+    }
+    case 'flex-budget': {
+      const original = values.fixed + values.unitCost * values.planned;
+      const adjusted = values.fixed + values.unitCost * values.actual;
+      metrics = [currency('Orçamento original', original), currency('Orçamento ajustado ao volume real', adjusted), currency('Desvio de custo após ajuste', values.actualCost - adjusted), currency('Efeito do volume no orçamento', adjusted - original)];
+      break;
+    }
     case 'diesel-impact': {
       const liters = values.distance / values.efficiency;
       const before = liters * values.basePrice;

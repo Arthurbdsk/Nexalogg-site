@@ -13,7 +13,7 @@ type ScrollState = {
  * Estado de rolagem calculado dentro de requestAnimationFrame, com listener
  * passivo, para evitar layout thrashing durante o scroll.
  */
-export function useScrollState(threshold = 24): ScrollState {
+export function useScrollState(threshold = 24, trackProgress = false): ScrollState {
   const [state, setState] = useState<ScrollState>({ scrolled: false, progress: 0 });
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export function useScrollState(threshold = 24): ScrollState {
     const measure = () => {
       frame = 0;
       const top = window.scrollY;
-      const height = document.documentElement.scrollHeight - window.innerHeight;
+      const height = trackProgress ? document.documentElement.scrollHeight - window.innerHeight : 0;
       const progress = height > 0 ? Math.min(1, Math.max(0, top / height)) : 0;
       setState((previous) => {
         const scrolled = top > threshold;
@@ -46,7 +46,7 @@ export function useScrollState(threshold = 24): ScrollState {
       window.removeEventListener('resize', onScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [threshold]);
+  }, [threshold, trackProgress]);
 
   return state;
 }

@@ -40,7 +40,7 @@ export default function BlogPage() {
           slug, title, description, category, publishedAt,
           minutes: readingMinutes({ slug, title, description, category, publishedAt, ...post }),
           hasVideo: Boolean(post.videoId),
-          toolLabel: post.calculator ? 'Simulador com memória de cálculo' : slug === 'custo-por-km-transportadora' ? 'Calculadora interativa' : undefined,
+          toolLabel: post.calculator ? 'Simulador com memória de cálculo' : undefined,
         }))} />
         <FinalCta />
       </main>

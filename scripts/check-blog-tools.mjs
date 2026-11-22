@@ -3,6 +3,9 @@ import { readFileSync } from 'node:fs';
 import { blogTools, defaultToolValues, calculateBlogTool, toolCsv } from '../src/lib/blog-calculators.ts';
 
 const cases = [
+  ['cost-per-km', [4, 4.45, 3.7]],
+  ['otif', [92, 95, 89]],
+  ['flex-budget', [142000, 146400, 2600, 4400]],
   ['empty-distance', [25, 5500, 1760]],
   ['receivables', [42, 420000, 70000]],
   ['break-even', [400000, 30000, 500000, 20]],
@@ -43,6 +46,18 @@ checkError('break-even', { contribution: 101 });
 checkError('cost-to-serve', { revenue: 0 });
 checkError('client-loss', { clientRevenue: 600000 });
 checkError('client-loss', { contribution: 101 });
+checkError('cost-per-km', { kilometers: 0 });
+checkError('otif', { onTime: 101 });
+checkError('otif', { inFull: 101 });
+checkError('otif', { both: 93 });
+checkError('otif', { both: 86 });
+checkError('otif', { total: 100.5 });
+checkError('otif', { onTime: 92.5 });
+checkError('otif', { both: 89.5 });
+assert.equal(calculateBlogTool('otif', { total: 100, onTime: 0, inFull: 0, both: 0 }).metrics[2].value, 0);
+assert.equal(calculateBlogTool('otif', { total: 1, onTime: 1, inFull: 1, both: 1 }).metrics[2].value, 100);
+assert.equal(calculateBlogTool('flex-budget', { ...defaultToolValues('flex-budget'), actual: 0, actualCost: 119000 }).metrics[2].value, -1000);
+assert.equal(calculateBlogTool('cost-per-km', { ...defaultToolValues('cost-per-km'), fixed: 0, variable: 0 }).metrics[0].value, 0);
 checkError('diesel-impact', { efficiency: 0 });
 checkError('diesel-impact', { revenue: 0 });
 checkError('freight-discount', { discount: 100 });
@@ -62,7 +77,7 @@ const loss = calculateBlogTool('cost-to-serve', { ...defaultToolValues('cost-to-
 assert.equal(loss.metrics[1].value, -43000);
 assert.equal(loss.metrics[2].value, -86);
 const posts = JSON.parse(readFileSync(new URL('../src/data/blog.json', import.meta.url), 'utf8'));
-assert.equal(posts.filter((post) => post.calculator).length, 7);
+assert.equal(posts.filter((post) => post.calculator).length, Object.keys(blogTools).length);
 assert.deepEqual(new Set(posts.filter((post) => post.calculator).map((post) => post.calculator)), new Set(Object.keys(blogTools)));
 for (const post of posts.filter((post) => post.calculator)) assert(Object.hasOwn(blogTools, post.calculator), post.slug);
-console.log('OK limites cruzados, zero, resultado negativo e associação dos sete simuladores');
+console.log('OK limites cruzados, zero, resultado negativo e associação de todos os simuladores');

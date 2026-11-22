@@ -55,4 +55,6 @@ for (const path of ['/robots.txt', '/llms.txt', '/politica-de-privacidade', '/te
   assert.equal((await fetch(base + path)).status, 200, path);
 }
 assert(html.includes('Feito por Socialy') && html.includes('https://www.instagram.com/socialy_webdesign/'));
+const methodology = await (await fetch(base + '/metodologia')).text();
+assert(methodology.includes('id="resultados"'), 'Destino do link Resultados esperados ausente');
 console.log('OK home unificada: texto, sete frentes, X, podcast, âncoras, JSON-LD, redirecionamentos 308, sitemap e páginas institucionais');

@@ -26,7 +26,7 @@ const canScrollInside = (target: EventTarget | null, deltaY: number) => {
 
 /** Indicador fino de progresso de leitura, fixo no topo da viewport. */
 export function ScrollProgress() {
-  const { progress } = useScrollState();
+  const { progress } = useScrollState(24, true);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');

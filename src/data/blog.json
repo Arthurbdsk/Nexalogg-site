@@ -45,8 +45,9 @@
     "title": "Custo por km na transportadora: como calcular e usar na precificação",
     "description": "Calcule o custo por km com custos fixos, variáveis e quilômetros vazios. Veja um exemplo e os cuidados ao transformar custo em preço de frete.",
     "category": "Custos e margem",
+    "calculator": "cost-per-km",
     "publishedAt": "2026-10-12",
-    "updatedAt": "2026-10-12",
+    "updatedAt": "2026-11-22",
     "intro": "O custo por km perde utilidade quando o gestor divide apenas combustível e pedágio pelos quilômetros carregados. A frota também custa quando está parada, retorna vazia ou espera no cliente. O indicador precisa representar a estrutura que a empresa realmente mantém para executar o serviço.",
     "takeaway": "Use a mesma base de custos e quilômetros em toda comparação. Retorno vazio e tempo de espera precisam aparecer na conta da viagem.",
     "sources": [{"id": "scor", "name": "ASCM: SCOR Digital Standard, atributos de custo e ativos", "url": "https://scor.ascm.org/performance/introduction"}],
@@ -97,7 +98,7 @@
       {"id": "ponte", "title": "Faça uma ponte entre resultado e dinheiro", "bullets": ["Identifique itens do resultado sem movimentação de caixa.", "Verifique a evolução de recebíveis e obrigações operacionais.", "Separe investimentos, empréstimos, amortizações e aportes.", "Concilie a variação calculada com os saldos financeiros.", "Investigue divergências antes de usar os números na decisão."], "paragraphs": ["O contador deve validar classificação e tratamento dos eventos. A operação precisa explicar o que provocou as mudanças: atraso no faturamento, perda de volume, compra de capacidade ou aumento de prazo comercial."]},
       {"id": "projecao", "title": "Projete as datas e teste cenários", "paragraphs": ["Organize uma projeção semanal com saldo inicial, recebimentos esperados, pagamentos comprometidos e saldo final. Diferencie valores confirmados de estimativas. Teste o atraso de clientes relevantes e a queda de volume com manutenção dos custos fixos.", "Ao identificar uma semana de insuficiência, o gestor ganha tempo para cobrar pendências, negociar prazo, rever desembolsos e discutir financiamento. Atualize a projeção com o realizado e explique o desvio para melhorar as premissas."]}
     ],
-    "related": ["gestao-financeira-para-transportadoras", "margem-por-cliente-rota-frete"],
+    "related": ["gestao-financeira-para-transportadoras","margem-por-cliente-rota-frete","orcamento-realizado-transportadora"],
     "cta": {"title": "Acompanhe resultado e caixa com clareza", "text": "Conheça a leitura financeira da NEXACASH para acompanhar a operação.", "href": "/nexacash", "label": "Conhecer a ferramenta"}
   },
   {
@@ -117,7 +118,7 @@
       {"id": "segmentacao", "title": "Abra o desvio antes de definir a ação", "paragraphs": ["Uma média mensal pode esconder um cliente com atrasos ou uma rota com espera elevada. Abra o indicador por cliente, rota, unidade e tipo de serviço quando essas dimensões explicarem o comportamento.", "Comece pelos desvios com maior impacto e recorrência. Verifique os dados no processo real: ocorrência, documento, percurso e execução. Procure uma causa que possa ser tratada."]},
       {"id": "metas", "title": "Defina metas a partir de compromissos e capacidade", "paragraphs": ["Não existe um percentual universal de margem ou ocupação adequado para toda transportadora. A meta deve considerar contrato, carga, risco, capacidade e histórico. Benchmark é uma referência de investigação, não prova de que sua operação suporta a mesma condição.", "Na reunião semanal, registre a contramedida e volte ao indicador depois da execução. Acompanhe também medidas de proteção: reduzir custo não pode deteriorar segurança ou compromisso com o cliente."], "bullets": ["Qual foi o desvio e onde ocorreu?", "Qual evidência sustenta a hipótese de causa?", "Quem executará a ação e até quando?", "Qual medida demonstra que a ação funcionou?", "Qual efeito colateral precisa ser acompanhado?"]}
     ],
-    "related": ["margem-por-cliente-rota-frete", "custo-por-km-transportadora", "plano-acao-90-dias-transportadora"],
+    "related": ["margem-por-cliente-rota-frete","custo-por-km-transportadora","plano-acao-90-dias-transportadora","otif-entregas-transportadora"],
     "cta": {"title": "Conecte indicadores à execução", "text": "Veja como o Programa D90 organiza diagnóstico, prioridades e acompanhamento.", "href": "/metodologia", "label": "Conhecer o Programa D90"}
   },
   {
@@ -158,7 +159,7 @@
       {"id": "retorno", "title": "Carga de retorno também precisa deixar contribuição", "paragraphs": ["Uma carga adicional pode reduzir a proporção de quilômetros vazios, mas exigir desvio, espera ou um dia extra de operação. Avalie a receita líquida menos os custos incrementais e o efeito na próxima viagem. Um indicador melhor pode acompanhar um resultado pior.", "Antes de aceitar, confirme restrições de carga, equipamento, segurança, jornada, cobertura e prazo. Compare o cenário completo com e sem a carga adicional. A diferença entre os dois é mais útil do que olhar apenas o frete da volta."]},
       {"id": "piloto", "title": "Teste em poucas rotas e acompanhe o efeito realizado", "bullets": ["Escolha os fluxos com maior distância vazia e recorrência.", "Registre o percurso e a espera antes da mudança.", "Teste uma combinação de cargas compatíveis.", "Meça custo variável, contribuição, tempo e nível de serviço.", "Expanda a solução apenas quando o ganho se mantiver."], "paragraphs": ["O simulador estima somente o custo variável da distância informada. Ele não inclui receita adicional, custos fixos ou mudança de jornada. A economia depende de os quilômetros serem realmente eliminados e de o custo unitário representar despesas que variam com a distância."]}
     ],
-    "related": ["custo-por-km-transportadora", "margem-por-cliente-rota-frete", "indicadores-transportadora-scor"],
+    "related": ["custo-por-km-transportadora","margem-por-cliente-rota-frete","indicadores-transportadora-scor","manutencao-preventiva-custo-parada-frota"],
     "cta": {"title": "Reveja a malha com foco em contribuição", "text": "Conecte programação de frota, custo por rota e resultado no diagnóstico da NEXALLOG.", "href": "/metodologia", "label": "Conhecer o Programa D90"}
   },
   {
@@ -449,11 +450,7 @@
         ]
       }
     ],
-    "related": [
-      "conciliacao-bancaria-transportadora",
-      "capital-giro-crescimento-transportadora",
-      "prazo-entrega-faturamento-recebimento"
-    ],
+    "related": ["conciliacao-bancaria-transportadora","capital-giro-crescimento-transportadora","prazo-entrega-faturamento-recebimento","prazo-fornecedores-caixa-transportadora"],
     "cta": {
       "title": "Organize o caixa antes do próximo compromisso",
       "text": "Conheça a NEXACASH e aproxime a leitura financeira das decisões da operação.",
@@ -591,11 +588,7 @@
         ]
       }
     ],
-    "related": [
-      "projecao-caixa-13-semanas-transportadora",
-      "dre-e-fluxo-de-caixa-transportadora",
-      "gestao-financeira-para-transportadoras"
-    ],
+    "related": ["projecao-caixa-13-semanas-transportadora","dre-e-fluxo-de-caixa-transportadora","gestao-financeira-para-transportadoras","inadimplencia-cobranca-transportadora"],
     "cta": {
       "title": "Dê uma base confiável à gestão do caixa",
       "text": "Conheça a NEXACASH e as funcionalidades de conciliação e acompanhamento financeiro apresentadas pela NEXALLOG.",
@@ -986,6 +979,519 @@
     "cta": {
       "title": "Negocie com uma leitura clara da contribuição",
       "text": "Conecte preço, custo de servir e capacidade ao diagnóstico da NEXALLOG.",
+      "href": "/contato",
+      "label": "Falar com a NEXALLOG"
+    }
+  },
+  {
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "slug": "inadimplencia-cobranca-transportadora",
+    "title": "Inadimplência na transportadora: organize a cobrança antes de faltar caixa",
+    "description": "Monte um mapa de recebíveis por vencimento, separe atraso de pendência documental e organize a cobrança com responsáveis e datas.",
+    "category": "Gestão financeira",
+    "intro": "Uma lista de títulos vencidos mostra onde o dinheiro parou. Para agir, a transportadora precisa saber por que cada valor não entrou, quem pode resolver a pendência e qual data de recebimento tem fundamento. Cobrança eficiente começa com uma base confiável e uma rotina de decisão.",
+    "takeaway": "O valor vencido é o ponto de partida. Causa, responsável e próxima ação transformam a carteira em um plano de cobrança.",
+    "sources": [
+      {
+        "id": "apqc",
+        "name": "APQC: Accounts Receivable Key Benchmarks e processos de recebíveis e cobrança",
+        "url": "https://www.apqc.org/resource-library/resource-collection/accounts-receivable-key-benchmarks"
+      }
+    ],
+    "sections": [
+      {
+        "id": "base",
+        "title": "Confira o saldo antes de cobrar",
+        "paragraphs": [
+          "A APQC trata crédito, faturamento, contas a receber, cobrança e ajustes como atividades relacionadas da administração da receita. Essa visão ajuda a evitar uma cobrança isolada de problemas que começaram em outra etapa.",
+          "Na rotina da transportadora, comece conciliando o título com o recebimento. Pagamento parcial, retenção em análise, duplicidade e baixa ainda não processada precisam de tratamento específico. Cobrar o valor integral de quem já pagou desgasta a relação e não resolve o saldo.",
+          "Defina uma data de corte e use uma linha por título ou parcela. Registre cliente, documento, vencimento original, saldo em aberto e dias de atraso. Se o cliente prometeu uma nova data, mantenha o vencimento original no histórico e registre a promessa em outro campo."
+        ],
+        "sourceIds": [
+          "apqc"
+        ]
+      },
+      {
+        "id": "aging",
+        "title": "Separe a carteira por idade e por motivo",
+        "paragraphs": [
+          "Uma tabela por faixas de vencimento, conhecida como aging, organiza a exposição. As faixas abaixo são um modelo de trabalho, sem pretensão de classificar contabilmente a perda ou de estabelecer uma política universal de crédito.",
+          "Cruze as faixas com a causa do atraso. Um título de valor alto pode depender da confirmação de entrega; outro pode estar aprovado, mas fora do lote de pagamento. Ambos estão vencidos, porém exigem ações e interlocutores diferentes."
+        ],
+        "table": {
+          "headers": [
+            "Faixa sugerida",
+            "Pergunta de gestão",
+            "Tratamento inicial"
+          ],
+          "rows": [
+            [
+              "A vencer",
+              "Documentos e instruções de cobrança estão completos?",
+              "Prevenir pendência antes do vencimento"
+            ],
+            [
+              "1 a 15 dias",
+              "O pagamento foi programado ou houve divergência?",
+              "Confirmar causa e previsão com evidência"
+            ],
+            [
+              "16 a 30 dias",
+              "A ação anterior resolveu o bloqueio?",
+              "Escalar pendência com responsável definido"
+            ],
+            [
+              "Acima de 30 dias",
+              "A promessa é viável e o risco foi revisto?",
+              "Reavaliar exposição e plano de recuperação"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "prioridade",
+        "title": "Escolha a próxima ação pelo impacto e pela causa",
+        "paragraphs": [
+          "Imagine uma carteira ilustrativa com R$ 80 mil vencidos: R$ 35 mil aguardam comprovação de entrega, R$ 25 mil foram contestados e R$ 20 mil têm pagamento confirmado para a semana seguinte. Projetar os R$ 80 mil como entrada imediata cria uma segurança que a operação ainda não possui.",
+          "O financeiro pode acompanhar a promessa dos R$ 20 mil, enquanto operação e atendimento reúnem a documentação dos R$ 35 mil. A contestação exige conferência do serviço e do acordo comercial. Cada grupo deve ter uma próxima ação, uma pessoa responsável e um prazo para atualizar a situação."
+        ]
+      },
+      {
+        "id": "rotina",
+        "title": "Faça uma reunião de cobrança que termine em decisões",
+        "bullets": [
+          "Atualizar recebimentos, baixas e saldos antes da reunião.",
+          "Separar títulos sem divergência daqueles com pendência operacional ou comercial.",
+          "Registrar promessas de pagamento sem apagar o histórico de vencimento.",
+          "Definir quem resolve cada bloqueio e quando haverá uma nova checagem.",
+          "Ajustar a previsão de caixa com as datas sustentadas por evidências.",
+          "Rever o limite de exposição e as condições de novos serviços com os responsáveis pelo crédito."
+        ],
+        "paragraphs": [
+          "Para acompanhar a rotina, observe saldo vencido, envelhecimento da carteira, promessas cumpridas e reincidência de pendências. Uma queda do vencido pode resultar de recebimento, mas também de baixa ou renegociação. A movimentação precisa estar explicada.",
+          "Leve as causas recorrentes de volta ao processo. Se a mesma documentação trava o recebimento de vários clientes, a correção deve acontecer na entrega e no faturamento. O objetivo é reduzir a necessidade de cobrar o mesmo problema todos os meses."
+        ]
+      }
+    ],
+    "related": [
+      "prazo-entrega-faturamento-recebimento",
+      "conciliacao-bancaria-transportadora",
+      "projecao-caixa-13-semanas-transportadora"
+    ],
+    "cta": {
+      "title": "Conecte recebíveis e previsão de caixa",
+      "text": "Conheça a NEXACASH e a proposta de organizar os controles financeiros da operação.",
+      "href": "/nexacash",
+      "label": "Conhecer a NEXACASH"
+    }
+  },
+  {
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "slug": "prazo-fornecedores-caixa-transportadora",
+    "title": "Prazo de fornecedores: como negociar sem apenas empurrar o problema de caixa",
+    "description": "Compare vencimentos, recebimentos e descontos antes de negociar fornecedores. Veja como organizar o calendário de pagamentos da transportadora.",
+    "category": "Gestão financeira",
+    "intro": "A transportadora paga combustível, manutenção e terceiros em datas que nem sempre acompanham o recebimento dos fretes. Negociar prazo pode aliviar esse intervalo, mas a decisão precisa considerar preço, abastecimento, relacionamento e a capacidade de cumprir o novo acordo.",
+    "takeaway": "Prazo é uma condição comercial que precisa caber no calendário da operação. Adiar o desembolso não elimina seu custo.",
+    "sources": [
+      {
+        "id": "acca",
+        "name": "ACCA: Working capital management, prazo de fornecedores e ciclo de caixa",
+        "url": "https://www.accaglobal.com/uk/en/student/exam-support-resources/fundamentals-exams-study-resources/f9/technical-articles/wcm.html"
+      }
+    ],
+    "sections": [
+      {
+        "id": "calendario",
+        "title": "Monte o calendário antes de negociar",
+        "paragraphs": [
+          "Na discussão de capital de giro, a ACCA relaciona o ciclo de caixa ao intervalo entre pagamentos e recebimentos. O prazo de fornecedores participa dessa relação, mas precisa ser analisado junto com descontos e consequências comerciais.",
+          "Para aplicar essa leitura à transportadora, organize os pagamentos por semana e pela criticidade do fornecedor. Identifique o que mantém o serviço funcionando, o que tem uma janela de negociação e o que depende de aprovação ou documentação. Uma média mensal esconde concentrações importantes.",
+          "Use valores e datas efetivas. Comprar combustível com pagamento em sete dias não produz o mesmo calendário de uma compra liquidada ao fim do mês. Considere também a data de corte da fatura e os dias de processamento do cliente que paga o frete."
+        ],
+        "sourceIds": [
+          "acca"
+        ]
+      },
+      {
+        "id": "cenario",
+        "title": "Compare a falta de caixa por semana",
+        "paragraphs": [
+          "Em um exemplo ilustrativo, a empresa espera R$ 120 mil de entrada na terceira semana, mas tem R$ 100 mil de pagamentos na segunda e saldo disponível de R$ 40 mil. Antes de considerar outros movimentos, existe uma necessidade de R$ 60 mil na segunda semana.",
+          "Se R$ 50 mil puderem ser renegociados para a terceira semana, o intervalo diminui, mas não desaparece. A empresa ainda precisa resolver R$ 10 mil e confirmar se os R$ 120 mil chegarão antes do novo vencimento. Se o cliente atrasar, o problema reaparece.",
+          "Registre os pagamentos deslocados nas semanas seguintes. Não conte a mesma renegociação como economia e como entrada de dinheiro: o compromisso continua existindo, apenas com outro vencimento."
+        ],
+        "table": {
+          "headers": [
+            "Condição a comparar",
+            "O que verificar"
+          ],
+          "rows": [
+            [
+              "Mesmo preço, prazo maior",
+              "Data efetiva, limite e continuidade do fornecimento"
+            ],
+            [
+              "Desconto para antecipar",
+              "Desembolso imediato e compromissos que ele deixará sem cobertura"
+            ],
+            [
+              "Preço maior para alongar",
+              "Custo adicional e efeito sobre a margem do serviço"
+            ],
+            [
+              "Parcelamento",
+              "Soma das parcelas e concentração em semanas futuras"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "desconto",
+        "title": "O desconto precisa compensar o uso do dinheiro",
+        "paragraphs": [
+          "Considere uma obrigação de R$ 50 mil com alternativa de pagamento antecipado por R$ 49 mil. A economia nominal é de R$ 1 mil. Ela só pode ser avaliada depois de saber quais compromissos disputam esses R$ 49 mil e se a antecipação exigirá outra fonte de recursos.",
+          "Compare alternativas no mesmo intervalo e inclua todos os custos de uma eventual contratação financeira. A economia nominal, sozinha, não define a melhor decisão. Se o pagamento antecipado impedir uma operação com contribuição maior ou gerar falta de caixa, o desconto pode não ser interessante para aquela semana."
+        ]
+      },
+      {
+        "id": "acordo",
+        "title": "Documente o combinado e acompanhe o cumprimento",
+        "bullets": [
+          "Relacionar fornecedores críticos e os serviços ou insumos que sustentam.",
+          "Simular o calendário atual e o calendário proposto, incluindo atrasos de recebimento.",
+          "Comparar preço, desconto, prazo, limite e eventual custo adicional.",
+          "Formalizar a nova condição com o fornecedor e atualizar os vencimentos.",
+          "Conferir semanalmente se a negociação reduziu o intervalo de caixa.",
+          "Investigar o desequilíbrio recorrente entre custo, preço e prazo do cliente."
+        ],
+        "paragraphs": [
+          "Uma negociação útil tem escopo e acompanhamento. Alongar prazo de forma acordada é diferente de simplesmente deixar um título vencer. O calendário deve orientar uma conversa antecipada com o fornecedor e uma revisão das condições comerciais que geram o desequilíbrio."
+        ]
+      }
+    ],
+    "related": [
+      "projecao-caixa-13-semanas-transportadora",
+      "capital-giro-crescimento-transportadora",
+      "inadimplencia-cobranca-transportadora"
+    ],
+    "cta": {
+      "title": "Enxergue os compromissos antes do vencimento",
+      "text": "Conheça a proposta da NEXACASH para dar mais clareza aos controles e ao calendário financeiro.",
+      "href": "/nexacash",
+      "label": "Conhecer a NEXACASH"
+    }
+  },
+  {
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "slug": "manutencao-preventiva-custo-parada-frota",
+    "title": "Manutenção da frota: o custo da parada vai além da oficina",
+    "description": "Avalie reparo, indisponibilidade, substituição e contribuição perdida antes de decidir a manutenção da frota. Inclui exemplo e roteiro de controle.",
+    "category": "Operação e execução",
+    "intro": "A nota da oficina mostra uma parte do custo de uma falha. O veículo parado também altera a programação, consome tempo da equipe e pode exigir outra solução para atender o cliente. Para decidir melhor, a transportadora precisa relacionar manutenção, disponibilidade e resultado do serviço.",
+    "takeaway": "Acompanhe o evento completo: falha, tempo indisponível, alternativa de atendimento, desembolso e efeito sobre a contribuição.",
+    "sources": [
+      {
+        "id": "pnnl",
+        "name": "Pacific Northwest National Laboratory: Maintenance Approaches",
+        "url": "https://www.pnnl.gov/projects/om-best-practices/maintenance-approaches"
+      }
+    ],
+    "sections": [
+      {
+        "id": "abordagens",
+        "title": "Diferencie manutenção programada e resposta à falha",
+        "paragraphs": [
+          "O PNNL distingue abordagens reativas, preventivas e preditivas. Sua análise trata de gestão de equipamentos e ajuda a organizar o raciocínio: agir depois da falha, atuar em intervalos definidos ou acompanhar a condição do ativo.",
+          "Na frota, a programação deve respeitar as orientações técnicas do fabricante, as condições de uso e a avaliação dos responsáveis pela manutenção. O modelo de gestão não substitui inspeções ou decisões sobre segurança. A referência industrial não estabelece intervalos de revisão para caminhões.",
+          "O financeiro contribui registrando os gastos e a indisponibilidade de forma comparável. Isso permite discutir recorrência, concentração de falhas e efeito na programação, em vez de avaliar cada reparo como uma ocorrência desconectada."
+        ],
+        "sourceIds": [
+          "pnnl"
+        ]
+      },
+      {
+        "id": "registro",
+        "title": "Registre a ocorrência por veículo",
+        "paragraphs": [
+          "Uma ordem de serviço útil relaciona identificação do veículo, data da falha, entrada e saída, diagnóstico, peças, serviços e responsável pela liberação. Registre separadamente a espera por peça, a execução do reparo e o tempo até o retorno à operação.",
+          "Acrescente a alternativa utilizada para cumprir o serviço. Houve remanejamento de outro veículo, contratação de terceiro, adiamento ou cancelamento? Cada resposta tem um efeito econômico diferente. Somar receita perdida e custo de substituição para a mesma viagem pode contar o impacto duas vezes."
+        ],
+        "table": {
+          "headers": [
+            "Componente",
+            "Tratamento sugerido"
+          ],
+          "rows": [
+            [
+              "Reparo",
+              "Peças e serviços efetivamente atribuídos à ocorrência"
+            ],
+            [
+              "Substituição",
+              "Custo adicional líquido da alternativa usada para atender"
+            ],
+            [
+              "Serviço não realizado",
+              "Contribuição perdida, quando não recuperada depois"
+            ],
+            [
+              "Estrutura fixa",
+              "Acompanhar separadamente, sem repetir um custo já considerado"
+            ],
+            [
+              "Atendimento e programação",
+              "Horas adicionais e consequências documentadas"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "exemplo",
+        "title": "Leia o impacto sem confundir receita com resultado",
+        "paragraphs": [
+          "Em um exemplo ilustrativo, um veículo deixa de realizar três serviços. Cada serviço geraria R$ 2 mil de receita líquida e exigiria R$ 1,2 mil de custos variáveis que não aconteceram. A contribuição não realizada é de R$ 800 por serviço, ou R$ 2,4 mil no total.",
+          "Se o reparo custou R$ 4 mil, a leitura inicial do evento reúne R$ 4 mil de gasto com oficina e R$ 2,4 mil de contribuição não realizada. Os R$ 6,4 mil representam uma combinação de gasto e custo de oportunidade, não uma saída de caixa de R$ 6,4 mil naquele dia.",
+          "Se um terceiro realizou as viagens e o cliente foi atendido, refaça a comparação com a contribuição efetivamente obtida. Se as viagens foram apenas adiadas, acompanhe quando a receita foi recuperada e quais custos extras ocorreram. A classificação correta muda a decisão."
+        ]
+      },
+      {
+        "id": "decisao",
+        "title": "Use o histórico para priorizar a próxima ação",
+        "bullets": [
+          "Comparar veículos de perfil e utilização semelhantes.",
+          "Separar falhas repetidas de intervenções programadas.",
+          "Medir tempo indisponível e custo por ocorrência na mesma base.",
+          "Conferir a qualidade e a duração dos reparos anteriores.",
+          "Planejar a janela de intervenção com operação e manutenção.",
+          "Relacionar a recorrência ao plano de ação e verificar seu efeito após a execução."
+        ],
+        "paragraphs": [
+          "O menor gasto com oficina em um mês pode esconder uma intervenção adiada. Da mesma forma, um mês de manutenção programada mais alta pode preservar disponibilidade futura. Avalie o histórico e o serviço entregue, sem prometer um percentual de economia que os dados da frota não demonstraram."
+        ]
+      }
+    ],
+    "related": [
+      "custo-por-km-transportadora",
+      "frete-vazio-ociosidade-frota",
+      "indicadores-transportadora-scor"
+    ],
+    "cta": {
+      "title": "Conecte disponibilidade e resultado da operação",
+      "text": "Converse com a NEXALLOG sobre diagnóstico, prioridades e acompanhamento da execução.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "slug": "otif-entregas-transportadora",
+    "title": "OTIF na transportadora: calcule entregas no prazo e completas sem distorcer o indicador",
+    "description": "Entenda como calcular OTIF com a mesma base de entregas, evitar a multiplicação de percentuais e investigar causas. Inclui calculadora e CSV.",
+    "category": "Operação e execução",
+    "calculator": "otif",
+    "intro": "Entregar no prazo e entregar a quantidade combinada são condições diferentes. O OTIF mostra quantas entregas atenderam às duas ao mesmo tempo. O indicador só ajuda a gestão quando a transportadora define a base, preserva a data acordada e consegue investigar as falhas por cliente e operação.",
+    "takeaway": "Calcule a interseção real das entregas no prazo e completas. Dois percentuais isolados não mostram quantas entregas cumpriram ambos os critérios.",
+    "sources": [
+      {
+        "id": "ascm",
+        "name": "ASCM: 8 KPIs for an Efficient Warehouse, definição de OTIF",
+        "url": "https://www.ascm.org/ascm-insights/8-kpis-for-an-efficient-warehouse/"
+      },
+      {
+        "id": "scor",
+        "name": "ASCM SCOR: Perfect Customer Order Fulfillment",
+        "url": "https://scor.ascm.org/performance/reliability/RL.1.1"
+      }
+    ],
+    "sections": [
+      {
+        "id": "regra",
+        "title": "Combine o significado de prazo e entrega completa",
+        "paragraphs": [
+          "A ASCM apresenta o OTIF como a verificação de recebimento completo na data desejada. Antes de usar a taxa em uma transportadora, registre a regra de apuração acordada com o cliente.",
+          "Defina se a unidade é pedido, entrega, nota ou outra referência. Estabeleça a janela de horário, a quantidade esperada, o tratamento de recusas e o período de corte. Não misture pedidos e volumes no mesmo denominador.",
+          "Uma base por entregas previstas no período ajuda a revelar pendências ainda não concluídas. Se a regra utilizar apenas entregas realizadas, informe esse recorte para não ocultar o estoque de atrasos. O importante é aplicar e explicar uma convenção consistente."
+        ],
+        "sourceIds": [
+          "ascm"
+        ]
+      },
+      {
+        "id": "formula",
+        "title": "Conte as entregas que atendem aos dois critérios",
+        "formula": "OTIF (%) = entregas no prazo e completas / total de entregas da base × 100",
+        "paragraphs": [
+          "No exemplo da calculadora, a base tem 100 entregas: 92 ocorreram no prazo, 95 estavam completas e 89 atenderam às duas condições. O OTIF é 89%. Multiplicar 92% por 95% produziria 87,4%, um valor que não corresponde à interseção observada.",
+          "Os números precisam ser compatíveis. A quantidade no prazo e completa não pode superar o menor dos dois grupos. Nessa mesma base, também não poderia ser menor que 87, pois existem apenas 100 entregas para acomodar os grupos de 92 e 95.",
+          "A ferramenta rejeita contagens fracionadas, grupos maiores que o total e interseções impossíveis. O CSV registra a base informada, as três taxas e as premissas. Ele não substitui a conferência dos registros que originaram a contagem."
+        ],
+        "table": {
+          "headers": [
+            "Situação ilustrativa",
+            "Entregas"
+          ],
+          "rows": [
+            [
+              "No prazo e completas",
+              "89"
+            ],
+            [
+              "No prazo, mas incompletas",
+              "3"
+            ],
+            [
+              "Completas, mas atrasadas",
+              "6"
+            ],
+            [
+              "Atrasadas e incompletas",
+              "2"
+            ],
+            [
+              "Total",
+              "100"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "causas",
+        "title": "Investigue as falhas sem alterar a promessa original",
+        "paragraphs": [
+          "Após apurar o indicador, classifique as ocorrências: programação, carregamento, disponibilidade de veículo, trânsito, janela, quantidade ou outro motivo confirmado. Diferencie um fato registrado de uma justificativa ainda não verificada.",
+          "Mudar retrospectivamente a data prometida para a data realizada elimina a capacidade de medir o compromisso. Se houver uma renegociação válida, guarde a promessa original, a nova condição e a justificativa. Isso permite acompanhar o cumprimento e entender por que a programação mudou.",
+          "Compare grupos semelhantes. Uma operação dedicada e uma distribuição com múltiplas paradas podem exigir leituras diferentes. Metas devem considerar o serviço contratado e a capacidade real; o exemplo da calculadora não é uma meta universal de mercado."
+        ]
+      },
+      {
+        "id": "pedido-perfeito",
+        "title": "OTIF não cobre todos os critérios de um pedido perfeito",
+        "paragraphs": [
+          "No SCOR, a avaliação de pedido perfeito também contempla dimensões além de prazo e quantidade, como condição e documentação. Por isso, a calculadora desta página mede apenas o OTIF definido no seu escopo.",
+          "Relacione as falhas ao custo de reentrega, à contestação e ao tempo de faturamento quando houver evidência. O próximo passo de gestão é escolher uma causa relevante, definir uma ação e verificar se ela reduz a recorrência sem comprometer o custo ou a segurança."
+        ],
+        "sourceIds": [
+          "scor"
+        ]
+      }
+    ],
+    "related": [
+      "indicadores-transportadora-scor",
+      "custo-de-servir-cliente-transportadora",
+      "prazo-entrega-faturamento-recebimento"
+    ],
+    "cta": {
+      "title": "Transforme o indicador em ação operacional",
+      "text": "Conheça como a NEXALLOG organiza diagnóstico e acompanhamento da execução no Programa D90.",
+      "href": "/metodologia",
+      "label": "Conhecer o Programa D90"
+    }
+  },
+  {
+    "publishedAt": "2026-11-22",
+    "updatedAt": "2026-11-22",
+    "slug": "orcamento-realizado-transportadora",
+    "title": "Orçado versus realizado: separe volume e desvio de custo na transportadora",
+    "description": "Compare custos com uma base de atividade equivalente. Use o orçamento ajustado para separar efeito de volume e desvio, com calculadora e CSV.",
+    "category": "Custos e margem",
+    "calculator": "flex-budget",
+    "intro": "O custo ficou acima do orçamento, mas a transportadora também rodou mais. Quanto do aumento era esperado pelo volume e quanto precisa de investigação? A comparação fica mais útil quando o orçamento é ajustado à atividade realizada, preservando os parâmetros de custo definidos para a análise.",
+    "takeaway": "Compare o custo real com o custo esperado para o volume real. Só depois investigue preço, consumo, produtividade e mudança de estrutura.",
+    "sources": [
+      {
+        "id": "openstax",
+        "name": "OpenStax, Rice University: Prepare Flexible Budgets",
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/7-4-prepare-flexible-budgets"
+      }
+    ],
+    "sections": [
+      {
+        "id": "base",
+        "title": "Defina uma unidade de atividade que explique o custo",
+        "paragraphs": [
+          "A OpenStax apresenta o orçamento flexível como uma forma de comparar custos levando em conta o nível de atividade. O objetivo é evitar atribuir ao controle de gastos uma diferença que decorre apenas do volume.",
+          "Na transportadora, a unidade pode ser quilômetro, entrega ou outra medida adequada ao grupo analisado. A escolha precisa explicar o comportamento dos custos. Não trate duas viagens de perfis muito diferentes como unidades equivalentes sem avaliar a composição.",
+          "Separe custos fixos dos variáveis e mantenha o mesmo período e critério de registro. A calculadora usa custos por competência; pagamentos de parcelas antigas ou compras ainda não consumidas não devem ser misturados automaticamente ao custo operacional do mês."
+        ],
+        "sourceIds": [
+          "openstax"
+        ]
+      },
+      {
+        "id": "exemplo",
+        "title": "Ajuste o orçamento antes de concluir que houve desperdício",
+        "paragraphs": [
+          "O exemplo ilustrativo considera R$ 120 mil de custos fixos, R$ 2,20 de custo variável por unidade e previsão de 10 mil unidades de atividade. O orçamento original é de R$ 142 mil. A operação realiza 12 mil unidades e registra R$ 149 mil de custo.",
+          "Comparado diretamente ao original, o custo cresceu R$ 7 mil. Porém, o orçamento ajustado para 12 mil unidades seria R$ 146,4 mil. Desse modo, R$ 4,4 mil da diferença correspondem ao volume adicional no modelo, e R$ 2,6 mil permanecem como desvio de custo a investigar.",
+          "Os R$ 2,6 mil não comprovam desperdício. Podem refletir mudança de preço, consumo, mistura de operações, classificação ou estrutura. A separação dá um ponto de partida mais claro para conferir as causas."
+        ],
+        "formula": "Orçamento ajustado = custo fixo orçado + custo variável unitário orçado × volume realizado",
+        "table": {
+          "headers": [
+            "Leitura do exemplo",
+            "Valor"
+          ],
+          "rows": [
+            [
+              "Orçamento original para 10 mil unidades",
+              "R$ 142.000"
+            ],
+            [
+              "Orçamento ajustado para 12 mil unidades",
+              "R$ 146.400"
+            ],
+            [
+              "Custo realizado",
+              "R$ 149.000"
+            ],
+            [
+              "Efeito do volume",
+              "R$ 4.400"
+            ],
+            [
+              "Desvio após ajuste",
+              "R$ 2.600"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "investigar",
+        "title": "Abra o desvio por causa e responsável",
+        "paragraphs": [
+          "Para combustível, confira preço por litro e rendimento. Para terceiros, compare o perfil contratado com o previsto. Para atendimento e retrabalho, verifique horas adicionais e ocorrências. Um total isolado não mostra qual alavanca mudou.",
+          "Um valor abaixo do orçamento também pede explicação. Pode resultar de eficiência, mas também de manutenção adiada, serviço ainda não registrado ou atendimento incompleto. Relacione o resultado financeiro aos indicadores de serviço antes de considerar a diferença favorável.",
+          "Registre a causa comprovada, a ação, o responsável e a data de revisão. Quando uma premissa deixa de representar a operação, documente a mudança e mantenha o orçamento original para que o histórico continue comparável."
+        ]
+      },
+      {
+        "id": "limites",
+        "title": "Reconheça onde o modelo simplificado deixa de funcionar",
+        "bullets": [
+          "A estrutura fixa muda quando há novo veículo, turno ou equipe dedicada.",
+          "O custo variável por unidade deixa de ser constante se o perfil da operação muda.",
+          "Uma média da empresa pode esconder variações entre clientes, veículos e rotas.",
+          "Receita e margem exigem análise própria, além da comparação de custos.",
+          "Efeito no caixa depende das datas de pagamento e recebimento, não apenas da competência."
+        ],
+        "paragraphs": [
+          "Use a ferramenta para uma primeira comparação em uma faixa de atividade coerente. O CSV guarda as premissas e permite levar a leitura à reunião de resultado. Se o volume adicional mudou a estrutura, refaça a base antes de avaliar o desempenho da equipe."
+        ]
+      }
+    ],
+    "related": [
+      "dre-e-fluxo-de-caixa-transportadora",
+      "custo-por-km-transportadora",
+      "ponto-equilibrio-transportadora"
+    ],
+    "cta": {
+      "title": "Dê uma causa e uma ação a cada desvio relevante",
+      "text": "Converse com a NEXALLOG sobre a leitura financeira da operação e o acompanhamento do plano de ação.",
       "href": "/contato",
       "label": "Falar com a NEXALLOG"
     }

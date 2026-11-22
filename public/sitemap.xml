@@ -24,7 +24,7 @@
   </url>
   <url>
     <loc>https://www.nexallog.com.br/blog</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://www.nexallog.com.br/blog/custo-por-km-transportadora</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -133,6 +133,36 @@
   <url>
     <loc>https://www.nexallog.com.br/blog/desconto-frete-margem-contribuicao</loc>
     <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nexallog.com.br/blog/inadimplencia-cobranca-transportadora</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nexallog.com.br/blog/prazo-fornecedores-caixa-transportadora</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nexallog.com.br/blog/manutencao-preventiva-custo-parada-frota</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nexallog.com.br/blog/otif-entregas-transportadora</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nexallog.com.br/blog/orcamento-realizado-transportadora</loc>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -9,9 +9,16 @@ export function FloatingWhatsApp() {
   const t = useCopy();
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
 
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      if (wasOpen.current) triggerRef.current?.focus();
+      wasOpen.current = false;
+      return;
+    }
+    wasOpen.current = true;
     closeRef.current?.focus();
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setOpen(false);
@@ -24,6 +31,7 @@ export function FloatingWhatsApp() {
     return (
       <div className="whatsapp-attention fixed bottom-6 right-6 z-[60] rounded-full">
         <button
+          ref={triggerRef}
           type="button"
           onClick={() => {
             setOpen(true);
@@ -31,6 +39,7 @@ export function FloatingWhatsApp() {
           }}
           aria-label={t('Iniciar conversa pelo WhatsApp')}
           aria-expanded="false"
+          aria-haspopup="dialog"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_14px_32px_-12px_rgb(17_17_17/0.55)] transition-transform duration-300 ease-outexpo hover:scale-105 focus-visible:scale-105"
         >
           <WhatsAppIcon />
@@ -41,12 +50,14 @@ export function FloatingWhatsApp() {
 
   return (
     <aside
-      aria-label={t('Acesso rápido ao WhatsApp')}
-      className="tone-dark fixed bottom-5 right-5 z-[60] w-[min(24rem,calc(100vw-2.5rem))] border border-line/25 bg-surface p-6 text-content shadow-[0_24px_70px_rgb(0_0_0/0.35)]"
+      id="whatsapp-painel"
+      role="dialog"
+      aria-labelledby="whatsapp-painel-titulo"
+      className="tone-dark fixed bottom-5 right-5 z-[60] max-h-[calc(100dvh-2.5rem)] w-[min(24rem,calc(100vw-2.5rem))] overflow-y-auto overscroll-contain border border-line/25 bg-surface p-6 text-content shadow-[0_24px_70px_rgb(0_0_0/0.35)]"
     >
       <div className="flex items-start justify-between gap-6">
         <div>
-          <p className="text-lg font-bold">{t('Falar pelo WhatsApp')}</p>
+          <p id="whatsapp-painel-titulo" className="text-lg font-bold">{t('Falar pelo WhatsApp')}</p>
           <p className="mt-2 text-sm leading-relaxed text-content/65">
             {t('Informe seu nome e sua empresa para iniciar a conversa.')}
           </p>
